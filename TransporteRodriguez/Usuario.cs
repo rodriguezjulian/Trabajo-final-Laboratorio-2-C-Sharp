@@ -3,9 +3,9 @@
     public class Usuario
     {
         //? por los retornos nulos
-        private string? nombre;
-        private string? contraseña;
-        private string? mail;
+        private string? _nombre;
+        private string? _contraseña;
+        private string? _mail;
 
         public Usuario() { }
         //public Usuario(string nombre, string contraseña) : this(nombre, contraseña, "SIN MAIL"){ }
@@ -17,9 +17,11 @@
             this.Mail = mail;
         }
 
+        public string? Nombre { get => _nombre; set => _nombre = value; }
+        public string? Contraseña { get => _contraseña; set => _contraseña = value; }
+        public string? Mail { get => _mail; set => _mail = value; }
+
         //EVALUAR SI PRECISO TODOS LOS SETS
-        public string? Nombre { get => nombre; set => nombre = value; }
-        public string? Contraseña { get => contraseña; set => contraseña = value; }
-        public string? Mail { get => mail; set => mail = value; }
+
     }
 }

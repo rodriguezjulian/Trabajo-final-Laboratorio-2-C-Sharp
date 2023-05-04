@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransporteRodriguez", "TransporteRodriguez\TransporteRodriguez.csproj", "{5EC4B951-81F7-4C40-8535-4015BCB7D019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransporteRodriguez", "TransporteRodriguez\TransporteRodriguez.csproj", "{5EC4B951-81F7-4C40-8535-4015BCB7D019}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerado", "Enumerado\Enumerado.csproj", "{D59C302D-8B05-41C1-9ABB-F3341E05BDC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerado", "Enumerado\Enumerado.csproj", "{D59C302D-8B05-41C1-9ABB-F3341E05BDC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmLogueo", "FrmLogueo\FrmLogueo.csproj", "{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WF_TransporteRodriguez", "FrmLogueo\WF_TransporteRodriguez.csproj", "{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

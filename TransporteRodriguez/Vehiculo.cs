@@ -10,27 +10,27 @@ namespace TransporteRodriguez
 {
     internal class Vehiculo
     {
-        private short idVehiculo;
-        private Marcas marcaVehiculo;
-        private int capacidadDeCarga;
-        private Colores color;
-        private string? patente;
+        private short _idVehiculo;
+        private Marcas _marcaVehiculo;
+        private int _capacidadDeCarga;
+        private Colores _color;
+        private string? _patente;
 
         public Vehiculo() { }
 
         public Vehiculo(short idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string? patente)
         {
-            this.IdVehiculo = idVehiculo;
-            this.MarcaVehiculo = marcaVehiculo;
-            this.CapacidadDeCarga = capacidadDeCarga;
-            this.Color = color;
-            this.Patente = patente;
+            _idVehiculo = idVehiculo;
+            _marcaVehiculo = marcaVehiculo;
+            _capacidadDeCarga = capacidadDeCarga;
+            _color = color;
+            _patente = patente;
         }
 
-        public short IdVehiculo { get => idVehiculo; set => idVehiculo = value; }
-        public Marcas MarcaVehiculo { get => marcaVehiculo; set => marcaVehiculo = value; }
-        public int CapacidadDeCarga { get => capacidadDeCarga; set => capacidadDeCarga = value; }
-        public Colores Color { get => color; set => color = value; }
-        public string? Patente { get => patente; set => patente = value; }
+        public short IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
+        public Marcas MarcaVehiculo { get => _marcaVehiculo; set => _marcaVehiculo = value; }
+        public int CapacidadDeCarga { get => _capacidadDeCarga; set => _capacidadDeCarga = value; }
+        public Colores Color { get => _color; set => _color = value; }
+        public string? Patente { get => _patente; set => _patente = value; }
     }
 }

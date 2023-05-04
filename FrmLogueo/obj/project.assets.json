@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\FrmLogueo\\FrmLogueo.csproj",
-      "projectName": "FrmLogueo",
-      "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\FrmLogueo\\FrmLogueo.csproj",
+      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\FrmLogueo\\WF_TransporteRodriguez.csproj",
+      "projectName": "WF_TransporteRodriguez",
+      "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\FrmLogueo\\WF_TransporteRodriguez.csproj",
       "packagesPath": "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\FrmLogueo\\obj\\",
       "projectStyle": "PackageReference",

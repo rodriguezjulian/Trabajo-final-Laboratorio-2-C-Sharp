@@ -9,12 +9,12 @@ namespace TransporteRodriguez
     internal class Viaje
         // nose si podria hacer que viaje herede de cliente los datos de nombre cliente y direccion de salida
     {
-        private short idViaje;
-        private string? nombreCliente;
-        private string? direccionSalida; // que seria la direccion del cliente
-        private string? provinciaDestino;
-        private float precio;
-        private short idVehiculo;
-        private DateTime fechaViaje;
+        private short _idViaje;
+        private string? _nombreCliente;
+        private string? _direccionSalida; // que seria la direccion del cliente
+        private string? _provinciaDestino;
+        private float _precio;
+        private short _idVehiculo;
+        private DateTime _fechaViaje;
     }
 }
