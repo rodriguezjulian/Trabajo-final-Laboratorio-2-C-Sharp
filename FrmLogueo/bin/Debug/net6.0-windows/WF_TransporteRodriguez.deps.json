@@ -7,14 +7,40 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "WF_TransporteRodriguez/1.0.0": {
+        "dependencies": {
+          "TransporteRodriguez": "1.0.0"
+        },
         "runtime": {
           "WF_TransporteRodriguez.dll": {}
+        }
+      },
+      "Enumerado/1.0.0": {
+        "runtime": {
+          "Enumerado.dll": {}
+        }
+      },
+      "TransporteRodriguez/1.0.0": {
+        "dependencies": {
+          "Enumerado": "1.0.0"
+        },
+        "runtime": {
+          "TransporteRodriguez.dll": {}
         }
       }
     }
   },
   "libraries": {
     "WF_TransporteRodriguez/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Enumerado/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TransporteRodriguez/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

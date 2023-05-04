@@ -8,14 +8,17 @@
         private string? _mail;
 
         public Usuario() { }
+
+        public Usuario(string? nombre, string? contraseña, string? mail)
+        {
+            _nombre = nombre;
+            _contraseña = contraseña;
+            _mail = mail;
+        }
+
         //public Usuario(string nombre, string contraseña) : this(nombre, contraseña, "SIN MAIL"){ }
         //INTENTO SOBRECARGAR 
-        public Usuario(string nombre, string contraseña, string mail)
-        {
-            this.Nombre = nombre;
-            this.Contraseña = contraseña;
-            this.Mail = mail;
-        }
+
 
         public string? Nombre { get => _nombre; set => _nombre = value; }
         public string? Contraseña { get => _contraseña; set => _contraseña = value; }

@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "Enumerado/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Enumerado.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Enumerado.dll": {}
+        }
+      },
+      "TransporteRodriguez/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Enumerado": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TransporteRodriguez.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TransporteRodriguez.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Enumerado/1.0.0": {
+      "type": "project",
+      "path": "../Enumerado/Enumerado.csproj",
+      "msbuildProject": "../Enumerado/Enumerado.csproj"
+    },
+    "TransporteRodriguez/1.0.0": {
+      "type": "project",
+      "path": "../TransporteRodriguez/TransporteRodriguez.csproj",
+      "msbuildProject": "../TransporteRodriguez/TransporteRodriguez.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "TransporteRodriguez >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\": {}
@@ -33,7 +70,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\TransporteRodriguez\\TransporteRodriguez.csproj": {
+              "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\TransporteRodriguez\\TransporteRodriguez.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
