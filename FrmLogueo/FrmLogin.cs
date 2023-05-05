@@ -14,11 +14,19 @@ namespace FrmLogueo
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
-            FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL USUARIO
-            menuEmpleado.Show();
-            this.Hide();//Para "esconder" al login
-
+            Empleado usuario = new Empleado(txt_LoginUsuario.Text, txt_Contraseña.Text);
+            if (Sistema.ValidarUsuario(usuario))
+            {
+                FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL USUARIO
+                menuEmpleado.Show();
+                this.Hide();//Para "esconder" al login
+            }
         }
 
+        private void Frm_Login_Load(object sender, EventArgs e)
+        {
+            Sistema.AgregarCliente();
+            Sistema.AgregarEmpleado();
+        }
     }
 }

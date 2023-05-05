@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    internal class Sistema
+    public static class Sistema
     {
-        public static List<Cliente> listaClientes = new List<Cliente>();
-        public static List<Empleado> listaEmpleado = new List<Empleado>();
-        private static int AgregarUsuario(string opcionCboLogin)
+        static List<Cliente> listaClientes = new List<Cliente>();
+        static List<Empleado> listaEmpleado = new List<Empleado>();
+        
+       /*public static int AgregarUsuario(string opcionCboLogin)
         {
             int retorno;
             if (opcionCboLogin == "Cliente")
@@ -32,8 +33,8 @@ namespace TransporteRodriguez
                 }
             }
             return retorno;
-        }
-        private static void AgregarCliente()
+        }*/
+        public static void AgregarCliente()
         {           
             listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));       
             listaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));       
@@ -50,7 +51,7 @@ namespace TransporteRodriguez
             listaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", 13, "Av. Córdoba 6789", "Herramientas"));
             listaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", 14, "Calle Mendoza 3456", "Deportes"));
         }
-        private static void AgregarEmpleado()
+        public static void AgregarEmpleado()
         {
             listaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
             listaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas"));
@@ -60,26 +61,67 @@ namespace TransporteRodriguez
         }
         private static void AgregarAdmin() 
         {
-
+            
         }
-      /*   validarUsuario(int tipoDeUsuario)
+
+        /*public static bool ValidarUsuario(Usuario nombre)
         {
             bool retorno = false;
-            switch (tipoDeUsuario)
+            foreach (Usuario empleado in listaEmpleado)
             {
-                case 1:
-
-                break;
-                case 2:
-                break;
-                case 3:
-                break;
+                if (nombre == empleado)
+                {
+                    retorno = true;
+                }
+            }
+            foreach (Cliente cliente in listaClientes)
+            {
+                if (nombre == cliente)
+                {
+                    retorno = true;
+                }
             }
 
             return retorno;
         }*/
 
 
+        public static bool ValidarUsuario(Empleado empleadoUno)
+          {
+              bool retorno = false;
+              foreach (Empleado empleado in listaEmpleado)
+              {
+                  if (empleadoUno == empleado)
+                  {
+                      retorno = true;
+                  }
+              }
+              return retorno;
+          }
+          public static bool ValidarUsuario(Cliente empleadoUno)
+          {
+              bool retorno = false;
+              foreach (Cliente empleado in listaClientes)
+              {
+                  if (empleadoUno == empleado)
+                  {
+                      retorno = true;
+                  }
+              }
+              return retorno;
+          }
+        /*public static bool ValidarUsuario(Empleado empleadoUno)
+        {
+            bool retorno = false;
+            foreach (Empleado empleado in listaEmpleado)
+            {
+                if (empleadoUno == empleado)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }*/
 
 
     }

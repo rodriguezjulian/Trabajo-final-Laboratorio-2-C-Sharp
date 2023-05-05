@@ -21,6 +21,19 @@ namespace TransporteRodriguez
             _direccionBSAS = direccionBSAS;
             _rubro = rubro;
         }
+        public static bool operator ==(Cliente uno, Cliente dos)
+        {
+            bool retorno = false;
+            if ((uno.Nombre == dos.Nombre) && (uno.Contraseña == dos.Contraseña))
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+        public static bool operator !=(Cliente uno, Cliente dos)
+        {
+            return !(uno == dos);
+        }
         // listaClientes.Add(new Cliente("pedro", "ashe", pedro@yahoo.com,1,Libertador 45,Textil));
     }
 }

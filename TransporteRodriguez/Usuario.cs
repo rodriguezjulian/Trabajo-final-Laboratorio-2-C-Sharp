@@ -14,6 +14,12 @@
             _nombre = nombre;
             _contraseña = contraseña;
             _mail = mail;
+
+        }
+        public Usuario(string? nombre, string? contraseña)
+        {
+            _nombre = nombre;
+            _contraseña = contraseña;
         }
 
         //public Usuario(string nombre, string contraseña) : this(nombre, contraseña, "SIN MAIL"){ }

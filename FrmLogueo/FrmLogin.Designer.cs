@@ -37,6 +37,7 @@
             btn_Ingresar = new Button();
             cbo_Rol = new ComboBox();
             label3 = new Label();
+            colorDialog1 = new ColorDialog();
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).BeginInit();
             SuspendLayout();
             // 
@@ -141,6 +142,7 @@
             Name = "Frm_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += Frm_Login_Load;
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -155,5 +157,6 @@
         private Button btn_Ingresar;
         private ComboBox cbo_Rol;
         private Label label3;
+        private ColorDialog colorDialog1;
     }
 }
