@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FrmLogueo;
+using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,5 +34,12 @@ namespace WF_TransporteRodriguez
 
         }
 
+        private void btn_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Oculta el formulario actual
+            Form anterior = new Frm_Login(); // Crea una instancia del formulario anterior
+            anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
+            this.Close(); // Cierra el formulario actual
+        }
     }
 }

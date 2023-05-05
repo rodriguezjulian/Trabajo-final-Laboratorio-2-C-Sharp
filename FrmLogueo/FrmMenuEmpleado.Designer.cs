@@ -45,6 +45,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             pictureBox1 = new PictureBox();
             button1 = new Button();
+            btn_CerrarSesion = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -167,11 +168,22 @@
             button1.Text = "Cerrar sesion";
             button1.UseVisualStyleBackColor = true;
             // 
+            // btn_CerrarSesion
+            // 
+            btn_CerrarSesion.Location = new Point(495, 267);
+            btn_CerrarSesion.Name = "btn_CerrarSesion";
+            btn_CerrarSesion.Size = new Size(131, 23);
+            btn_CerrarSesion.TabIndex = 6;
+            btn_CerrarSesion.Text = "Cerrar sesion";
+            btn_CerrarSesion.UseVisualStyleBackColor = true;
+            btn_CerrarSesion.Click += btn_CerrarSesion_Click;
+            // 
             // FrmMenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(638, 302);
+            Controls.Add(btn_CerrarSesion);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
@@ -204,5 +216,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private PictureBox pictureBox1;
         private Button button1;
+        private Button btn_CerrarSesion;
     }
 }

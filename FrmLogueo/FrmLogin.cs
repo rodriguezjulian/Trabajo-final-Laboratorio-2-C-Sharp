@@ -28,5 +28,22 @@ namespace FrmLogueo
             Sistema.AgregarCliente();
             Sistema.AgregarEmpleado();
         }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //dialog resulta es un enumerado
+            DialogResult confirmacion = MessageBox.Show("Esta seguro que quiere salir?", "Cierre"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirmacion == DialogResult.No)
+            {
+                // Application.Exit();
+                e.Cancel = true;//para cancelar la salida
+            }
+        }
     }
 }
