@@ -9,6 +9,7 @@ namespace TransporteRodriguez
     internal class Sistema
     {
         public static List<Cliente> listaClientes = new List<Cliente>();
+        public static List<Empleado> listaEmpleado = new List<Empleado>();
         private static int AgregarUsuario(string opcionCboLogin)
         {
             int retorno;
@@ -51,16 +52,32 @@ namespace TransporteRodriguez
         }
         private static void AgregarEmpleado()
         {
-            Empleado emp1 = new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas");
-            Empleado emp2 = new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas");
-            Empleado emp3 = new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", 3, "Asistente Administrativo");
-            Empleado emp4 = new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", 4, "Desarrollador Web");
-            Empleado emp5 = new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", 5, "Contador General");
+            listaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
+            listaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas"));
+            listaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", 3, "Asistente Administrativo"));
+            listaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", 4, "Desarrollador Web"));
+            listaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", 5, "Contador General"));
         }
         private static void AgregarAdmin() 
         {
 
         }
+      /*   validarUsuario(int tipoDeUsuario)
+        {
+            bool retorno = false;
+            switch (tipoDeUsuario)
+            {
+                case 1:
+
+                break;
+                case 2:
+                break;
+                case 3:
+                break;
+            }
+
+            return retorno;
+        }*/
 
 
 

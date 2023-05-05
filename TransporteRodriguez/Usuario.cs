@@ -23,7 +23,10 @@
         public string? Nombre { get => _nombre; set => _nombre = value; }
         public string? Contraseña { get => _contraseña; set => _contraseña = value; }
         public string? Mail { get => _mail; set => _mail = value; }
-
+        public virtual bool ValidarUsuario(Usuario user)
+        {
+            return true;
+        }
         //EVALUAR SI PRECISO TODOS LOS SETS
 
     }
