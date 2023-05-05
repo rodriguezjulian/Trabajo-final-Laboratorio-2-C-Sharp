@@ -13,6 +13,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class FrmAltaCliente : Form
     {
+        Cliente nuevoCliente;
         public FrmAltaCliente()
         {
             InitializeComponent();
@@ -20,7 +21,11 @@ namespace WF_TransporteRodriguez
         //COMO ES UN FORMULARIO QUE SE MUESTRA COMO MODAL PUEDO HACER ESTO
         private void btn_GuardarCliente_Click(object sender, EventArgs e)
         {
-            Cliente nuevoCliente = new Cliente(txt_AltaNombre.Text,txt_AltaContraseña.Text,
+            /*
+             *         public Cliente(string nombre, string contraseña, string mail,short idCliente, string? direccionBSAS, string? rubro) 
+            : base(nombre, contraseña, mail)
+             */
+             nuevoCliente = new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text,txt_AltaMail.Text, short.Parse(txt_AltaId.Text),
                 txt_AltaDireccion.Text, txt_AltaRubro.Text);
 
             this.DialogResult = DialogResult.OK;

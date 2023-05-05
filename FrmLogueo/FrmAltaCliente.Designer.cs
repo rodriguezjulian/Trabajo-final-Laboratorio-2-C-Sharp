@@ -39,6 +39,10 @@
             txt_AltaRubro = new TextBox();
             btn_SalirAltaCliente = new Button();
             btn_GuardarCliente = new Button();
+            txt_AltaMail = new TextBox();
+            lbl_AltaMail = new Label();
+            txt_AltaId = new TextBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -136,11 +140,47 @@
             btn_GuardarCliente.UseVisualStyleBackColor = false;
             btn_GuardarCliente.Click += btn_GuardarCliente_Click;
             // 
+            // txt_AltaMail
+            // 
+            txt_AltaMail.Location = new Point(245, 179);
+            txt_AltaMail.Name = "txt_AltaMail";
+            txt_AltaMail.Size = new Size(100, 23);
+            txt_AltaMail.TabIndex = 35;
+            // 
+            // lbl_AltaMail
+            // 
+            lbl_AltaMail.AutoSize = true;
+            lbl_AltaMail.Location = new Point(114, 182);
+            lbl_AltaMail.Name = "lbl_AltaMail";
+            lbl_AltaMail.Size = new Size(30, 15);
+            lbl_AltaMail.TabIndex = 36;
+            lbl_AltaMail.Text = "Mail";
+            // 
+            // txt_AltaId
+            // 
+            txt_AltaId.Location = new Point(245, 237);
+            txt_AltaId.Name = "txt_AltaId";
+            txt_AltaId.Size = new Size(100, 23);
+            txt_AltaId.TabIndex = 37;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(123, 245);
+            label6.Name = "label6";
+            label6.Size = new Size(18, 15);
+            label6.TabIndex = 38;
+            label6.Text = "ID";
+            // 
             // FrmAltaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label6);
+            Controls.Add(txt_AltaId);
+            Controls.Add(lbl_AltaMail);
+            Controls.Add(txt_AltaMail);
             Controls.Add(btn_GuardarCliente);
             Controls.Add(btn_SalirAltaCliente);
             Controls.Add(txt_AltaRubro);
@@ -172,5 +212,9 @@
         private TextBox txt_AltaRubro;
         private Button btn_SalirAltaCliente;
         private Button btn_GuardarCliente;
+        private TextBox txt_AltaMail;
+        private Label lbl_AltaMail;
+        private TextBox txt_AltaId;
+        private Label label6;
     }
 }

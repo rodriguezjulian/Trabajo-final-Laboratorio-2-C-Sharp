@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             pic_CamionLogin = new PictureBox();
             lbl_Bienvenido = new Label();
             txt_LoginUsuario = new TextBox();
             txt_Contraseña = new TextBox();
-            rad_Empleado = new RadioButton();
-            rad_Cliente = new RadioButton();
             label2 = new Label();
             btn_Ingresar = new Button();
+            cbo_Rol = new ComboBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // 
             txt_LoginUsuario.BackColor = Color.FromArgb(255, 255, 192);
             txt_LoginUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_LoginUsuario.Location = new Point(109, 71);
+            txt_LoginUsuario.Location = new Point(12, 71);
             txt_LoginUsuario.Name = "txt_LoginUsuario";
             txt_LoginUsuario.Size = new Size(202, 29);
             txt_LoginUsuario.TabIndex = 9;
@@ -74,38 +75,12 @@
             // 
             txt_Contraseña.BackColor = Color.FromArgb(255, 255, 192);
             txt_Contraseña.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Contraseña.Location = new Point(109, 121);
+            txt_Contraseña.Location = new Point(12, 121);
             txt_Contraseña.Name = "txt_Contraseña";
             txt_Contraseña.Size = new Size(202, 29);
             txt_Contraseña.TabIndex = 10;
             txt_Contraseña.Text = "Contraseña";
             txt_Contraseña.TextAlign = HorizontalAlignment.Center;
-            // 
-            // rad_Empleado
-            // 
-            rad_Empleado.AutoSize = true;
-            rad_Empleado.BackColor = Color.Transparent;
-            rad_Empleado.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rad_Empleado.Location = new Point(47, 41);
-            rad_Empleado.Name = "rad_Empleado";
-            rad_Empleado.Size = new Size(95, 24);
-            rad_Empleado.TabIndex = 11;
-            rad_Empleado.TabStop = true;
-            rad_Empleado.Text = "Empleado";
-            rad_Empleado.UseVisualStyleBackColor = false;
-            // 
-            // rad_Cliente
-            // 
-            rad_Cliente.AutoSize = true;
-            rad_Cliente.BackColor = Color.Transparent;
-            rad_Cliente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rad_Cliente.Location = new Point(292, 41);
-            rad_Cliente.Name = "rad_Cliente";
-            rad_Cliente.Size = new Size(73, 24);
-            rad_Cliente.TabIndex = 12;
-            rad_Cliente.TabStop = true;
-            rad_Cliente.Text = "Cliente";
-            rad_Cliente.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -120,7 +95,7 @@
             // 
             btn_Ingresar.BackColor = Color.PeachPuff;
             btn_Ingresar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Ingresar.Location = new Point(153, 156);
+            btn_Ingresar.Location = new Point(172, 172);
             btn_Ingresar.Name = "btn_Ingresar";
             btn_Ingresar.Size = new Size(109, 30);
             btn_Ingresar.TabIndex = 23;
@@ -128,20 +103,41 @@
             btn_Ingresar.UseVisualStyleBackColor = false;
             btn_Ingresar.Click += btn_Ingresar_Click;
             // 
+            // cbo_Rol
+            // 
+            cbo_Rol.DisplayMember = "0";
+            cbo_Rol.FormattingEnabled = true;
+            cbo_Rol.Items.AddRange(new object[] { "Cliente", "Administrador", "Empleado" });
+            cbo_Rol.Location = new Point(262, 76);
+            cbo_Rol.Name = "cbo_Rol";
+            cbo_Rol.Size = new Size(121, 23);
+            cbo_Rol.TabIndex = 24;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(297, 48);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 25);
+            label3.TabIndex = 26;
+            label3.Text = "ROL";
+            // 
             // Frm_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 229);
+            Controls.Add(label3);
+            Controls.Add(cbo_Rol);
             Controls.Add(btn_Ingresar);
             Controls.Add(label2);
-            Controls.Add(rad_Cliente);
-            Controls.Add(rad_Empleado);
             Controls.Add(txt_Contraseña);
             Controls.Add(txt_LoginUsuario);
             Controls.Add(lbl_Bienvenido);
             Controls.Add(pic_CamionLogin);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -155,9 +151,9 @@
         private Label lbl_Bienvenido;
         private TextBox txt_LoginUsuario;
         private TextBox txt_Contraseña;
-        private RadioButton rad_Empleado;
-        private RadioButton rad_Cliente;
         private Label label2;
         private Button btn_Ingresar;
+        private ComboBox cbo_Rol;
+        private Label label3;
     }
 }

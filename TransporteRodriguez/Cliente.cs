@@ -21,5 +21,6 @@ namespace TransporteRodriguez
             _direccionBSAS = direccionBSAS;
             _rubro = rubro;
         }
+        // listaClientes.Add(new Cliente("pedro", "ashe", pedro@yahoo.com,1,Libertador 45,Textil));
     }
 }

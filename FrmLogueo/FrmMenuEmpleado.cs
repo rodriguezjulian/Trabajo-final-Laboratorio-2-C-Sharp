@@ -24,7 +24,10 @@ namespace WF_TransporteRodriguez
             //INSTACIO EL FORMULARIO SIGUIENTE
             FrmAltaCliente frmAltaCliente = new FrmAltaCliente();
             //DialogResult confirmacion
-            frmAltaCliente.ShowDialog();//cuando mostramos con ShowDialog damos foco a ese formulario
+            if (frmAltaCliente.ShowDialog() == DialogResult.OK) //cuando mostramos con ShowDialog damos foco a ese formulario
+            {
+
+            }
 
 
         }
