@@ -54,6 +54,8 @@
             pictureBox7 = new PictureBox();
             txt_AltaId = new TextBox();
             label4 = new Label();
+            pictureBox8 = new PictureBox();
+            lbl_nombreUsuario = new Label();
             panel5.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -78,10 +81,12 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(255, 255, 192);
+            panel5.Controls.Add(lbl_nombreUsuario);
+            panel5.Controls.Add(pictureBox8);
             panel5.Controls.Add(label7);
             panel5.Location = new Point(90, 1);
             panel5.Name = "panel5";
-            panel5.Size = new Size(536, 33);
+            panel5.Size = new Size(549, 33);
             panel5.TabIndex = 40;
             // 
             // label7
@@ -105,7 +110,7 @@
             panel1.Controls.Add(label5);
             panel1.Location = new Point(2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(89, 259);
+            panel1.Size = new Size(89, 303);
             panel1.TabIndex = 41;
             // 
             // label9
@@ -126,6 +131,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 46;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label8
             // 
@@ -139,7 +145,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.guardar;
-            pictureBox1.Location = new Point(10, 79);
+            pictureBox1.Location = new Point(16, 79);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(66, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -288,7 +294,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(451, 196);
+            pictureBox7.Location = new Point(114, 244);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(49, 35);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -299,7 +305,7 @@
             // 
             txt_AltaId.BackColor = Color.FromArgb(255, 255, 192);
             txt_AltaId.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaId.Location = new Point(517, 206);
+            txt_AltaId.Location = new Point(164, 254);
             txt_AltaId.Name = "txt_AltaId";
             txt_AltaId.ReadOnly = true;
             txt_AltaId.Size = new Size(78, 25);
@@ -310,18 +316,39 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(517, 186);
+            label4.Location = new Point(164, 234);
             label4.Name = "label4";
             label4.Size = new Size(22, 17);
             label4.TabIndex = 57;
             label4.Text = "ID";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = Properties.Resources.persona;
+            pictureBox8.Location = new Point(335, 0);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(44, 35);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 58;
+            pictureBox8.TabStop = false;
+            // 
+            // lbl_nombreUsuario
+            // 
+            lbl_nombreUsuario.AutoSize = true;
+            lbl_nombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_nombreUsuario.Location = new Point(385, 10);
+            lbl_nombreUsuario.Name = "lbl_nombreUsuario";
+            lbl_nombreUsuario.Size = new Size(64, 20);
+            lbl_nombreUsuario.TabIndex = 59;
+            lbl_nombreUsuario.Text = "Nombre";
+            
             // 
             // FrmAltaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
-            ClientSize = new Size(622, 263);
+            ClientSize = new Size(638, 302);
             ControlBox = false;
             Controls.Add(label4);
             Controls.Add(txt_AltaId);
@@ -358,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -389,5 +417,7 @@
         private PictureBox pictureBox7;
         private TextBox txt_AltaId;
         private Label label4;
+        private Label lbl_nombreUsuario;
+        private PictureBox pictureBox8;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Enumerado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,32 +9,35 @@ namespace TransporteRodriguez
 {
     public static class Sistema
     {
-        static List<Cliente> listaClientes = new List<Cliente>();
-        static List<Empleado> listaEmpleado = new List<Empleado>();
-        
-       /*public static int AgregarUsuario(string opcionCboLogin)
-        {
-            int retorno;
-            if (opcionCboLogin == "Cliente")
-            {
-                AgregarCliente();
-                retorno = 0;
-            }
-            else
-            {
-                if (opcionCboLogin == "Empleado")
-                {
-                    AgregarEmpleado();
-                    retorno = 1;
-                }
-                else
-                {
-                    AgregarAdmin();
-                    retorno = 2;
-                }
-            }
-            return retorno;
-        }*/
+        private static List<Cliente> listaClientes = new List<Cliente>();
+        private static List<Empleado> listaEmpleado = new List<Empleado>();
+        private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
+
+        internal static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
+
+        /*public static int AgregarUsuario(string opcionCboLogin)
+         {
+             int retorno;
+             if (opcionCboLogin == "Cliente")
+             {
+                 AgregarCliente();
+                 retorno = 0;
+             }
+             else
+             {
+                 if (opcionCboLogin == "Empleado")
+                 {
+                     AgregarEmpleado();
+                     retorno = 1;
+                 }
+                 else
+                 {
+                     AgregarAdmin();
+                     retorno = 2;
+                 }
+             }
+             return retorno;
+         }*/
         public static void AgregarCliente()
         {           
             listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));       
@@ -64,27 +68,15 @@ namespace TransporteRodriguez
         {
             
         }
-
-        /*public static bool ValidarUsuario(Usuario nombre)
+        public static void AgregarVehiculos()
         {
-            bool retorno = false;
-            foreach (Usuario empleado in listaEmpleado)
-            {
-                if (nombre == empleado)
-                {
-                    retorno = true;
-                }
-            }
-            foreach (Cliente cliente in listaClientes)
-            {
-                if (nombre == cliente)
-                {
-                    retorno = true;
-                }
-            }
+            listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "ABC123"));
+            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "DEF456"));
+            listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "GHI789"));
+            listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "JKL012"));
+            listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "MNO345"));
+        }
 
-            return retorno;
-        }*/
 
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
@@ -111,9 +103,6 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-
-
-
 
         public static bool ValidarUsuario(Empleado empleadoUno)
           {

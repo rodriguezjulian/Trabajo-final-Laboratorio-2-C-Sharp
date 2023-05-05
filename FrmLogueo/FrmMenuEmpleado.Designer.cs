@@ -134,6 +134,7 @@
             listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             listarToolStripMenuItem1.Size = new Size(187, 34);
             listarToolStripMenuItem1.Text = "Listar";
+            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
             // 
             // turnosOcupadosToolStripMenuItem
             // 
@@ -159,9 +160,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(153, 1);
+            pictureBox1.Location = new Point(193, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(489, 301);
+            pictureBox1.Size = new Size(449, 301);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;

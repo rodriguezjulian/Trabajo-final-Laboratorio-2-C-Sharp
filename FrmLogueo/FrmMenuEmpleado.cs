@@ -30,6 +30,7 @@ namespace WF_TransporteRodriguez
         {
             //INSTACIO EL FORMULARIO SIGUIENTE
             FrmAltaCliente frmAltaCliente = new FrmAltaCliente();
+            frmAltaCliente.EmpleadoInstanciado = usuarioInstanciado;
             //DialogResult confirmacion
             if (frmAltaCliente.ShowDialog() == DialogResult.OK) //cuando mostramos con ShowDialog damos foco a ese formulario
             {
@@ -44,12 +45,17 @@ namespace WF_TransporteRodriguez
             this.Hide(); // Oculta el formulario actual
             Form anterior = new Frm_Login(); // Crea una instancia del formulario anterior
             anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
-            this.Close(); // Cierra el formulario actual
+            //this.Close(); // Cierra el formulario actual
         }
 
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
+        }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmListarVehiculos frmListarVehiculos = new FrmListarVehiculos();
         }
     }
 }

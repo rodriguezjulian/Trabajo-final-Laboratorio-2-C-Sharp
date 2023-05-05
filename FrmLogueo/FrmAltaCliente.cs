@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrmLogueo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,17 @@ namespace WF_TransporteRodriguez
 {
     public partial class FrmAltaCliente : Form
     {
+        Usuario empleadoInstanciado;
         Cliente nuevoCliente;
         public FrmAltaCliente()
         {
             InitializeComponent();
         }
+
+        public Usuario EmpleadoInstanciado { get => empleadoInstanciado; set => empleadoInstanciado = value; }
+
+
+
         //COMO ES UN FORMULARIO QUE SE MUESTRA COMO MODAL PUEDO HACER ESTO
         private void btn_GuardarCliente_Click(object sender, EventArgs e)
         {
@@ -35,6 +42,17 @@ namespace WF_TransporteRodriguez
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             cbo_Rubro.SelectedIndex = 2;
+            lbl_nombreUsuario.Text = empleadoInstanciado.Nombre;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Oculta el formulario actual
+                         //   Form anterior = new Frm_Login(); // Crea una instancia del formulario anterior
+                         // anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
+            this.Close(); // Cierra el formulario actual
+        }
+
+ 
     }
 }
