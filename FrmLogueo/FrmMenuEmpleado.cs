@@ -14,7 +14,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class FrmMenuEmpleado : Form
     {
-        List<Cliente> listaEmpleados;
+        //List<Cliente> listaEmpleados;
         Usuario usuarioInstanciado;
 
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }

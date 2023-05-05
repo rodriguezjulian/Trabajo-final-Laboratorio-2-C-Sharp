@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj": {}
+    "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj": {
+    "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj",
+        "projectUniqueName": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj",
         "projectName": "Enumerado",
-        "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj",
+        "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj",
         "packagesPath": "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\obj\\",
+        "outputPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",

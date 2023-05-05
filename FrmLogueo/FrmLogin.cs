@@ -16,12 +16,22 @@ namespace FrmLogueo
             Usuario usuario = new Usuario(txt_LoginUsuario.Text, txt_Contraseña.Text);
             Usuario usuarioAuxiliar;
             usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
-            if (usuarioAuxiliar!=null)
+            if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
-                FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL USUARIO
+                FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL EMPLEADO
                 menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
                 menuEmpleado.Show();
                 this.Hide();//Para "esconder" al login
+            }
+            else
+            {
+                if (usuarioAuxiliar != null && usuarioAuxiliar is Cliente)
+                {
+                    FrmMenuCliente menuEmpleado = new FrmMenuCliente();//INSTANCIO AL CLIENTE
+                    menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
+                    menuEmpleado.Show();
+                    this.Hide();//Para "esconder" al login
+                }
             }
         }
 
@@ -33,7 +43,8 @@ namespace FrmLogueo
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+            Application.Exit();
         }
 
         private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)

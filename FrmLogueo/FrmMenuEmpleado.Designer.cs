@@ -47,9 +47,9 @@
             button1 = new Button();
             btn_CerrarSesion = new Button();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             lbl_NombreUsuario = new Label();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -75,7 +75,7 @@
             clienteToolStripMenuItem.Margin = new Padding(0, 33, 0, 20);
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(137, 34);
-            clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Text = "Clientes";
             // 
             // crearToolStripMenuItem
             // 
@@ -199,6 +199,16 @@
             panel1.Size = new Size(489, 33);
             panel1.TabIndex = 30;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.persona;
+            pictureBox2.Location = new Point(281, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
+            // 
             // lbl_NombreUsuario
             // 
             lbl_NombreUsuario.AutoSize = true;
@@ -218,16 +228,6 @@
             label1.Size = new Size(275, 30);
             label1.TabIndex = 29;
             label1.Text = "TRANSPORTE RODRIGUEZ";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.persona;
-            pictureBox2.Location = new Point(281, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(34, 27);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 33;
-            pictureBox2.TabStop = false;
             // 
             // FrmMenuEmpleado
             // 

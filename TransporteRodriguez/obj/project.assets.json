@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\TransporteRodriguez\\TransporteRodriguez.csproj",
+      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj",
       "projectName": "TransporteRodriguez",
-      "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\TransporteRodriguez\\TransporteRodriguez.csproj",
+      "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj",
       "packagesPath": "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\TransporteRodriguez\\obj\\",
+      "outputPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Julian Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj": {
-              "projectPath": "C:\\Users\\Julian Rodriguez\\source\\repos\\ppLaboratorio2.RodriguezJulian\\Enumerado\\Enumerado.csproj"
+            "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj": {
+              "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj"
             }
           }
         }
