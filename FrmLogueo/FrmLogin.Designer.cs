@@ -38,12 +38,12 @@
             cbo_Rol = new ComboBox();
             label3 = new Label();
             colorDialog1 = new ColorDialog();
-            panel1 = new Panel();
+            pnl_TransporteRodriguez = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             btn_cerrar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).BeginInit();
-            panel1.SuspendLayout();
+            pnl_TransporteRodriguez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).BeginInit();
             SuspendLayout();
@@ -131,16 +131,16 @@
             label3.TabIndex = 26;
             label3.Text = "ROL";
             // 
-            // panel1
+            // pnl_TransporteRodriguez
             // 
-            panel1.BackColor = Color.FromArgb(255, 255, 192);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(btn_cerrar);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(802, 33);
-            panel1.TabIndex = 27;
+            pnl_TransporteRodriguez.BackColor = Color.FromArgb(255, 255, 192);
+            pnl_TransporteRodriguez.Controls.Add(pictureBox1);
+            pnl_TransporteRodriguez.Controls.Add(label1);
+            pnl_TransporteRodriguez.Controls.Add(btn_cerrar);
+            pnl_TransporteRodriguez.Location = new Point(0, 0);
+            pnl_TransporteRodriguez.Name = "pnl_TransporteRodriguez";
+            pnl_TransporteRodriguez.Size = new Size(802, 33);
+            pnl_TransporteRodriguez.TabIndex = 27;
             // 
             // pictureBox1
             // 
@@ -180,7 +180,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 267);
-            Controls.Add(panel1);
+            Controls.Add(pnl_TransporteRodriguez);
             Controls.Add(label3);
             Controls.Add(cbo_Rol);
             Controls.Add(btn_Ingresar);
@@ -197,8 +197,8 @@
             FormClosing += Frm_Login_FormClosing;
             Load += Frm_Login_Load;
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnl_TransporteRodriguez.ResumeLayout(false);
+            pnl_TransporteRodriguez.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).EndInit();
             ResumeLayout(false);
@@ -215,7 +215,7 @@
         private ComboBox cbo_Rol;
         private Label label3;
         private ColorDialog colorDialog1;
-        private Panel panel1;
+        private Panel pnl_TransporteRodriguez;
         private PictureBox btn_cerrar;
         private PictureBox pictureBox1;
         private Label label1;

@@ -46,8 +46,11 @@
             pictureBox1 = new PictureBox();
             button1 = new Button();
             btn_CerrarSesion = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -63,9 +66,10 @@
             // 
             // clienteToolStripMenuItem
             // 
+            clienteToolStripMenuItem.AutoSize = false;
             clienteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem, moToolStripMenuItem, bajarToolStripMenuItem, listarToolStripMenuItem });
             clienteToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            clienteToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
+            clienteToolStripMenuItem.Margin = new Padding(0, 33, 0, 20);
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(137, 34);
             clienteToolStripMenuItem.Text = "Cliente";
@@ -170,30 +174,57 @@
             // 
             // btn_CerrarSesion
             // 
-            btn_CerrarSesion.Location = new Point(495, 267);
+            btn_CerrarSesion.BackColor = Color.FromArgb(255, 128, 128);
+            btn_CerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_CerrarSesion.ForeColor = Color.Black;
+            btn_CerrarSesion.Location = new Point(508, 261);
             btn_CerrarSesion.Name = "btn_CerrarSesion";
-            btn_CerrarSesion.Size = new Size(131, 23);
+            btn_CerrarSesion.Size = new Size(118, 29);
             btn_CerrarSesion.TabIndex = 6;
             btn_CerrarSesion.Text = "Cerrar sesion";
-            btn_CerrarSesion.UseVisualStyleBackColor = true;
+            btn_CerrarSesion.UseVisualStyleBackColor = false;
             btn_CerrarSesion.Click += btn_CerrarSesion_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(255, 255, 192);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(153, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(489, 33);
+            panel1.TabIndex = 30;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(0, 1);
+            label1.Name = "label1";
+            label1.Size = new Size(314, 32);
+            label1.TabIndex = 29;
+            label1.Text = "TRANSPORTE RODRIGUEZ";
             // 
             // FrmMenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(638, 302);
+            Controls.Add(panel1);
             Controls.Add(btn_CerrarSesion);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmMenuEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,5 +248,7 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Button btn_CerrarSesion;
+        private Panel panel1;
+        private Label label1;
     }
 }

@@ -41,5 +41,10 @@ namespace WF_TransporteRodriguez
             anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
             this.Close(); // Cierra el formulario actual
         }
+
+        private void pnl_TransporteRodriguez_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

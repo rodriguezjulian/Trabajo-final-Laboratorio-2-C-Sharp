@@ -53,6 +53,7 @@ namespace TransporteRodriguez
         }
         public static void AgregarEmpleado()
         {
+            listaEmpleado.Add(new Empleado("Usuario", "Contraseña", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
             listaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
             listaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas"));
             listaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", 3, "Asistente Administrativo"));

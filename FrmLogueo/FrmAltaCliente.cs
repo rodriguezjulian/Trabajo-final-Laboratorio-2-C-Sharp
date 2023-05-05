@@ -25,8 +25,8 @@ namespace WF_TransporteRodriguez
              *         public Cliente(string nombre, string contraseña, string mail,short idCliente, string? direccionBSAS, string? rubro) 
             : base(nombre, contraseña, mail)
              */
-             nuevoCliente = new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text,txt_AltaMail.Text, short.Parse(txt_AltaId.Text),
-                txt_AltaDireccion.Text, txt_AltaRubro.Text);
+            nuevoCliente = new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text, txt_AltaMail.Text, short.Parse(txt_AltaId.Text),
+               txt_AltaDireccion.Text, txt_AltaRubro.Text);
 
             this.DialogResult = DialogResult.OK;
         }
@@ -35,5 +35,6 @@ namespace WF_TransporteRodriguez
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
     }
 }
