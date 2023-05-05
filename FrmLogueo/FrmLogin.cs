@@ -8,16 +8,18 @@ namespace FrmLogueo
         public Frm_Login()
         {
             InitializeComponent();
-            cbo_Rol.SelectedIndex = 0;
 
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
-            Empleado usuario = new Empleado(txt_LoginUsuario.Text, txt_Contraseña.Text);
-            if (Sistema.ValidarUsuario(usuario))
+            Usuario usuario = new Usuario(txt_LoginUsuario.Text, txt_Contraseña.Text);
+            Usuario usuarioAuxiliar;
+            usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
+            if (usuarioAuxiliar!=null)
             {
                 FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL USUARIO
+                menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
                 menuEmpleado.Show();
                 this.Hide();//Para "esconder" al login
             }

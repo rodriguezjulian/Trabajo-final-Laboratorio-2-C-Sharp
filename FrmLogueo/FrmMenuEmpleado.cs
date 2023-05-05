@@ -15,10 +15,15 @@ namespace WF_TransporteRodriguez
     public partial class FrmMenuEmpleado : Form
     {
         List<Cliente> listaEmpleados;
+        Usuario usuarioInstanciado;
+
+        public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
+
         public FrmMenuEmpleado()
         {
             InitializeComponent();
-            listaEmpleados = new List<Cliente>();
+
+            //  listaEmpleados = new List<Cliente>();
         }
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +50,11 @@ namespace WF_TransporteRodriguez
         private void pnl_TransporteRodriguez_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FrmMenuEmpleado_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(UsuarioInstanciado.Nombre);
         }
     }
 }

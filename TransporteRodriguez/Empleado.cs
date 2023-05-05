@@ -20,7 +20,7 @@ namespace TransporteRodriguez
 
         public short IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
         public string? Puesto { get => _puesto; set => _puesto = value; }
-        public static bool operator ==(Empleado uno, Empleado dos)
+        public static bool operator ==(Empleado uno, Usuario dos)
         {
             bool retorno = false;
             if ((uno.Nombre == dos.Nombre) && (uno.Contraseña == dos.Contraseña))
@@ -29,7 +29,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public static bool operator !=(Empleado uno, Empleado dos)
+        public static bool operator !=(Empleado uno, Usuario dos)
         {
             return !(uno == dos);
         }

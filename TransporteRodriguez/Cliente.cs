@@ -21,7 +21,7 @@ namespace TransporteRodriguez
             _direccionBSAS = direccionBSAS;
             _rubro = rubro;
         }
-        public static bool operator ==(Cliente uno, Cliente dos)
+        public static bool operator ==(Cliente uno, Usuario dos)
         {
             bool retorno = false;
             if ((uno.Nombre == dos.Nombre) && (uno.Contraseña == dos.Contraseña))
@@ -30,7 +30,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public static bool operator !=(Cliente uno, Cliente dos)
+        public static bool operator !=(Cliente uno, Usuario dos)
         {
             return !(uno == dos);
         }

@@ -156,9 +156,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(153, 1);
+            pictureBox1.Location = new Point(210, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(489, 301);
+            pictureBox1.Size = new Size(432, 301);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -220,6 +220,7 @@
             Name = "FrmMenuEmpleado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += FrmMenuEmpleado_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

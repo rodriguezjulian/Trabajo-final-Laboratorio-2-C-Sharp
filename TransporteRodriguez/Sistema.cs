@@ -86,6 +86,34 @@ namespace TransporteRodriguez
             return retorno;
         }*/
 
+        public static Usuario ValidarUsuario(Usuario usuarioUno)
+        {
+             Usuario? retorno = null;
+
+            foreach (Empleado empleado in listaEmpleado)
+            {
+                if (empleado  == usuarioUno)
+                {
+                    retorno = empleado;
+                    break;
+                }
+            }
+            if (retorno==null)
+            {
+                foreach (Cliente cliente in listaClientes)
+                {
+                    if (cliente == usuarioUno)
+                    {
+                        retorno = cliente;
+                        break;
+                    }
+                }
+            }
+            return retorno;
+        }
+
+
+
 
         public static bool ValidarUsuario(Empleado empleadoUno)
           {
