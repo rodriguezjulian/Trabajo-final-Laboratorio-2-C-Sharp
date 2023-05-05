@@ -47,14 +47,9 @@ namespace WF_TransporteRodriguez
             this.Close(); // Cierra el formulario actual
         }
 
-        private void pnl_TransporteRodriguez_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(UsuarioInstanciado.Nombre);
+            lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
         }
     }
 }

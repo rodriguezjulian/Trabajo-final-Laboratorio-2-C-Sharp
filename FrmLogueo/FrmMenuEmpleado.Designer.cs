@@ -47,10 +47,13 @@
             button1 = new Button();
             btn_CerrarSesion = new Button();
             panel1 = new Panel();
+            lbl_NombreUsuario = new Label();
             label1 = new Label();
+            pictureBox2 = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -156,9 +159,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(210, 1);
+            pictureBox1.Location = new Point(153, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(432, 301);
+            pictureBox1.Size = new Size(489, 301);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -188,21 +191,43 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 255, 192);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(lbl_NombreUsuario);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(153, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(489, 33);
             panel1.TabIndex = 30;
             // 
+            // lbl_NombreUsuario
+            // 
+            lbl_NombreUsuario.AutoSize = true;
+            lbl_NombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_NombreUsuario.Location = new Point(321, 9);
+            lbl_NombreUsuario.Name = "lbl_NombreUsuario";
+            lbl_NombreUsuario.Size = new Size(64, 20);
+            lbl_NombreUsuario.TabIndex = 32;
+            lbl_NombreUsuario.Text = "Nombre";
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(0, 1);
             label1.Name = "label1";
-            label1.Size = new Size(314, 32);
+            label1.Size = new Size(275, 30);
             label1.TabIndex = 29;
             label1.Text = "TRANSPORTE RODRIGUEZ";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.persona;
+            pictureBox2.Location = new Point(281, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
             // 
             // FrmMenuEmpleado
             // 
@@ -226,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,5 +277,7 @@
         private Button btn_CerrarSesion;
         private Panel panel1;
         private Label label1;
+        private Label lbl_NombreUsuario;
+        private PictureBox pictureBox2;
     }
 }
