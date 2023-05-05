@@ -9,11 +9,31 @@ namespace TransporteRodriguez
     internal class Sistema
     {
         public static List<Cliente> listaClientes = new List<Cliente>();
-
-        private static void AgregarCliente()
+        private static int AgregarUsuario(string opcionCboLogin)
         {
-           
-           
+            int retorno;
+            if (opcionCboLogin == "Cliente")
+            {
+                AgregarCliente();
+                retorno = 0;
+            }
+            else
+            {
+                if (opcionCboLogin == "Empleado")
+                {
+                    AgregarEmpleado();
+                    retorno = 1;
+                }
+                else
+                {
+                    AgregarAdmin();
+                    retorno = 2;
+                }
+            }
+            return retorno;
+        }
+        private static void AgregarCliente()
+        {           
             listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));       
             listaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));       
             listaClientes.Add(new Cliente("Lucas Martínez", "lucas789", "lucas.martinez@yahoo.com", 3, "Av. Corrientes 2468", "Muebles"));        
@@ -28,8 +48,20 @@ namespace TransporteRodriguez
             listaClientes.Add(new Cliente("Valeria Gómez", "valeria888", "valeria.gomez@yahoo.com", 12, "Calle Callao 4321", "Computación"));     
             listaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", 13, "Av. Córdoba 6789", "Herramientas"));
             listaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", 14, "Calle Mendoza 3456", "Deportes"));
- 
         }
+        private static void AgregarEmpleado()
+        {
+            Empleado emp1 = new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas");
+            Empleado emp2 = new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas");
+            Empleado emp3 = new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", 3, "Asistente Administrativo");
+            Empleado emp4 = new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", 4, "Desarrollador Web");
+            Empleado emp5 = new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", 5, "Contador General");
+        }
+        private static void AgregarAdmin() 
+        {
+
+        }
+
 
 
 
