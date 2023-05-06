@@ -13,7 +13,7 @@ using TransporteRodriguez;
 
 namespace WF_TransporteRodriguez
 {
-    public partial class FrmListarVehiculos : Frmdiseño
+    public partial class FrmListarVehiculos : Form
     {
         Usuario usuarioInstanciado;
         public FrmListarVehiculos()
@@ -26,11 +26,10 @@ namespace WF_TransporteRodriguez
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
             Sistema.AgregarVehiculos();
-            lbl_NombreUsuarioCliente.Text = usuarioInstanciado.Nombre;
+            lbl_nombreUsuario.Text = usuarioInstanciado.Nombre;
             dataGridView2.DataSource = Sistema.ListaVehiculos;
         }
-
-        private void btn_CerrarSesion_Click(object sender, EventArgs e)
+        private void pic_Volver_Click(object sender, EventArgs e)
         {
             FrmMenuEmpleado anterior = new FrmMenuEmpleado();
             anterior.UsuarioInstanciado = usuarioInstanciado;
