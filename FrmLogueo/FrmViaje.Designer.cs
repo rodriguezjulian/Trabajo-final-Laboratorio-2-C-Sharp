@@ -44,6 +44,8 @@
             txt_IdVehiculo = new TextBox();
             lbl_IdVehiculo = new Label();
             dataGridView1 = new DataGridView();
+            txt_Kg = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -117,6 +119,7 @@
             txt_Nombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Nombre.Location = new Point(138, 99);
             txt_Nombre.Name = "txt_Nombre";
+            txt_Nombre.ReadOnly = true;
             txt_Nombre.Size = new Size(255, 25);
             txt_Nombre.TabIndex = 50;
             txt_Nombre.TextAlign = HorizontalAlignment.Center;
@@ -199,11 +202,32 @@
             dataGridView1.Size = new Size(185, 150);
             dataGridView1.TabIndex = 58;
             // 
+            // txt_Kg
+            // 
+            txt_Kg.BackColor = Color.FromArgb(255, 255, 192);
+            txt_Kg.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Kg.Location = new Point(416, 71);
+            txt_Kg.Name = "txt_Kg";
+            txt_Kg.Size = new Size(127, 25);
+            txt_Kg.TabIndex = 59;
+            txt_Kg.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(416, 53);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 15);
+            label1.TabIndex = 60;
+            label1.Text = "Kg del bulto";
+            // 
             // FrmViaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(596, 340);
+            Controls.Add(label1);
+            Controls.Add(txt_Kg);
             Controls.Add(dataGridView1);
             Controls.Add(lbl_IdVehiculo);
             Controls.Add(txt_IdVehiculo);
@@ -224,6 +248,7 @@
             Name = "FrmViaje";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Viaje";
+            Load += FrmViaje_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -247,5 +272,7 @@
         private TextBox txt_IdVehiculo;
         private Label lbl_IdVehiculo;
         private DataGridView dataGridView1;
+        private TextBox txt_Kg;
+        private Label label1;
     }
 }

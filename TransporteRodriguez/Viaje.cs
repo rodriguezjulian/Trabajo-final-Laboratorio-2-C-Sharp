@@ -13,19 +13,22 @@ namespace TransporteRodriguez
         private string? _nombreCliente;
         private string? _direccionSalida; // que seria la direccion del cliente
         private string? _provinciaDestino;
+        private float _kilosATransportar;
         private float _precio;
         private short _idVehiculo;
         private DateTime _fechaViaje;
 
-        public Viaje(short idViaje, string? nombreCliente, string? direccionSalida, string? provinciaDestino, float precio, short idVehiculo, DateTime fechaViaje)
+        public Viaje(short idViaje, string? nombreCliente, 
+            string? direccionSalida, string? provinciaDestino, float kilosATransportar, float precio, short idVehiculo, DateTime fechaViaje)
         {
-            IdViaje = idViaje;
-            NombreCliente = nombreCliente;
-            DireccionSalida = direccionSalida;
-            ProvinciaDestino = provinciaDestino;
-            Precio = precio;
-            IdVehiculo = idVehiculo;
-            FechaViaje = fechaViaje;
+            _idViaje = idViaje;
+            _nombreCliente = nombreCliente;
+            _direccionSalida = direccionSalida;
+            _provinciaDestino = provinciaDestino;
+            _kilosATransportar = kilosATransportar;
+            _precio = precio;
+            _idVehiculo = idVehiculo;
+            _fechaViaje = fechaViaje;
         }
 
         public short IdViaje { get => _idViaje; set => _idViaje = value; }
@@ -35,5 +38,6 @@ namespace TransporteRodriguez
         public float Precio { get => _precio; set => _precio = value; }
         public short IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
+        public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
     }
 }

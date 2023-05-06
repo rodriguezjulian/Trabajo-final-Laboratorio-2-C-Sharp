@@ -39,9 +39,9 @@ namespace WF_TransporteRodriguez
         {
             FrmViaje frmViaje = new FrmViaje();
             //formularioHijo.Dock = DockStyle.Fill;
-
+            frmViaje.ClienteInstanciado = usuarioInstanciado;
           //  frmViaje.MdiParent = this;
-         //   frmViaje.Dock = DockStyle.Fill;
+          //   frmViaje.Dock = DockStyle.Fill;
             frmViaje.Show();
             //this.Hide();
 

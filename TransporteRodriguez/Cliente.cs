@@ -17,10 +17,15 @@ namespace TransporteRodriguez
         public Cliente(string nombre, string contraseña, string mail,short idCliente, string? direccionBSAS, string? rubro) 
             : base(nombre, contraseña, mail)
         {
-            _idCliente = idCliente;
-            _direccionBSAS = direccionBSAS;
-            _rubro = rubro;
+            IdCliente = idCliente;
+            DireccionBSAS = direccionBSAS;
+            Rubro = rubro;
         }
+
+        public short IdCliente { get => _idCliente; set => _idCliente = value; }
+        public string? DireccionBSAS { get => _direccionBSAS; set => _direccionBSAS = value; }
+        public string? Rubro { get => _rubro; set => _rubro = value; }
+
         public static bool operator ==(Cliente uno, Usuario dos)
         {
             bool retorno = false;
