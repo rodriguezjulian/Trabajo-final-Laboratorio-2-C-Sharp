@@ -12,32 +12,10 @@ namespace TransporteRodriguez
         private static List<Cliente> listaClientes = new List<Cliente>();
         private static List<Empleado> listaEmpleado = new List<Empleado>();
         private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
+        private static List<Viaje> listaViajes = new List<Viaje>();
+       public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
+       public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
 
-        public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
-
-        /*public static int AgregarUsuario(string opcionCboLogin)
-         {
-             int retorno;
-             if (opcionCboLogin == "Cliente")
-             {
-                 AgregarCliente();
-                 retorno = 0;
-             }
-             else
-             {
-                 if (opcionCboLogin == "Empleado")
-                 {
-                     AgregarEmpleado();
-                     retorno = 1;
-                 }
-                 else
-                 {
-                     AgregarAdmin();
-                     retorno = 2;
-                 }
-             }
-             return retorno;
-         }*/
         public static void AgregarCliente()
         {           
             listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));       
@@ -75,6 +53,11 @@ namespace TransporteRodriguez
             listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "GHI789"));
             listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "JKL012"));
             listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "MNO345"));
+        }
+
+        public static void AgregarViajes()
+        {
+     
         }
 
 
@@ -128,19 +111,5 @@ namespace TransporteRodriguez
               }
               return retorno;
           }
-        /*public static bool ValidarUsuario(Empleado empleadoUno)
-        {
-            bool retorno = false;
-            foreach (Empleado empleado in listaEmpleado)
-            {
-                if (empleadoUno == empleado)
-                {
-                    retorno = true;
-                }
-            }
-            return retorno;
-        }*/
-
-
     }
 }

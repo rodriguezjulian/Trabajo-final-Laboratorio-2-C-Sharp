@@ -51,3 +51,4 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frmdiseño.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmMenuCliente.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmListarVehiculos.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmViaje.resources

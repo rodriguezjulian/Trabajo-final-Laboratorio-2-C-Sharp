@@ -34,5 +34,17 @@ namespace WF_TransporteRodriguez
             anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
             this.Close(); // Cierra el formulario actual
         }
+
+        private void reservarViajeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmViaje frmViaje = new FrmViaje();
+            //formularioHijo.Dock = DockStyle.Fill;
+
+          //  frmViaje.MdiParent = this;
+         //   frmViaje.Dock = DockStyle.Fill;
+            frmViaje.Show();
+            //this.Hide();
+
+        }
     }
 }
