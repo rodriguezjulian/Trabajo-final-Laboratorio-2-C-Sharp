@@ -52,9 +52,11 @@
             // txt_Id
             // 
             txt_Id.BackColor = Color.FromArgb(255, 255, 192);
+            txt_Id.Enabled = false;
             txt_Id.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Id.Location = new Point(138, 53);
             txt_Id.Name = "txt_Id";
+            txt_Id.ReadOnly = true;
             txt_Id.Size = new Size(255, 25);
             txt_Id.TabIndex = 43;
             txt_Id.TextAlign = HorizontalAlignment.Center;
@@ -64,27 +66,27 @@
             lbl_IdViaje.AutoSize = true;
             lbl_IdViaje.Location = new Point(138, 25);
             lbl_IdViaje.Name = "lbl_IdViaje";
-            lbl_IdViaje.Size = new Size(42, 15);
+            lbl_IdViaje.Size = new Size(107, 15);
             lbl_IdViaje.TabIndex = 44;
-            lbl_IdViaje.Text = "idViaje";
+            lbl_IdViaje.Text = "idViaje READ ONLY";
             // 
             // lbl_NombreCliente
             // 
             lbl_NombreCliente.AutoSize = true;
             lbl_NombreCliente.Location = new Point(138, 81);
             lbl_NombreCliente.Name = "lbl_NombreCliente";
-            lbl_NombreCliente.Size = new Size(51, 15);
+            lbl_NombreCliente.Size = new Size(116, 15);
             lbl_NombreCliente.TabIndex = 45;
-            lbl_NombreCliente.Text = "Nombre";
+            lbl_NombreCliente.Text = "Nombre READ ONLY";
             // 
             // lbl_DireccionSalida
             // 
             lbl_DireccionSalida.AutoSize = true;
             lbl_DireccionSalida.Location = new Point(138, 127);
             lbl_DireccionSalida.Name = "lbl_DireccionSalida";
-            lbl_DireccionSalida.Size = new Size(106, 15);
+            lbl_DireccionSalida.Size = new Size(171, 15);
             lbl_DireccionSalida.TabIndex = 46;
-            lbl_DireccionSalida.Text = "Direccion de salida";
+            lbl_DireccionSalida.Text = "Direccion de salida READ ONLY";
             // 
             // lbl_ProvinciaDestino
             // 
@@ -166,7 +168,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(438, 147);
+            button1.Location = new Point(416, 127);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 55;
@@ -178,7 +180,7 @@
             // 
             txt_IdVehiculo.BackColor = Color.FromArgb(255, 255, 192);
             txt_IdVehiculo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_IdVehiculo.Location = new Point(292, 288);
+            txt_IdVehiculo.Location = new Point(292, 283);
             txt_IdVehiculo.Name = "txt_IdVehiculo";
             txt_IdVehiculo.Size = new Size(121, 25);
             txt_IdVehiculo.TabIndex = 56;
@@ -196,7 +198,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(399, 176);
+            dataGridView1.Location = new Point(460, 176);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(185, 150);
@@ -217,15 +219,15 @@
             label1.AutoSize = true;
             label1.Location = new Point(416, 53);
             label1.Name = "label1";
-            label1.Size = new Size(71, 15);
+            label1.Size = new Size(91, 15);
             label1.TabIndex = 60;
-            label1.Text = "Kg del bulto";
+            label1.Text = "Kg a transportar";
             // 
             // FrmViaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(596, 340);
+            ClientSize = new Size(669, 348);
             Controls.Add(label1);
             Controls.Add(txt_Kg);
             Controls.Add(dataGridView1);

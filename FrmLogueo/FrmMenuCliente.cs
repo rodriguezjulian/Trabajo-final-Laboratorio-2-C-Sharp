@@ -19,7 +19,6 @@ namespace WF_TransporteRodriguez
         {
             InitializeComponent();
         }
-
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
 
         private void FrmMenuCliente_Load(object sender, EventArgs e)
@@ -40,11 +39,10 @@ namespace WF_TransporteRodriguez
             FrmViaje frmViaje = new FrmViaje();
             //formularioHijo.Dock = DockStyle.Fill;
             frmViaje.ClienteInstanciado = usuarioInstanciado;
-          //  frmViaje.MdiParent = this;
-          //   frmViaje.Dock = DockStyle.Fill;
+            frmViaje.MdiParent = this;
+            // frmViaje.Dock = DockStyle.Fill;
             frmViaje.Show();
             //this.Hide();
-
         }
     }
 }

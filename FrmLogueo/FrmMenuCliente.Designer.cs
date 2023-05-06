@@ -52,7 +52,7 @@
             // 
             // btn_CerrarSesion
             // 
-            btn_CerrarSesion.Location = new Point(508, 261);
+            btn_CerrarSesion.Location = new Point(370, 99);
             btn_CerrarSesion.Click += btn_CerrarSesion_Click;
             // 
             // menuStrip1
@@ -138,9 +138,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(504, 216);
+            pictureBox1.Location = new Point(449, 237);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(134, 86);
+            pictureBox1.Size = new Size(189, 65);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;

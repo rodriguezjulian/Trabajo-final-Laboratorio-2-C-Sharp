@@ -13,25 +13,18 @@ namespace FrmLogueo
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+            Form formulario;
             Usuario usuario = new Usuario(txt_LoginUsuario.Text, txt_Contraseña.Text);
-            Usuario usuarioAuxiliar;
-            usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
-            if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
+            FactoryConcreta factoryConcreta = new FactoryConcreta();
+            if ((formulario = factoryConcreta.CrearFormulario(usuario)) != null)
             {
-                FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL EMPLEADO
-                menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
-                menuEmpleado.Show();
-                this.Hide();//Para "esconder" al login
+                formulario.Show();
+                this.Hide();
             }
             else
             {
-                if (usuarioAuxiliar != null && usuarioAuxiliar is Cliente)
-                {
-                    FrmMenuCliente menuEmpleado = new FrmMenuCliente();//INSTANCIO AL CLIENTE
-                    menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
-                    menuEmpleado.Show();
-                    this.Hide();//Para "esconder" al login
-                }
+                MessageBox.Show("Verifique los datos ingresados",
+                    "ADVERTENCIA");
             }
         }
 

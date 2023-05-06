@@ -28,3 +28,4 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\TransporteRodriguez\obj\Debug\net6.0\refint\TransporteRodriguez.dll
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\TransporteRodriguez\obj\Debug\net6.0\TransporteRodriguez.pdb
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\TransporteRodriguez\obj\Debug\net6.0\ref\TransporteRodriguez.dll
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\TransporteRodriguez\obj\Debug\net6.0\TransporteRodriguez.csproj.ResolveComReference.cache

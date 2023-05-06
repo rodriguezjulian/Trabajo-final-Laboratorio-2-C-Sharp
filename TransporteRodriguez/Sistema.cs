@@ -57,10 +57,24 @@ namespace TransporteRodriguez
 
         public static void AgregarViajes()
         {
-
+            Sistema.ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
+            "Salta", 200, 10000, 1, DateTime.Parse("11/05/2025")));
+            Sistema.ListaViajes.Add(new Viaje(2, "Pablo Ramírez", "Av. Córdoba 6789",
+            "Misiones", 500, 10500, 5, DateTime.Parse("11/05/2024")));
+            Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
+           "Misiones", 1400, 10500, 2, DateTime.Parse("11/05/2024")));
         }
 
-
+        public static string CalcularIdViaje()
+        {
+            string retorno;
+            int id;
+            Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
+            id = (viajeUltimo.IdViaje)+1;
+            id = id + 1;
+            retorno = id.ToString();
+            return retorno;
+        }
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario? retorno = null;

@@ -24,8 +24,13 @@ namespace WF_TransporteRodriguez
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Sistema.ListaViajes.Add(new Viaje(short.Parse(txt_Id.Text), txt_Nombre.Text, txt_DireccionSalida.Text,
+
+            string id;
+            id = Sistema.CalcularIdViaje();
+
+            Sistema.ListaViajes.Add(new Viaje(int.Parse(id), txt_Nombre.Text, txt_DireccionSalida.Text,
                 txt_ProvinciaDestino.Text, float.Parse(txt_Kg.Text), float.Parse(txt_Precio.Text), short.Parse(txt_IdVehiculo.Text), DateTime.Parse(txt_Fecha.Text)));
+            // Sistema.AgregarViajes();
             dataGridView1.DataSource = Sistema.ListaViajes;
         }
 
@@ -33,8 +38,9 @@ namespace WF_TransporteRodriguez
         {
             cliente = Sistema.BuscarCliente(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
+            Sistema.AgregarViajes();//
+            txt_Id.Text = Sistema.CalcularIdViaje();
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
-
         }
     }
 }
