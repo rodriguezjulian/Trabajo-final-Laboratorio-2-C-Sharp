@@ -40,6 +40,8 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             btn_cerrar = new PictureBox();
+            btn_HardCodearEmpleado = new Button();
+            btn_HardCodearCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).BeginInit();
             pnl_TransporteRodriguez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -152,12 +154,34 @@
             btn_cerrar.TabStop = false;
             btn_cerrar.Click += btn_cerrar_Click;
             // 
+            // btn_HardCodearEmpleado
+            // 
+            btn_HardCodearEmpleado.Location = new Point(12, 107);
+            btn_HardCodearEmpleado.Name = "btn_HardCodearEmpleado";
+            btn_HardCodearEmpleado.Size = new Size(75, 23);
+            btn_HardCodearEmpleado.TabIndex = 28;
+            btn_HardCodearEmpleado.Text = "Empleado";
+            btn_HardCodearEmpleado.UseVisualStyleBackColor = true;
+            btn_HardCodearEmpleado.Click += btn_HardCodearEmpleado_Click;
+            // 
+            // btn_HardCodearCliente
+            // 
+            btn_HardCodearCliente.Location = new Point(344, 111);
+            btn_HardCodearCliente.Name = "btn_HardCodearCliente";
+            btn_HardCodearCliente.Size = new Size(75, 23);
+            btn_HardCodearCliente.TabIndex = 29;
+            btn_HardCodearCliente.Text = "Cliente";
+            btn_HardCodearCliente.UseVisualStyleBackColor = true;
+            btn_HardCodearCliente.Click += btn_HardCodearCliente_Click;
+            // 
             // Frm_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 267);
+            Controls.Add(btn_HardCodearCliente);
+            Controls.Add(btn_HardCodearEmpleado);
             Controls.Add(pnl_TransporteRodriguez);
             Controls.Add(btn_Ingresar);
             Controls.Add(label2);
@@ -193,5 +217,7 @@
         private PictureBox btn_cerrar;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button btn_HardCodearEmpleado;
+        private Button btn_HardCodearCliente;
     }
 }

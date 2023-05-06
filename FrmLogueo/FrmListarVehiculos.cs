@@ -14,16 +14,18 @@ namespace WF_TransporteRodriguez
 {
     public partial class FrmListarVehiculos : Frmdiseño
     {
+        Usuario usuarioInstanciado;
         public FrmListarVehiculos()
         {
             InitializeComponent();
         }
 
+        public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
+
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
-          //  dataGridView1.DataSource = Sistema.ListaVehiculos;
-
+             lbl_NombreUsuarioCliente.Text = usuarioInstanciado.Nombre;
+            dataGridView1.DataSource = Sistema.ListaVehiculos;
         }
-
     }
 }

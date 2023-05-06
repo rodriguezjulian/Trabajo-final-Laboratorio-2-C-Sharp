@@ -89,6 +89,7 @@
             ClientSize = new Size(638, 302);
             Controls.Add(dataGridView1);
             Name = "FrmListarVehiculos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListarVehiculos";
             Load += FrmListarVehiculos_Load;
             Controls.SetChildIndex(dataGridView1, 0);

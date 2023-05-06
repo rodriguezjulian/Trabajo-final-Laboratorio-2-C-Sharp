@@ -8,7 +8,7 @@ using Enumerado;
 
 namespace TransporteRodriguez
 {
-    internal class Vehiculo
+    public class Vehiculo
     {
         private short _idVehiculo;
         private Marcas _marcaVehiculo;

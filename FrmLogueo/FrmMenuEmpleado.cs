@@ -56,6 +56,11 @@ namespace WF_TransporteRodriguez
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmListarVehiculos frmListarVehiculos = new FrmListarVehiculos();
+            frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
+            frmListarVehiculos.ShowDialog();
+            this.Hide();
+
+           
         }
     }
 }

@@ -58,5 +58,17 @@ namespace FrmLogueo
                 e.Cancel = true;//para cancelar la salida
             }
         }
+
+        private void btn_HardCodearEmpleado_Click(object sender, EventArgs e)
+        {
+            txt_LoginUsuario.Text = "Sofía Rodríguez";
+            txt_Contraseña.Text = "contrasena123";
+        }
+
+        private void btn_HardCodearCliente_Click(object sender, EventArgs e)
+        {
+            txt_LoginUsuario.Text = "Javier Díaz";
+            txt_Contraseña.Text = "javier333";
+        }
     }
 }

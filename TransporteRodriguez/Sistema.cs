@@ -13,7 +13,7 @@ namespace TransporteRodriguez
         private static List<Empleado> listaEmpleado = new List<Empleado>();
         private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
 
-        internal static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
+        public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
 
         /*public static int AgregarUsuario(string opcionCboLogin)
          {
