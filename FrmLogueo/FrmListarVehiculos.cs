@@ -25,8 +25,9 @@ namespace WF_TransporteRodriguez
 
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
+            Sistema.AgregarVehiculos();
             lbl_NombreUsuarioCliente.Text = usuarioInstanciado.Nombre;
-            dataGridView1.DataSource = Sistema.ListaVehiculos;
+            dataGridView2.DataSource = Sistema.ListaVehiculos;
         }
 
         private void btn_CerrarSesion_Click(object sender, EventArgs e)
