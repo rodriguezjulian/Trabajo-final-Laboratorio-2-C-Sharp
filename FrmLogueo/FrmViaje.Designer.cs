@@ -43,6 +43,8 @@
             button1 = new Button();
             txt_IdVehiculo = new TextBox();
             lbl_IdVehiculo = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // txt_Id
@@ -188,11 +190,21 @@
             lbl_IdVehiculo.TabIndex = 57;
             lbl_IdVehiculo.Text = "Id Vehiculo";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(399, 176);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(185, 150);
+            dataGridView1.TabIndex = 58;
+            // 
             // FrmViaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(596, 340);
+            Controls.Add(dataGridView1);
             Controls.Add(lbl_IdVehiculo);
             Controls.Add(txt_IdVehiculo);
             Controls.Add(button1);
@@ -212,6 +224,7 @@
             Name = "FrmViaje";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Viaje";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,5 +246,6 @@
         private Button button1;
         private TextBox txt_IdVehiculo;
         private Label lbl_IdVehiculo;
+        private DataGridView dataGridView1;
     }
 }

@@ -23,6 +23,7 @@ namespace WF_TransporteRodriguez
             //listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "GHI789"));
             Sistema.ListaViajes.Add(new Viaje(short.Parse(txt_Id.Text), txt_Nombre.Text, txt_DireccionSalida.Text,
                 txt_ProvinciaDestino.Text, float.Parse(txt_Precio.Text), short.Parse(txt_IdVehiculo.Text), DateTime.Parse(txt_Fecha.Text)));
+            dataGridView1.DataSource = Sistema.ListaViajes;
         }
     }
 }
