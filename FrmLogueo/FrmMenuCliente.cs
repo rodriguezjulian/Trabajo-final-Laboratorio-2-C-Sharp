@@ -12,7 +12,7 @@ using TransporteRodriguez;
 
 namespace WF_TransporteRodriguez
 {
-    public partial class FrmMenuCliente : Frmdiseño
+    public partial class FrmMenuCliente : Form
     {
         Usuario usuarioInstanciado;
         public FrmMenuCliente()
@@ -20,11 +20,6 @@ namespace WF_TransporteRodriguez
             InitializeComponent();
         }
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
-
-        private void FrmMenuCliente_Load(object sender, EventArgs e)
-        {
-            lbl_NombreUsuarioCliente.Text = UsuarioInstanciado.Nombre;
-        }
 
         private void btn_CerrarSesion_Click(object sender, EventArgs e)
         {

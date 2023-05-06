@@ -118,6 +118,7 @@
             // txt_Nombre
             // 
             txt_Nombre.BackColor = Color.FromArgb(255, 255, 192);
+            txt_Nombre.Enabled = false;
             txt_Nombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Nombre.Location = new Point(138, 99);
             txt_Nombre.Name = "txt_Nombre";
@@ -149,6 +150,7 @@
             // txt_DireccionSalida
             // 
             txt_DireccionSalida.BackColor = Color.FromArgb(255, 255, 192);
+            txt_DireccionSalida.Enabled = false;
             txt_DireccionSalida.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_DireccionSalida.Location = new Point(138, 145);
             txt_DireccionSalida.Name = "txt_DireccionSalida";
@@ -227,7 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(669, 348);
+            ClientSize = new Size(745, 387);
             Controls.Add(label1);
             Controls.Add(txt_Kg);
             Controls.Add(dataGridView1);

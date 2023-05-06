@@ -64,7 +64,34 @@ namespace TransporteRodriguez
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
            "Misiones", 1400, 10500, 2, DateTime.Parse("11/05/2024")));
         }
+        public static short VerificarPesoSoportado(float kilos)
+        {
+            short retorno = 0;
+            float cargaSoportada;
+            foreach (Vehiculo vehiculo in listaVehiculos)
+            {
+                cargaSoportada = vehiculo.CapacidadDeCarga;
+                if (cargaSoportada >= kilos)
+                {
+                    retorno = vehiculo.IdVehiculo;
+                    break;
+                }
+            }
+            return retorno;
+        }
+        public static int RetornarVehiculoAdecuado(float kilos)
+        {
+            //PARTIR LA FUNCION EN 2 - TENER UNA PARA LOS KG Y OTRO PARA FECHA
+            int retorno = 0;
+            short id = VerificarPesoSoportado(kilos);
+           /* foreach(Viaje viaje in listaViajes) 
+            {
+                DateTime fecha = viaje.FechaViaje;
+                if (fecha) { }
+            }*/
+            return retorno;
 
+        }
         public static string CalcularIdViaje()
         {
             string retorno;

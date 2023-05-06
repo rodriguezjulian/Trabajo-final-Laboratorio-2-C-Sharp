@@ -37,23 +37,9 @@
             reservarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem2 = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuStrip1.SuspendLayout();
             ms_MenuCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(168, 0);
-            panel1.Size = new Size(470, 33);
-            // 
-            // btn_CerrarSesion
-            // 
-            btn_CerrarSesion.Location = new Point(370, 99);
-            btn_CerrarSesion.Click += btn_CerrarSesion_Click;
             // 
             // menuStrip1
             // 
@@ -98,7 +84,7 @@
             ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2 });
             ms_MenuCliente.Location = new Point(0, 0);
             ms_MenuCliente.Name = "ms_MenuCliente";
-            ms_MenuCliente.Size = new Size(165, 302);
+            ms_MenuCliente.Size = new Size(165, 469);
             ms_MenuCliente.TabIndex = 2;
             ms_MenuCliente.Text = "menuStrip2";
             // 
@@ -135,22 +121,11 @@
             cancelarViajeToolStripMenuItem2.Size = new Size(152, 34);
             cancelarViajeToolStripMenuItem2.Text = "Cancelar viaje";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(449, 237);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(189, 65);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
             // FrmMenuCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(638, 302);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(874, 469);
             Controls.Add(menuStrip1);
             Controls.Add(ms_MenuCliente);
             IsMdiContainer = true;
@@ -158,20 +133,10 @@
             Name = "FrmMenuCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMenuCliente";
-            Load += FrmMenuCliente_Load;
-            Controls.SetChildIndex(panel1, 0);
-            Controls.SetChildIndex(ms_MenuCliente, 0);
-            Controls.SetChildIndex(menuStrip1, 0);
-            Controls.SetChildIndex(pictureBox1, 0);
-            Controls.SetChildIndex(btn_CerrarSesion, 0);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ms_MenuCliente.ResumeLayout(false);
             ms_MenuCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,7 +151,6 @@
         private ToolStripMenuItem misViajeToolStripMenuItem;
         private ToolStripMenuItem reservarViajeToolStripMenuItem1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem1;
-        private PictureBox pictureBox1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem2;
     }
 }
