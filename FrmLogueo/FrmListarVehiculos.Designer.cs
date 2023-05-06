@@ -46,6 +46,8 @@
             // btn_CerrarSesion
             // 
             btn_CerrarSesion.Location = new Point(494, 229);
+            btn_CerrarSesion.Text = "Volver ";
+            btn_CerrarSesion.Click += btn_CerrarSesion_Click;
             // 
             // dataGridView1
             // 
