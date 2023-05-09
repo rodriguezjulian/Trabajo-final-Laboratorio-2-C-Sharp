@@ -21,38 +21,55 @@ namespace WF_TransporteRodriguez
         }
 
         public Usuario ClienteInstanciado { get => clienteInstanciado; set => clienteInstanciado = value; }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            string id;
-            id = Sistema.CalcularIdViaje();
-
-            if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)) != 0)
-            {
-                txt_IdVehiculo.Text = Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)).ToString();
-                Sistema.ListaViajes.Add(new Viaje(int.Parse(id), txt_Nombre.Text, txt_DireccionSalida.Text,
-                cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
-                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
-                Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)),
-                DateTime.Parse(txt_Fecha.Text)));
-            }
-            else
-            {
-                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
-            }
-            dataGridView1.DataSource = Sistema.ListaViajes;
-        }
-
         private void FrmViaje_Load(object sender, EventArgs e)
         {
             cliente = Sistema.BuscarCliente(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
             Sistema.AgregarViajes();
-            txt_Id.Text = Sistema.CalcularIdViaje();
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
         }
 
+        private void pic_ReservarViajar_Click(object sender, EventArgs e)
+        {
+            if (txt_Kg.Text != "")
+            {
+                if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value) != 0)
+                {
+                    Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
+                    cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
+                    Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
+                    Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
+                     dtp_FechaDeViaje.Value));
+                }
+                else
+                {
+                    MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ERROR, Recuerde completar todos los campos \n");
+            }
+
+        }
+        /*
+                 private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dtp_FechaDeViaje.Value.ToString());
+            if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value) != 0)
+            {
+                Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
+                cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
+                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
+                Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
+                 dtp_FechaDeViaje.Value));
+            }
+            else
+            {
+                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
+            }
+        }
+         */
     }
 }

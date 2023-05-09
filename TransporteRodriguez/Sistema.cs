@@ -190,14 +190,11 @@ namespace TransporteRodriguez
             return retorno;
 
         }*/
-        public static string CalcularIdViaje()
+        public static int CalcularIdViaje()
         {
-            string retorno;
-            int id;
+            int retorno;
             Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
-            id = (viajeUltimo.IdViaje)+1;
-            id = id + 1;
-            retorno = id.ToString();
+            retorno = (viajeUltimo.IdViaje)+1;
             return retorno;
         }
         public static Usuario ValidarUsuario(Usuario usuarioUno)

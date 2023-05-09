@@ -125,7 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 469);
+            ClientSize = new Size(903, 469);
             Controls.Add(menuStrip1);
             Controls.Add(ms_MenuCliente);
             IsMdiContainer = true;
