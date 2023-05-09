@@ -64,34 +64,92 @@ namespace TransporteRodriguez
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
            "Misiones", 1400, 10500, 2, DateTime.Parse("11/05/2024")));
         }
-        public static short VerificarPesoSoportado(float kilos)
+        /*
+         public static List<int> VerificarPesoSoportado(float kilos)
+         {
+             float cargaSoportada;
+             //vehiculos aptos para transportar la cantidad de kilos.
+             List<int> idVehiculosAptos = new List<int>();
+             foreach (Vehiculo vehiculo in listaVehiculos)
+             {
+                 cargaSoportada = vehiculo.CapacidadDeCarga;
+                 if (cargaSoportada >= kilos)
+                 {
+                     idVehiculosAptos.Add(vehiculo.IdVehiculo);
+                 }
+             }
+             return idVehiculosAptos;
+         }
+        */
+        public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
-            short retorno = 0;
-            float cargaSoportada;
-            foreach (Vehiculo vehiculo in listaVehiculos)
+            bool retorno = true;
+            foreach (Viaje viajesReservados in listaViajes)
             {
-                cargaSoportada = vehiculo.CapacidadDeCarga;
-                if (cargaSoportada >= kilos)
+                if (viajesReservados == viajeAxuliar)
                 {
-                    retorno = vehiculo.IdVehiculo;
+                    retorno = false;
                     break;
                 }
             }
             return retorno;
         }
-        public static int RetornarVehiculoAdecuado(float kilos)
+       
+        public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
+        {
+            float cargaSoportada;
+            Viaje viajeAxuliar;
+            //vehiculos aptos para transportar la cantidad de kilos.
+            int retorno =0;
+            foreach (Vehiculo vehiculo in listaVehiculos)
+            {
+                cargaSoportada = vehiculo.CapacidadDeCarga;
+                //busco 1 vehiculo que soporte el peso
+                if (cargaSoportada >= kilos)
+                {
+                    //CREO UN VIAJE CON ESE VEHICULO EN ESA FECHA
+                    viajeAxuliar = new (vehiculo.IdVehiculo, fechaSolicitada);
+                    //SI YA HAY UN VIAJE CON ESA FECHA Y ESE IDVEHICULO, NO SE ROMPE EL BUCLE
+                    //EN CASO QUE NO SEA POSIBLE ENCONTRAR UN VEHICULO DISPONIBLE RETORNO=0;
+                    if (VerificarDisponibilidadFecha(viajeAxuliar))
+                    {
+                        retorno = vehiculo.IdVehiculo;
+                        break;    
+                    }
+                }
+            }
+            return retorno;
+        }
+
+       /* public static bool VerificarDisponibilidadFecha(DateTime fechaSolicitada, List<int> idVehiculosAptos)
+        {
+            bool retorno = false;
+            foreach (Viaje viaje in listaViajes)
+            {
+                DateTime fecha = viaje.FechaViaje;
+                for (int i = 0; i < idVehiculosAptos.Count; i++)
+                {
+                    //SI TENGO UN VIAJE EN ESTA FECHA, EL VEHICULO ES DISTINTO AL APTO?
+                    //if(fecha == fechaSolicitada && viaje.IdVehiculo!= idVehiculosAptos[i])
+                    // 
+                    if (fecha == fechaSolicitada)
+                    {
+
+                    }
+                }
+
+            }
+            return retorno;
+        }*/
+        /*public static int RetornarVehiculoAdecuado(float kilos, DateTime fechaSolicitada)
         {
             //PARTIR LA FUNCION EN 2 - TENER UNA PARA LOS KG Y OTRO PARA FECHA
             int retorno = 0;
-            short id = VerificarPesoSoportado(kilos);
-           /* foreach(Viaje viaje in listaViajes) 
-            {
-                DateTime fecha = viaje.FechaViaje;
-                if (fecha) { }
-            }*/
+           // short id = VerificarPesoSoportado(kilos);
+
             return retorno;
 
-        }
+        }*/
         public static string CalcularIdViaje()
         {
             string retorno;

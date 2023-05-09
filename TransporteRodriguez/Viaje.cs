@@ -39,5 +39,19 @@ namespace TransporteRodriguez
         public short IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
         public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
+
+        public static bool operator ==(Viaje uno, Viaje Dos)
+        {
+            bool retorno = false;
+            if (uno.IdVehiculo == Dos.IdVehiculo && uno.FechaViaje ==Dos.FechaViaje)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+        public static bool operator !=(Viaje uno, Viaje dos)
+        {
+            return !(uno == dos);
+        }
     }
 }
