@@ -30,7 +30,11 @@ namespace TransporteRodriguez
             _idVehiculo = idVehiculo;
             _fechaViaje = fechaViaje;
         }
-
+        public Viaje(short idVehiculo, DateTime fechaViaje)
+        {
+            _idVehiculo = idVehiculo;
+            _fechaViaje = fechaViaje;
+        }
         public int IdViaje { get => _idViaje; set => _idViaje = value; }
         public string? NombreCliente { get => _nombreCliente; set => _nombreCliente = value; }
         public string? DireccionSalida { get => _direccionSalida; set => _direccionSalida = value; }

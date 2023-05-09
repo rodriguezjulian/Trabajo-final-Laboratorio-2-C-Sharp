@@ -15,7 +15,10 @@ namespace TransporteRodriguez
         private static List<Viaje> listaViajes = new List<Viaje>();
         public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
         public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
-
+        static Sistema()
+        {
+            AgregarVehiculos();
+        }
         public static void AgregarCliente()
         {
             listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));
@@ -60,9 +63,9 @@ namespace TransporteRodriguez
             Sistema.ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
             "Salta", 200, 10000, 1, DateTime.Parse("11/05/2025")));
             Sistema.ListaViajes.Add(new Viaje(2, "Pablo Ramírez", "Av. Córdoba 6789",
-            "Misiones", 500, 10500, 5, DateTime.Parse("11/05/2024")));
+            "Corrientes", 500, 10500, 5, DateTime.Parse("11/05/2024")));
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
-           "Misiones", 1400, 10500, 2, DateTime.Parse("11/05/2024")));
+           "Santa Fe", 1400, 10500, 3, DateTime.Parse("11/05/2024")));
         }
         /*
          public static List<int> VerificarPesoSoportado(float kilos)
@@ -95,12 +98,12 @@ namespace TransporteRodriguez
             return retorno;
         }
        
-        public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
+        public static short RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
             float cargaSoportada;
             Viaje viajeAxuliar;
             //vehiculos aptos para transportar la cantidad de kilos.
-            int retorno =0;
+            short retorno =0;
             foreach (Vehiculo vehiculo in listaVehiculos)
             {
                 cargaSoportada = vehiculo.CapacidadDeCarga;
@@ -120,27 +123,64 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-
-       /* public static bool VerificarDisponibilidadFecha(DateTime fechaSolicitada, List<int> idVehiculosAptos)
+        public static float calcularPrecioViaje(int provincia, float kilosTransportados)
         {
-            bool retorno = false;
-            foreach (Viaje viaje in listaViajes)
+            float precio=0;
+            switch (provincia)
             {
-                DateTime fecha = viaje.FechaViaje;
-                for (int i = 0; i < idVehiculosAptos.Count; i++)
+                case 0:
+                    precio = (kilosTransportados * 200) + 4000;
+                break;
+                case 1:
+                    precio = (kilosTransportados * 200) + 6000;
+                break;
+                case 2:
+                    precio = (kilosTransportados * 200) + 8000;
+                break;
+            }   
+            return precio;
+        }
+        /*
+                 public static float calcularPrecioViaje(int provincia, float kilosTransportados)
+        {
+            float precio=0;
+            if (provincia != null)
+            {
+                switch (provincia)
                 {
-                    //SI TENGO UN VIAJE EN ESTA FECHA, EL VEHICULO ES DISTINTO AL APTO?
-                    //if(fecha == fechaSolicitada && viaje.IdVehiculo!= idVehiculosAptos[i])
-                    // 
-                    if (fecha == fechaSolicitada)
-                    {
-
-                    }
+                    case "Santa fe":
+                        precio = (kilosTransportados * 200) + 4000;
+                    break;
+                    case "Corrientes":
+                        precio = (kilosTransportados * 200) + 6000;
+                    break;
+                    case "Misiones":
+                        precio = (kilosTransportados * 200) + 8000;
+                    break;
                 }
-
             }
-            return retorno;
+            return precio;
         }*/
+        /* public static bool VerificarDisponibilidadFecha(DateTime fechaSolicitada, List<int> idVehiculosAptos)
+         {
+             bool retorno = false;
+             foreach (Viaje viaje in listaViajes)
+             {
+                 DateTime fecha = viaje.FechaViaje;
+                 for (int i = 0; i < idVehiculosAptos.Count; i++)
+                 {
+                     //SI TENGO UN VIAJE EN ESTA FECHA, EL VEHICULO ES DISTINTO AL APTO?
+                     //if(fecha == fechaSolicitada && viaje.IdVehiculo!= idVehiculosAptos[i])
+                     // 
+                     if (fecha == fechaSolicitada)
+                     {
+
+                     }
+                 }
+
+             }
+             return retorno;
+         }*/
         /*public static int RetornarVehiculoAdecuado(float kilos, DateTime fechaSolicitada)
         {
             //PARTIR LA FUNCION EN 2 - TENER UNA PARA LOS KG Y OTRO PARA FECHA

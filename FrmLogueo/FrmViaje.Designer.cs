@@ -36,7 +36,6 @@
             lbl_Precio = new Label();
             lbl_Fecha = new Label();
             txt_Nombre = new TextBox();
-            txt_ProvinciaDestino = new TextBox();
             txt_Fecha = new TextBox();
             txt_DireccionSalida = new TextBox();
             txt_Precio = new TextBox();
@@ -46,7 +45,14 @@
             dataGridView1 = new DataGridView();
             txt_Kg = new TextBox();
             label1 = new Label();
+            cbo_Provincias = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            grp_CargosFijos = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            grp_CargosFijos.SuspendLayout();
             SuspendLayout();
             // 
             // txt_Id
@@ -127,16 +133,6 @@
             txt_Nombre.TabIndex = 50;
             txt_Nombre.TextAlign = HorizontalAlignment.Center;
             // 
-            // txt_ProvinciaDestino
-            // 
-            txt_ProvinciaDestino.BackColor = Color.FromArgb(255, 255, 192);
-            txt_ProvinciaDestino.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_ProvinciaDestino.Location = new Point(138, 191);
-            txt_ProvinciaDestino.Name = "txt_ProvinciaDestino";
-            txt_ProvinciaDestino.Size = new Size(255, 25);
-            txt_ProvinciaDestino.TabIndex = 51;
-            txt_ProvinciaDestino.TextAlign = HorizontalAlignment.Center;
-            // 
             // txt_Fecha
             // 
             txt_Fecha.BackColor = Color.FromArgb(255, 255, 192);
@@ -181,6 +177,7 @@
             // txt_IdVehiculo
             // 
             txt_IdVehiculo.BackColor = Color.FromArgb(255, 255, 192);
+            txt_IdVehiculo.Enabled = false;
             txt_IdVehiculo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdVehiculo.Location = new Point(292, 283);
             txt_IdVehiculo.Name = "txt_IdVehiculo";
@@ -193,14 +190,14 @@
             lbl_IdVehiculo.AutoSize = true;
             lbl_IdVehiculo.Location = new Point(292, 265);
             lbl_IdVehiculo.Name = "lbl_IdVehiculo";
-            lbl_IdVehiculo.Size = new Size(65, 15);
+            lbl_IdVehiculo.Size = new Size(130, 15);
             lbl_IdVehiculo.TabIndex = 57;
-            lbl_IdVehiculo.Text = "Id Vehiculo";
+            lbl_IdVehiculo.Text = "Id Vehiculo READ ONLY";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(460, 176);
+            dataGridView1.Location = new Point(478, 201);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(185, 150);
@@ -225,11 +222,60 @@
             label1.TabIndex = 60;
             label1.Text = "Kg a transportar";
             // 
+            // cbo_Provincias
+            // 
+            cbo_Provincias.FormattingEnabled = true;
+            cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
+            cbo_Provincias.Location = new Point(138, 191);
+            cbo_Provincias.Name = "cbo_Provincias";
+            cbo_Provincias.Size = new Size(272, 23);
+            cbo_Provincias.TabIndex = 61;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 15);
+            label2.TabIndex = 62;
+            label2.Text = "Santa fe       Cargo fijo 4000 ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 50);
+            label3.Name = "label3";
+            label3.Size = new Size(152, 15);
+            label3.TabIndex = 63;
+            label3.Text = "Corrientes   Cargo fijo 6000 ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 78);
+            label4.Name = "label4";
+            label4.Size = new Size(148, 15);
+            label4.TabIndex = 64;
+            label4.Text = "Misiones     Cargo fijo 8000";
+            // 
+            // grp_CargosFijos
+            // 
+            grp_CargosFijos.Controls.Add(label2);
+            grp_CargosFijos.Controls.Add(label4);
+            grp_CargosFijos.Controls.Add(label3);
+            grp_CargosFijos.Location = new Point(549, 42);
+            grp_CargosFijos.Name = "grp_CargosFijos";
+            grp_CargosFijos.Size = new Size(200, 100);
+            grp_CargosFijos.TabIndex = 65;
+            grp_CargosFijos.TabStop = false;
+            // 
             // FrmViaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(745, 387);
+            Controls.Add(grp_CargosFijos);
+            Controls.Add(cbo_Provincias);
             Controls.Add(label1);
             Controls.Add(txt_Kg);
             Controls.Add(dataGridView1);
@@ -239,7 +285,6 @@
             Controls.Add(txt_Precio);
             Controls.Add(txt_DireccionSalida);
             Controls.Add(txt_Fecha);
-            Controls.Add(txt_ProvinciaDestino);
             Controls.Add(txt_Nombre);
             Controls.Add(lbl_Fecha);
             Controls.Add(lbl_Precio);
@@ -254,6 +299,8 @@
             Text = "Viaje";
             Load += FrmViaje_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            grp_CargosFijos.ResumeLayout(false);
+            grp_CargosFijos.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,7 +315,6 @@
         private Label lbl_Precio;
         private Label lbl_Fecha;
         private TextBox txt_Nombre;
-        private TextBox txt_ProvinciaDestino;
         private TextBox txt_Fecha;
         private TextBox txt_DireccionSalida;
         private TextBox txt_Precio;
@@ -278,5 +324,11 @@
         private DataGridView dataGridView1;
         private TextBox txt_Kg;
         private Label label1;
+        private ComboBox cbo_Provincias;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private GroupBox grp_CargosFijos;
     }
 }

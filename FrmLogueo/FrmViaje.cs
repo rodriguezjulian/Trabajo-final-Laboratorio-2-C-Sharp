@@ -28,9 +28,19 @@ namespace WF_TransporteRodriguez
             string id;
             id = Sistema.CalcularIdViaje();
 
-            Sistema.ListaViajes.Add(new Viaje(int.Parse(id), txt_Nombre.Text, txt_DireccionSalida.Text,
-                txt_ProvinciaDestino.Text, float.Parse(txt_Kg.Text), float.Parse(txt_Precio.Text), short.Parse(txt_IdVehiculo.Text), DateTime.Parse(txt_Fecha.Text)));
-            // Sistema.AgregarViajes();
+            if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)) != 0)
+            {
+                txt_IdVehiculo.Text = Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)).ToString();
+                Sistema.ListaViajes.Add(new Viaje(int.Parse(id), txt_Nombre.Text, txt_DireccionSalida.Text,
+                cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
+                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
+                Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), DateTime.Parse(txt_Fecha.Text)),
+                DateTime.Parse(txt_Fecha.Text)));
+            }
+            else
+            {
+                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
+            }
             dataGridView1.DataSource = Sistema.ListaViajes;
         }
 
@@ -38,9 +48,11 @@ namespace WF_TransporteRodriguez
         {
             cliente = Sistema.BuscarCliente(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
-            Sistema.AgregarViajes();//
+            Sistema.AgregarViajes();
             txt_Id.Text = Sistema.CalcularIdViaje();
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
+            cbo_Provincias.SelectedIndex = 0;
         }
+
     }
 }
