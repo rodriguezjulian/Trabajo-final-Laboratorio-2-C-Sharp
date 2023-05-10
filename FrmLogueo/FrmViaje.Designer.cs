@@ -316,13 +316,12 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(255, 192, 128);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 33);
+            panel1.Size = new Size(714, 33);
             panel1.TabIndex = 66;
             // 
             // pictureBox2
@@ -339,7 +338,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(3, 0);
+            label5.Location = new Point(-3, 0);
             label5.Name = "label5";
             label5.Size = new Size(275, 30);
             label5.TabIndex = 30;

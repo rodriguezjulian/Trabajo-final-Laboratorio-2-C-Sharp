@@ -93,7 +93,7 @@
             txt_IdDeViajeAModificar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeAModificar.Location = new Point(12, 99);
             txt_IdDeViajeAModificar.Name = "txt_IdDeViajeAModificar";
-            txt_IdDeViajeAModificar.Size = new Size(127, 25);
+            txt_IdDeViajeAModificar.Size = new Size(165, 25);
             txt_IdDeViajeAModificar.TabIndex = 84;
             txt_IdDeViajeAModificar.TextAlign = HorizontalAlignment.Center;
             // 
@@ -103,7 +103,7 @@
             txt_Kg.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Kg.Location = new Point(12, 152);
             txt_Kg.Name = "txt_Kg";
-            txt_Kg.Size = new Size(127, 25);
+            txt_Kg.Size = new Size(165, 25);
             txt_Kg.TabIndex = 83;
             txt_Kg.TextAlign = HorizontalAlignment.Center;
             // 

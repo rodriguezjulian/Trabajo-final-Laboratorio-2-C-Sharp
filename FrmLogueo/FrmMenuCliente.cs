@@ -62,7 +62,15 @@ namespace WF_TransporteRodriguez
             frmModificarViajeCliente.MdiParent = this;
             frmModificarViajeCliente.Dock = DockStyle.Fill;
             frmModificarViajeCliente.Show();
+        }
 
+        private void cancelarViajeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmCancelarViajeCliente frmCancelarViajeCliente = new FrmCancelarViajeCliente();
+            frmCancelarViajeCliente.Cliente = clienteInstanciado;
+            frmCancelarViajeCliente.MdiParent = this;
+            frmCancelarViajeCliente.Dock = DockStyle.Fill;
+            frmCancelarViajeCliente.Show();
         }
     }
 }

@@ -104,7 +104,7 @@
             reservarViajeToolStripMenuItem1.Margin = new Padding(0, 0, 0, 20);
             reservarViajeToolStripMenuItem1.Name = "reservarViajeToolStripMenuItem1";
             reservarViajeToolStripMenuItem1.Size = new Size(164, 34);
-            reservarViajeToolStripMenuItem1.Text = "Resevar viaje";
+            reservarViajeToolStripMenuItem1.Text = "Reservar viaje";
             reservarViajeToolStripMenuItem1.Click += reservarViajeToolStripMenuItem1_Click;
             // 
             // modificarViajeToolStripMenuItem1
@@ -123,6 +123,7 @@
             cancelarViajeToolStripMenuItem2.Name = "cancelarViajeToolStripMenuItem2";
             cancelarViajeToolStripMenuItem2.Size = new Size(164, 34);
             cancelarViajeToolStripMenuItem2.Text = "Cancelar viaje";
+            cancelarViajeToolStripMenuItem2.Click += cancelarViajeToolStripMenuItem2_Click;
             // 
             // listarViajeToolStripMenuItem
             // 

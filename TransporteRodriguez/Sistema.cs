@@ -141,11 +141,11 @@ namespace TransporteRodriguez
             }   
             return precio;
         }
-        public static bool buscarViaje(int idViaje, out Viaje? viajeEncontrado, out int indiceViaje)
+        public static bool buscarViaje(int idViaje, out Viaje? viajeEncontrado)
         {
             viajeEncontrado = null;
             bool retorno = false;
-            indiceViaje = 0;
+            
             foreach (Viaje viajeAxuliar in ListaViajes)
             {  
                 if (viajeAxuliar.IdViaje == idViaje)
@@ -154,7 +154,7 @@ namespace TransporteRodriguez
                     retorno= true;
                     break;
                 }
-                indiceViaje = indiceViaje + 1;
+                
             }
             return retorno;
         }

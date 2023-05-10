@@ -57,8 +57,9 @@ namespace WF_TransporteRodriguez
         {
             FrmListarVehiculos frmListarVehiculos = new FrmListarVehiculos();
             frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
+            this.Close();
             frmListarVehiculos.ShowDialog();
-            this.Hide();
+            
 
 
         }

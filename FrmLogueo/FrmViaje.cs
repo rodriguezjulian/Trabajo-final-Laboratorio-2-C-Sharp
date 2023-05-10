@@ -44,9 +44,8 @@ namespace WF_TransporteRodriguez
                     MessageBox.Show("Viaje reservado satisfactoriamente.\n");
                     FrmMenuCliente anterior = new FrmMenuCliente();
                     anterior.usuarioInstanciado = clienteInstanciado;
+                    this.Close();
                     anterior.ShowDialog();
-                    this.Hide();
-
                 }
                 else
                 {
