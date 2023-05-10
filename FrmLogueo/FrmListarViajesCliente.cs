@@ -23,7 +23,8 @@ namespace WF_TransporteRodriguez
 
         private void FrmListarViajesCliente_Load(object sender, EventArgs e)
         {
-          //  List<Viaje> viajesCliente = listaViajes.FindAll(viaje => viaje.NombreCliente == nombreCliente);
+            List<Viaje> viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+            dataGridView1.DataSource = viajesCliente;
         }
     }
 }

@@ -59,6 +59,7 @@
             pictureBox2 = new PictureBox();
             label5 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             grp_CargosFijos.SuspendLayout();
             grp_Viajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -219,7 +220,6 @@
             grp_Viajes.Size = new Size(720, 469);
             grp_Viajes.TabIndex = 66;
             grp_Viajes.TabStop = false;
-            
             // 
             // label7
             // 
@@ -402,5 +402,6 @@
         protected Label label7;
         private PictureBox pictureBox4;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
     }
 }

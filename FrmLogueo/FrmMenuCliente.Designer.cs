@@ -35,9 +35,10 @@
             ms_MenuCliente = new MenuStrip();
             misViajeToolStripMenuItem = new ToolStripMenuItem();
             reservarViajeToolStripMenuItem1 = new ToolStripMenuItem();
-            cancelarViajeToolStripMenuItem1 = new ToolStripMenuItem();
+            modificarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem2 = new ToolStripMenuItem();
             listarViajeToolStripMenuItem = new ToolStripMenuItem();
+            misDatosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ms_MenuCliente.SuspendLayout();
             SuspendLayout();
@@ -82,7 +83,7 @@
             // 
             ms_MenuCliente.BackColor = Color.FromArgb(255, 192, 128);
             ms_MenuCliente.Dock = DockStyle.Left;
-            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2, listarViajeToolStripMenuItem });
+            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, modificarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2, listarViajeToolStripMenuItem, misDatosToolStripMenuItem });
             ms_MenuCliente.Location = new Point(0, 0);
             ms_MenuCliente.Name = "ms_MenuCliente";
             ms_MenuCliente.Size = new Size(177, 469);
@@ -106,13 +107,14 @@
             reservarViajeToolStripMenuItem1.Text = "Resevar viaje";
             reservarViajeToolStripMenuItem1.Click += reservarViajeToolStripMenuItem1_Click;
             // 
-            // cancelarViajeToolStripMenuItem1
+            // modificarViajeToolStripMenuItem1
             // 
-            cancelarViajeToolStripMenuItem1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            cancelarViajeToolStripMenuItem1.Margin = new Padding(0, 0, 0, 20);
-            cancelarViajeToolStripMenuItem1.Name = "cancelarViajeToolStripMenuItem1";
-            cancelarViajeToolStripMenuItem1.Size = new Size(164, 34);
-            cancelarViajeToolStripMenuItem1.Text = "Modificar viaje";
+            modificarViajeToolStripMenuItem1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            modificarViajeToolStripMenuItem1.Margin = new Padding(0, 0, 0, 20);
+            modificarViajeToolStripMenuItem1.Name = "modificarViajeToolStripMenuItem1";
+            modificarViajeToolStripMenuItem1.Size = new Size(164, 34);
+            modificarViajeToolStripMenuItem1.Text = "Modificar viaje";
+            modificarViajeToolStripMenuItem1.Click += modificarViajeToolStripMenuItem1_Click;
             // 
             // cancelarViajeToolStripMenuItem2
             // 
@@ -125,10 +127,18 @@
             // listarViajeToolStripMenuItem
             // 
             listarViajeToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            listarViajeToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             listarViajeToolStripMenuItem.Name = "listarViajeToolStripMenuItem";
             listarViajeToolStripMenuItem.Size = new Size(164, 34);
             listarViajeToolStripMenuItem.Text = "Listar viajes";
             listarViajeToolStripMenuItem.Click += listarViajeToolStripMenuItem_Click;
+            // 
+            // misDatosToolStripMenuItem
+            // 
+            misDatosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
+            misDatosToolStripMenuItem.Size = new Size(164, 34);
+            misDatosToolStripMenuItem.Text = "Mis datos";
             // 
             // FrmMenuCliente
             // 
@@ -160,8 +170,9 @@
         private MenuStrip ms_MenuCliente;
         private ToolStripMenuItem misViajeToolStripMenuItem;
         private ToolStripMenuItem reservarViajeToolStripMenuItem1;
-        private ToolStripMenuItem cancelarViajeToolStripMenuItem1;
+        private ToolStripMenuItem modificarViajeToolStripMenuItem1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem2;
         private ToolStripMenuItem listarViajeToolStripMenuItem;
+        private ToolStripMenuItem misDatosToolStripMenuItem;
     }
 }

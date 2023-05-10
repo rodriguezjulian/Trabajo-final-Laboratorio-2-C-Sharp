@@ -27,6 +27,7 @@ namespace WF_TransporteRodriguez
             txt_Nombre.Text = cliente.Nombre;
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
+            dtp_FechaDeViaje.MinDate = DateTime.Today;
         }
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
@@ -40,6 +41,12 @@ namespace WF_TransporteRodriguez
                     Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
                     Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
                      dtp_FechaDeViaje.Value));
+                    MessageBox.Show("Viaje reservado satisfactoriamente.\n");
+                    FrmMenuCliente anterior = new FrmMenuCliente();
+                    anterior.usuarioInstanciado = clienteInstanciado;
+                    anterior.ShowDialog();
+                    this.Hide();
+
                 }
                 else
                 {

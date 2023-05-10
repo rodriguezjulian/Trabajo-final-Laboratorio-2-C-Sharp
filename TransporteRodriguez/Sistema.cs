@@ -63,7 +63,7 @@ namespace TransporteRodriguez
         {
             Sistema.ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
             "Salta", 200, 10000, 1, DateTime.Parse("11/05/2025")));
-            Sistema.ListaViajes.Add(new Viaje(2, "Pablo Ramírez", "Av. Córdoba 6789",
+            Sistema.ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
             "Corrientes", 500, 10500, 5, DateTime.Parse("11/05/2024")));
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
            "Santa Fe", 1400, 10500, 3, DateTime.Parse("11/05/2024")));
@@ -141,6 +141,24 @@ namespace TransporteRodriguez
             }   
             return precio;
         }
+        public static bool buscarViaje(int idViaje, out Viaje? viajeEncontrado, out int indiceViaje)
+        {
+            viajeEncontrado = null;
+            bool retorno = false;
+            indiceViaje = 0;
+            foreach (Viaje viajeAxuliar in ListaViajes)
+            {  
+                if (viajeAxuliar.IdViaje == idViaje)
+                {
+                    viajeEncontrado = viajeAxuliar;
+                    retorno= true;
+                    break;
+                }
+                indiceViaje = indiceViaje + 1;
+            }
+            return retorno;
+        }
+
         /*
                  public static float calcularPrecioViaje(int provincia, float kilosTransportados)
         {
