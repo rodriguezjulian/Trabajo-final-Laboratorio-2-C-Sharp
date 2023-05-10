@@ -17,6 +17,7 @@ namespace TransporteRodriguez
         public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
         static Sistema()
         {
+            AgregarViajes();
             AgregarVehiculos();
         }
         public static void AgregarCliente()

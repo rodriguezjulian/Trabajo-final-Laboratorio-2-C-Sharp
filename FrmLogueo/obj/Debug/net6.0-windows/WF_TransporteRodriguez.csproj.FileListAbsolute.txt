@@ -48,7 +48,7 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.pdb
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.genruntimeconfig.cache
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\ref\WF_TransporteRodriguez.dll
-C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frmdiseño.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmMenuCliente.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmListarVehiculos.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmViaje.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.FrmListarViajesCliente.resources

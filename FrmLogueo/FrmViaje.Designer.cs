@@ -36,7 +36,6 @@
             lbl_Fecha = new Label();
             txt_Nombre = new TextBox();
             txt_DireccionSalida = new TextBox();
-            button1 = new Button();
             txt_Kg = new TextBox();
             label1 = new Label();
             cbo_Provincias = new ComboBox();
@@ -47,7 +46,6 @@
             grp_CargosFijos = new GroupBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             grp_Viajes = new GroupBox();
-            label8 = new Label();
             label7 = new Label();
             pictureBox4 = new PictureBox();
             lbl_RerservarViaje = new Label();
@@ -60,6 +58,7 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             grp_CargosFijos.SuspendLayout();
             grp_Viajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -130,15 +129,6 @@
             txt_DireccionSalida.TabIndex = 53;
             txt_DireccionSalida.TextAlign = HorizontalAlignment.Center;
             // 
-            // button1
-            // 
-            button1.Location = new Point(470, 392);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 55;
-            button1.Text = "Crear";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // txt_Kg
             // 
             txt_Kg.BackColor = Color.FromArgb(255, 255, 192);
@@ -199,11 +189,12 @@
             grp_CargosFijos.Controls.Add(label2);
             grp_CargosFijos.Controls.Add(label4);
             grp_CargosFijos.Controls.Add(label3);
-            grp_CargosFijos.Location = new Point(446, 112);
+            grp_CargosFijos.Location = new Point(446, 97);
             grp_CargosFijos.Name = "grp_CargosFijos";
-            grp_CargosFijos.Size = new Size(236, 125);
+            grp_CargosFijos.Size = new Size(236, 140);
             grp_CargosFijos.TabIndex = 65;
             grp_CargosFijos.TabStop = false;
+            grp_CargosFijos.Text = "DEPOSITOS";
             // 
             // contextMenuStrip1
             // 
@@ -214,7 +205,6 @@
             // 
             grp_Viajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             grp_Viajes.BackColor = Color.FromArgb(255, 255, 192);
-            grp_Viajes.Controls.Add(label8);
             grp_Viajes.Controls.Add(label7);
             grp_Viajes.Controls.Add(pictureBox4);
             grp_Viajes.Controls.Add(lbl_RerservarViaje);
@@ -224,22 +214,12 @@
             grp_Viajes.Controls.Add(panel2);
             grp_Viajes.Controls.Add(panel1);
             grp_Viajes.Controls.Add(grp_CargosFijos);
-            grp_Viajes.Controls.Add(button1);
             grp_Viajes.Location = new Point(0, 0);
             grp_Viajes.Name = "grp_Viajes";
             grp_Viajes.Size = new Size(720, 469);
             grp_Viajes.TabIndex = 66;
             grp_Viajes.TabStop = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(518, 97);
-            label8.Name = "label8";
-            label8.Size = new Size(79, 17);
-            label8.TabIndex = 76;
-            label8.Text = "DEPOSITOS";
+            
             // 
             // label7
             // 
@@ -399,7 +379,6 @@
         private Label lbl_Fecha;
         private TextBox txt_Nombre;
         private TextBox txt_DireccionSalida;
-        private Button button1;
         private TextBox txt_Kg;
         private Label label1;
         private ComboBox cbo_Provincias;
@@ -422,6 +401,6 @@
         private GroupBox grp_DatosViaje;
         protected Label label7;
         private PictureBox pictureBox4;
-        protected Label label8;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

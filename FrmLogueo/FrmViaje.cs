@@ -25,7 +25,6 @@ namespace WF_TransporteRodriguez
         {
             cliente = Sistema.BuscarCliente(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
-            Sistema.AgregarViajes();
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
         }
@@ -53,23 +52,25 @@ namespace WF_TransporteRodriguez
             }
 
         }
+
+
         /*
-                 private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(dtp_FechaDeViaje.Value.ToString());
-            if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value) != 0)
-            {
-                Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
-                cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
-                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
-                Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
-                 dtp_FechaDeViaje.Value));
-            }
-            else
-            {
-                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
-            }
-        }
-         */
+        private void pictureBox1_Click(object sender, EventArgs e)
+{
+   MessageBox.Show(dtp_FechaDeViaje.Value.ToString());
+   if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value) != 0)
+   {
+       Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
+       cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
+       Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
+       Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
+        dtp_FechaDeViaje.Value));
+   }
+   else
+   {
+       MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
+   }
+}
+*/
     }
 }

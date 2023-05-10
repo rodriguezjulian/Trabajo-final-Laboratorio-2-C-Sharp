@@ -37,6 +37,7 @@
             reservarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem2 = new ToolStripMenuItem();
+            listarViajeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ms_MenuCliente.SuspendLayout();
             SuspendLayout();
@@ -81,10 +82,10 @@
             // 
             ms_MenuCliente.BackColor = Color.FromArgb(255, 192, 128);
             ms_MenuCliente.Dock = DockStyle.Left;
-            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2 });
+            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2, listarViajeToolStripMenuItem });
             ms_MenuCliente.Location = new Point(0, 0);
             ms_MenuCliente.Name = "ms_MenuCliente";
-            ms_MenuCliente.Size = new Size(165, 469);
+            ms_MenuCliente.Size = new Size(177, 469);
             ms_MenuCliente.TabIndex = 2;
             ms_MenuCliente.Text = "menuStrip2";
             // 
@@ -93,7 +94,7 @@
             misViajeToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             misViajeToolStripMenuItem.Margin = new Padding(0, 33, 0, 20);
             misViajeToolStripMenuItem.Name = "misViajeToolStripMenuItem";
-            misViajeToolStripMenuItem.Size = new Size(152, 34);
+            misViajeToolStripMenuItem.Size = new Size(164, 34);
             misViajeToolStripMenuItem.Text = "Mi perfil";
             // 
             // reservarViajeToolStripMenuItem1
@@ -101,8 +102,8 @@
             reservarViajeToolStripMenuItem1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             reservarViajeToolStripMenuItem1.Margin = new Padding(0, 0, 0, 20);
             reservarViajeToolStripMenuItem1.Name = "reservarViajeToolStripMenuItem1";
-            reservarViajeToolStripMenuItem1.Size = new Size(152, 34);
-            reservarViajeToolStripMenuItem1.Text = "Viajes";
+            reservarViajeToolStripMenuItem1.Size = new Size(164, 34);
+            reservarViajeToolStripMenuItem1.Text = "Resevar viaje";
             reservarViajeToolStripMenuItem1.Click += reservarViajeToolStripMenuItem1_Click;
             // 
             // cancelarViajeToolStripMenuItem1
@@ -110,16 +111,24 @@
             cancelarViajeToolStripMenuItem1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             cancelarViajeToolStripMenuItem1.Margin = new Padding(0, 0, 0, 20);
             cancelarViajeToolStripMenuItem1.Name = "cancelarViajeToolStripMenuItem1";
-            cancelarViajeToolStripMenuItem1.Size = new Size(152, 34);
-            cancelarViajeToolStripMenuItem1.Text = "Reservar viaje";
+            cancelarViajeToolStripMenuItem1.Size = new Size(164, 34);
+            cancelarViajeToolStripMenuItem1.Text = "Modificar viaje";
             // 
             // cancelarViajeToolStripMenuItem2
             // 
             cancelarViajeToolStripMenuItem2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             cancelarViajeToolStripMenuItem2.Margin = new Padding(0, 0, 0, 20);
             cancelarViajeToolStripMenuItem2.Name = "cancelarViajeToolStripMenuItem2";
-            cancelarViajeToolStripMenuItem2.Size = new Size(152, 34);
+            cancelarViajeToolStripMenuItem2.Size = new Size(164, 34);
             cancelarViajeToolStripMenuItem2.Text = "Cancelar viaje";
+            // 
+            // listarViajeToolStripMenuItem
+            // 
+            listarViajeToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            listarViajeToolStripMenuItem.Name = "listarViajeToolStripMenuItem";
+            listarViajeToolStripMenuItem.Size = new Size(164, 34);
+            listarViajeToolStripMenuItem.Text = "Listar viajes";
+            listarViajeToolStripMenuItem.Click += listarViajeToolStripMenuItem_Click;
             // 
             // FrmMenuCliente
             // 
@@ -133,6 +142,7 @@
             Name = "FrmMenuCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMenuCliente";
+            Load += FrmMenuCliente_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ms_MenuCliente.ResumeLayout(false);
@@ -152,5 +162,6 @@
         private ToolStripMenuItem reservarViajeToolStripMenuItem1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem2;
+        private ToolStripMenuItem listarViajeToolStripMenuItem;
     }
 }

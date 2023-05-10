@@ -15,6 +15,7 @@ namespace WF_TransporteRodriguez
     public partial class FrmMenuCliente : Form
     {
         Usuario usuarioInstanciado;
+        Cliente clienteInstanciado;
         public FrmMenuCliente()
         {
             InitializeComponent();
@@ -40,5 +41,20 @@ namespace WF_TransporteRodriguez
             //this.Hide();
         }
 
+        private void listarViajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListarViajesCliente frmListarViajesCliente = new FrmListarViajesCliente();
+            frmListarViajesCliente.Cliente = clienteInstanciado;
+            frmListarViajesCliente.MdiParent = this;
+            frmListarViajesCliente.Dock = DockStyle.Fill;
+            frmListarViajesCliente.Show();
+
+        }
+
+        private void FrmMenuCliente_Load(object sender, EventArgs e)
+        {
+            clienteInstanciado = Sistema.BuscarCliente(usuarioInstanciado);
+            
+        }
     }
 }
