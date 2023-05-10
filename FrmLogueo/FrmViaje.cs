@@ -28,6 +28,7 @@ namespace WF_TransporteRodriguez
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
             dtp_FechaDeViaje.MinDate = DateTime.Today;
+            lbl_NombreClient.Text = cliente.Nombre;
         }
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
@@ -49,6 +50,26 @@ namespace WF_TransporteRodriguez
             {
                 MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
             }
+        }
+
+        private void pic_ReservarViajar_MouseLeave(object sender, EventArgs e)
+        {
+            pic_ReservarViajar.BackColor = Color.Transparent;
+        }
+
+        private void pic_ReservarViajar_MouseEnter(object sender, EventArgs e)
+        {
+            pic_ReservarViajar.BackColor = Color.Orange;
+        }
+
+        private void pic_Cancelar_MouseEnter(object sender, EventArgs e)
+        {
+            pic_Cancelar.BackColor = Color.Orange;
+        }
+
+        private void pic_Cancelar_MouseLeave(object sender, EventArgs e)
+        {
+            pic_Cancelar.BackColor = Color.Transparent;
         }
 
 

@@ -39,17 +39,17 @@
             pic_EditarViaje = new PictureBox();
             lbl_RerservarViaje = new Label();
             label7 = new Label();
-            pictureBox4 = new PictureBox();
+            pic_CancelarModificacion = new PictureBox();
             dtg_ListarViajes = new DataGridView();
             panel2 = new Panel();
             label6 = new Label();
             panel1 = new Panel();
+            lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            label8 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             groupBox1.Controls.Add(pic_EditarViaje);
             groupBox1.Controls.Add(lbl_RerservarViaje);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(pictureBox4);
+            groupBox1.Controls.Add(pic_CancelarModificacion);
             groupBox1.Controls.Add(dtg_ListarViajes);
             groupBox1.Controls.Add(panel2);
             groupBox1.Controls.Add(panel1);
@@ -146,6 +146,8 @@
             pic_EditarViaje.TabIndex = 79;
             pic_EditarViaje.TabStop = false;
             pic_EditarViaje.Click += pic_EditarViaje_Click;
+            pic_EditarViaje.MouseEnter += pic_EditarViaje_MouseEnter;
+            pic_EditarViaje.MouseLeave += pic_EditarViaje_MouseLeave;
             // 
             // lbl_RerservarViaje
             // 
@@ -167,15 +169,17 @@
             label7.TabIndex = 76;
             label7.Text = "CANCELAR";
             // 
-            // pictureBox4
+            // pic_CancelarModificacion
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(618, 81);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(79, 76);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 75;
-            pictureBox4.TabStop = false;
+            pic_CancelarModificacion.Image = (Image)resources.GetObject("pic_CancelarModificacion.Image");
+            pic_CancelarModificacion.Location = new Point(618, 81);
+            pic_CancelarModificacion.Name = "pic_CancelarModificacion";
+            pic_CancelarModificacion.Size = new Size(79, 76);
+            pic_CancelarModificacion.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_CancelarModificacion.TabIndex = 75;
+            pic_CancelarModificacion.TabStop = false;
+            pic_CancelarModificacion.MouseEnter += pic_CancelarModificacion_MouseEnter;
+            pic_CancelarModificacion.MouseLeave += pic_CancelarModificacion_MouseLeave;
             // 
             // dtg_ListarViajes
             // 
@@ -209,13 +213,23 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(255, 192, 128);
-            panel1.Controls.Add(label8);
+            panel1.Controls.Add(lbl_NombreCliente);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(720, 33);
             panel1.TabIndex = 67;
+            // 
+            // lbl_NombreCliente
+            // 
+            lbl_NombreCliente.AutoSize = true;
+            lbl_NombreCliente.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_NombreCliente.Location = new Point(416, 0);
+            lbl_NombreCliente.Name = "lbl_NombreCliente";
+            lbl_NombreCliente.Size = new Size(192, 30);
+            lbl_NombreCliente.TabIndex = 86;
+            lbl_NombreCliente.Text = "NOMBRE CLIENTE";
             // 
             // pictureBox2
             // 
@@ -237,16 +251,6 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(416, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(192, 30);
-            label8.TabIndex = 86;
-            label8.Text = "NOMBRE CLIENTE";
-            // 
             // FrmModificarViajeCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -260,7 +264,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -279,7 +283,7 @@
         private Panel panel2;
         protected Label label6;
         private DataGridView dtg_ListarViajes;
-        private PictureBox pictureBox4;
+        private PictureBox pic_CancelarModificacion;
         protected Label label7;
         protected Label lbl_RerservarViaje;
         private PictureBox pic_EditarViaje;
@@ -289,6 +293,6 @@
         protected Label label3;
         private TextBox txt_IdDeViajeAModificar;
         private TextBox txt_Kg;
-        protected Label label8;
+        protected Label lbl_NombreCliente;
     }
 }

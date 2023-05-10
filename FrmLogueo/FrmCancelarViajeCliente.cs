@@ -27,18 +27,24 @@ namespace WF_TransporteRodriguez
         {
             viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dtg_ListarViajes.DataSource = viajesCliente;
+            lbl_NombreClient.Text = cliente.Nombre;
         }
 
         private void pic_EliminarViaje_Click(object sender, EventArgs e)
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
             Viaje? viajeAux;
-            if (Sistema.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
+            if (int.TryParse(txt_IdDeViajeACancelar.Text, out _) == true
+                && Sistema.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 Sistema.ListaViajes.Remove(viajeAux);
                 viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
                 dtg_ListarViajes.DataSource = viajesCliente;
+            }
+            else
+            {
+                MessageBox.Show("Verifique datos ingresados. \n");
             }
         }
         private void pic_EliminarViaje_MouseLeave(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnl_TopNaranja = new Panel();
+            lbl_NombreClient = new Label();
             pic_IconoPersona = new PictureBox();
             lbl_TransporteRodriguez = new Label();
             pnl_CancelarViaje = new Panel();
@@ -49,12 +50,23 @@
             // 
             pnl_TopNaranja.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnl_TopNaranja.BackColor = Color.FromArgb(255, 192, 128);
+            pnl_TopNaranja.Controls.Add(lbl_NombreClient);
             pnl_TopNaranja.Controls.Add(pic_IconoPersona);
             pnl_TopNaranja.Controls.Add(lbl_TransporteRodriguez);
             pnl_TopNaranja.Location = new Point(0, 0);
             pnl_TopNaranja.Name = "pnl_TopNaranja";
             pnl_TopNaranja.Size = new Size(706, 33);
             pnl_TopNaranja.TabIndex = 68;
+            // 
+            // lbl_NombreClient
+            // 
+            lbl_NombreClient.AutoSize = true;
+            lbl_NombreClient.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_NombreClient.Location = new Point(416, 3);
+            lbl_NombreClient.Name = "lbl_NombreClient";
+            lbl_NombreClient.Size = new Size(192, 30);
+            lbl_NombreClient.TabIndex = 88;
+            lbl_NombreClient.Text = "NOMBRE CLIENTE";
             // 
             // pic_IconoPersona
             // 
@@ -98,10 +110,10 @@
             // dtg_ListarViajes
             // 
             dtg_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarViajes.Location = new Point(3, 152);
+            dtg_ListarViajes.Location = new Point(0, 155);
             dtg_ListarViajes.Name = "dtg_ListarViajes";
             dtg_ListarViajes.RowTemplate.Height = 25;
-            dtg_ListarViajes.Size = new Size(706, 286);
+            dtg_ListarViajes.Size = new Size(706, 277);
             dtg_ListarViajes.TabIndex = 70;
             // 
             // lbl_IdCancelarViaje
@@ -162,6 +174,7 @@
             Controls.Add(pnl_TopNaranja);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmCancelarViajeCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCancelarViajeCliente";
             Load += FrmCancelarViajeCliente_Load;
             pnl_TopNaranja.ResumeLayout(false);
@@ -187,5 +200,6 @@
         private TextBox txt_IdDeViajeACancelar;
         private PictureBox pic_EliminarViaje;
         protected Label lbl_ConfirmarEliminacion;
+        protected Label lbl_NombreClient;
     }
 }

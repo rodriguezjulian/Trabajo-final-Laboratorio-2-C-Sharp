@@ -27,6 +27,7 @@ namespace WF_TransporteRodriguez
             viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dtg_ListarViajes.DataSource = viajesCliente;
             dtp_FechaDeViaje.MinDate = DateTime.Today;
+            lbl_NombreCliente.Text = cliente.Nombre;
 
         }
 
@@ -51,6 +52,26 @@ namespace WF_TransporteRodriguez
             {
                 MessageBox.Show("Verifique datos ingresados. \n");
             }
+        }
+
+        private void pic_EditarViaje_MouseEnter(object sender, EventArgs e)
+        {
+            pic_EditarViaje.BackColor = Color.Orange;
+        }
+
+        private void pic_EditarViaje_MouseLeave(object sender, EventArgs e)
+        {
+            pic_EditarViaje.BackColor = Color.Transparent;
+        }
+
+        private void pic_CancelarModificacion_MouseEnter(object sender, EventArgs e)
+        {
+            pic_CancelarModificacion.BackColor = Color.Orange;
+        }
+
+        private void pic_CancelarModificacion_MouseLeave(object sender, EventArgs e)
+        {
+            pic_CancelarModificacion.BackColor = Color.Transparent;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace WF_TransporteRodriguez
         {
             List<Viaje> viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dataGridView1.DataSource = viajesCliente;
+            lbl_NombreCliente.Text = cliente.Nombre;
         }
     }
 }

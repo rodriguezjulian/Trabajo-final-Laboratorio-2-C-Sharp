@@ -46,7 +46,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             grp_Viajes = new GroupBox();
             label7 = new Label();
-            pictureBox4 = new PictureBox();
+            pic_Cancelar = new PictureBox();
             lbl_RerservarViaje = new Label();
             pic_ReservarViajar = new PictureBox();
             grp_DatosViaje = new GroupBox();
@@ -56,13 +56,14 @@
             panel2 = new Panel();
             label6 = new Label();
             panel1 = new Panel();
+            lbl_NombreClient = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             grp_CargosFijos.SuspendLayout();
             grp_Viajes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
             grp_DatosViaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nup_Kilos).BeginInit();
@@ -198,7 +199,7 @@
             grp_Viajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             grp_Viajes.BackColor = Color.FromArgb(255, 255, 192);
             grp_Viajes.Controls.Add(label7);
-            grp_Viajes.Controls.Add(pictureBox4);
+            grp_Viajes.Controls.Add(pic_Cancelar);
             grp_Viajes.Controls.Add(lbl_RerservarViaje);
             grp_Viajes.Controls.Add(pic_ReservarViajar);
             grp_Viajes.Controls.Add(grp_DatosViaje);
@@ -222,15 +223,17 @@
             label7.TabIndex = 75;
             label7.Text = "CANCELAR";
             // 
-            // pictureBox4
+            // pic_Cancelar
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(603, 259);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(79, 76);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 74;
-            pictureBox4.TabStop = false;
+            pic_Cancelar.Image = (Image)resources.GetObject("pic_Cancelar.Image");
+            pic_Cancelar.Location = new Point(603, 259);
+            pic_Cancelar.Name = "pic_Cancelar";
+            pic_Cancelar.Size = new Size(79, 76);
+            pic_Cancelar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Cancelar.TabIndex = 74;
+            pic_Cancelar.TabStop = false;
+            pic_Cancelar.MouseEnter += pic_Cancelar_MouseEnter;
+            pic_Cancelar.MouseLeave += pic_Cancelar_MouseLeave;
             // 
             // lbl_RerservarViaje
             // 
@@ -252,6 +255,8 @@
             pic_ReservarViajar.TabIndex = 71;
             pic_ReservarViajar.TabStop = false;
             pic_ReservarViajar.Click += pic_ReservarViajar_Click;
+            pic_ReservarViajar.MouseEnter += pic_ReservarViajar_MouseEnter;
+            pic_ReservarViajar.MouseLeave += pic_ReservarViajar_MouseLeave;
             // 
             // grp_DatosViaje
             // 
@@ -318,12 +323,23 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 192, 128);
+            panel1.Controls.Add(lbl_NombreClient);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(714, 33);
             panel1.TabIndex = 66;
+            // 
+            // lbl_NombreClient
+            // 
+            lbl_NombreClient.AutoSize = true;
+            lbl_NombreClient.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_NombreClient.Location = new Point(416, 0);
+            lbl_NombreClient.Name = "lbl_NombreClient";
+            lbl_NombreClient.Size = new Size(192, 30);
+            lbl_NombreClient.TabIndex = 87;
+            lbl_NombreClient.Text = "NOMBRE CLIENTE";
             // 
             // pictureBox2
             // 
@@ -360,7 +376,7 @@
             grp_CargosFijos.PerformLayout();
             grp_Viajes.ResumeLayout(false);
             grp_Viajes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
             grp_DatosViaje.ResumeLayout(false);
             grp_DatosViaje.PerformLayout();
@@ -400,9 +416,10 @@
         private PictureBox pic_ReservarViajar;
         private GroupBox grp_DatosViaje;
         protected Label label7;
-        private PictureBox pictureBox4;
+        private PictureBox pic_Cancelar;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private NumericUpDown nup_Kilos;
+        protected Label lbl_NombreClient;
     }
 }
