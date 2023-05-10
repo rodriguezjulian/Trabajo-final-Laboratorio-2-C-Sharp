@@ -32,31 +32,23 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            if (txt_Kg.Text != "")
+            if (Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
-                if (Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value) != 0)
-                {
-                    Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
-                    cbo_Provincias.SelectedItem.ToString(), float.Parse(txt_Kg.Text),
-                    Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, float.Parse(txt_Kg.Text)),
-                    Sistema.RetornarVehiculoDisponible(float.Parse(txt_Kg.Text), dtp_FechaDeViaje.Value),
-                     dtp_FechaDeViaje.Value));
-                    MessageBox.Show("Viaje reservado satisfactoriamente.\n");
-                    FrmMenuCliente anterior = new FrmMenuCliente();
-                    anterior.usuarioInstanciado = clienteInstanciado;
-                    this.Close();
-                    anterior.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
-                }
+                Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
+                cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
+                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
+                Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
+                    dtp_FechaDeViaje.Value));
+                MessageBox.Show("Viaje reservado satisfactoriamente.\n");
+                FrmMenuCliente anterior = new FrmMenuCliente();
+                anterior.usuarioInstanciado = clienteInstanciado;
+                this.Close();
+                anterior.ShowDialog();
             }
             else
             {
-                MessageBox.Show("ERROR, Recuerde completar todos los campos \n");
+                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
             }
-
         }
 
 

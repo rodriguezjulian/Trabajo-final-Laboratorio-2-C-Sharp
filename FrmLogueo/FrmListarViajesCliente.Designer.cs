@@ -41,7 +41,7 @@
             dataGridView1.Location = new Point(12, 71);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(676, 336);
+            dataGridView1.Size = new Size(694, 336);
             dataGridView1.TabIndex = 0;
             // 
             // grp_ListarViajesCliente
@@ -50,7 +50,7 @@
             grp_ListarViajesCliente.Controls.Add(dataGridView1);
             grp_ListarViajesCliente.Location = new Point(0, 0);
             grp_ListarViajesCliente.Name = "grp_ListarViajesCliente";
-            grp_ListarViajesCliente.Size = new Size(720, 469);
+            grp_ListarViajesCliente.Size = new Size(738, 469);
             grp_ListarViajesCliente.TabIndex = 1;
             grp_ListarViajesCliente.TabStop = false;
             // 
@@ -58,7 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 469);
+            ClientSize = new Size(722, 469);
             Controls.Add(grp_ListarViajesCliente);
             Name = "FrmListarViajesCliente";
             Text = "FrmListarViajesCliente";

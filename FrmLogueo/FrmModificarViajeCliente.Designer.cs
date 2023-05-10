@@ -46,6 +46,7 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            label8 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -200,14 +201,15 @@
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(0, -3);
             label6.Name = "label6";
-            label6.Size = new Size(180, 30);
+            label6.Size = new Size(194, 30);
             label6.TabIndex = 68;
-            label6.Text = "RESERVAR VIAJE";
+            label6.Text = "MODIFICAR VIAJE";
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(255, 192, 128);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
             panel1.Location = new Point(0, 0);
@@ -235,12 +237,23 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(416, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(192, 30);
+            label8.TabIndex = 86;
+            label8.Text = "NOMBRE CLIENTE";
+            // 
             // FrmModificarViajeCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(719, 469);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmModificarViajeCliente";
             Text = "FrmModificarViaje";
             Load += FrmModificarViajeCliente_Load;
@@ -276,5 +289,6 @@
         protected Label label3;
         private TextBox txt_IdDeViajeAModificar;
         private TextBox txt_Kg;
+        protected Label label8;
     }
 }

@@ -36,7 +36,6 @@
             lbl_Fecha = new Label();
             txt_Nombre = new TextBox();
             txt_DireccionSalida = new TextBox();
-            txt_Kg = new TextBox();
             label1 = new Label();
             cbo_Provincias = new ComboBox();
             label2 = new Label();
@@ -51,6 +50,7 @@
             lbl_RerservarViaje = new Label();
             pic_ReservarViajar = new PictureBox();
             grp_DatosViaje = new GroupBox();
+            nup_Kilos = new NumericUpDown();
             dtp_FechaDeViaje = new DateTimePicker();
             panel3 = new Panel();
             panel2 = new Panel();
@@ -65,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
             grp_DatosViaje.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nup_Kilos).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -130,16 +131,6 @@
             txt_DireccionSalida.TabIndex = 53;
             txt_DireccionSalida.TextAlign = HorizontalAlignment.Center;
             // 
-            // txt_Kg
-            // 
-            txt_Kg.BackColor = Color.FromArgb(255, 255, 192);
-            txt_Kg.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Kg.Location = new Point(2, 250);
-            txt_Kg.Name = "txt_Kg";
-            txt_Kg.Size = new Size(127, 25);
-            txt_Kg.TabIndex = 59;
-            txt_Kg.TextAlign = HorizontalAlignment.Center;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -155,7 +146,7 @@
             cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
             cbo_Provincias.Location = new Point(2, 143);
             cbo_Provincias.Name = "cbo_Provincias";
-            cbo_Provincias.Size = new Size(272, 23);
+            cbo_Provincias.Size = new Size(255, 23);
             cbo_Provincias.TabIndex = 61;
             // 
             // label2
@@ -264,10 +255,10 @@
             // 
             // grp_DatosViaje
             // 
+            grp_DatosViaje.Controls.Add(nup_Kilos);
             grp_DatosViaje.Controls.Add(dtp_FechaDeViaje);
             grp_DatosViaje.Controls.Add(cbo_Provincias);
             grp_DatosViaje.Controls.Add(label1);
-            grp_DatosViaje.Controls.Add(txt_Kg);
             grp_DatosViaje.Controls.Add(txt_DireccionSalida);
             grp_DatosViaje.Controls.Add(txt_Nombre);
             grp_DatosViaje.Controls.Add(lbl_Fecha);
@@ -280,11 +271,21 @@
             grp_DatosViaje.TabIndex = 70;
             grp_DatosViaje.TabStop = false;
             // 
+            // nup_Kilos
+            // 
+            nup_Kilos.Location = new Point(6, 253);
+            nup_Kilos.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
+            nup_Kilos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nup_Kilos.Name = "nup_Kilos";
+            nup_Kilos.Size = new Size(251, 23);
+            nup_Kilos.TabIndex = 70;
+            nup_Kilos.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
             // dtp_FechaDeViaje
             // 
             dtp_FechaDeViaje.Location = new Point(2, 198);
             dtp_FechaDeViaje.Name = "dtp_FechaDeViaje";
-            dtp_FechaDeViaje.Size = new Size(230, 23);
+            dtp_FechaDeViaje.Size = new Size(255, 23);
             dtp_FechaDeViaje.TabIndex = 69;
             // 
             // panel3
@@ -363,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
             grp_DatosViaje.ResumeLayout(false);
             grp_DatosViaje.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nup_Kilos).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -378,7 +380,6 @@
         private Label lbl_Fecha;
         private TextBox txt_Nombre;
         private TextBox txt_DireccionSalida;
-        private TextBox txt_Kg;
         private Label label1;
         private ComboBox cbo_Provincias;
         private Label label2;
@@ -402,5 +403,6 @@
         private PictureBox pictureBox4;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private NumericUpDown nup_Kilos;
     }
 }

@@ -36,10 +36,14 @@ namespace WF_TransporteRodriguez
 
             // tengo que verificar que el id de viaje sea del cliente y que la fecha se mayor a hoy
             //se supone que por como funciona el cortafuego no deberia ser null viajeAux porque ya se corta el if en la primer condicion
-            if (Sistema.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
+            //El guion bajo (_) se utiliza como una convención para indicar que no se va a utilizar el valor de salida.
+            if (int.TryParse(txt_IdDeViajeAModificar.Text, out _) == true
+                && int.TryParse(txt_Kg.Text, out _) == true
+                    && Sistema.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
+                viajeAux.KilosATransportar = float.Parse(txt_Kg.Text);
                 viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
                 dtg_ListarViajes.DataSource = viajesCliente;
             }

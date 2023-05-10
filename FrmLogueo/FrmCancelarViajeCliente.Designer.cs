@@ -160,6 +160,7 @@
             Controls.Add(dtg_ListarViajes);
             Controls.Add(pnl_CancelarViaje);
             Controls.Add(pnl_TopNaranja);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmCancelarViajeCliente";
             Text = "FrmCancelarViajeCliente";
             Load += FrmCancelarViajeCliente_Load;
