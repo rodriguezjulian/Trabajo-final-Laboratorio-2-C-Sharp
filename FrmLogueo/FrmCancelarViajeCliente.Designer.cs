@@ -39,11 +39,13 @@
             txt_IdDeViajeACancelar = new TextBox();
             pic_EliminarViaje = new PictureBox();
             lbl_ConfirmarEliminacion = new Label();
+            pic_Id = new PictureBox();
             pnl_TopNaranja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_EliminarViaje).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Id).BeginInit();
             SuspendLayout();
             // 
             // pnl_TopNaranja
@@ -120,7 +122,7 @@
             // 
             lbl_IdCancelarViaje.AutoSize = true;
             lbl_IdCancelarViaje.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_IdCancelarViaje.Location = new Point(12, 88);
+            lbl_IdCancelarViaje.Location = new Point(66, 88);
             lbl_IdCancelarViaje.Name = "lbl_IdCancelarViaje";
             lbl_IdCancelarViaje.Size = new Size(165, 17);
             lbl_IdCancelarViaje.TabIndex = 79;
@@ -130,7 +132,7 @@
             // 
             txt_IdDeViajeACancelar.BackColor = Color.FromArgb(255, 255, 192);
             txt_IdDeViajeACancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_IdDeViajeACancelar.Location = new Point(15, 108);
+            txt_IdDeViajeACancelar.Location = new Point(66, 108);
             txt_IdDeViajeACancelar.Name = "txt_IdDeViajeACancelar";
             txt_IdDeViajeACancelar.Size = new Size(162, 25);
             txt_IdDeViajeACancelar.TabIndex = 85;
@@ -159,12 +161,23 @@
             lbl_ConfirmarEliminacion.TabIndex = 87;
             lbl_ConfirmarEliminacion.Text = "CONFIRMAR ";
             // 
+            // pic_Id
+            // 
+            pic_Id.Image = Properties.Resources.ID;
+            pic_Id.Location = new Point(3, 97);
+            pic_Id.Name = "pic_Id";
+            pic_Id.Size = new Size(57, 36);
+            pic_Id.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_Id.TabIndex = 88;
+            pic_Id.TabStop = false;
+            // 
             // FrmCancelarViajeCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(704, 430);
+            Controls.Add(pic_Id);
             Controls.Add(lbl_ConfirmarEliminacion);
             Controls.Add(pic_EliminarViaje);
             Controls.Add(txt_IdDeViajeACancelar);
@@ -184,6 +197,7 @@
             pnl_CancelarViaje.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_EliminarViaje).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Id).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +215,6 @@
         private PictureBox pic_EliminarViaje;
         protected Label lbl_ConfirmarEliminacion;
         protected Label lbl_NombreClient;
+        private PictureBox pic_Id;
     }
 }

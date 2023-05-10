@@ -38,7 +38,6 @@
             modificarViajeToolStripMenuItem1 = new ToolStripMenuItem();
             cancelarViajeToolStripMenuItem2 = new ToolStripMenuItem();
             listarViajeToolStripMenuItem = new ToolStripMenuItem();
-            misDatosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ms_MenuCliente.SuspendLayout();
             SuspendLayout();
@@ -83,7 +82,7 @@
             // 
             ms_MenuCliente.BackColor = Color.FromArgb(255, 192, 128);
             ms_MenuCliente.Dock = DockStyle.Left;
-            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, modificarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2, listarViajeToolStripMenuItem, misDatosToolStripMenuItem });
+            ms_MenuCliente.Items.AddRange(new ToolStripItem[] { misViajeToolStripMenuItem, reservarViajeToolStripMenuItem1, modificarViajeToolStripMenuItem1, cancelarViajeToolStripMenuItem2, listarViajeToolStripMenuItem });
             ms_MenuCliente.Location = new Point(0, 0);
             ms_MenuCliente.Name = "ms_MenuCliente";
             ms_MenuCliente.Size = new Size(177, 469);
@@ -97,6 +96,7 @@
             misViajeToolStripMenuItem.Name = "misViajeToolStripMenuItem";
             misViajeToolStripMenuItem.Size = new Size(164, 34);
             misViajeToolStripMenuItem.Text = "Mi perfil";
+            misViajeToolStripMenuItem.Click += misViajeToolStripMenuItem_Click;
             // 
             // reservarViajeToolStripMenuItem1
             // 
@@ -134,13 +134,6 @@
             listarViajeToolStripMenuItem.Text = "Listar viajes";
             listarViajeToolStripMenuItem.Click += listarViajeToolStripMenuItem_Click;
             // 
-            // misDatosToolStripMenuItem
-            // 
-            misDatosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
-            misDatosToolStripMenuItem.Size = new Size(164, 34);
-            misDatosToolStripMenuItem.Text = "Mis datos";
-            // 
             // FrmMenuCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -174,6 +167,5 @@
         private ToolStripMenuItem modificarViajeToolStripMenuItem1;
         private ToolStripMenuItem cancelarViajeToolStripMenuItem2;
         private ToolStripMenuItem listarViajeToolStripMenuItem;
-        private ToolStripMenuItem misDatosToolStripMenuItem;
     }
 }

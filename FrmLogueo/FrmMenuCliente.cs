@@ -72,5 +72,13 @@ namespace WF_TransporteRodriguez
             frmCancelarViajeCliente.Dock = DockStyle.Fill;
             frmCancelarViajeCliente.Show();
         }
+        private void misViajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDatosCliente frmDatos = new FrmDatosCliente();
+            frmDatos.Cliente = clienteInstanciado;
+            frmDatos.MdiParent = this;
+            frmDatos.Dock = DockStyle.Fill;
+            frmDatos.Show();
+        }
     }
 }

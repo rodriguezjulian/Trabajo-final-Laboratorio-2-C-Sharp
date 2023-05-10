@@ -73,5 +73,7 @@ namespace WF_TransporteRodriguez
         {
             pic_CancelarModificacion.BackColor = Color.Transparent;
         }
+
+   
     }
 }

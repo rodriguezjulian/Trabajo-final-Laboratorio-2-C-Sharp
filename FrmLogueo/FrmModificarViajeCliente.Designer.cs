@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModificarViajeCliente));
             groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
+            pic_Id = new PictureBox();
             label3 = new Label();
             txt_IdDeViajeAModificar = new TextBox();
             txt_Kg = new TextBox();
@@ -48,6 +50,8 @@
             pictureBox2 = new PictureBox();
             label5 = new Label();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Id).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).BeginInit();
@@ -59,6 +63,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(pic_Id);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txt_IdDeViajeAModificar);
             groupBox1.Controls.Add(txt_Kg);
@@ -78,11 +84,31 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.carga;
+            pictureBox1.Location = new Point(3, 133);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(54, 47);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 90;
+            pictureBox1.TabStop = false;
+            // 
+            // pic_Id
+            // 
+            pic_Id.Image = Properties.Resources.ID;
+            pic_Id.Location = new Point(0, 93);
+            pic_Id.Name = "pic_Id";
+            pic_Id.Size = new Size(57, 36);
+            pic_Id.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_Id.TabIndex = 89;
+            pic_Id.TabStop = false;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(12, 132);
+            label3.Location = new Point(60, 135);
             label3.Name = "label3";
             label3.Size = new Size(134, 17);
             label3.TabIndex = 85;
@@ -92,7 +118,7 @@
             // 
             txt_IdDeViajeAModificar.BackColor = Color.FromArgb(255, 255, 192);
             txt_IdDeViajeAModificar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_IdDeViajeAModificar.Location = new Point(12, 99);
+            txt_IdDeViajeAModificar.Location = new Point(63, 99);
             txt_IdDeViajeAModificar.Name = "txt_IdDeViajeAModificar";
             txt_IdDeViajeAModificar.Size = new Size(165, 25);
             txt_IdDeViajeAModificar.TabIndex = 84;
@@ -102,7 +128,7 @@
             // 
             txt_Kg.BackColor = Color.FromArgb(255, 255, 192);
             txt_Kg.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Kg.Location = new Point(12, 152);
+            txt_Kg.Location = new Point(63, 152);
             txt_Kg.Name = "txt_Kg";
             txt_Kg.Size = new Size(165, 25);
             txt_Kg.TabIndex = 83;
@@ -112,7 +138,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(210, 81);
+            label2.Location = new Point(251, 81);
             label2.Name = "label2";
             label2.Size = new Size(96, 17);
             label2.TabIndex = 82;
@@ -120,7 +146,7 @@
             // 
             // dtp_FechaDeViaje
             // 
-            dtp_FechaDeViaje.Location = new Point(210, 101);
+            dtp_FechaDeViaje.Location = new Point(251, 101);
             dtp_FechaDeViaje.MinDate = new DateTime(2023, 5, 9, 0, 0, 0, 0);
             dtp_FechaDeViaje.Name = "dtp_FechaDeViaje";
             dtp_FechaDeViaje.Size = new Size(200, 23);
@@ -153,7 +179,7 @@
             // 
             lbl_RerservarViaje.AutoSize = true;
             lbl_RerservarViaje.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_RerservarViaje.Location = new Point(6, 81);
+            lbl_RerservarViaje.Location = new Point(63, 81);
             lbl_RerservarViaje.Name = "lbl_RerservarViaje";
             lbl_RerservarViaje.Size = new Size(171, 17);
             lbl_RerservarViaje.TabIndex = 78;
@@ -178,6 +204,7 @@
             pic_CancelarModificacion.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_CancelarModificacion.TabIndex = 75;
             pic_CancelarModificacion.TabStop = false;
+         
             pic_CancelarModificacion.MouseEnter += pic_CancelarModificacion_MouseEnter;
             pic_CancelarModificacion.MouseLeave += pic_CancelarModificacion_MouseLeave;
             // 
@@ -263,6 +290,8 @@
             Load += FrmModificarViajeCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Id).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).EndInit();
@@ -294,5 +323,7 @@
         private TextBox txt_IdDeViajeAModificar;
         private TextBox txt_Kg;
         protected Label lbl_NombreCliente;
+        private PictureBox pictureBox1;
+        private PictureBox pic_Id;
     }
 }
