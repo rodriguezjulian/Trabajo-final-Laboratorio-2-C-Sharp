@@ -75,7 +75,6 @@
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(137, 34);
             clienteToolStripMenuItem.Text = "Clientes";
-            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // crearToolStripMenuItem
             // 
@@ -89,6 +88,7 @@
             moToolStripMenuItem.Name = "moToolStripMenuItem";
             moToolStripMenuItem.Size = new Size(181, 34);
             moToolStripMenuItem.Text = "Modificar";
+            moToolStripMenuItem.Click += moToolStripMenuItem_Click;
             // 
             // bajarToolStripMenuItem
             // 
@@ -216,7 +216,6 @@
             // tmr_Menu
             // 
             tmr_Menu.Enabled = true;
-        
             // 
             // Frm_Empleado_Menu
             // 
@@ -263,7 +262,7 @@
         private Label lbl_NombreUsuario;
         private PictureBox pictureBox2;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
-        private Panel pnl_Padre;
         private System.Windows.Forms.Timer tmr_Menu;
+        static public Panel pnl_Padre;
     }
 }

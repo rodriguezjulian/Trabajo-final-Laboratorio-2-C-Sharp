@@ -45,6 +45,8 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(110, 39);
             dataGridView2.Name = "dataGridView2";
@@ -123,7 +125,7 @@
             lbl_TransporteRodriguez.TabIndex = 31;
             lbl_TransporteRodriguez.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // FrmListarVehiculos
+            // Frm_Empleados_Lista_Vehiculos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -132,7 +134,7 @@
             Controls.Add(pnl_Izquierdo);
             Controls.Add(dataGridView2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmListarVehiculos";
+            Name = "Frm_Empleados_Lista_Vehiculos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListarVehiculos";
             Load += FrmListarVehiculos_Load;

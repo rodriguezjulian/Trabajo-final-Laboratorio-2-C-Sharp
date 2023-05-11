@@ -19,7 +19,8 @@ namespace WF_TransporteRodriguez
 
         private void tmr_HoraMenu_Tick(object sender, EventArgs e)
         {
-            lbl_Hora.Text = DateTime.Now.ToLongTimeString();
+            lbl_Hora.Text = DateTime.Now.ToString("HH:MM:ss");
+            lbl_Fecha.Text = DateTime.Now.ToString("dddd MMM yyy");
         }
     }
 }

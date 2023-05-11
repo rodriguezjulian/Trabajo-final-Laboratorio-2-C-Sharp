@@ -17,7 +17,7 @@ namespace WF_TransporteRodriguez
     {
         //List<Cliente> listaEmpleados;
         Usuario usuarioInstanciado;
-
+        static public Frm_Hora hora = new Frm_Hora();
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
         private static Frm_Login login;
         public static Frm_Login Login { get => login; set => login = value; }
@@ -28,21 +28,16 @@ namespace WF_TransporteRodriguez
         }
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //INSTACIO EL FORMULARIO SIGUIENTE
-            Frm_Empleado_Alta_Cliente frmAltaCliente = new Frm_Empleado_Alta_Cliente();
-            frmAltaCliente.EmpleadoInstanciado = usuarioInstanciado;
-            //DialogResult confirmacion
-            if (frmAltaCliente.ShowDialog() == DialogResult.OK) //cuando mostramos con ShowDialog damos foco a ese formulario
-            {
-
-            }
+            Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
+            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
         }
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
-            Frm_Hora hora = new Frm_Hora();
+
             actualizarPanel(pnl_Padre, hora);
         }
+
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_Empleados_Lista_Vehiculos frmListarVehiculos = new Frm_Empleados_Lista_Vehiculos();
@@ -55,19 +50,18 @@ namespace WF_TransporteRodriguez
             this.Hide(); // Oculta el formulario actual
             login.Show();
         }
-
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
-            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
-        }
-        public void actualizarPanel(Panel pln_Padre,Form hijo)
+        public static void actualizarPanel(Panel pln_Padre, Form hijo)
         {
             pnl_Padre.Controls.Clear();
             hijo.TopLevel = false;
             pnl_Padre.Controls.Add(hijo);
             hijo.Dock = DockStyle.Fill;
             hijo.Show();
+        }
+
+        private void moToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

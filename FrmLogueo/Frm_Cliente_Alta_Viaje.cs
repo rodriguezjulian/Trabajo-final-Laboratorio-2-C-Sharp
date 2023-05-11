@@ -51,7 +51,7 @@ namespace WF_TransporteRodriguez
                 MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
             }
         }
-
+        #region EVENTOS PARA EL MOUSE
         private void pic_ReservarViajar_MouseLeave(object sender, EventArgs e)
         {
             pic_ReservarViajar.BackColor = Color.Transparent;
@@ -71,7 +71,7 @@ namespace WF_TransporteRodriguez
         {
             pic_Cancelar.BackColor = Color.Transparent;
         }
-
+        #endregion 
         private void pic_Cancelar_Click(object sender, EventArgs e)
         {
             this.Hide(); 

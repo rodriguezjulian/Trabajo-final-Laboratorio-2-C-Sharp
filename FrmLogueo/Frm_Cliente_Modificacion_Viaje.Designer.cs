@@ -83,7 +83,6 @@
             groupBox1.Size = new Size(720, 469);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            
             // 
             // pictureBox1
             // 
@@ -211,6 +210,8 @@
             // 
             // dtg_ListarViajes
             // 
+            dtg_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListarViajes.BackgroundColor = Color.White;
             dtg_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarViajes.Location = new Point(0, 183);
             dtg_ListarViajes.Name = "dtg_ListarViajes";

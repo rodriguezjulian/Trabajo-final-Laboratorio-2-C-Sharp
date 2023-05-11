@@ -47,6 +47,7 @@ namespace WF_TransporteRodriguez
                 MessageBox.Show("Verifique datos ingresados. \n");
             }
         }
+        #region EVENTOS PARA EL MOUSE
         private void pic_EliminarViaje_MouseLeave(object sender, EventArgs e)
         {
             pic_EliminarViaje.BackColor = Color.Transparent;
@@ -56,13 +57,6 @@ namespace WF_TransporteRodriguez
         {
             pic_EliminarViaje.BackColor = Color.Black;
         }
-
-        private void pic_Cancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.Hide();
-        }
-
         private void pic_Cancelar_MouseLeave(object sender, EventArgs e)
         {
             pic_Cancelar.BackColor = Color.Transparent;
@@ -72,5 +66,12 @@ namespace WF_TransporteRodriguez
         {
             pic_Cancelar.BackColor = Color.Orange;
         }
+        #endregion
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+        }
+
     }
 }

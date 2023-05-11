@@ -30,25 +30,27 @@
         {
             dataGridView1 = new DataGridView();
             grp_ListarViajesCliente = new GroupBox();
+            label7 = new Label();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label6 = new Label();
             panel1 = new Panel();
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            pictureBox1 = new PictureBox();
-            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(3, 114);
             dataGridView1.Name = "dataGridView1";
@@ -69,6 +71,27 @@
             grp_ListarViajesCliente.Size = new Size(738, 469);
             grp_ListarViajesCliente.TabIndex = 1;
             grp_ListarViajesCliente.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(603, 39);
+            label7.Name = "label7";
+            label7.Size = new Size(59, 21);
+            label7.TabIndex = 106;
+            label7.Text = "Volver";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.volver;
+            pictureBox1.Location = new Point(603, 59);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(71, 49);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 105;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -131,27 +154,6 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.volver;
-            pictureBox1.Location = new Point(603, 59);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(71, 49);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 105;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(603, 39);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 21);
-            label7.TabIndex = 106;
-            label7.Text = "Volver";
-            // 
             // Frm_Cliente_Lista_Viajes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -165,12 +167,12 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             grp_ListarViajesCliente.ResumeLayout(false);
             grp_ListarViajesCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

@@ -53,7 +53,7 @@ namespace WF_TransporteRodriguez
                 MessageBox.Show("Verifique datos ingresados. \n");
             }
         }
-
+        #region EVENTOS PARA EL MOUSE
         private void pic_EditarViaje_MouseEnter(object sender, EventArgs e)
         {
             pic_EditarViaje.BackColor = Color.Orange;
@@ -73,7 +73,7 @@ namespace WF_TransporteRodriguez
         {
             pic_CancelarModificacion.BackColor = Color.Transparent;
         }
-
+        #endregion
         private void pic_CancelarModificacion_Click(object sender, EventArgs e)
         {
             this.Hide();

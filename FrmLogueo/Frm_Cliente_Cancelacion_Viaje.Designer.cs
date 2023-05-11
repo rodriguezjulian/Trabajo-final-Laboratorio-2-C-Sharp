@@ -126,6 +126,8 @@
             // 
             // dtg_ListarViajes
             // 
+            dtg_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListarViajes.BackgroundColor = Color.White;
             dtg_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarViajes.Location = new Point(0, 155);
             dtg_ListarViajes.Name = "dtg_ListarViajes";
