@@ -14,8 +14,8 @@ namespace TransporteRodriguez
 
         public Cliente() { }
 
-        public Cliente(string nombre, string contraseña, string mail,int estado, short idCliente, string? direccionBSAS, string? rubro) 
-            : base(nombre, contraseña, mail, estado)
+        public Cliente(string nombre, string contraseña, string mail,short idCliente, string? direccionBSAS, string? rubro) 
+            : base(nombre, contraseña, mail)
         {
             IdCliente = idCliente;
             DireccionBSAS = direccionBSAS;
