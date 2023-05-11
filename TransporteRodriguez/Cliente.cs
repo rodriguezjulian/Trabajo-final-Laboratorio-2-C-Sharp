@@ -39,6 +39,5 @@ namespace TransporteRodriguez
         {
             return !(uno == dos);
         }
-        // listaClientes.Add(new Cliente("pedro", "ashe", pedro@yahoo.com,1,Libertador 45,Textil));
     }
 }

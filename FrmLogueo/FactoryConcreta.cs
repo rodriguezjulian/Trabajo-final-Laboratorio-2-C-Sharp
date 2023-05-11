@@ -16,7 +16,7 @@ namespace WF_TransporteRodriguez
             usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
-                 FrmMenuEmpleado menuEmpleado = new FrmMenuEmpleado();//INSTANCIO AL EMPLEADO
+                 Frm_Empleado_Menu menuEmpleado = new Frm_Empleado_Menu();//INSTANCIO AL EMPLEADO
                 menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
                 formulario =menuEmpleado;
             }
@@ -24,7 +24,7 @@ namespace WF_TransporteRodriguez
             {
                 if (usuarioAuxiliar != null && usuarioAuxiliar is Cliente)
                 {
-                     FrmMenuCliente menuCliente = new FrmMenuCliente();//INSTANCIO AL CLIENTE
+                     Frm_Cliente_Menu menuCliente = new Frm_Cliente_Menu();//INSTANCIO AL CLIENTE
                     menuCliente.UsuarioInstanciado = usuarioAuxiliar;
                     formulario= menuCliente;
                 }
