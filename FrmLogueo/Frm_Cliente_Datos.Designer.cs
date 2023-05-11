@@ -332,7 +332,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 104;
             pictureBox1.TabStop = false;
-           
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label7
             // 
@@ -344,7 +344,7 @@
             label7.TabIndex = 105;
             label7.Text = "Volver";
             // 
-            // FrmDatosCliente
+            // Frm_Cliente_Datos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -357,7 +357,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmDatosCliente";
+            Name = "Frm_Cliente_Datos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmDatosCliente";
             Load += FrmDatosCliente_Load;

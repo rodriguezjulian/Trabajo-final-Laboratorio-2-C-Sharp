@@ -16,5 +16,11 @@ namespace WF_TransporteRodriguez
         {
             InitializeComponent();
         }
+
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }

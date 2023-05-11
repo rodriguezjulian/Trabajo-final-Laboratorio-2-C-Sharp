@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransporteRodriguez;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WF_TransporteRodriguez
 {
@@ -16,11 +17,14 @@ namespace WF_TransporteRodriguez
     {
         public Usuario usuarioInstanciado;
         Cliente clienteInstanciado;
+        static Frm_Login login;
         public Frm_Cliente_Menu()
         {
             InitializeComponent();
         }
+        
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
+        public static Frm_Login Login { get => login; set => login = value; }
 
         private void btn_CerrarSesion_Click(object sender, EventArgs e)
         {
@@ -46,13 +50,11 @@ namespace WF_TransporteRodriguez
             frmListarViajesCliente.MdiParent = this;
             frmListarViajesCliente.Dock = DockStyle.Fill;
             frmListarViajesCliente.Show();
-
         }
 
         private void FrmMenuCliente_Load(object sender, EventArgs e)
         {
             clienteInstanciado = Sistema.BuscarCliente(usuarioInstanciado);
-
         }
 
         private void modificarViajeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -79,6 +81,13 @@ namespace WF_TransporteRodriguez
             frmDatos.MdiParent = this;
             frmDatos.Dock = DockStyle.Fill;
             frmDatos.Show();
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //Frm_Login anterior = new Frm_Login(); // Crea una instancia del formulario anterior
+            login.Show();
         }
     }
 }

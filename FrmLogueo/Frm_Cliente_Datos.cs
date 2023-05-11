@@ -29,5 +29,11 @@ namespace WF_TransporteRodriguez
             txt_Mail.Text = cliente.Mail;
             txt_Rubro.Text = cliente.Rubro;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }

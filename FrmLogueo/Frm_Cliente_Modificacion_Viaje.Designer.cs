@@ -83,6 +83,7 @@
             groupBox1.Size = new Size(720, 469);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            
             // 
             // pictureBox1
             // 
@@ -204,6 +205,7 @@
             pic_CancelarModificacion.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_CancelarModificacion.TabIndex = 75;
             pic_CancelarModificacion.TabStop = false;
+            pic_CancelarModificacion.Click += pic_CancelarModificacion_Click;
             pic_CancelarModificacion.MouseEnter += pic_CancelarModificacion_MouseEnter;
             pic_CancelarModificacion.MouseLeave += pic_CancelarModificacion_MouseLeave;
             // 
@@ -277,14 +279,14 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // FrmModificarViajeCliente
+            // Frm_Cliente_Modificacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(719, 469);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmModificarViajeCliente";
+            Name = "Frm_Cliente_Modificacion_Viaje";
             Text = "FrmModificarViaje";
             Load += FrmModificarViajeCliente_Load;
             groupBox1.ResumeLayout(false);

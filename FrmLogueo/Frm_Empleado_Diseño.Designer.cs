@@ -28,127 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel5 = new Panel();
-            pictureBox8 = new PictureBox();
-            label7 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Diseño));
             panel1 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            label5 = new Label();
-            panel2 = new Panel();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            pic_ReservarViajar = new PictureBox();
+            pic_Cancelar = new PictureBox();
+            lbl_Cancelar = new Label();
+            lbl_Guardar = new Label();
+            lbl_Acciones = new Label();
+            pnl_PanelSup = new Panel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             SuspendLayout();
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(255, 255, 192);
-            panel5.Controls.Add(pictureBox8);
-            panel5.Controls.Add(label7);
-            panel5.Location = new Point(89, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(632, 33);
-            panel5.TabIndex = 41;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = Properties.Resources.persona;
-            pictureBox8.Location = new Point(406, 0);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(44, 35);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 58;
-            pictureBox8.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ImageAlign = ContentAlignment.TopLeft;
-            label7.Location = new Point(7, 1);
-            label7.Name = "label7";
-            label7.Size = new Size(314, 32);
-            label7.TabIndex = 30;
-            label7.Text = "TRANSPORTE RODRIGUEZ";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 192, 128);
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pic_ReservarViajar);
+            panel1.Controls.Add(pic_Cancelar);
+            panel1.Controls.Add(lbl_Cancelar);
+            panel1.Controls.Add(lbl_Guardar);
+            panel1.Controls.Add(lbl_Acciones);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(89, 468);
             panel1.TabIndex = 42;
             // 
-            // label9
+            // pic_ReservarViajar
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(16, 304);
-            label9.Name = "label9";
-            label9.Size = new Size(53, 15);
-            label9.TabIndex = 47;
-            label9.Text = "Cancelar";
+            pic_ReservarViajar.Image = Properties.Resources.guardar;
+            pic_ReservarViajar.Location = new Point(7, 135);
+            pic_ReservarViajar.Name = "pic_ReservarViajar";
+            pic_ReservarViajar.Size = new Size(75, 75);
+            pic_ReservarViajar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_ReservarViajar.TabIndex = 72;
+            pic_ReservarViajar.TabStop = false;
             // 
-            // label8
+            // pic_Cancelar
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 204);
-            label8.Name = "label8";
-            label8.Size = new Size(49, 15);
-            label8.TabIndex = 45;
-            label8.Text = "Guardar";
+            pic_Cancelar.Image = (Image)resources.GetObject("pic_Cancelar.Image");
+            pic_Cancelar.Location = new Point(9, 256);
+            pic_Cancelar.Name = "pic_Cancelar";
+            pic_Cancelar.Size = new Size(70, 65);
+            pic_Cancelar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Cancelar.TabIndex = 75;
+            pic_Cancelar.TabStop = false;
             // 
-            // label5
+            // lbl_Cancelar
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(0, 36);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 21);
-            label5.TabIndex = 43;
-            label5.Text = "ACCIONES";
+            lbl_Cancelar.AutoSize = true;
+            lbl_Cancelar.Location = new Point(16, 324);
+            lbl_Cancelar.Name = "lbl_Cancelar";
+            lbl_Cancelar.Size = new Size(53, 15);
+            lbl_Cancelar.TabIndex = 47;
+            lbl_Cancelar.Text = "Cancelar";
             // 
-            // panel2
+            // lbl_Guardar
             // 
-            panel2.BackColor = Color.FromArgb(255, 128, 0);
-            panel2.Location = new Point(89, 33);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(315, 40);
-            panel2.TabIndex = 69;
+            lbl_Guardar.AutoSize = true;
+            lbl_Guardar.Location = new Point(16, 213);
+            lbl_Guardar.Name = "lbl_Guardar";
+            lbl_Guardar.Size = new Size(49, 15);
+            lbl_Guardar.TabIndex = 45;
+            lbl_Guardar.Text = "Guardar";
+            // 
+            // lbl_Acciones
+            // 
+            lbl_Acciones.AutoSize = true;
+            lbl_Acciones.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Acciones.Location = new Point(-2, 90);
+            lbl_Acciones.Name = "lbl_Acciones";
+            lbl_Acciones.Size = new Size(89, 21);
+            lbl_Acciones.TabIndex = 43;
+            lbl_Acciones.Text = "ACCIONES";
+            // 
+            // pnl_PanelSup
+            // 
+            pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
+            pnl_PanelSup.Location = new Point(89, 0);
+            pnl_PanelSup.Name = "pnl_PanelSup";
+            pnl_PanelSup.Size = new Size(315, 40);
+            pnl_PanelSup.TabIndex = 69;
             // 
             // Frm_Empleado_Diseño
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
-            Controls.Add(panel2);
+            Controls.Add(pnl_PanelSup);
             Controls.Add(panel1);
-            Controls.Add(panel5);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Diseño";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "prueba";
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel5;
-        private PictureBox pictureBox8;
-        private Label label7;
         private Panel panel1;
-        private Label label9;
-        private Label label8;
-        private Label label5;
-        private Panel panel2;
+        private Label lbl_Cancelar;
+        private Label lbl_Guardar;
+        private Label lbl_Acciones;
+        private Panel pnl_PanelSup;
+        protected PictureBox pic_Cancelar;
+        protected PictureBox pic_ReservarViajar;
     }
 }

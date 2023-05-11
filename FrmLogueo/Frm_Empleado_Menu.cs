@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,14 +19,13 @@ namespace WF_TransporteRodriguez
         Usuario usuarioInstanciado;
 
         public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
+        private static Frm_Login login;
+        public static Frm_Login Login { get => login; set => login = value; }
 
         public Frm_Empleado_Menu()
         {
             InitializeComponent();
-
-            //  listaEmpleados = new List<Cliente>();
         }
-
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //INSTACIO EL FORMULARIO SIGUIENTE
@@ -36,29 +36,45 @@ namespace WF_TransporteRodriguez
             {
 
             }
-
-
         }
-
-        private void btn_CerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // Oculta el formulario actual
-            Form anterior = new Frm_Login(); // Crea una instancia del formulario anterior
-            anterior.ShowDialog(); // Muestra el formulario anterior como diálogo
-            //this.Close(); // Cierra el formulario actual
-        }
-
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
         }
-
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_Empleados_Lista_Vehiculos frmListarVehiculos = new Frm_Empleados_Lista_Vehiculos();
             frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
             this.Close();
-            frmListarVehiculos.ShowDialog();
+            frmListarVehiculos.Show();
+        }
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Oculta el formulario actual
+            login.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
+            frm_Empleado_Alta_Cliente.TopLevel = false;
+            pnl_Padre.Controls.Add(frm_Empleado_Alta_Cliente);
+            frm_Empleado_Alta_Cliente.Dock = DockStyle.Fill;
+            //frm_Empleado_Alta_Cliente.EmpleadoInstanciado = usuarioInstanciado;
+            frm_Empleado_Alta_Cliente.Show();
+        }
+
+        private void tmr_Menu_Tick(object sender, EventArgs e)
+        {
+            lbl_Hora.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
+/*
+             frm_Empleado_Alta_Cliente.TopLevel = false;
+            frm_Empleado_Alta_Cliente.Dock = DockStyle.Fill;
+            this. pnl_Padre.Controls.Add(fh);
+            this. pnl_Padre.Tag = fh;
+            frm_Empleado_Alta_Cliente();
+ 
+ */

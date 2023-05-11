@@ -74,6 +74,12 @@ namespace WF_TransporteRodriguez
             pic_CancelarModificacion.BackColor = Color.Transparent;
         }
 
+        private void pic_CancelarModificacion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
 
     }
 }

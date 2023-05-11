@@ -36,26 +36,31 @@
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            pictureBox1 = new PictureBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 96);
+            dataGridView1.Location = new Point(3, 114);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(717, 361);
+            dataGridView1.Size = new Size(717, 343);
             dataGridView1.TabIndex = 0;
             // 
             // grp_ListarViajesCliente
             // 
             grp_ListarViajesCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grp_ListarViajesCliente.Controls.Add(label7);
+            grp_ListarViajesCliente.Controls.Add(pictureBox1);
             grp_ListarViajesCliente.Controls.Add(panel2);
             grp_ListarViajesCliente.Controls.Add(panel1);
             grp_ListarViajesCliente.Controls.Add(dataGridView1);
@@ -126,23 +131,46 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // FrmListarViajesCliente
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.volver;
+            pictureBox1.Location = new Point(603, 59);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(71, 49);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 105;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(603, 39);
+            label7.Name = "label7";
+            label7.Size = new Size(59, 21);
+            label7.TabIndex = 106;
+            label7.Text = "Volver";
+            // 
+            // Frm_Cliente_Lista_Viajes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(722, 469);
             Controls.Add(grp_ListarViajesCliente);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmListarViajesCliente";
+            Name = "Frm_Cliente_Lista_Viajes";
             Text = "FrmListarViajesCliente";
             Load += FrmListarViajesCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             grp_ListarViajesCliente.ResumeLayout(false);
+            grp_ListarViajesCliente.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -156,5 +184,7 @@
         protected Label label5;
         private Panel panel2;
         protected Label label6;
+        private PictureBox pictureBox1;
+        protected Label label7;
     }
 }

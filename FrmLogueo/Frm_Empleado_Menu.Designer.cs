@@ -42,28 +42,29 @@
             listarToolStripMenuItem1 = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             estadisticasToolStripMenuItem = new ToolStripMenuItem();
+            cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            pictureBox1 = new PictureBox();
-            button1 = new Button();
-            btn_CerrarSesion = new Button();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             lbl_NombreUsuario = new Label();
             label1 = new Label();
+            pnl_Padre = new Panel();
+            lbl_Hora = new Label();
+            tmr_Menu = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            pnl_Padre.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 192, 128);
             menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, estadisticasToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, estadisticasToolStripMenuItem, cerrarSesionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(150, 302);
+            menuStrip1.Size = new Size(157, 505);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -76,6 +77,7 @@
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(137, 34);
             clienteToolStripMenuItem.Text = "Clientes";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // crearToolStripMenuItem
             // 
@@ -108,7 +110,7 @@
             vehiculosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             vehiculosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            vehiculosToolStripMenuItem.Size = new Size(137, 34);
+            vehiculosToolStripMenuItem.Size = new Size(144, 34);
             vehiculosToolStripMenuItem.Text = "Vehiculos";
             // 
             // cargarVehiculoToolStripMenuItem
@@ -141,53 +143,29 @@
             turnosOcupadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             turnosOcupadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             turnosOcupadosToolStripMenuItem.Name = "turnosOcupadosToolStripMenuItem";
-            turnosOcupadosToolStripMenuItem.Size = new Size(137, 34);
+            turnosOcupadosToolStripMenuItem.Size = new Size(144, 34);
             turnosOcupadosToolStripMenuItem.Text = "Listar viajes ";
             // 
             // estadisticasToolStripMenuItem
             // 
             estadisticasToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            estadisticasToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
+            estadisticasToolStripMenuItem.Margin = new Padding(0, 0, 0, 120);
             estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            estadisticasToolStripMenuItem.Size = new Size(137, 34);
+            estadisticasToolStripMenuItem.Size = new Size(144, 34);
             estadisticasToolStripMenuItem.Text = "Estadisticas";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            cerrarSesionToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            cerrarSesionToolStripMenuItem.Size = new Size(144, 34);
+            cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
+            cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.animacionCamion;
-            pictureBox1.Location = new Point(153, 1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(489, 301);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(683, 278);
-            button1.Name = "button1";
-            button1.Size = new Size(105, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Cerrar sesion";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // btn_CerrarSesion
-            // 
-            btn_CerrarSesion.BackColor = Color.FromArgb(255, 128, 128);
-            btn_CerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_CerrarSesion.ForeColor = Color.Black;
-            btn_CerrarSesion.Location = new Point(508, 261);
-            btn_CerrarSesion.Name = "btn_CerrarSesion";
-            btn_CerrarSesion.Size = new Size(118, 29);
-            btn_CerrarSesion.TabIndex = 6;
-            btn_CerrarSesion.Text = "Cerrar sesion";
-            btn_CerrarSesion.UseVisualStyleBackColor = false;
-            btn_CerrarSesion.Click += btn_CerrarSesion_Click;
             // 
             // panel1
             // 
@@ -195,15 +173,15 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(lbl_NombreUsuario);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(153, 1);
+            panel1.Location = new Point(158, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(489, 33);
+            panel1.Size = new Size(720, 33);
             panel1.TabIndex = 30;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.persona;
-            pictureBox2.Location = new Point(281, 4);
+            pictureBox2.Location = new Point(448, 6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 27);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -214,7 +192,7 @@
             // 
             lbl_NombreUsuario.AutoSize = true;
             lbl_NombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_NombreUsuario.Location = new Point(321, 9);
+            lbl_NombreUsuario.Location = new Point(500, 11);
             lbl_NombreUsuario.Name = "lbl_NombreUsuario";
             lbl_NombreUsuario.Size = new Size(64, 20);
             lbl_NombreUsuario.TabIndex = 32;
@@ -230,29 +208,52 @@
             label1.TabIndex = 29;
             label1.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // FrmMenuEmpleado
+            // pnl_Padre
+            // 
+            pnl_Padre.Controls.Add(lbl_Hora);
+            pnl_Padre.Location = new Point(158, 35);
+            pnl_Padre.Name = "pnl_Padre";
+            pnl_Padre.Size = new Size(720, 468);
+            pnl_Padre.TabIndex = 32;
+            // 
+            // lbl_Hora
+            // 
+            lbl_Hora.AutoSize = true;
+            lbl_Hora.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Hora.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_Hora.Location = new Point(237, 193);
+            lbl_Hora.Name = "lbl_Hora";
+            lbl_Hora.Size = new Size(202, 65);
+            lbl_Hora.TabIndex = 0;
+            lbl_Hora.Text = "{HORA}";
+            // 
+            // tmr_Menu
+            // 
+            tmr_Menu.Enabled = true;
+            tmr_Menu.Tick += tmr_Menu_Tick;
+            // 
+            // Frm_Empleado_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(638, 302);
+            ClientSize = new Size(879, 505);
+            Controls.Add(pnl_Padre);
             Controls.Add(panel1);
-            Controls.Add(btn_CerrarSesion);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Name = "FrmMenuEmpleado";
+            Name = "Frm_Empleado_Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += FrmMenuEmpleado_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            pnl_Padre.ResumeLayout(false);
+            pnl_Padre.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,12 +274,13 @@
         private ToolStripMenuItem turnosOcupadosToolStripMenuItem;
         private ToolStripMenuItem estadisticasToolStripMenuItem;
         private ContextMenuStrip contextMenuStrip1;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Button btn_CerrarSesion;
         private Panel panel1;
         private Label label1;
         private Label lbl_NombreUsuario;
         private PictureBox pictureBox2;
+        private ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private Panel pnl_Padre;
+        private Label lbl_Hora;
+        private System.Windows.Forms.Timer tmr_Menu;
     }
 }

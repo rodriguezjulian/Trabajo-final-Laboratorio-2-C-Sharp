@@ -30,18 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Alta_Cliente));
             label1 = new Label();
-            panel5 = new Panel();
-            lbl_nombreUsuario = new Label();
-            pictureBox8 = new PictureBox();
-            label7 = new Label();
-            panel1 = new Panel();
-            label9 = new Label();
-            panel2 = new Panel();
-            label11 = new Label();
-            pictureBox2 = new PictureBox();
-            label8 = new Label();
-            pictureBox1 = new PictureBox();
-            label5 = new Label();
             txt_AltaNombre = new TextBox();
             pictureBox3 = new PictureBox();
             txt_AltaContraseña = new TextBox();
@@ -60,12 +48,14 @@
             label4 = new Label();
             grp_DatosNuevoCliente = new GroupBox();
             pictureBox9 = new PictureBox();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label5 = new Label();
+            pictureBox1 = new PictureBox();
+            label8 = new Label();
+            pictureBox2 = new PictureBox();
+            label9 = new Label();
+            panel1 = new Panel();
+            label11 = new Label();
+            pnl_AltaCliente = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -73,6 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             grp_DatosNuevoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
+            pnl_AltaCliente.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -85,137 +79,13 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(255, 192, 128);
-            panel5.Controls.Add(lbl_nombreUsuario);
-            panel5.Controls.Add(pictureBox8);
-            panel5.Controls.Add(label7);
-            panel5.Location = new Point(89, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(634, 33);
-            panel5.TabIndex = 40;
-            // 
-            // lbl_nombreUsuario
-            // 
-            lbl_nombreUsuario.AutoSize = true;
-            lbl_nombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_nombreUsuario.Location = new Point(385, 10);
-            lbl_nombreUsuario.Name = "lbl_nombreUsuario";
-            lbl_nombreUsuario.Size = new Size(64, 20);
-            lbl_nombreUsuario.TabIndex = 59;
-            lbl_nombreUsuario.Text = "Nombre";
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = Properties.Resources.persona;
-            pictureBox8.Location = new Point(335, 0);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(44, 35);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 58;
-            pictureBox8.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(0, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(314, 32);
-            label7.TabIndex = 30;
-            label7.Text = "TRANSPORTE RODRIGUEZ";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(255, 192, 128);
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label5);
-            panel1.Location = new Point(2, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(89, 468);
-            panel1.TabIndex = 41;
-            panel1.Paint += panel1_Paint;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(10, 315);
-            label9.Name = "label9";
-            label9.Size = new Size(53, 15);
-            label9.TabIndex = 47;
-            label9.Text = "Cancelar";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(255, 128, 0);
-            panel2.Controls.Add(label11);
-            panel2.Location = new Point(89, 33);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 33);
-            panel2.TabIndex = 58;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(8, 8);
-            label11.Name = "label11";
-            label11.Size = new Size(136, 25);
-            label11.TabIndex = 58;
-            label11.Text = "ALTA CLIENTE";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(8, 241);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 60);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 46;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 203);
-            label8.Name = "label8";
-            label8.Size = new Size(49, 15);
-            label8.TabIndex = 45;
-            label8.Text = "Guardar";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.guardar;
-            pictureBox1.Location = new Point(10, 140);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(66, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 44;
-            pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(3, 96);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 21);
-            label5.TabIndex = 43;
-            label5.Text = "ACCIONES";
-            // 
             // txt_AltaNombre
             // 
             txt_AltaNombre.BackColor = Color.FromArgb(255, 255, 192);
             txt_AltaNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaNombre.Location = new Point(64, 68);
             txt_AltaNombre.Name = "txt_AltaNombre";
-            txt_AltaNombre.Size = new Size(255, 25);
+            txt_AltaNombre.Size = new Size(247, 25);
             txt_AltaNombre.TabIndex = 42;
             txt_AltaNombre.TextAlign = HorizontalAlignment.Center;
             // 
@@ -235,7 +105,7 @@
             txt_AltaContraseña.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaContraseña.Location = new Point(62, 127);
             txt_AltaContraseña.Name = "txt_AltaContraseña";
-            txt_AltaContraseña.Size = new Size(255, 25);
+            txt_AltaContraseña.Size = new Size(249, 25);
             txt_AltaContraseña.TabIndex = 44;
             txt_AltaContraseña.TextAlign = HorizontalAlignment.Center;
             // 
@@ -275,7 +145,7 @@
             txt_AltaMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaMail.Location = new Point(64, 175);
             txt_AltaMail.Name = "txt_AltaMail";
-            txt_AltaMail.Size = new Size(255, 25);
+            txt_AltaMail.Size = new Size(247, 25);
             txt_AltaMail.TabIndex = 48;
             txt_AltaMail.TextAlign = HorizontalAlignment.Center;
             // 
@@ -305,7 +175,7 @@
             txt_AltaDireccion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaDireccion.Location = new Point(62, 229);
             txt_AltaDireccion.Name = "txt_AltaDireccion";
-            txt_AltaDireccion.Size = new Size(255, 25);
+            txt_AltaDireccion.Size = new Size(249, 25);
             txt_AltaDireccion.TabIndex = 51;
             txt_AltaDireccion.TextAlign = HorizontalAlignment.Center;
             // 
@@ -325,7 +195,7 @@
             cbo_Rubro.Items.AddRange(new object[] { "Libros", "Electrodosmesticos", "Muebles", "Ropa", "Juguetes", "Calzado", "Hogar", "Mascotas", "Computacion" });
             cbo_Rubro.Location = new Point(62, 273);
             cbo_Rubro.Name = "cbo_Rubro";
-            cbo_Rubro.Size = new Size(255, 23);
+            cbo_Rubro.Size = new Size(249, 23);
             cbo_Rubro.TabIndex = 53;
             // 
             // label3
@@ -341,7 +211,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(14, 311);
+            pictureBox7.Location = new Point(10, 311);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(49, 35);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -355,7 +225,7 @@
             txt_AltaId.Location = new Point(64, 321);
             txt_AltaId.Name = "txt_AltaId";
             txt_AltaId.ReadOnly = true;
-            txt_AltaId.Size = new Size(255, 25);
+            txt_AltaId.Size = new Size(247, 25);
             txt_AltaId.TabIndex = 56;
             txt_AltaId.TextAlign = HorizontalAlignment.Center;
             // 
@@ -371,7 +241,7 @@
             // 
             // grp_DatosNuevoCliente
             // 
-            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 192, 128);
+            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
             grp_DatosNuevoCliente.Controls.Add(label3);
             grp_DatosNuevoCliente.Controls.Add(label4);
@@ -407,15 +277,97 @@
             pictureBox9.TabIndex = 49;
             pictureBox9.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(3, 96);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 21);
+            label5.TabIndex = 43;
+            label5.Text = "ACCIONES";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.guardar;
+            pictureBox1.Location = new Point(10, 140);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(66, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(16, 203);
+            label8.Name = "label8";
+            label8.Size = new Size(49, 15);
+            label8.TabIndex = 45;
+            label8.Text = "Guardar";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(8, 241);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(66, 60);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 46;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(10, 315);
+            label9.Name = "label9";
+            label9.Size = new Size(53, 15);
+            label9.TabIndex = 47;
+            label9.Text = "Cancelar";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(89, 469);
+            panel1.TabIndex = 41;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(8, 8);
+            label11.Name = "label11";
+            label11.Size = new Size(136, 25);
+            label11.TabIndex = 58;
+            label11.Text = "ALTA CLIENTE";
+            // 
+            // pnl_AltaCliente
+            // 
+            pnl_AltaCliente.BackColor = Color.FromArgb(255, 128, 0);
+            pnl_AltaCliente.Controls.Add(label11);
+            pnl_AltaCliente.Location = new Point(86, 0);
+            pnl_AltaCliente.Name = "pnl_AltaCliente";
+            pnl_AltaCliente.Size = new Size(200, 33);
+            pnl_AltaCliente.TabIndex = 58;
+            // 
             // Frm_Empleado_Alta_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 255, 192);
+            BackColor = Color.White;
             ClientSize = new Size(720, 469);
             ControlBox = false;
-            Controls.Add(panel2);
-            Controls.Add(panel5);
+            Controls.Add(pnl_AltaCliente);
             Controls.Add(panel1);
             Controls.Add(grp_DatosNuevoCliente);
             FormBorderStyle = FormBorderStyle.None;
@@ -423,15 +375,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaCliente";
             Load += FrmAltaCliente_Load;
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -440,20 +383,18 @@
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            pnl_AltaCliente.ResumeLayout(false);
+            pnl_AltaCliente.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label label1;
-        private Panel panel5;
-        private Label label7;
-        private Panel panel1;
-        private Label label9;
-        private PictureBox pictureBox2;
-        private Label label8;
-        private PictureBox pictureBox1;
-        private Label label5;
         private TextBox txt_AltaNombre;
         private PictureBox pictureBox3;
         private TextBox txt_AltaContraseña;
@@ -470,11 +411,15 @@
         private PictureBox pictureBox7;
         private TextBox txt_AltaId;
         private Label label4;
-        private Label lbl_nombreUsuario;
-        private PictureBox pictureBox8;
         private GroupBox grp_DatosNuevoCliente;
         private PictureBox pictureBox9;
-        private Panel panel2;
+        private Label label5;
+        private PictureBox pictureBox1;
+        private Label label8;
+        private PictureBox pictureBox2;
+        private Label label9;
+        private Panel panel1;
         private Label label11;
+        private Panel pnl_AltaCliente;
     }
 }

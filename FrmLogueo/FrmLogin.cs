@@ -18,8 +18,11 @@ namespace FrmLogueo
             FactoryConcreta factoryConcreta = new FactoryConcreta();
             if ((formulario = factoryConcreta.CrearFormulario(usuario)) != null)
             {
+                Frm_Cliente_Menu.Login = this;
+                Frm_Empleado_Menu.Login = this;
                 formulario.Show();
                 this.Hide();
+                //this.Close();
             }
             else
             {
@@ -40,16 +43,15 @@ namespace FrmLogueo
             Application.Exit();
         }
 
-        private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+       private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //dialog resulta es un enumerado
             DialogResult confirmacion = MessageBox.Show("Esta seguro que quiere salir?", "Cierre"
-                , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+             , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmacion == DialogResult.No)
             {
-                // Application.Exit();
+                //Application.Exit();
                 e.Cancel = true;//para cancelar la salida
-            }
+              }
         }
 
         private void btn_HardCodearEmpleado_Click(object sender, EventArgs e)
