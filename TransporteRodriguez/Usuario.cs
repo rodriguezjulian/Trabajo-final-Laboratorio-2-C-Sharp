@@ -3,32 +3,34 @@
     public class Usuario
     {
         //? por los retornos nulos
-        private string? _nombre;
-        private string? _contraseña;
-        private string? _mail;
+        private string? nombre;
+        private string? contraseña;
+        private string? mail;
+        // no activo=0 || activo=1
+        private int estado;
 
         public Usuario() { }
 
-        public Usuario(string? nombre, string? contraseña, string? mail)
+        public Usuario(string? nombreUsuario, string? contraseñaUsuario, string? mailUsuario, int activoUsuario)
         {
-            _nombre = nombre;
-            _contraseña = contraseña;
-            _mail = mail;
+            nombreUsuario = nombre;
+            contraseñaUsuario = contraseña;
+            mailUsuario = mail;
+            activoUsuario = Estado;
 
         }
-        public Usuario(string? nombre, string? contraseña)
+
+        public Usuario(string? nombreUsuario, string? contraseñaUsuario)
         {
-            _nombre = nombre;
-            _contraseña = contraseña;
+            nombreUsuario = nombre;
+            contraseñaUsuario = contraseña;
         }
 
-        //public Usuario(string nombre, string contraseña) : this(nombre, contraseña, "SIN MAIL"){ }
-        //INTENTO SOBRECARGAR 
+        public string? Nombre { get => nombre; set => nombre = value;}
+        public string? Contraseña { get => contraseña; set => contraseña = value;}
+        public string? Mail { get => mail; set => mail = value;}
+        public int Estado { get => estado; set => estado = value; }
 
-
-        public string? Nombre { get => _nombre; set => _nombre = value;}
-        public string? Contraseña { get => _contraseña; set => _contraseña = value;}
-        public string? Mail { get => _mail; set => _mail = value;}
         public virtual bool ValidarUsuario(Usuario user)
         {
             return true;
