@@ -49,6 +49,7 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
+            Frm_Empleado_Menu.actualizarPanel();
         }
 
     }

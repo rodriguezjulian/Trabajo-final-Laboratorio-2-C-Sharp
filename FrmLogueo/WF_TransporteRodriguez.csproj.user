@@ -37,5 +37,8 @@
     <Compile Update="Frm_Empleado_Modificacion_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Hora.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

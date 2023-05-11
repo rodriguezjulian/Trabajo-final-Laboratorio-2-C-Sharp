@@ -40,6 +40,8 @@ namespace WF_TransporteRodriguez
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
+            Frm_Hora hora = new Frm_Hora();
+            actualizarPanel(pnl_Padre, hora);
         }
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -57,24 +59,16 @@ namespace WF_TransporteRodriguez
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
-            frm_Empleado_Alta_Cliente.TopLevel = false;
-            pnl_Padre.Controls.Add(frm_Empleado_Alta_Cliente);
-            frm_Empleado_Alta_Cliente.Dock = DockStyle.Fill;
-            //frm_Empleado_Alta_Cliente.EmpleadoInstanciado = usuarioInstanciado;
-            frm_Empleado_Alta_Cliente.Show();
+            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
         }
-
-        private void tmr_Menu_Tick(object sender, EventArgs e)
+        public void actualizarPanel(Panel pln_Padre,Form hijo)
         {
-            lbl_Hora.Text = DateTime.Now.ToLongTimeString();
+            pnl_Padre.Controls.Clear();
+            hijo.TopLevel = false;
+            pnl_Padre.Controls.Add(hijo);
+            hijo.Dock = DockStyle.Fill;
+            hijo.Show();
         }
     }
+
 }
-/*
-             frm_Empleado_Alta_Cliente.TopLevel = false;
-            frm_Empleado_Alta_Cliente.Dock = DockStyle.Fill;
-            this. pnl_Padre.Controls.Add(fh);
-            this. pnl_Padre.Tag = fh;
-            frm_Empleado_Alta_Cliente();
- 
- */

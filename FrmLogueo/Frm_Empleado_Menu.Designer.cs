@@ -49,12 +49,10 @@
             lbl_NombreUsuario = new Label();
             label1 = new Label();
             pnl_Padre = new Panel();
-            lbl_Hora = new Label();
             tmr_Menu = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            pnl_Padre.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -210,27 +208,15 @@
             // 
             // pnl_Padre
             // 
-            pnl_Padre.Controls.Add(lbl_Hora);
             pnl_Padre.Location = new Point(158, 35);
             pnl_Padre.Name = "pnl_Padre";
             pnl_Padre.Size = new Size(720, 468);
             pnl_Padre.TabIndex = 32;
             // 
-            // lbl_Hora
-            // 
-            lbl_Hora.AutoSize = true;
-            lbl_Hora.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Hora.ForeColor = Color.FromArgb(255, 128, 0);
-            lbl_Hora.Location = new Point(237, 193);
-            lbl_Hora.Name = "lbl_Hora";
-            lbl_Hora.Size = new Size(202, 65);
-            lbl_Hora.TabIndex = 0;
-            lbl_Hora.Text = "{HORA}";
-            // 
             // tmr_Menu
             // 
             tmr_Menu.Enabled = true;
-            tmr_Menu.Tick += tmr_Menu_Tick;
+        
             // 
             // Frm_Empleado_Menu
             // 
@@ -252,8 +238,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            pnl_Padre.ResumeLayout(false);
-            pnl_Padre.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,7 +264,6 @@
         private PictureBox pictureBox2;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private Panel pnl_Padre;
-        private Label lbl_Hora;
         private System.Windows.Forms.Timer tmr_Menu;
     }
 }
