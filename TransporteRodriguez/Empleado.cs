@@ -11,7 +11,8 @@ namespace TransporteRodriguez
         private short _idEmpleado;
         private string? _puesto;
         public Empleado(string nombre, string contraseña) : base(nombre, contraseña) { }
-        public Empleado(string nombre, string contraseña, string mail, short idEmpleado, string puesto) : base(nombre, contraseña, mail)
+        public Empleado(string nombre, string contraseña, string mail, bool estado, short idEmpleado, string puesto) : 
+            base(nombre, contraseña, mail, estado)
         {
             this.IdEmpleado = idEmpleado;
             this.Puesto = puesto;

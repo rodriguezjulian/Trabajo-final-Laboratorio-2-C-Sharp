@@ -39,7 +39,7 @@ namespace WF_TransporteRodriguez
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
                 Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
                 Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
-                    dtp_FechaDeViaje.Value));
+                    dtp_FechaDeViaje.Value.Date));
                 MessageBox.Show("Viaje reservado satisfactoriamente.\n");
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;

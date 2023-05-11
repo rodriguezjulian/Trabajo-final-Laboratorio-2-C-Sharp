@@ -22,29 +22,29 @@ namespace TransporteRodriguez
         }
         public static void AgregarCliente()
         {
-            listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", 1, "Av. Belgrano 1234", "Libros"));
-            listaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));
-            listaClientes.Add(new Cliente("Lucas Martínez", "lucas789", "lucas.martinez@yahoo.com", 3, "Av. Corrientes 2468", "Muebles"));
-            listaClientes.Add(new Cliente("Ana Rodríguez", "ana000", "ana.rodriguez@gmail.com", 4, "Calle Florida 4321", "Ropa"));
-            listaClientes.Add(new Cliente("Pedro González", "pedro111", "pedro.gonzalez@hotmail.com", 5, "Calle Reconquista 6789", "Juguetes"));
-            listaClientes.Add(new Cliente("Laura Fernández", "laura222", "laura.fernandez@yahoo.com", 6, "Av. Santa Fe 2468", "Calzado"));
-            listaClientes.Add(new Cliente("Javier Díaz", "javier333", "javier.diaz@gmail.com", 7, "Calle Maipú 3456", "Hogar"));
-            listaClientes.Add(new Cliente("Carla Castro", "carla444", "carla.castro@hotmail.com", 8, "Calle Lavalle 6789", "Mascotas"));
-            listaClientes.Add(new Cliente("Martín Suárez", "martin555", "martin.suarez@yahoo.com", 9, "Av. San Martín 1234", "Computación"));
-            listaClientes.Add(new Cliente("Silvia López", "silvia666", "silvia.lopez@gmail.com", 10, "Calle Esmeralda 5678", "Computación"));
-            listaClientes.Add(new Cliente("Federico Torres", "federico777", "federico.torres@hotmail.com", 11, "Av. Pueyrredón 2468", "Computación"));
-            listaClientes.Add(new Cliente("Valeria Gómez", "valeria888", "valeria.gomez@yahoo.com", 12, "Calle Callao 4321", "Computación"));
-            listaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", 13, "Av. Córdoba 6789", "Computación"));
-            listaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", 14, "Calle Mendoza 3456", "Computación"));
+            listaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
+            listaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", true, 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));
+            listaClientes.Add(new Cliente("Lucas Martínez", "lucas789", "lucas.martinez@yahoo.com", true, 3, "Av. Corrientes 2468", "Muebles"));
+            listaClientes.Add(new Cliente("Ana Rodríguez", "ana000", "ana.rodriguez@gmail.com", true, 4, "Calle Florida 4321", "Ropa"));
+            listaClientes.Add(new Cliente("Pedro González", "pedro111", "pedro.gonzalez@hotmail.com", true, 5, "Calle Reconquista 6789", "Juguetes"));
+            listaClientes.Add(new Cliente("Laura Fernández", "laura222", "laura.fernandez@yahoo.com", true, 6, "Av. Santa Fe 2468", "Calzado"));
+            listaClientes.Add(new Cliente("Javier Díaz", "javier333", "javier.diaz@gmail.com", true, 7, "Calle Maipú 3456", "Hogar"));
+            listaClientes.Add(new Cliente("Carla Castro", "carla444", "carla.castro@hotmail.com", true, 8, "Calle Lavalle 6789", "Mascotas"));
+            listaClientes.Add(new Cliente("Martín Suárez", "martin555", "martin.suarez@yahoo.com", true, 9, "Av. San Martín 1234", "Computación"));
+            listaClientes.Add(new Cliente("Silvia López", "silvia666", "silvia.lopez@gmail.com", true, 10, "Calle Esmeralda 5678", "Computación"));
+            listaClientes.Add(new Cliente("Federico Torres", "federico777", "federico.torres@hotmail.com", true, 11, "Av. Pueyrredón 2468", "Computación"));
+            listaClientes.Add(new Cliente("Valeria Gómez", "valeria888", "valeria.gomez@yahoo.com", true, 12, "Calle Callao 4321", "Computación"));
+            listaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", true, 13, "Av. Córdoba 6789", "Computación"));
+            listaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));
         }
         public static void AgregarEmpleado()
         {
-            listaEmpleado.Add(new Empleado("Usuario", "Contraseña", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
-            listaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", 1, "Gerente de Ventas"));
-            listaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", 2, "Analista de Sistemas"));
-            listaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", 3, "Asistente Administrativo"));
-            listaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", 4, "Desarrollador Web"));
-            listaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", 5, "Contador General"));
+            listaEmpleado.Add(new Empleado("Usuario", "Contraseña", "juan.perez@gmail.com", true, 1, "Gerente de Ventas"));
+            listaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", true, 1, "Gerente de Ventas"));
+            listaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", true, 2, "Analista de Sistemas"));
+            listaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", true, 3, "Asistente Administrativo"));
+            listaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", true, 4, "Desarrollador Web"));
+            listaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, "Contador General"));
         }
         private static void AgregarAdmin()
         {
@@ -67,24 +67,7 @@ namespace TransporteRodriguez
             "Corrientes", 500, 10500, 5, DateTime.Parse("11/05/2024")));
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
            "Santa Fe", 1400, 10500, 3, DateTime.Parse("11/05/2024")));
-        }
-        /*
-         public static List<int> VerificarPesoSoportado(float kilos)
-         {
-             float cargaSoportada;
-             //vehiculos aptos para transportar la cantidad de kilos.
-             List<int> idVehiculosAptos = new List<int>();
-             foreach (Vehiculo vehiculo in listaVehiculos)
-             {
-                 cargaSoportada = vehiculo.CapacidadDeCarga;
-                 if (cargaSoportada >= kilos)
-                 {
-                     idVehiculosAptos.Add(vehiculo.IdVehiculo);
-                 }
-             }
-             return idVehiculosAptos;
          }
-        */
         public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
             bool retorno = true;
@@ -158,57 +141,6 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-
-        /*
-                 public static float calcularPrecioViaje(int provincia, float kilosTransportados)
-        {
-            float precio=0;
-            if (provincia != null)
-            {
-                switch (provincia)
-                {
-                    case "Santa fe":
-                        precio = (kilosTransportados * 200) + 4000;
-                    break;
-                    case "Corrientes":
-                        precio = (kilosTransportados * 200) + 6000;
-                    break;
-                    case "Misiones":
-                        precio = (kilosTransportados * 200) + 8000;
-                    break;
-                }
-            }
-            return precio;
-        }*/
-        /* public static bool VerificarDisponibilidadFecha(DateTime fechaSolicitada, List<int> idVehiculosAptos)
-         {
-             bool retorno = false;
-             foreach (Viaje viaje in listaViajes)
-             {
-                 DateTime fecha = viaje.FechaViaje;
-                 for (int i = 0; i < idVehiculosAptos.Count; i++)
-                 {
-                     //SI TENGO UN VIAJE EN ESTA FECHA, EL VEHICULO ES DISTINTO AL APTO?
-                     //if(fecha == fechaSolicitada && viaje.IdVehiculo!= idVehiculosAptos[i])
-                     // 
-                     if (fecha == fechaSolicitada)
-                     {
-
-                     }
-                 }
-
-             }
-             return retorno;
-         }*/
-        /*public static int RetornarVehiculoAdecuado(float kilos, DateTime fechaSolicitada)
-        {
-            //PARTIR LA FUNCION EN 2 - TENER UNA PARA LOS KG Y OTRO PARA FECHA
-            int retorno = 0;
-           // short id = VerificarPesoSoportado(kilos);
-
-            return retorno;
-
-        }*/
         public static int CalcularIdViaje()
         {
             int retorno;
@@ -222,7 +154,7 @@ namespace TransporteRodriguez
 
             foreach (Empleado empleado in listaEmpleado)
             {
-                if (empleado == usuarioUno)
+                if (empleado == usuarioUno && empleado.Estado==true)
                 {
                     retorno = empleado;
                     break;
@@ -232,7 +164,7 @@ namespace TransporteRodriguez
             {
                 foreach (Cliente cliente in listaClientes)
                 {
-                    if (cliente == usuarioUno)
+                    if (cliente == usuarioUno && cliente.Estado == true)
                     {
                         retorno = cliente;
                         break;

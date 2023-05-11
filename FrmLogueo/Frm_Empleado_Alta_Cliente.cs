@@ -34,7 +34,7 @@ namespace WF_TransporteRodriguez
              *         public Cliente(string nombre, string contraseña, string mail,short idCliente, string? direccionBSAS, string? rubro) 
             : base(nombre, contraseña, mail)
              */
-            NuevoCliente = new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text, txt_AltaMail.Text, short.Parse(txt_AltaId.Text),
+           NuevoCliente = new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text, txt_AltaMail.Text,true, short.Parse(txt_AltaId.Text),
                txt_AltaDireccion.Text, cbo_Rubro.SelectedValue.ToString());
 
             this.DialogResult = DialogResult.OK;
