@@ -62,6 +62,12 @@ namespace WF_TransporteRodriguez
             hijo.Dock = DockStyle.Fill;
             hijo.Show();
         }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Listar_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Listar_Clientes();
+            actualizarPanel(pnl_Padre, frm_Empleado_Listar_Clientes);
+        }
     }
 
 }

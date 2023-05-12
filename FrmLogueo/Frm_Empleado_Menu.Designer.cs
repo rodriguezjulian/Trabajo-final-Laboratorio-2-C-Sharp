@@ -109,6 +109,7 @@
             listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             listarToolStripMenuItem.Size = new Size(181, 34);
             listarToolStripMenuItem.Text = "Listar";
+            listarToolStripMenuItem.Click += listarToolStripMenuItem_Click;
             // 
             // vehiculosToolStripMenuItem
             // 

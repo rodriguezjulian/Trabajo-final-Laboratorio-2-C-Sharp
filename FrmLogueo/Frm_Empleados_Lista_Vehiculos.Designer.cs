@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dtg_ListarVehiculos = new DataGridView();
+            dtg_Listar = new DataGridView();
             pnl_Izquierdo = new Panel();
             lbl_Volver = new Label();
             pic_Volver = new PictureBox();
             pnl_PanelSup = new Panel();
-            lbl_ListarVehiculos = new Label();
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarVehiculos).BeginInit();
+            lbl_Listar = new Label();
+            ((System.ComponentModel.ISupportInitialize)dtg_Listar).BeginInit();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
             pnl_PanelSup.SuspendLayout();
             SuspendLayout();
             // 
-            // dtg_ListarVehiculos
+            // dtg_Listar
             // 
-            dtg_ListarVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtg_ListarVehiculos.BackgroundColor = Color.White;
-            dtg_ListarVehiculos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarVehiculos.Location = new Point(107, 39);
-            dtg_ListarVehiculos.Name = "dtg_ListarVehiculos";
-            dtg_ListarVehiculos.RowTemplate.Height = 25;
-            dtg_ListarVehiculos.Size = new Size(614, 418);
-            dtg_ListarVehiculos.TabIndex = 9;
+            dtg_Listar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_Listar.BackgroundColor = Color.White;
+            dtg_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_Listar.Location = new Point(107, 39);
+            dtg_Listar.Name = "dtg_Listar";
+            dtg_Listar.RowTemplate.Height = 25;
+            dtg_Listar.Size = new Size(614, 418);
+            dtg_Listar.TabIndex = 9;
             // 
             // pnl_Izquierdo
             // 
@@ -84,21 +84,21 @@
             // pnl_PanelSup
             // 
             pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
-            pnl_PanelSup.Controls.Add(lbl_ListarVehiculos);
+            pnl_PanelSup.Controls.Add(lbl_Listar);
             pnl_PanelSup.Location = new Point(107, 0);
             pnl_PanelSup.Name = "pnl_PanelSup";
             pnl_PanelSup.Size = new Size(315, 40);
             pnl_PanelSup.TabIndex = 70;
             // 
-            // lbl_ListarVehiculos
+            // lbl_Listar
             // 
-            lbl_ListarVehiculos.AutoSize = true;
-            lbl_ListarVehiculos.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ListarVehiculos.Location = new Point(0, 6);
-            lbl_ListarVehiculos.Name = "lbl_ListarVehiculos";
-            lbl_ListarVehiculos.Size = new Size(203, 30);
-            lbl_ListarVehiculos.TabIndex = 71;
-            lbl_ListarVehiculos.Text = "LISTAR VEHICULOS";
+            lbl_Listar.AutoSize = true;
+            lbl_Listar.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Listar.Location = new Point(0, 6);
+            lbl_Listar.Name = "lbl_Listar";
+            lbl_Listar.Size = new Size(203, 30);
+            lbl_Listar.TabIndex = 71;
+            lbl_Listar.Text = "LISTAR VEHICULOS";
             // 
             // Frm_Empleados_Lista_Vehiculos
             // 
@@ -107,13 +107,13 @@
             ClientSize = new Size(720, 469);
             Controls.Add(pnl_PanelSup);
             Controls.Add(pnl_Izquierdo);
-            Controls.Add(dtg_ListarVehiculos);
+            Controls.Add(dtg_Listar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleados_Lista_Vehiculos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListarVehiculos";
             Load += FrmListarVehiculos_Load;
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarVehiculos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_Listar).EndInit();
             pnl_Izquierdo.ResumeLayout(false);
             pnl_Izquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
@@ -123,11 +123,11 @@
         }
 
         #endregion
-        private DataGridView dtg_ListarVehiculos;
+        private DataGridView dtg_Listar;
         private Panel pnl_Izquierdo;
         private Label lbl_Volver;
         private PictureBox pic_Volver;
         private Panel pnl_PanelSup;
-        private Label lbl_ListarVehiculos;
+        private Label lbl_Listar;
     }
 }
