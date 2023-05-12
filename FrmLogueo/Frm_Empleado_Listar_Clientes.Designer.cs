@@ -39,6 +39,7 @@
             pnl_PanelSup = new Panel();
             lbl_Listar = new Label();
             dtg_ListarClientes = new DataGridView();
+            btn_DeBaja = new Button();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
             pnl_PanelSup.SuspendLayout();
@@ -140,17 +141,31 @@
             dtg_ListarClientes.Size = new Size(614, 418);
             dtg_ListarClientes.TabIndex = 72;
             // 
+            // btn_DeBaja
+            // 
+            btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);
+            btn_DeBaja.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_DeBaja.Location = new Point(446, 4);
+            btn_DeBaja.Name = "btn_DeBaja";
+            btn_DeBaja.Size = new Size(242, 36);
+            btn_DeBaja.TabIndex = 73;
+            btn_DeBaja.Text = "Clientes dados de baja";
+            btn_DeBaja.UseVisualStyleBackColor = false;
+            btn_DeBaja.Click += btn_DeBaja_Click;
+            // 
             // Frm_Empleado_Listar_Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
+            Controls.Add(btn_DeBaja);
             Controls.Add(dtg_ListarClientes);
             Controls.Add(pnl_PanelSup);
             Controls.Add(pnl_Izquierdo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Listar_Clientes";
             Text = "Frm_Empleado_Listar_Clientes";
+            Load += Frm_Empleado_Listar_Clientes_Load;
             pnl_Izquierdo.ResumeLayout(false);
             pnl_Izquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
@@ -173,5 +188,6 @@
         private Panel pnl_PanelSup;
         private Label lbl_Listar;
         private DataGridView dtg_ListarClientes;
+        private Button btn_DeBaja;
     }
 }

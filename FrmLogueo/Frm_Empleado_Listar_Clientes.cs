@@ -14,12 +14,38 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Listar_Clientes : Form
     {
+        private static List<Cliente> listaClientesBaja = new List<Cliente>();
         public Frm_Empleado_Listar_Clientes()
         {
             InitializeComponent();
-            dtg_ListarClientes.AutoGenerateColumns = false;
-            #region DATAGRID
+        }
+        private void Frm_Empleado_Listar_Clientes_Load(object sender, EventArgs e)
+        {
             dtg_ListarClientes.DataSource = Sistema.ListaClientes;
+            dtg_ListarClientes.AutoGenerateColumns = false;
+            ConfigurarDTG();
+        }
+        private void btn_DeBaja_Click(object sender, EventArgs e)
+        {
+        
+            if (Sistema.FiltrarClientes(listaClientesBaja))
+            {
+                dtg_ListarClientes.DataSource = null;
+                dtg_ListarClientes.Rows.Clear();
+                dtg_ListarClientes.AutoGenerateColumns = false;
+                dtg_ListarClientes.DataSource = listaClientesBaja;
+                ConfigurarDTG();
+            }
+            else
+            {
+                MessageBox.Show("No existen clientes dados de baja.\n");
+            }
+        }
+        private void ConfigurarDTG()
+        {
+            
+            #region DATAGRID
+            
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -57,5 +83,7 @@ namespace WF_TransporteRodriguez
             });
             #endregion
         }
+
+
     }
 }

@@ -68,8 +68,8 @@ namespace TransporteRodriguez
             Sistema.ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
             "Corrientes", 1800, 10500, 5, DateTime.Parse("11/05/2024")));
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
-           "Santa Fe", 20, 10500, 3, new DateTime(2024,05,11,0,0,0)));
-         }
+           "Santa Fe", 20, 10500, 3, new DateTime(2024, 05, 11, 0, 0, 0)));
+        }
         public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
             bool retorno = true;
@@ -84,7 +84,7 @@ namespace TransporteRodriguez
             return retorno;
         }
         //Este metodo es clave para despues poder comparar la fecha ingresada con la existente
-        public static DateTime ActualizarFechaIngresada(DateTime actual) 
+        public static DateTime ActualizarFechaIngresada(DateTime actual)
         {
             DateTime actualizado;
             actualizado = actual.Date;
@@ -95,7 +95,7 @@ namespace TransporteRodriguez
             float cargaSoportada;
             Viaje viajeAxuliar;
             //vehiculos aptos para transportar la cantidad de kilos.
-            short retorno =0;
+            short retorno = 0;
             foreach (Vehiculo vehiculo in listaVehiculos)
             {
                 cargaSoportada = vehiculo.CapacidadDeCarga;
@@ -103,13 +103,13 @@ namespace TransporteRodriguez
                 if (cargaSoportada >= kilos)
                 {
                     //CREO UN VIAJE CON ESE VEHICULO EN ESA FECHA
-                    viajeAxuliar = new (vehiculo.IdVehiculo, fechaSolicitada);
+                    viajeAxuliar = new(vehiculo.IdVehiculo, fechaSolicitada);
                     //SI YA HAY UN VIAJE CON ESA FECHA Y ESE IDVEHICULO, NO SE ROMPE EL BUCLE
                     //EN CASO QUE NO SEA POSIBLE ENCONTRAR UN VEHICULO DISPONIBLE RETORNO=0;
                     if (VerificarDisponibilidadFecha(viajeAxuliar))
                     {
                         retorno = vehiculo.IdVehiculo;
-                        break;    
+                        break;
                     }
                 }
             }
@@ -117,35 +117,35 @@ namespace TransporteRodriguez
         }
         public static float calcularPrecioViaje(int provincia, float kilosTransportados)
         {
-            float precio=0;
+            float precio = 0;
             switch (provincia)
             {
                 case 0:
                     precio = (kilosTransportados * 200) + 4000;
-                break;
+                    break;
                 case 1:
                     precio = (kilosTransportados * 200) + 6000;
-                break;
+                    break;
                 case 2:
                     precio = (kilosTransportados * 200) + 8000;
-                break;
-            }   
+                    break;
+            }
             return precio;
         }
         public static bool buscarViaje(int idViaje, out Viaje? viajeEncontrado)
         {
             viajeEncontrado = null;
             bool retorno = false;
-            
+
             foreach (Viaje viajeAxuliar in ListaViajes)
-            {  
+            {
                 if (viajeAxuliar.IdViaje == idViaje)
                 {
                     viajeEncontrado = viajeAxuliar;
-                    retorno= true;
+                    retorno = true;
                     break;
                 }
-                
+
             }
             return retorno;
         }
@@ -154,7 +154,7 @@ namespace TransporteRodriguez
         {
             int retorno;
             Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
-            retorno = (viajeUltimo.IdViaje)+1;
+            retorno = (viajeUltimo.IdViaje) + 1;
             return retorno;
         }
         public static int CalcularIdCliente()
@@ -170,7 +170,7 @@ namespace TransporteRodriguez
 
             foreach (Empleado empleado in listaEmpleado)
             {
-                if (empleado == usuarioUno && empleado.Estado==true)
+                if (empleado == usuarioUno && empleado.Estado == true)
                 {
                     retorno = empleado;
                     break;
@@ -226,7 +226,7 @@ namespace TransporteRodriguez
                     cliente = clienteAuxliar;
                     break;
                 }
-               // contador = contador + 1;
+                // contador = contador + 1;
             }
             //indice = contador;
             return cliente;
@@ -244,5 +244,22 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-    }
+        public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
+        {
+             bool retorno = false;
+           
+            foreach (Cliente clienteAuxiliar in ListaClientes)
+            {
+                if(clienteAuxiliar.Estado==false)
+                {
+                    //ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
+                    listaClientesBaja.Add(new Cliente(clienteAuxiliar.Nombre, clienteAuxiliar.Contraseña, clienteAuxiliar.Mail, clienteAuxiliar.Estado, 
+                        clienteAuxiliar.IdCliente, clienteAuxiliar.DireccionBSAS, clienteAuxiliar.Rubro));
+                        retorno =true;
+                }
+            }
+            return retorno;
+        }
+
+}
 }

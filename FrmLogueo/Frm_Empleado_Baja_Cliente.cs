@@ -83,7 +83,7 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            
+
             if (txt_BajaID.Text != "")
             {
                 Cliente cliente = Sistema.BuscarCliente(int.Parse(txt_BajaID.Text));
