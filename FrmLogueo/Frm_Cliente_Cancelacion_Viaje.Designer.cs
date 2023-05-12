@@ -45,6 +45,7 @@
             label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             pln_CancelarViaje.SuspendLayout();
@@ -149,7 +150,7 @@
             // 
             // txt_IdDeViajeACancelar
             // 
-            txt_IdDeViajeACancelar.BackColor = Color.FromArgb(255, 255, 192);
+            txt_IdDeViajeACancelar.BackColor = Color.FromArgb(224, 224, 224);
             txt_IdDeViajeACancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeACancelar.Location = new Point(66, 108);
             txt_IdDeViajeACancelar.Name = "txt_IdDeViajeACancelar";
@@ -198,11 +199,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(569, 67);
+            label1.Location = new Point(569, 52);
             label1.Name = "label1";
-            label1.Size = new Size(74, 17);
+            label1.Size = new Size(77, 17);
             label1.TabIndex = 90;
-            label1.Text = "CANCELAR";
+            label1.Text = "PANTALLA ";
             // 
             // label2
             // 
@@ -225,12 +226,23 @@
             panel1.Size = new Size(731, 33);
             panel1.TabIndex = 92;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(569, 69);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 17);
+            label3.TabIndex = 93;
+            label3.Text = "PRINCIPAL";
+            // 
             // Frm_Cliente_Cancelacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 469);
+            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -278,5 +290,6 @@
         private Panel panel1;
         private Panel pln_CancelarViaje;
         protected Label lbl_Cancelar;
+        protected Label label3;
     }
 }

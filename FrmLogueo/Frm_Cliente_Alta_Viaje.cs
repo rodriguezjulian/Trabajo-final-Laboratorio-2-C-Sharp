@@ -34,7 +34,7 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            
+
             if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
                 Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
@@ -77,7 +77,7 @@ namespace WF_TransporteRodriguez
         #endregion 
         private void pic_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
+            this.Hide();
             this.Close();
         }
     }

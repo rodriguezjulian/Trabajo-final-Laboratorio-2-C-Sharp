@@ -61,6 +61,7 @@
             label5 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            label8 = new Label();
             grp_CargosFijos.SuspendLayout();
             grp_Viajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
@@ -198,6 +199,7 @@
             // 
             grp_Viajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             grp_Viajes.BackColor = Color.FromArgb(255, 255, 192);
+            grp_Viajes.Controls.Add(label8);
             grp_Viajes.Controls.Add(label7);
             grp_Viajes.Controls.Add(pic_Cancelar);
             grp_Viajes.Controls.Add(lbl_RerservarViaje);
@@ -219,9 +221,9 @@
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(603, 342);
             label7.Name = "label7";
-            label7.Size = new Size(74, 17);
+            label7.Size = new Size(77, 17);
             label7.TabIndex = 75;
-            label7.Text = "CANCELAR";
+            label7.Text = "PANTALLA ";
             // 
             // pic_Cancelar
             // 
@@ -362,6 +364,16 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(605, 359);
+            label8.Name = "label8";
+            label8.Size = new Size(73, 17);
+            label8.TabIndex = 76;
+            label8.Text = "PRINCIPAL";
+            // 
             // Frm_Cliente_Alta_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -422,5 +434,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private NumericUpDown nup_Kilos;
         protected Label lbl_NombreClient;
+        protected Label label8;
     }
 }

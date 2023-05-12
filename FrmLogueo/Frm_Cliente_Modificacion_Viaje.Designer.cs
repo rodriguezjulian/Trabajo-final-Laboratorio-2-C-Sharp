@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
             groupBox1 = new GroupBox();
+            nup_Kg = new NumericUpDown();
             pictureBox1 = new PictureBox();
             pic_Id = new PictureBox();
             label3 = new Label();
             txt_IdDeViajeAModificar = new TextBox();
-            txt_Kg = new TextBox();
             label2 = new Label();
             dtp_FechaDeViaje = new DateTimePicker();
             label1 = new Label();
@@ -42,19 +42,21 @@
             lbl_RerservarViaje = new Label();
             label7 = new Label();
             pic_CancelarModificacion = new PictureBox();
-            dtg_ListarViajes = new DataGridView();
+            dtg_ListaViajes = new DataGridView();
             panel2 = new Panel();
             label6 = new Label();
             panel1 = new Panel();
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            label4 = new Label();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nup_Kg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Id).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,11 +65,12 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(nup_Kg);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(pic_Id);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txt_IdDeViajeAModificar);
-            groupBox1.Controls.Add(txt_Kg);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(dtp_FechaDeViaje);
             groupBox1.Controls.Add(label1);
@@ -75,7 +78,7 @@
             groupBox1.Controls.Add(lbl_RerservarViaje);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(pic_CancelarModificacion);
-            groupBox1.Controls.Add(dtg_ListarViajes);
+            groupBox1.Controls.Add(dtg_ListaViajes);
             groupBox1.Controls.Add(panel2);
             groupBox1.Controls.Add(panel1);
             groupBox1.Location = new Point(0, 0);
@@ -83,6 +86,14 @@
             groupBox1.Size = new Size(720, 469);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // nup_Kg
+            // 
+            nup_Kg.Location = new Point(63, 154);
+            nup_Kg.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
+            nup_Kg.Name = "nup_Kg";
+            nup_Kg.Size = new Size(165, 23);
+            nup_Kg.TabIndex = 92;
             // 
             // pictureBox1
             // 
@@ -116,23 +127,14 @@
             // 
             // txt_IdDeViajeAModificar
             // 
-            txt_IdDeViajeAModificar.BackColor = Color.FromArgb(255, 255, 192);
+            txt_IdDeViajeAModificar.BackColor = Color.FromArgb(224, 224, 224);
             txt_IdDeViajeAModificar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeAModificar.Location = new Point(63, 99);
             txt_IdDeViajeAModificar.Name = "txt_IdDeViajeAModificar";
+            txt_IdDeViajeAModificar.ReadOnly = true;
             txt_IdDeViajeAModificar.Size = new Size(165, 25);
             txt_IdDeViajeAModificar.TabIndex = 84;
             txt_IdDeViajeAModificar.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txt_Kg
-            // 
-            txt_Kg.BackColor = Color.FromArgb(255, 255, 192);
-            txt_Kg.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Kg.Location = new Point(63, 152);
-            txt_Kg.Name = "txt_Kg";
-            txt_Kg.Size = new Size(165, 25);
-            txt_Kg.TabIndex = 83;
-            txt_Kg.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -156,7 +158,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(492, 160);
+            label1.Location = new Point(492, 141);
             label1.Name = "label1";
             label1.Size = new Size(53, 17);
             label1.TabIndex = 80;
@@ -165,7 +167,7 @@
             // pic_EditarViaje
             // 
             pic_EditarViaje.Image = Properties.Resources.modificarCliente;
-            pic_EditarViaje.Location = new Point(478, 81);
+            pic_EditarViaje.Location = new Point(479, 62);
             pic_EditarViaje.Name = "pic_EditarViaje";
             pic_EditarViaje.Size = new Size(83, 76);
             pic_EditarViaje.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -189,16 +191,16 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(618, 163);
+            label7.Location = new Point(618, 141);
             label7.Name = "label7";
-            label7.Size = new Size(74, 17);
+            label7.Size = new Size(77, 17);
             label7.TabIndex = 76;
-            label7.Text = "CANCELAR";
+            label7.Text = "PANTALLA ";
             // 
             // pic_CancelarModificacion
             // 
             pic_CancelarModificacion.Image = (Image)resources.GetObject("pic_CancelarModificacion.Image");
-            pic_CancelarModificacion.Location = new Point(618, 81);
+            pic_CancelarModificacion.Location = new Point(618, 62);
             pic_CancelarModificacion.Name = "pic_CancelarModificacion";
             pic_CancelarModificacion.Size = new Size(79, 76);
             pic_CancelarModificacion.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -208,17 +210,18 @@
             pic_CancelarModificacion.MouseEnter += pic_CancelarModificacion_MouseEnter;
             pic_CancelarModificacion.MouseLeave += pic_CancelarModificacion_MouseLeave;
             // 
-            // dtg_ListarViajes
+            // dtg_ListaViajes
             // 
-            dtg_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtg_ListarViajes.BackgroundColor = Color.White;
-            dtg_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarViajes.Location = new Point(0, 183);
-            dtg_ListarViajes.Name = "dtg_ListarViajes";
-            dtg_ListarViajes.RowTemplate.Height = 25;
-            dtg_ListarViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_ListarViajes.Size = new Size(720, 286);
-            dtg_ListarViajes.TabIndex = 69;
+            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListaViajes.BackgroundColor = Color.White;
+            dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListaViajes.Location = new Point(0, 183);
+            dtg_ListaViajes.Name = "dtg_ListaViajes";
+            dtg_ListaViajes.RowTemplate.Height = 25;
+            dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_ListaViajes.Size = new Size(720, 286);
+            dtg_ListaViajes.TabIndex = 69;
+            dtg_ListaViajes.CellClick += dtg_ListarViajes_CellClick;
             // 
             // panel2
             // 
@@ -281,6 +284,16 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(618, 163);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 17);
+            label4.TabIndex = 93;
+            label4.Text = "PRINCIPAL";
+            // 
             // Frm_Cliente_Modificacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -293,11 +306,12 @@
             Load += FrmModificarViajeCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nup_Kg).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Id).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_EditarViaje).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_CancelarModificacion).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -314,7 +328,7 @@
         protected Label label5;
         private Panel panel2;
         protected Label label6;
-        private DataGridView dtg_ListarViajes;
+        private DataGridView dtg_ListaViajes;
         private PictureBox pic_CancelarModificacion;
         protected Label label7;
         protected Label lbl_RerservarViaje;
@@ -324,9 +338,10 @@
         private DateTimePicker dtp_FechaDeViaje;
         protected Label label3;
         private TextBox txt_IdDeViajeAModificar;
-        private TextBox txt_Kg;
         protected Label lbl_NombreCliente;
         private PictureBox pictureBox1;
         private PictureBox pic_Id;
+        private NumericUpDown nup_Kg;
+        protected Label label4;
     }
 }

@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-            dtg_ListarViajes.DataSource = viajesCliente;
+            OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
 
@@ -38,15 +38,13 @@ namespace WF_TransporteRodriguez
             // tengo que verificar que el id de viaje sea del cliente y que la fecha se mayor a hoy
             //se supone que por como funciona el cortafuego no deberia ser null viajeAux porque ya se corta el if en la primer condicion
             //El guion bajo (_) se utiliza como una convención para indicar que no se va a utilizar el valor de salida.
-            if (int.TryParse(txt_IdDeViajeAModificar.Text, out _) == true
-                && int.TryParse(txt_Kg.Text, out _) == true
-                    && Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
+            if (Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
-                viajeAux.KilosATransportar = float.Parse(txt_Kg.Text);
+                viajeAux.KilosATransportar = (float)nup_Kg.Value;
                 viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-                dtg_ListarViajes.DataSource = viajesCliente;
+                OrganizarDataGridViajes(viajesCliente);
                 MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
             }
             else
@@ -81,6 +79,60 @@ namespace WF_TransporteRodriguez
             this.Close();
         }
 
+        private void dtg_ListarViajes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_IdDeViajeAModificar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
+            dtp_FechaDeViaje.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
+            nup_Kg.Text = dtg_ListaViajes.CurrentRow.Cells[3].Value.ToString();
+        }
+        public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
+        {
+            dtg_ListaViajes.AutoGenerateColumns = false;
+            dtg_ListaViajes.DataSource = viajesCliente;
 
+
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdViaje",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "FechaViaje",
+                HeaderText = "Fecha",
+                DisplayIndex = 1
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "nombreCliente",
+                HeaderText = "Nombre",
+                DisplayIndex = 2
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "KilosATransportar",
+                HeaderText = "KG",
+                DisplayIndex = 3
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "DireccionSalida",
+                HeaderText = "Salida",
+                DisplayIndex = 4
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "ProvinciaDestino",
+                HeaderText = "Destino",
+                DisplayIndex = 5
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Precio",
+                HeaderText = "Precio",
+                DisplayIndex = 6
+            });
+        }
     }
 }
