@@ -44,10 +44,10 @@ namespace TransporteRodriguez
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
         public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
 
-        public static bool operator ==(Viaje uno, Viaje Dos)
+        public static bool operator ==(Viaje uno, Viaje dos)
         {
             bool retorno = false;
-            if (uno.IdVehiculo == Dos.IdVehiculo && uno.FechaViaje ==Dos.FechaViaje)
+            if (uno.IdVehiculo == dos.IdVehiculo && uno.FechaViaje.Date == dos.FechaViaje.Date)
             {
                 retorno = true;
             }

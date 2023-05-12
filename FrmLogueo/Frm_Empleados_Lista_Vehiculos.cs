@@ -21,7 +21,7 @@ namespace WF_TransporteRodriguez
         }
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
-            dtg_Listar.DataSource = Sistema.ListaVehiculos;
+            dtg_Listar.DataSource = Repositorio_Vehiculos.ListaVehiculos;
         }
         private void pic_Volver_Click(object sender, EventArgs e)
         {

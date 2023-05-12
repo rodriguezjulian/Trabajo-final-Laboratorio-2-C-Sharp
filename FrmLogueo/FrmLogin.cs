@@ -22,7 +22,6 @@ namespace FrmLogueo
                 Frm_Empleado_Menu.Login = this;
                 formulario.Show();
                 this.Hide();
-                //this.Close();
             }
             else
             {
@@ -33,13 +32,11 @@ namespace FrmLogueo
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            Sistema.AgregarCliente();
-            Sistema.AgregarEmpleado();
+
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            //this.Close();
             Application.Exit();
         }
 
@@ -59,7 +56,6 @@ namespace FrmLogueo
             txt_LoginUsuario.Text = "Sofía Rodríguez";
             txt_Contraseña.Text = "contrasena123";
         }
-
         private void btn_HardCodearCliente_Click(object sender, EventArgs e)
         {
             txt_LoginUsuario.Text = "Javier Díaz";

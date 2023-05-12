@@ -23,7 +23,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmListarViajesCliente_Load(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dgt_ListarViajes.DataSource = viajesCliente;
             lbl_NombreCliente.Text = cliente.Nombre;
         }

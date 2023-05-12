@@ -41,8 +41,8 @@ namespace WF_TransporteRodriguez
             //MessageBox.Show(cbo_Rubro.SelectedItem.ToString());
             if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "" && txt_AltaDireccion.Text != "")
             {
-                Sistema.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, Sistema.generarContraseña(), txt_AltaMail.Text, true,
-                 Sistema.CalcularIdCliente(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
+                Repositorio_Clientes.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, Usuario.generarContraseña(), txt_AltaMail.Text, true,
+                 Repositorio_Clientes.CalcularIdCliente(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
 
                 MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
             }

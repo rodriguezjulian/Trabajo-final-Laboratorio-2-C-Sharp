@@ -21,14 +21,14 @@ namespace WF_TransporteRodriguez
         }
         private void Frm_Empleado_Listar_Clientes_Load(object sender, EventArgs e)
         {
-            dtg_ListarClientes.DataSource = Sistema.ListaClientes;
+            dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
             dtg_ListarClientes.AutoGenerateColumns = false;
             ConfigurarDTG();
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
 
-            if (Sistema.FiltrarClientes(listaClientesBaja))
+            if (Repositorio_Clientes.FiltrarClientes(listaClientesBaja))
             {
                 dtg_ListarClientes.DataSource = null;
                 dtg_ListarClientes.Rows.Clear();

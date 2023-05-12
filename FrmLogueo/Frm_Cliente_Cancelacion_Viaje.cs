@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
-            viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dtg_ListarViajes.DataSource = viajesCliente;
             lbl_NombreClient.Text = cliente.Nombre;
         }
@@ -35,11 +35,11 @@ namespace WF_TransporteRodriguez
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
             Viaje? viajeAux;
             if (int.TryParse(txt_IdDeViajeACancelar.Text, out _) == true
-                && Sistema.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
+                && Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
-                Sistema.ListaViajes.Remove(viajeAux);
-                viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+                Repositorio_Viajes.ListaViajes.Remove(viajeAux);
+                viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
                 dtg_ListarViajes.DataSource = viajesCliente;
             }
             else

@@ -24,7 +24,7 @@ namespace WF_TransporteRodriguez
         public Usuario ClienteInstanciado { get => clienteInstanciado; set => clienteInstanciado = value; }
         private void FrmViaje_Load(object sender, EventArgs e)
         {
-            cliente = Sistema.BuscarCliente(clienteInstanciado);
+            cliente = Repositorio_Clientes.BuscarCliente(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
@@ -36,16 +36,16 @@ namespace WF_TransporteRodriguez
         {
             DateTime fechaSinHora=dtp_FechaDeViaje.Value.Date;
             //MessageBox.Show(fechaSinHora.ToString());
-            if (Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
+            if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
-                Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
+                Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
-                Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
-                Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
+                Repositorio_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
+                Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
                 //dtp_FechaDeViaje.Value.Date));
-                Sistema.ActualizarFechaIngresada(fechaSinHora)));
+                Repositorio_Viajes.ActualizarFechaIngresada(fechaSinHora)));
                 //dtp_FechaDeViaje.Value.Year, dtp_FechaDeViaje.Value.Month, dtp_FechaDeViaje.Value.Day));
-                 Sistema.buscarViaje(Sistema.CalcularIdViaje() - 1, out viajeAux);
+                Repositorio_Viajes.buscarViaje(Repositorio_Viajes.CalcularIdViaje() - 1, out viajeAux);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;

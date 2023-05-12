@@ -23,7 +23,7 @@ namespace WF_TransporteRodriguez
             dtg_ListarClientes.AutoGenerateColumns = false;
             #region DATAGRID
 
-            dtg_ListarClientes.DataSource = Sistema.ListaClientes;
+            dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "IdCliente",
@@ -86,7 +86,7 @@ namespace WF_TransporteRodriguez
 
             if (txt_BajaID.Text != "")
             {
-                Cliente cliente = Sistema.BuscarCliente(int.Parse(txt_BajaID.Text));
+                Cliente cliente = Repositorio_Clientes.BuscarCliente(int.Parse(txt_BajaID.Text));
                 if (cliente.Estado ==true)
                 {
                     cliente.Estado = false;
@@ -94,7 +94,7 @@ namespace WF_TransporteRodriguez
                     dtg_ListarClientes.DataSource = null;
                     dtg_ListarClientes.Rows.Clear();
                     dtg_ListarClientes.AutoGenerateColumns = false;
-                    dtg_ListarClientes.DataSource = Sistema.ListaClientes;
+                    dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
                 }
                 else
                 {

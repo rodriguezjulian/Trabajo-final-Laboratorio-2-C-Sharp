@@ -24,7 +24,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
-            viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
             dtg_ListarViajes.DataSource = viajesCliente;
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
@@ -40,12 +40,12 @@ namespace WF_TransporteRodriguez
             //El guion bajo (_) se utiliza como una convención para indicar que no se va a utilizar el valor de salida.
             if (int.TryParse(txt_IdDeViajeAModificar.Text, out _) == true
                 && int.TryParse(txt_Kg.Text, out _) == true
-                    && Sistema.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
+                    && Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeAModificar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
                 viajeAux.KilosATransportar = float.Parse(txt_Kg.Text);
-                viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+                viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
                 dtg_ListarViajes.DataSource = viajesCliente;
                 MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
             }

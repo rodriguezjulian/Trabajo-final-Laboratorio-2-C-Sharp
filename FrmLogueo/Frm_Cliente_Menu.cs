@@ -54,7 +54,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmMenuCliente_Load(object sender, EventArgs e)
         {
-            clienteInstanciado = Sistema.BuscarCliente(usuarioInstanciado);
+            clienteInstanciado = Repositorio_Clientes.BuscarCliente(usuarioInstanciado);
         }
 
         private void modificarViajeToolStripMenuItem1_Click(object sender, EventArgs e)
