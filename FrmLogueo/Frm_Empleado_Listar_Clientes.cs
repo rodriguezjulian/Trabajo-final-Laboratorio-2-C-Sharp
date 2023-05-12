@@ -27,7 +27,7 @@ namespace WF_TransporteRodriguez
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-        
+
             if (Sistema.FiltrarClientes(listaClientesBaja))
             {
                 dtg_ListarClientes.DataSource = null;
@@ -43,9 +43,9 @@ namespace WF_TransporteRodriguez
         }
         private void ConfigurarDTG()
         {
-            
+
             #region DATAGRID
-            
+
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -84,6 +84,11 @@ namespace WF_TransporteRodriguez
             #endregion
         }
 
-
+        private void pic_Volver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+        }
     }
 }

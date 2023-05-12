@@ -47,6 +47,7 @@ namespace WF_TransporteRodriguez
                 viajeAux.KilosATransportar = float.Parse(txt_Kg.Text);
                 viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
                 dtg_ListarViajes.DataSource = viajesCliente;
+                MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
             }
             else
             {

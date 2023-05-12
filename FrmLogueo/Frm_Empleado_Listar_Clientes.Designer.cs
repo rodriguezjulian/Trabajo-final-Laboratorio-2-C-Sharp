@@ -109,6 +109,7 @@
             pic_Volver.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_Volver.TabIndex = 1;
             pic_Volver.TabStop = false;
+            pic_Volver.Click += pic_Volver_Click;
             // 
             // pnl_PanelSup
             // 

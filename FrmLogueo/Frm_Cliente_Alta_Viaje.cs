@@ -46,7 +46,7 @@ namespace WF_TransporteRodriguez
                 Sistema.ActualizarFechaIngresada(fechaSinHora)));
                 //dtp_FechaDeViaje.Value.Year, dtp_FechaDeViaje.Value.Month, dtp_FechaDeViaje.Value.Day));
                  Sistema.buscarViaje(Sistema.CalcularIdViaje() - 1, out viajeAux);
-                MessageBox.Show(viajeAux.ToString());
+                MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;
                 this.Close();

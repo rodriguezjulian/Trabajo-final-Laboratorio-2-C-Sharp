@@ -60,7 +60,7 @@ namespace TransporteRodriguez
         public override string ToString()
         {
             StringBuilder miCadena = new StringBuilder();
-            miCadena.AppendLine("VIAJE CONFIRMADO");
+           // miCadena.AppendLine("VIAJE CONFIRMADO");
             miCadena.AppendLine("ID VIAJE: " + IdViaje);
             miCadena.AppendLine("Direccion de Salida: " + DireccionSalida);
             miCadena.AppendLine("Provincia destino: " + ProvinciaDestino);

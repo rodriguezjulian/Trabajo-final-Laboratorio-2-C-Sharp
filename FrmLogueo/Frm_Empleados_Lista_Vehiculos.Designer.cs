@@ -87,7 +87,7 @@
             pnl_PanelSup.Controls.Add(lbl_Listar);
             pnl_PanelSup.Location = new Point(107, 0);
             pnl_PanelSup.Name = "pnl_PanelSup";
-            pnl_PanelSup.Size = new Size(315, 40);
+            pnl_PanelSup.Size = new Size(614, 40);
             pnl_PanelSup.TabIndex = 70;
             // 
             // lbl_Listar

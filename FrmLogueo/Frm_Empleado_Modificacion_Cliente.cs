@@ -92,7 +92,10 @@ namespace WF_TransporteRodriguez
                 cliente.Rubro = cbo_Rubro.Text;
                 cliente.Mail = txt_ModMail.Text;
                 cliente.DireccionBSAS = txt_ModDireccion.Text;
-                MessageBox.Show(cliente.ToString());
+                MessageBox.Show("DATOS DEL CLIENTE "+ cliente.ToString());
+                this.Hide();
+                this.Close();
+                Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
             }
             else
             {

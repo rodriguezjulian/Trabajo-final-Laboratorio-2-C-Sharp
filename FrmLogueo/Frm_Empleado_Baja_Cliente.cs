@@ -87,8 +87,18 @@ namespace WF_TransporteRodriguez
             if (txt_BajaID.Text != "")
             {
                 Cliente cliente = Sistema.BuscarCliente(int.Parse(txt_BajaID.Text));
-                cliente.Estado = false;
-                MessageBox.Show(cliente.Nombre + "a sido dado de baja.\n");
+                if (cliente.Estado ==true)
+                {
+                    cliente.Estado = false;
+                    MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
+                    this.Hide();
+                    this.Close();
+                    Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR, El cliente " + cliente.Nombre + " ya se encuentra dado de baja.\n");
+                }
             }
             else
             {

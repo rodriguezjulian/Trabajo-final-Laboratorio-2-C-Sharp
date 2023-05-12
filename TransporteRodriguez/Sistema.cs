@@ -66,7 +66,7 @@ namespace TransporteRodriguez
             Sistema.ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
             "Salta", 200, 10000, 1, DateTime.Parse("11/05/2025")));
             Sistema.ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
-            "Corrientes", 1800, 10500, 5, DateTime.Parse("11/05/2024")));
+            "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO AAAAA
             Sistema.ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
            "Santa Fe", 20, 10500, 3, new DateTime(2024, 05, 11, 0, 0, 0)));
         }
