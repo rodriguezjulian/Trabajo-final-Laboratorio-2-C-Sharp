@@ -35,13 +35,6 @@ namespace TransporteRodriguez
             return retorno;
         }
         //Este metodo es clave para despues poder comparar la fecha ingresada con la existente
-        public static DateTime ActualizarFechaIngresada(DateTime actual)
-        {
-            DateTime actualizado;
-            actualizado = actual.Date;
-            return actualizado;
-        }
-
         public static float calcularPrecioViaje(int provincia, float kilosTransportados)
         {
             float precio = 0;

@@ -26,21 +26,23 @@ namespace WF_TransporteRodriguez
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
             viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-            dtg_ListarViajes.DataSource = viajesCliente;
+            // dtg_ListaViajes.DataSource = viajesCliente;
+            // OrganizarDataGridViajes()
+            OrganizarDataGridViajes(viajesCliente);
             lbl_NombreClient.Text = cliente.Nombre;
         }
 
         private void pic_EliminarViaje_Click(object sender, EventArgs e)
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
-            Viaje? viajeAux;
-            if (int.TryParse(txt_IdDeViajeACancelar.Text, out _) == true
-                && Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
+            Viaje viajeAux;
+
+            if (Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 Repositorio_Viajes.ListaViajes.Remove(viajeAux);
                 viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-                dtg_ListarViajes.DataSource = viajesCliente;
+                OrganizarDataGridViajes(viajesCliente);
             }
             else
             {
@@ -73,5 +75,51 @@ namespace WF_TransporteRodriguez
             this.Hide();
         }
 
+        private void dtg_ListarViajes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_IdDeViajeACancelar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
+        }
+        public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
+        {
+            dtg_ListaViajes.DataSource = viajesCliente;
+            dtg_ListaViajes.AutoGenerateColumns = false;
+
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdViaje",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "FechaViaje",
+                HeaderText = "Fecha",
+                DisplayIndex = 1
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "nombreCliente",
+                HeaderText = "Nombre",
+                DisplayIndex = 2
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "DireccionSalida",
+                HeaderText = "Salida",
+                DisplayIndex = 3
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "ProvinciaDestino",
+                HeaderText = "Destino",
+                DisplayIndex = 4
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Precio",
+                HeaderText = "Precio",
+                DisplayIndex = 5
+            });
+        }
     }
 }

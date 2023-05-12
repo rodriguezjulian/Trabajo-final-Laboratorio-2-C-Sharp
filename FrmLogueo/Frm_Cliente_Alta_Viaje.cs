@@ -34,17 +34,14 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            DateTime fechaSinHora=dtp_FechaDeViaje.Value.Date;
-            //MessageBox.Show(fechaSinHora.ToString());
+            
             if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
                 Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
                 Repositorio_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
                 Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
-                //dtp_FechaDeViaje.Value.Date));
-                Repositorio_Viajes.ActualizarFechaIngresada(fechaSinHora)));
-                //dtp_FechaDeViaje.Value.Year, dtp_FechaDeViaje.Value.Month, dtp_FechaDeViaje.Value.Day));
+                dtp_FechaDeViaje.Value.Date));
                 Repositorio_Viajes.buscarViaje(Repositorio_Viajes.CalcularIdViaje() - 1, out viajeAux);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();

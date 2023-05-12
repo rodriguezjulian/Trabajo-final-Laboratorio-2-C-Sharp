@@ -26,8 +26,11 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Lista_Viajes_Load(object sender, EventArgs e)
         {
-
-            dtg_ListaViajes.DataSource = Repositorio_Viajes.ListaViajes;
+            OrganizarDataGridViajes(Repositorio_Viajes.ListaViajes);
+        }
+        public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
+        {
+            dtg_ListaViajes.DataSource = viajesCliente;
             dtg_ListaViajes.AutoGenerateColumns = false;
 
             dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()

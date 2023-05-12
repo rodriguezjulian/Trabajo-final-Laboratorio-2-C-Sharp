@@ -36,7 +36,7 @@
             pln_CancelarViaje = new Panel();
             lbl_Cancelar = new Label();
             label6 = new Label();
-            dtg_ListarViajes = new DataGridView();
+            dtg_ListaViajes = new DataGridView();
             lbl_IdCancelarViaje = new Label();
             txt_IdDeViajeACancelar = new TextBox();
             pic_EliminarViaje = new PictureBox();
@@ -48,7 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             pln_CancelarViaje.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_EliminarViaje).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Id).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
@@ -124,17 +124,18 @@
             label6.TabIndex = 68;
             label6.Text = "CANCELAR VIAJE";
             // 
-            // dtg_ListarViajes
+            // dtg_ListaViajes
             // 
-            dtg_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dtg_ListarViajes.BackgroundColor = Color.White;
-            dtg_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarViajes.Location = new Point(0, 155);
-            dtg_ListarViajes.Name = "dtg_ListarViajes";
-            dtg_ListarViajes.RowTemplate.Height = 25;
-            dtg_ListarViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_ListarViajes.Size = new Size(721, 318);
-            dtg_ListarViajes.TabIndex = 70;
+            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListaViajes.BackgroundColor = Color.White;
+            dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListaViajes.Location = new Point(0, 155);
+            dtg_ListaViajes.Name = "dtg_ListaViajes";
+            dtg_ListaViajes.RowTemplate.Height = 25;
+            dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_ListaViajes.Size = new Size(721, 318);
+            dtg_ListaViajes.TabIndex = 70;
+            dtg_ListaViajes.CellClick += dtg_ListarViajes_CellClick;
             // 
             // lbl_IdCancelarViaje
             // 
@@ -152,6 +153,7 @@
             txt_IdDeViajeACancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeACancelar.Location = new Point(66, 108);
             txt_IdDeViajeACancelar.Name = "txt_IdDeViajeACancelar";
+            txt_IdDeViajeACancelar.ReadOnly = true;
             txt_IdDeViajeACancelar.Size = new Size(162, 25);
             txt_IdDeViajeACancelar.TabIndex = 85;
             txt_IdDeViajeACancelar.TextAlign = HorizontalAlignment.Center;
@@ -233,7 +235,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pic_Cancelar);
-            Controls.Add(dtg_ListarViajes);
+            Controls.Add(dtg_ListaViajes);
             Controls.Add(pic_Id);
             Controls.Add(pic_EliminarViaje);
             Controls.Add(txt_IdDeViajeACancelar);
@@ -249,7 +251,7 @@
             pnl_CancelarViaje.PerformLayout();
             pln_CancelarViaje.ResumeLayout(false);
             pln_CancelarViaje.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dtg_ListarViajes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_EliminarViaje).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Id).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
@@ -264,7 +266,7 @@
         protected Label lbl_TransporteRodriguez;
         private Panel pnl_CancelarViaje;
         protected Label label6;
-        private DataGridView dtg_ListarViajes;
+        private DataGridView dtg_ListaViajes;
         protected Label lbl_IdCancelarViaje;
         private TextBox txt_IdDeViajeACancelar;
         private PictureBox pic_EliminarViaje;
