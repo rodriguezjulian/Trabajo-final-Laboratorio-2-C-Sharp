@@ -24,11 +24,11 @@ namespace WF_TransporteRodriguez
         private void FrmListarViajesCliente_Load(object sender, EventArgs e)
         {
             List<Viaje> viajesCliente = Sistema.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-            dataGridView1.DataSource = viajesCliente;
+            dgt_ListarViajes.DataSource = viajesCliente;
             lbl_NombreCliente.Text = cliente.Nombre;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pic_Atras_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();

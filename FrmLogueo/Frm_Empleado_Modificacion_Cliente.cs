@@ -83,7 +83,7 @@ namespace WF_TransporteRodriguez
             cbo_Rubro.Text = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
             txt_ModMail.Text = dtg_ListarClientes.CurrentRow.Cells[4].Value.ToString();
         }
-        private void pic_ReservarViajar_Click(object sender, EventArgs e)
+        private void pic_Guardar_Click(object sender, EventArgs e)
         {
             if (txt_ID.Text != "")
             {
@@ -93,9 +93,10 @@ namespace WF_TransporteRodriguez
                 cliente.Mail = txt_ModMail.Text;
                 cliente.DireccionBSAS = txt_ModDireccion.Text;
                 MessageBox.Show("DATOS DEL CLIENTE "+ cliente.ToString());
-                this.Hide();
-                this.Close();
-                Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+                dtg_ListarClientes.DataSource = null;
+                dtg_ListarClientes.Rows.Clear();
+                dtg_ListarClientes.AutoGenerateColumns = false;
+                dtg_ListarClientes.DataSource =Sistema.ListaClientes;
             }
             else
             {

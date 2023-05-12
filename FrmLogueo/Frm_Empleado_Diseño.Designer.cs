@@ -32,14 +32,14 @@
             pnl_PanelSup = new Panel();
             lbl_Opcion = new Label();
             panel2 = new Panel();
-            pic_ReservarViajar = new PictureBox();
+            pic_Guardar = new PictureBox();
             pic_Cancelar = new PictureBox();
             lbl_Cancelar = new Label();
             lbl_Guardar = new Label();
             lbl_Acciones = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             // 
             panel2.BackColor = Color.FromArgb(255, 192, 128);
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(pic_ReservarViajar);
+            panel2.Controls.Add(pic_Guardar);
             panel2.Controls.Add(pic_Cancelar);
             panel2.Controls.Add(lbl_Cancelar);
             panel2.Controls.Add(lbl_Guardar);
@@ -76,15 +76,15 @@
             panel2.Size = new Size(89, 468);
             panel2.TabIndex = 70;
             // 
-            // pic_ReservarViajar
+            // pic_Guardar
             // 
-            pic_ReservarViajar.Image = Properties.Resources.guardar;
-            pic_ReservarViajar.Location = new Point(7, 135);
-            pic_ReservarViajar.Name = "pic_ReservarViajar";
-            pic_ReservarViajar.Size = new Size(75, 75);
-            pic_ReservarViajar.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic_ReservarViajar.TabIndex = 72;
-            pic_ReservarViajar.TabStop = false;
+            pic_Guardar.Image = Properties.Resources.guardar;
+            pic_Guardar.Location = new Point(7, 135);
+            pic_Guardar.Name = "pic_Guardar";
+            pic_Guardar.Size = new Size(75, 75);
+            pic_Guardar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Guardar.TabIndex = 72;
+            pic_Guardar.TabStop = false;
             // 
             // pic_Cancelar
             // 
@@ -139,7 +139,7 @@
             pnl_PanelSup.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ResumeLayout(false);
         }
@@ -147,7 +147,7 @@
         #endregion
         public Panel pnl_PanelSup;
         public Panel panel2;
-        public PictureBox pic_ReservarViajar;
+        public PictureBox pic_Guardar;
         public PictureBox pic_Cancelar;
         public Label lbl_Cancelar;
         public Label lbl_Guardar;

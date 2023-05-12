@@ -81,7 +81,7 @@ namespace WF_TransporteRodriguez
             Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
-        private void pic_ReservarViajar_Click(object sender, EventArgs e)
+        private void pic_Guardar_Click(object sender, EventArgs e)
         {
 
             if (txt_BajaID.Text != "")
@@ -91,9 +91,10 @@ namespace WF_TransporteRodriguez
                 {
                     cliente.Estado = false;
                     MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
-                    this.Hide();
-                    this.Close();
-                    Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+                    dtg_ListarClientes.DataSource = null;
+                    dtg_ListarClientes.Rows.Clear();
+                    dtg_ListarClientes.AutoGenerateColumns = false;
+                    dtg_ListarClientes.DataSource = Sistema.ListaClientes;
                 }
                 else
                 {

@@ -38,7 +38,7 @@
             pic_ID = new PictureBox();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Persona).BeginInit();
@@ -47,7 +47,7 @@
             // 
             // pic_ReservarViajar
             // 
-            pic_ReservarViajar.Click += pic_ReservarViajar_Click;
+            pic_Guardar.Click += pic_Guardar_Click;
             // 
             // pic_Cancelar
             // 
@@ -172,7 +172,7 @@
             pnl_PanelSup.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Persona).EndInit();

@@ -28,98 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgt_ListarViajes = new DataGridView();
             grp_ListarViajesCliente = new GroupBox();
-            label7 = new Label();
-            pictureBox1 = new PictureBox();
+            pic_Atras = new PictureBox();
+            lbl_Volver = new Label();
             panel2 = new Panel();
-            label6 = new Label();
+            lbl_Listar = new Label();
             panel1 = new Panel();
             lbl_NombreCliente = new Label();
-            pictureBox2 = new PictureBox();
-            label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pic_Persona = new PictureBox();
+            lbl_TransporteRodriguez = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgt_ListarViajes).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Atras).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Persona).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgt_ListarViajes
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 114);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(717, 343);
-            dataGridView1.TabIndex = 0;
+            dgt_ListarViajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgt_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgt_ListarViajes.BackgroundColor = Color.White;
+            dgt_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgt_ListarViajes.Location = new Point(3, 114);
+            dgt_ListarViajes.Name = "dgt_ListarViajes";
+            dgt_ListarViajes.RowTemplate.Height = 25;
+            dgt_ListarViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgt_ListarViajes.Size = new Size(717, 343);
+            dgt_ListarViajes.TabIndex = 0;
             // 
             // grp_ListarViajesCliente
             // 
             grp_ListarViajesCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            grp_ListarViajesCliente.Controls.Add(label7);
-            grp_ListarViajesCliente.Controls.Add(pictureBox1);
+            grp_ListarViajesCliente.Controls.Add(pic_Atras);
+            grp_ListarViajesCliente.Controls.Add(lbl_Volver);
             grp_ListarViajesCliente.Controls.Add(panel2);
             grp_ListarViajesCliente.Controls.Add(panel1);
-            grp_ListarViajesCliente.Controls.Add(dataGridView1);
+            grp_ListarViajesCliente.Controls.Add(dgt_ListarViajes);
             grp_ListarViajesCliente.Location = new Point(0, 0);
             grp_ListarViajesCliente.Name = "grp_ListarViajesCliente";
             grp_ListarViajesCliente.Size = new Size(738, 469);
             grp_ListarViajesCliente.TabIndex = 1;
             grp_ListarViajesCliente.TabStop = false;
             // 
-            // label7
+            // pic_Atras
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(603, 39);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 21);
-            label7.TabIndex = 106;
-            label7.Text = "Volver";
+            pic_Atras.Image = Properties.Resources.volver;
+            pic_Atras.Location = new Point(603, 63);
+            pic_Atras.Name = "pic_Atras";
+            pic_Atras.Size = new Size(59, 50);
+            pic_Atras.SizeMode = PictureBoxSizeMode.Zoom;
+            pic_Atras.TabIndex = 107;
+            pic_Atras.TabStop = false;
+            pic_Atras.Click += pic_Atras_Click;
             // 
-            // pictureBox1
+            // lbl_Volver
             // 
-            pictureBox1.Image = Properties.Resources.volver;
-            pictureBox1.Location = new Point(603, 59);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(71, 49);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 105;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            lbl_Volver.AutoSize = true;
+            lbl_Volver.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Volver.Location = new Point(603, 39);
+            lbl_Volver.Name = "lbl_Volver";
+            lbl_Volver.Size = new Size(59, 21);
+            lbl_Volver.TabIndex = 106;
+            lbl_Volver.Text = "Volver";
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(lbl_Listar);
             panel2.Location = new Point(0, 27);
             panel2.Name = "panel2";
             panel2.Size = new Size(315, 40);
             panel2.TabIndex = 69;
             // 
-            // label6
+            // lbl_Listar
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(0, 5);
-            label6.Name = "label6";
-            label6.Size = new Size(158, 30);
-            label6.TabIndex = 68;
-            label6.Text = "LISTAR VIAJES";
+            lbl_Listar.AutoSize = true;
+            lbl_Listar.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Listar.Location = new Point(0, 5);
+            lbl_Listar.Name = "lbl_Listar";
+            lbl_Listar.Size = new Size(158, 30);
+            lbl_Listar.TabIndex = 68;
+            lbl_Listar.Text = "LISTAR VIAJES";
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(255, 192, 128);
             panel1.Controls.Add(lbl_NombreCliente);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(pic_Persona);
+            panel1.Controls.Add(lbl_TransporteRodriguez);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(720, 33);
@@ -135,25 +135,25 @@
             lbl_NombreCliente.TabIndex = 86;
             lbl_NombreCliente.Text = "NOMBRE CLIENTE";
             // 
-            // pictureBox2
+            // pic_Persona
             // 
-            pictureBox2.Image = Properties.Resources.persona;
-            pictureBox2.Location = new Point(376, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(34, 27);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 34;
-            pictureBox2.TabStop = false;
+            pic_Persona.Image = Properties.Resources.persona;
+            pic_Persona.Location = new Point(376, 3);
+            pic_Persona.Name = "pic_Persona";
+            pic_Persona.Size = new Size(34, 27);
+            pic_Persona.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Persona.TabIndex = 34;
+            pic_Persona.TabStop = false;
             // 
-            // label5
+            // lbl_TransporteRodriguez
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(3, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(275, 30);
-            label5.TabIndex = 30;
-            label5.Text = "TRANSPORTE RODRIGUEZ";
+            lbl_TransporteRodriguez.AutoSize = true;
+            lbl_TransporteRodriguez.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_TransporteRodriguez.Location = new Point(3, 0);
+            lbl_TransporteRodriguez.Name = "lbl_TransporteRodriguez";
+            lbl_TransporteRodriguez.Size = new Size(275, 30);
+            lbl_TransporteRodriguez.TabIndex = 30;
+            lbl_TransporteRodriguez.Text = "TRANSPORTE RODRIGUEZ";
             // 
             // Frm_Cliente_Lista_Viajes
             // 
@@ -165,29 +165,29 @@
             Name = "Frm_Cliente_Lista_Viajes";
             Text = "FrmListarViajesCliente";
             Load += FrmListarViajesCliente_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgt_ListarViajes).EndInit();
             grp_ListarViajesCliente.ResumeLayout(false);
             grp_ListarViajesCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Atras).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Persona).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgt_ListarViajes;
         private GroupBox grp_ListarViajesCliente;
         protected Panel panel1;
         protected Label lbl_NombreCliente;
-        protected PictureBox pictureBox2;
-        protected Label label5;
+        protected PictureBox pic_Persona;
+        protected Label lbl_TransporteRodriguez;
         private Panel panel2;
-        protected Label label6;
-        private PictureBox pictureBox1;
-        protected Label label7;
+        protected Label lbl_Listar;
+        protected Label lbl_Volver;
+        private PictureBox pic_Atras;
     }
 }
