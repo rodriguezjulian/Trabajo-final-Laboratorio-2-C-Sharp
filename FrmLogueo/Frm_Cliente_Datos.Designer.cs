@@ -380,23 +380,23 @@
 
         #endregion
 
-        protected Panel panel1;
-        protected Label lbl_NombreCliente;
-        protected PictureBox pictureBox2;
-        protected Label label5;
+        private Panel panel1;
+        private Label lbl_NombreCliente;
+        private PictureBox pictureBox2;
+        private Label label5;
         private Panel panel2;
-        protected Label label6;
+        private Label label6;
         private Panel panel3;
         private PictureBox pic_Id;
-        protected Label lbl_RerservarViaje;
+        private Label lbl_RerservarViaje;
         private TextBox txt_Id;
-        protected Label label1;
-        protected Label label2;
-        protected Label label3;
+        private Label label1;
+        private Label label2;
+        private Label label3;
         private TextBox txt_NombreCliente;
         private TextBox txt_Mail;
         private TextBox txt_Direccion;
-        protected Label label4;
+        private Label label4;
         private TextBox txt_Rubro;
         private GroupBox groupBox1;
         private PictureBox pic_Rubro;
@@ -404,6 +404,6 @@
         private PictureBox pic_Mail;
         private PictureBox pic_Persona;
         private PictureBox pictureBox1;
-        protected Label label7;
+        private Label label7;
     }
 }

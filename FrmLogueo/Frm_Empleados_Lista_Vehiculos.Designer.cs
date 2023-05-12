@@ -28,50 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView2 = new DataGridView();
+            dtg_ListarVehiculos = new DataGridView();
             pnl_Izquierdo = new Panel();
             lbl_Volver = new Label();
             pic_Volver = new PictureBox();
-            pnl_Superior = new Panel();
-            lbl_nombreUsuario = new Label();
-            pic_IconoPersona = new PictureBox();
-            lbl_TransporteRodriguez = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            pnl_PanelSup = new Panel();
+            lbl_ListarVehiculos = new Label();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListarVehiculos).BeginInit();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
-            pnl_Superior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
+            pnl_PanelSup.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView2
+            // dtg_ListarVehiculos
             // 
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(110, 39);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(528, 265);
-            dataGridView2.TabIndex = 9;
+            dtg_ListarVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListarVehiculos.BackgroundColor = Color.White;
+            dtg_ListarVehiculos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListarVehiculos.Location = new Point(107, 39);
+            dtg_ListarVehiculos.Name = "dtg_ListarVehiculos";
+            dtg_ListarVehiculos.RowTemplate.Height = 25;
+            dtg_ListarVehiculos.Size = new Size(614, 418);
+            dtg_ListarVehiculos.TabIndex = 9;
             // 
             // pnl_Izquierdo
             // 
-            pnl_Izquierdo.BackColor = Color.FromArgb(255, 192, 128);
+            pnl_Izquierdo.BackColor = Color.FromArgb(255, 128, 0);
             pnl_Izquierdo.Controls.Add(lbl_Volver);
             pnl_Izquierdo.Controls.Add(pic_Volver);
             pnl_Izquierdo.Location = new Point(0, 0);
             pnl_Izquierdo.Name = "pnl_Izquierdo";
-            pnl_Izquierdo.Size = new Size(107, 304);
+            pnl_Izquierdo.Size = new Size(107, 468);
             pnl_Izquierdo.TabIndex = 10;
             // 
             // lbl_Volver
             // 
             lbl_Volver.AutoSize = true;
-            lbl_Volver.Location = new Point(26, 233);
+            lbl_Volver.Location = new Point(12, 233);
             lbl_Volver.Name = "lbl_Volver";
-            lbl_Volver.Size = new Size(39, 15);
+            lbl_Volver.Size = new Size(87, 15);
             lbl_Volver.TabIndex = 2;
-            lbl_Volver.Text = "Volver";
+            lbl_Volver.Text = "Menu principal";
             // 
             // pic_Volver
             // 
@@ -84,78 +81,53 @@
             pic_Volver.TabStop = false;
             pic_Volver.Click += pic_Volver_Click;
             // 
-            // pnl_Superior
+            // pnl_PanelSup
             // 
-            pnl_Superior.BackColor = Color.FromArgb(255, 255, 192);
-            pnl_Superior.Controls.Add(lbl_nombreUsuario);
-            pnl_Superior.Controls.Add(pic_IconoPersona);
-            pnl_Superior.Controls.Add(lbl_TransporteRodriguez);
-            pnl_Superior.Location = new Point(110, 0);
-            pnl_Superior.Name = "pnl_Superior";
-            pnl_Superior.Size = new Size(528, 40);
-            pnl_Superior.TabIndex = 11;
+            pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
+            pnl_PanelSup.Controls.Add(lbl_ListarVehiculos);
+            pnl_PanelSup.Location = new Point(107, 0);
+            pnl_PanelSup.Name = "pnl_PanelSup";
+            pnl_PanelSup.Size = new Size(315, 40);
+            pnl_PanelSup.TabIndex = 70;
             // 
-            // lbl_nombreUsuario
+            // lbl_ListarVehiculos
             // 
-            lbl_nombreUsuario.AutoSize = true;
-            lbl_nombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_nombreUsuario.Location = new Point(370, 14);
-            lbl_nombreUsuario.Name = "lbl_nombreUsuario";
-            lbl_nombreUsuario.Size = new Size(64, 20);
-            lbl_nombreUsuario.TabIndex = 60;
-            lbl_nombreUsuario.Text = "Nombre";
-            // 
-            // pic_IconoPersona
-            // 
-            pic_IconoPersona.Image = Properties.Resources.persona;
-            pic_IconoPersona.Location = new Point(320, 2);
-            pic_IconoPersona.Name = "pic_IconoPersona";
-            pic_IconoPersona.Size = new Size(44, 35);
-            pic_IconoPersona.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic_IconoPersona.TabIndex = 59;
-            pic_IconoPersona.TabStop = false;
-            // 
-            // lbl_TransporteRodriguez
-            // 
-            lbl_TransporteRodriguez.AutoSize = true;
-            lbl_TransporteRodriguez.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_TransporteRodriguez.Location = new Point(0, 4);
-            lbl_TransporteRodriguez.Name = "lbl_TransporteRodriguez";
-            lbl_TransporteRodriguez.Size = new Size(314, 32);
-            lbl_TransporteRodriguez.TabIndex = 31;
-            lbl_TransporteRodriguez.Text = "TRANSPORTE RODRIGUEZ";
+            lbl_ListarVehiculos.AutoSize = true;
+            lbl_ListarVehiculos.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_ListarVehiculos.Location = new Point(0, 6);
+            lbl_ListarVehiculos.Name = "lbl_ListarVehiculos";
+            lbl_ListarVehiculos.Size = new Size(203, 30);
+            lbl_ListarVehiculos.TabIndex = 71;
+            lbl_ListarVehiculos.Text = "LISTAR VEHICULOS";
             // 
             // Frm_Empleados_Lista_Vehiculos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(638, 302);
-            Controls.Add(pnl_Superior);
+            ClientSize = new Size(720, 469);
+            Controls.Add(pnl_PanelSup);
             Controls.Add(pnl_Izquierdo);
-            Controls.Add(dataGridView2);
+            Controls.Add(dtg_ListarVehiculos);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleados_Lista_Vehiculos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListarVehiculos";
             Load += FrmListarVehiculos_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListarVehiculos).EndInit();
             pnl_Izquierdo.ResumeLayout(false);
             pnl_Izquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
-            pnl_Superior.ResumeLayout(false);
-            pnl_Superior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).EndInit();
+            pnl_PanelSup.ResumeLayout(false);
+            pnl_PanelSup.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private DataGridView dataGridView2;
+        private DataGridView dtg_ListarVehiculos;
         private Panel pnl_Izquierdo;
         private Label lbl_Volver;
         private PictureBox pic_Volver;
-        private Panel pnl_Superior;
-        private Label lbl_TransporteRodriguez;
-        private PictureBox pic_IconoPersona;
-        private Label lbl_nombreUsuario;
+        private Panel pnl_PanelSup;
+        private Label lbl_ListarVehiculos;
     }
 }

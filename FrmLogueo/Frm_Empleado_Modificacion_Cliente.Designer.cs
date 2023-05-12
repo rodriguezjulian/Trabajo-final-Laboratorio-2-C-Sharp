@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
+            pnl_PanelSup.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             SuspendLayout();
             // 
             // pic_Cancelar
             // 
             pic_Cancelar.Click += pic_Cancelar_Click;
+            // 
+            // lbl_Opcion
+            // 
+            lbl_Opcion.Size = new Size(219, 30);
+            lbl_Opcion.Text = "MODIFICAR CLIENTE";
             // 
             // Frm_Empleado_Modificacion_Cliente
             // 
@@ -43,8 +50,12 @@
             ClientSize = new Size(720, 469);
             Name = "Frm_Empleado_Modificacion_Cliente";
             Text = "Frm_Empleado_Modificacion_Cliente";
-            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
+            pnl_PanelSup.ResumeLayout(false);
+            pnl_PanelSup.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ResumeLayout(false);
         }
 

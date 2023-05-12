@@ -26,25 +26,29 @@ namespace WF_TransporteRodriguez
         {
             InitializeComponent();
         }
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
-            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
-        }
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
 
             actualizarPanel(pnl_Padre, hora);
         }
-
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
+            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
+        }
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_Empleados_Lista_Vehiculos frmListarVehiculos = new Frm_Empleados_Lista_Vehiculos();
-            frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
-            this.Close();
-            frmListarVehiculos.Show();
+            Frm_Empleados_Lista_Vehiculos Frm_Empleados_Lista_Vehiculos = new Frm_Empleados_Lista_Vehiculos();
+            actualizarPanel(pnl_Padre, Frm_Empleados_Lista_Vehiculos);
         }
+        /* private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+         {
+             Frm_Empleados_Lista_Vehiculos frmListarVehiculos = new Frm_Empleados_Lista_Vehiculos();
+             frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
+             actualizarPanel(pnl_Padre, frmListarVehiculos);
+             //frmListarVehiculos.Show();
+         }*/
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Oculta el formulario actual
@@ -57,11 +61,6 @@ namespace WF_TransporteRodriguez
             pnl_Padre.Controls.Add(hijo);
             hijo.Dock = DockStyle.Fill;
             hijo.Show();
-        }
-
-        private void moToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 

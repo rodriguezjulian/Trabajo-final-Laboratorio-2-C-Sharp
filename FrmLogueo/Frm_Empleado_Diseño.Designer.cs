@@ -29,31 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Diseño));
-            panel1 = new Panel();
+            pnl_PanelSup = new Panel();
+            lbl_Opcion = new Label();
+            panel2 = new Panel();
             pic_ReservarViajar = new PictureBox();
             pic_Cancelar = new PictureBox();
             lbl_Cancelar = new Label();
             lbl_Guardar = new Label();
             lbl_Acciones = new Label();
-            pnl_PanelSup = new Panel();
-            panel1.SuspendLayout();
+            pnl_PanelSup.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnl_PanelSup
             // 
-            panel1.BackColor = Color.FromArgb(255, 192, 128);
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(pic_ReservarViajar);
-            panel1.Controls.Add(pic_Cancelar);
-            panel1.Controls.Add(lbl_Cancelar);
-            panel1.Controls.Add(lbl_Guardar);
-            panel1.Controls.Add(lbl_Acciones);
-            panel1.Location = new Point(1, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(89, 468);
-            panel1.TabIndex = 42;
+            pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
+            pnl_PanelSup.Controls.Add(lbl_Opcion);
+            pnl_PanelSup.Location = new Point(89, 0);
+            pnl_PanelSup.Name = "pnl_PanelSup";
+            pnl_PanelSup.Size = new Size(315, 40);
+            pnl_PanelSup.TabIndex = 69;
+            // 
+            // lbl_Opcion
+            // 
+            lbl_Opcion.AutoSize = true;
+            lbl_Opcion.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Opcion.Location = new Point(6, 9);
+            lbl_Opcion.Name = "lbl_Opcion";
+            lbl_Opcion.Size = new Size(77, 30);
+            lbl_Opcion.TabIndex = 72;
+            lbl_Opcion.Text = "TEXTO";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(255, 192, 128);
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(pic_ReservarViajar);
+            panel2.Controls.Add(pic_Cancelar);
+            panel2.Controls.Add(lbl_Cancelar);
+            panel2.Controls.Add(lbl_Guardar);
+            panel2.Controls.Add(lbl_Acciones);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(89, 468);
+            panel2.TabIndex = 70;
             // 
             // pic_ReservarViajar
             // 
@@ -103,39 +124,34 @@
             lbl_Acciones.TabIndex = 43;
             lbl_Acciones.Text = "ACCIONES";
             // 
-            // pnl_PanelSup
-            // 
-            pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
-            pnl_PanelSup.Location = new Point(89, 0);
-            pnl_PanelSup.Name = "pnl_PanelSup";
-            pnl_PanelSup.Size = new Size(315, 40);
-            pnl_PanelSup.TabIndex = 69;
-            // 
             // Frm_Empleado_Diseño
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
+            Controls.Add(panel2);
             Controls.Add(pnl_PanelSup);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Diseño";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "prueba";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnl_PanelSup.ResumeLayout(false);
+            pnl_PanelSup.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel1;
-        private Label lbl_Cancelar;
-        private Label lbl_Guardar;
-        private Label lbl_Acciones;
-        private Panel pnl_PanelSup;
-        protected PictureBox pic_Cancelar;
-        protected PictureBox pic_ReservarViajar;
+        public Panel pnl_PanelSup;
+        public Panel panel2;
+        public PictureBox pic_ReservarViajar;
+        public PictureBox pic_Cancelar;
+        public Label lbl_Cancelar;
+        public Label lbl_Guardar;
+        public Label lbl_Acciones;
+        public Label lbl_Opcion;
     }
 }

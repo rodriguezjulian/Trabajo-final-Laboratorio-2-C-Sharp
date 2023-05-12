@@ -33,13 +33,17 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
+            DateTime fechaSinHora=dtp_FechaDeViaje.Value.Date;
+            MessageBox.Show(fechaSinHora.ToString());
             if (Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
                 Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
                 Sistema.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
                 Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
-                    dtp_FechaDeViaje.Value.Date));
+                //dtp_FechaDeViaje.Value.Date));
+                Sistema.ActualizarFechaIngresada(fechaSinHora)));
+                //dtp_FechaDeViaje.Value.Year, dtp_FechaDeViaje.Value.Month, dtp_FechaDeViaje.Value.Day));
                 MessageBox.Show("Viaje reservado satisfactoriamente.\n");
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;

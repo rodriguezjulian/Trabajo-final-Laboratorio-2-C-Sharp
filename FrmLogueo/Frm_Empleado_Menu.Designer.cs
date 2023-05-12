@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
+            misDatosToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
             moToolStripMenuItem = new ToolStripMenuItem();
@@ -59,12 +60,20 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 192, 128);
             menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, estadisticasToolStripMenuItem, cerrarSesionToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, estadisticasToolStripMenuItem, cerrarSesionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(157, 505);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // misDatosToolStripMenuItem
+            // 
+            misDatosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            misDatosToolStripMenuItem.Margin = new Padding(0, 30, 0, 0);
+            misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
+            misDatosToolStripMenuItem.Size = new Size(144, 34);
+            misDatosToolStripMenuItem.Text = "Mis datos";
             // 
             // clienteToolStripMenuItem
             // 
@@ -88,7 +97,6 @@
             moToolStripMenuItem.Name = "moToolStripMenuItem";
             moToolStripMenuItem.Size = new Size(181, 34);
             moToolStripMenuItem.Text = "Modificar";
-            moToolStripMenuItem.Click += moToolStripMenuItem_Click;
             // 
             // bajarToolStripMenuItem
             // 
@@ -263,6 +271,7 @@
         private PictureBox pictureBox2;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.Timer tmr_Menu;
-        static public Panel pnl_Padre;
+        private ToolStripMenuItem misDatosToolStripMenuItem;
+        public static Panel pnl_Padre;
     }
 }

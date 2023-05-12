@@ -8,13 +8,13 @@ namespace TransporteRodriguez
 {
     public class Cliente : Usuario
     {
-        private short _idCliente; // Ver la manera de que sea autoincremental
+        private int _idCliente; // Ver la manera de que sea autoincremental
         private string? _direccionBSAS;
         private string? _rubro; // podria sacarlo de un enumerado - sobrecargar constructor para que no sea obligatorio
 
         public Cliente() { }
 
-        public Cliente(string nombre, string contraseña, string mail,bool estado,short idCliente, string? direccionBSAS, string? rubro) 
+        public Cliente(string nombre, string contraseña, string mail,bool estado, int idCliente, string? direccionBSAS, string? rubro) 
             : base(nombre, contraseña, mail, estado)
         {
             IdCliente = idCliente;
@@ -22,7 +22,7 @@ namespace TransporteRodriguez
             Rubro = rubro;
         }
 
-        public short IdCliente { get => _idCliente; set => _idCliente = value; }
+        public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public string? DireccionBSAS { get => _direccionBSAS; set => _direccionBSAS = value; }
         public string? Rubro { get => _rubro; set => _rubro = value; }
 

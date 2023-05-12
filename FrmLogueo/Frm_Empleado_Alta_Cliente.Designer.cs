@@ -49,9 +49,9 @@
             grp_DatosNuevoCliente = new GroupBox();
             pictureBox9 = new PictureBox();
             label5 = new Label();
-            pictureBox1 = new PictureBox();
+            btn_GuardarCliente = new PictureBox();
             label8 = new Label();
-            pictureBox2 = new PictureBox();
+            pic_Cancelar = new PictureBox();
             label9 = new Label();
             panel1 = new Panel();
             label11 = new Label();
@@ -63,8 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             grp_DatosNuevoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_GuardarCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             panel1.SuspendLayout();
             pnl_AltaCliente.SuspendLayout();
             SuspendLayout();
@@ -193,7 +193,7 @@
             // 
             cbo_Rubro.FormattingEnabled = true;
             cbo_Rubro.Items.AddRange(new object[] { "Libros", "Electrodosmesticos", "Muebles", "Ropa", "Juguetes", "Calzado", "Hogar", "Mascotas", "Computacion" });
-            cbo_Rubro.Location = new Point(62, 273);
+            cbo_Rubro.Location = new Point(62, 282);
             cbo_Rubro.Name = "cbo_Rubro";
             cbo_Rubro.Size = new Size(249, 23);
             cbo_Rubro.TabIndex = 53;
@@ -202,7 +202,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(64, 253);
+            label3.Location = new Point(67, 257);
             label3.Name = "label3";
             label3.Size = new Size(45, 17);
             label3.TabIndex = 54;
@@ -211,7 +211,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(10, 311);
+            pictureBox7.Location = new Point(0, 335);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(49, 35);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -222,7 +222,7 @@
             // 
             txt_AltaId.BackColor = Color.FromArgb(255, 255, 192);
             txt_AltaId.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaId.Location = new Point(64, 321);
+            txt_AltaId.Location = new Point(64, 345);
             txt_AltaId.Name = "txt_AltaId";
             txt_AltaId.ReadOnly = true;
             txt_AltaId.Size = new Size(247, 25);
@@ -233,7 +233,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(67, 299);
+            label4.Location = new Point(64, 325);
             label4.Name = "label4";
             label4.Size = new Size(22, 17);
             label4.TabIndex = 57;
@@ -287,15 +287,16 @@
             label5.TabIndex = 43;
             label5.Text = "ACCIONES";
             // 
-            // pictureBox1
+            // btn_GuardarCliente
             // 
-            pictureBox1.Image = Properties.Resources.guardar;
-            pictureBox1.Location = new Point(10, 140);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(66, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 44;
-            pictureBox1.TabStop = false;
+            btn_GuardarCliente.Image = Properties.Resources.guardar;
+            btn_GuardarCliente.Location = new Point(10, 140);
+            btn_GuardarCliente.Name = "btn_GuardarCliente";
+            btn_GuardarCliente.Size = new Size(66, 60);
+            btn_GuardarCliente.SizeMode = PictureBoxSizeMode.StretchImage;
+            btn_GuardarCliente.TabIndex = 44;
+            btn_GuardarCliente.TabStop = false;
+            btn_GuardarCliente.Click += btn_GuardarCliente_Click_1;
             // 
             // label8
             // 
@@ -306,16 +307,16 @@
             label8.TabIndex = 45;
             label8.Text = "Guardar";
             // 
-            // pictureBox2
+            // pic_Cancelar
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(8, 241);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 60);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 46;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            pic_Cancelar.Image = (Image)resources.GetObject("pic_Cancelar.Image");
+            pic_Cancelar.Location = new Point(8, 241);
+            pic_Cancelar.Name = "pic_Cancelar";
+            pic_Cancelar.Size = new Size(66, 60);
+            pic_Cancelar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Cancelar.TabIndex = 46;
+            pic_Cancelar.TabStop = false;
+            pic_Cancelar.Click += pic_Cancelar_Click;
             // 
             // label9
             // 
@@ -331,9 +332,9 @@
             panel1.BackColor = Color.FromArgb(255, 128, 0);
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pic_Cancelar);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btn_GuardarCliente);
             panel1.Controls.Add(label5);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -383,8 +384,8 @@
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_GuardarCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             pnl_AltaCliente.ResumeLayout(false);
@@ -414,9 +415,9 @@
         private GroupBox grp_DatosNuevoCliente;
         private PictureBox pictureBox9;
         private Label label5;
-        private PictureBox pictureBox1;
+        private PictureBox btn_GuardarCliente;
         private Label label8;
-        private PictureBox pictureBox2;
+        private PictureBox pic_Cancelar;
         private Label label9;
         private Panel panel1;
         private Label label11;
