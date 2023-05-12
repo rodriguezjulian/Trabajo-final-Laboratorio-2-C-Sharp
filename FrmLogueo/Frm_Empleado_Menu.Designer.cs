@@ -97,6 +97,7 @@
             moToolStripMenuItem.Name = "moToolStripMenuItem";
             moToolStripMenuItem.Size = new Size(181, 34);
             moToolStripMenuItem.Text = "Modificar";
+            moToolStripMenuItem.Click += moToolStripMenuItem_Click;
             // 
             // bajarToolStripMenuItem
             // 

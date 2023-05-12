@@ -18,6 +18,7 @@ namespace WF_TransporteRodriguez
         {
             InitializeComponent();
             dtg_ListarClientes.AutoGenerateColumns = false;
+            #region DATAGRID
             dtg_ListarClientes.DataSource = Sistema.ListaClientes;
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
@@ -54,6 +55,7 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Estado",
                 DisplayIndex = 4
             });
+            #endregion
         }
     }
 }

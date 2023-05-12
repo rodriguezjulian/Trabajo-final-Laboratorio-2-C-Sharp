@@ -37,6 +37,11 @@ namespace WF_TransporteRodriguez
             Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
             actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
         }
+        private void moToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Modificacion_Cliente frm_Empleado_Modificacion_Cliente = new Frm_Empleado_Modificacion_Cliente();
+            actualizarPanel(pnl_Padre, frm_Empleado_Modificacion_Cliente);
+        }
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_Empleados_Lista_Vehiculos Frm_Empleados_Lista_Vehiculos = new Frm_Empleados_Lista_Vehiculos();
@@ -68,6 +73,8 @@ namespace WF_TransporteRodriguez
             Frm_Empleado_Listar_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Listar_Clientes();
             actualizarPanel(pnl_Padre, frm_Empleado_Listar_Clientes);
         }
+
+
     }
 
 }

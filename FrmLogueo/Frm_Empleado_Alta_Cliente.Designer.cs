@@ -43,9 +43,6 @@
             label6 = new Label();
             cbo_Rubro = new ComboBox();
             label3 = new Label();
-            pictureBox7 = new PictureBox();
-            txt_AltaId = new TextBox();
-            label4 = new Label();
             grp_DatosNuevoCliente = new GroupBox();
             pictureBox9 = new PictureBox();
             label5 = new Label();
@@ -60,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             grp_DatosNuevoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_GuardarCliente).BeginInit();
@@ -208,47 +204,13 @@
             label3.TabIndex = 54;
             label3.Text = "Rubro";
             // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(0, 335);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(49, 35);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 55;
-            pictureBox7.TabStop = false;
-            // 
-            // txt_AltaId
-            // 
-            txt_AltaId.BackColor = Color.FromArgb(255, 255, 192);
-            txt_AltaId.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaId.Location = new Point(64, 345);
-            txt_AltaId.Name = "txt_AltaId";
-            txt_AltaId.ReadOnly = true;
-            txt_AltaId.Size = new Size(247, 25);
-            txt_AltaId.TabIndex = 56;
-            txt_AltaId.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(64, 325);
-            label4.Name = "label4";
-            label4.Size = new Size(22, 17);
-            label4.TabIndex = 57;
-            label4.Text = "ID";
-            // 
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
             grp_DatosNuevoCliente.Controls.Add(label3);
-            grp_DatosNuevoCliente.Controls.Add(label4);
             grp_DatosNuevoCliente.Controls.Add(cbo_Rubro);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaNombre);
-            grp_DatosNuevoCliente.Controls.Add(pictureBox7);
-            grp_DatosNuevoCliente.Controls.Add(txt_AltaId);
             grp_DatosNuevoCliente.Controls.Add(label1);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaContraseña);
             grp_DatosNuevoCliente.Controls.Add(pictureBox3);
@@ -262,7 +224,7 @@
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
             grp_DatosNuevoCliente.Location = new Point(242, 71);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
-            grp_DatosNuevoCliente.Size = new Size(317, 386);
+            grp_DatosNuevoCliente.Size = new Size(317, 339);
             grp_DatosNuevoCliente.TabIndex = 48;
             grp_DatosNuevoCliente.TabStop = false;
             grp_DatosNuevoCliente.Text = "Datos por ingresar";
@@ -380,7 +342,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -409,9 +370,6 @@
         private Label label6;
         private ComboBox cbo_Rubro;
         private Label label3;
-        private PictureBox pictureBox7;
-        private TextBox txt_AltaId;
-        private Label label4;
         private GroupBox grp_DatosNuevoCliente;
         private PictureBox pictureBox9;
         private Label label5;
