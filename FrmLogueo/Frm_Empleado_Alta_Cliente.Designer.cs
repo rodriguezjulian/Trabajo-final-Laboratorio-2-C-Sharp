@@ -32,9 +32,6 @@
             label1 = new Label();
             txt_AltaNombre = new TextBox();
             pictureBox3 = new PictureBox();
-            txt_AltaContraseña = new TextBox();
-            label10 = new Label();
-            pictureBox4 = new PictureBox();
             label2 = new Label();
             txt_AltaMail = new TextBox();
             pictureBox5 = new PictureBox();
@@ -54,7 +51,6 @@
             label11 = new Label();
             pnl_AltaCliente = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             grp_DatosNuevoCliente.SuspendLayout();
@@ -95,41 +91,11 @@
             pictureBox3.TabIndex = 43;
             pictureBox3.TabStop = false;
             // 
-            // txt_AltaContraseña
-            // 
-            txt_AltaContraseña.BackColor = Color.FromArgb(255, 255, 192);
-            txt_AltaContraseña.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaContraseña.Location = new Point(62, 127);
-            txt_AltaContraseña.Name = "txt_AltaContraseña";
-            txt_AltaContraseña.Size = new Size(249, 25);
-            txt_AltaContraseña.TabIndex = 44;
-            txt_AltaContraseña.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(64, 102);
-            label10.Name = "label10";
-            label10.Size = new Size(77, 17);
-            label10.TabIndex = 45;
-            label10.Text = "Contraseña";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 117);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(44, 35);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 46;
-            pictureBox4.TabStop = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(67, 155);
+            label2.Location = new Point(62, 96);
             label2.Name = "label2";
             label2.Size = new Size(35, 17);
             label2.TabIndex = 47;
@@ -139,7 +105,7 @@
             // 
             txt_AltaMail.BackColor = Color.FromArgb(255, 255, 192);
             txt_AltaMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaMail.Location = new Point(64, 175);
+            txt_AltaMail.Location = new Point(67, 116);
             txt_AltaMail.Name = "txt_AltaMail";
             txt_AltaMail.Size = new Size(247, 25);
             txt_AltaMail.TabIndex = 48;
@@ -148,7 +114,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(14, 165);
+            pictureBox5.Location = new Point(14, 114);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 35);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -158,7 +124,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(12, 219);
+            pictureBox6.Location = new Point(14, 172);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(44, 35);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -169,7 +135,7 @@
             // 
             txt_AltaDireccion.BackColor = Color.FromArgb(255, 255, 192);
             txt_AltaDireccion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaDireccion.Location = new Point(62, 229);
+            txt_AltaDireccion.Location = new Point(67, 180);
             txt_AltaDireccion.Name = "txt_AltaDireccion";
             txt_AltaDireccion.Size = new Size(249, 25);
             txt_AltaDireccion.TabIndex = 51;
@@ -179,7 +145,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(64, 203);
+            label6.Location = new Point(64, 160);
             label6.Name = "label6";
             label6.Size = new Size(66, 17);
             label6.TabIndex = 52;
@@ -189,7 +155,7 @@
             // 
             cbo_Rubro.FormattingEnabled = true;
             cbo_Rubro.Items.AddRange(new object[] { "Libros", "Electrodosmesticos", "Muebles", "Ropa", "Juguetes", "Calzado", "Hogar", "Mascotas", "Computacion" });
-            cbo_Rubro.Location = new Point(62, 282);
+            cbo_Rubro.Location = new Point(68, 243);
             cbo_Rubro.Name = "cbo_Rubro";
             cbo_Rubro.Size = new Size(249, 23);
             cbo_Rubro.TabIndex = 53;
@@ -198,7 +164,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(67, 257);
+            label3.Location = new Point(67, 215);
             label3.Name = "label3";
             label3.Size = new Size(45, 17);
             label3.TabIndex = 54;
@@ -212,12 +178,9 @@
             grp_DatosNuevoCliente.Controls.Add(cbo_Rubro);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaNombre);
             grp_DatosNuevoCliente.Controls.Add(label1);
-            grp_DatosNuevoCliente.Controls.Add(txt_AltaContraseña);
             grp_DatosNuevoCliente.Controls.Add(pictureBox3);
-            grp_DatosNuevoCliente.Controls.Add(pictureBox4);
             grp_DatosNuevoCliente.Controls.Add(pictureBox6);
             grp_DatosNuevoCliente.Controls.Add(label6);
-            grp_DatosNuevoCliente.Controls.Add(label10);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaDireccion);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaMail);
             grp_DatosNuevoCliente.Controls.Add(label2);
@@ -232,7 +195,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.fabrica;
-            pictureBox9.Location = new Point(10, 260);
+            pictureBox9.Location = new Point(14, 221);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(48, 45);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -339,7 +302,6 @@
             Text = "FrmAltaCliente";
             Load += FrmAltaCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             grp_DatosNuevoCliente.ResumeLayout(false);
@@ -359,9 +321,6 @@
         private Label label1;
         private TextBox txt_AltaNombre;
         private PictureBox pictureBox3;
-        private TextBox txt_AltaContraseña;
-        private Label label10;
-        private PictureBox pictureBox4;
         private Label label2;
         private TextBox txt_AltaMail;
         private PictureBox pictureBox5;

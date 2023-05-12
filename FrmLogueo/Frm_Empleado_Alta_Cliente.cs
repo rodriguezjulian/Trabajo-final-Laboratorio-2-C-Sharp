@@ -39,9 +39,9 @@ namespace WF_TransporteRodriguez
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)
         {
             //MessageBox.Show(cbo_Rubro.SelectedItem.ToString());
-            if (txt_AltaNombre.Text != "" && txt_AltaContraseña.Text != "" && txt_AltaMail.Text != "" && txt_AltaDireccion.Text != "")
+            if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "" && txt_AltaDireccion.Text != "")
             {
-                Sistema.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, txt_AltaContraseña.Text, txt_AltaMail.Text, true,
+                Sistema.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, Sistema.generarContraseña(), txt_AltaMail.Text, true,
                  Sistema.CalcularIdCliente(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
 
                 MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
