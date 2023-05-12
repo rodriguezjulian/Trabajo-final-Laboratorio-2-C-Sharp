@@ -79,6 +79,12 @@ namespace WF_TransporteRodriguez
             Frm_Empleado_Baja_Cliente frm_Empleado_Baja_Cliente = new Frm_Empleado_Baja_Cliente();
             actualizarPanel(pnl_Padre, frm_Empleado_Baja_Cliente);
         }
+
+        private void turnosOcupadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Lista_Viajes frm_Empleado_Lista_Viajes = new Frm_Empleado_Lista_Viajes();
+            actualizarPanel(pnl_Padre, frm_Empleado_Lista_Viajes);
+        }
     }
 
 }

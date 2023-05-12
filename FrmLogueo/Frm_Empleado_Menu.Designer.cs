@@ -154,6 +154,7 @@
             turnosOcupadosToolStripMenuItem.Name = "turnosOcupadosToolStripMenuItem";
             turnosOcupadosToolStripMenuItem.Size = new Size(144, 34);
             turnosOcupadosToolStripMenuItem.Text = "Listar viajes ";
+            turnosOcupadosToolStripMenuItem.Click += turnosOcupadosToolStripMenuItem_Click;
             // 
             // estadisticasToolStripMenuItem
             // 
