@@ -15,6 +15,7 @@ namespace WF_TransporteRodriguez
     {
         Usuario clienteInstanciado;
         Cliente cliente;
+        Viaje viajeAux;
         public Frm_Cliente_Alta_Viaje()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace WF_TransporteRodriguez
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
             DateTime fechaSinHora=dtp_FechaDeViaje.Value.Date;
-            MessageBox.Show(fechaSinHora.ToString());
+            //MessageBox.Show(fechaSinHora.ToString());
             if (Sistema.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
                 Sistema.ListaViajes.Add(new Viaje(Sistema.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
@@ -44,7 +45,8 @@ namespace WF_TransporteRodriguez
                 //dtp_FechaDeViaje.Value.Date));
                 Sistema.ActualizarFechaIngresada(fechaSinHora)));
                 //dtp_FechaDeViaje.Value.Year, dtp_FechaDeViaje.Value.Month, dtp_FechaDeViaje.Value.Day));
-                MessageBox.Show("Viaje reservado satisfactoriamente.\n");
+                 Sistema.buscarViaje(Sistema.CalcularIdViaje() - 1, out viajeAux);
+                MessageBox.Show(viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;
                 this.Close();
