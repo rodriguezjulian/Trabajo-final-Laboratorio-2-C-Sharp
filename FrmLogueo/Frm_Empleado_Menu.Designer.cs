@@ -37,12 +37,7 @@
             bajarToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
             vehiculosToolStripMenuItem = new ToolStripMenuItem();
-            cargarVehiculoToolStripMenuItem = new ToolStripMenuItem();
-            modificarToolStripMenuItem = new ToolStripMenuItem();
-            bajaToolStripMenuItem = new ToolStripMenuItem();
-            listarToolStripMenuItem1 = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
-            estadisticasToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel1 = new Panel();
@@ -59,7 +54,7 @@
             // 
             menuStrip1.BackColor = Color.FromArgb(255, 192, 128);
             menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, estadisticasToolStripMenuItem, cerrarSesionToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, cerrarSesionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(157, 505);
@@ -115,54 +110,21 @@
             // 
             // vehiculosToolStripMenuItem
             // 
-            vehiculosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cargarVehiculoToolStripMenuItem, modificarToolStripMenuItem, bajaToolStripMenuItem, listarToolStripMenuItem1 });
             vehiculosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             vehiculosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             vehiculosToolStripMenuItem.Size = new Size(144, 34);
             vehiculosToolStripMenuItem.Text = "Vehiculos";
-            // 
-            // cargarVehiculoToolStripMenuItem
-            // 
-            cargarVehiculoToolStripMenuItem.Name = "cargarVehiculoToolStripMenuItem";
-            cargarVehiculoToolStripMenuItem.Size = new Size(187, 34);
-            cargarVehiculoToolStripMenuItem.Text = "Cargar";
-            // 
-            // modificarToolStripMenuItem
-            // 
-            modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            modificarToolStripMenuItem.Size = new Size(187, 34);
-            modificarToolStripMenuItem.Text = "Modificar ";
-            // 
-            // bajaToolStripMenuItem
-            // 
-            bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
-            bajaToolStripMenuItem.Size = new Size(187, 34);
-            bajaToolStripMenuItem.Text = "Baja";
-            // 
-            // listarToolStripMenuItem1
-            // 
-            listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            listarToolStripMenuItem1.Size = new Size(187, 34);
-            listarToolStripMenuItem1.Text = "Listar";
-            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
+            vehiculosToolStripMenuItem.Click += vehiculosToolStripMenuItem_Click;
             // 
             // turnosOcupadosToolStripMenuItem
             // 
             turnosOcupadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            turnosOcupadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
+            turnosOcupadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 120);
             turnosOcupadosToolStripMenuItem.Name = "turnosOcupadosToolStripMenuItem";
             turnosOcupadosToolStripMenuItem.Size = new Size(144, 34);
             turnosOcupadosToolStripMenuItem.Text = "Listar viajes ";
             turnosOcupadosToolStripMenuItem.Click += turnosOcupadosToolStripMenuItem_Click;
-            // 
-            // estadisticasToolStripMenuItem
-            // 
-            estadisticasToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            estadisticasToolStripMenuItem.Margin = new Padding(0, 0, 0, 120);
-            estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            estadisticasToolStripMenuItem.Size = new Size(144, 34);
-            estadisticasToolStripMenuItem.Text = "Estadisticas";
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -254,12 +216,7 @@
         private ToolStripMenuItem bajarToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem;
         private ToolStripMenuItem vehiculosToolStripMenuItem;
-        private ToolStripMenuItem cargarVehiculoToolStripMenuItem;
-        private ToolStripMenuItem modificarToolStripMenuItem;
-        private ToolStripMenuItem bajaToolStripMenuItem;
-        private ToolStripMenuItem listarToolStripMenuItem1;
         private ToolStripMenuItem turnosOcupadosToolStripMenuItem;
-        private ToolStripMenuItem estadisticasToolStripMenuItem;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panel1;
         private Label label1;
