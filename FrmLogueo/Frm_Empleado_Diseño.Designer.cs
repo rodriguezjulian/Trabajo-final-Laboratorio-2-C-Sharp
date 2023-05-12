@@ -37,10 +37,12 @@
             lbl_Cancelar = new Label();
             lbl_Guardar = new Label();
             lbl_Acciones = new Label();
+            panel1 = new Panel();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnl_PanelSup
@@ -124,13 +126,22 @@
             lbl_Acciones.TabIndex = 43;
             lbl_Acciones.Text = "ACCIONES";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(pnl_PanelSup);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(720, 469);
+            panel1.TabIndex = 76;
+            // 
             // Frm_Empleado_Diseño
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
-            Controls.Add(panel2);
-            Controls.Add(pnl_PanelSup);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Diseño";
             StartPosition = FormStartPosition.CenterScreen;
@@ -141,6 +152,7 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -153,5 +165,6 @@
         public Label lbl_Guardar;
         public Label lbl_Acciones;
         public Label lbl_Opcion;
+        private Panel panel1;
     }
 }

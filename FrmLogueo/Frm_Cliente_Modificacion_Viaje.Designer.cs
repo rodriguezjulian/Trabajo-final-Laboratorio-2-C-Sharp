@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
             groupBox1 = new GroupBox();
+            label4 = new Label();
             nup_Kg = new NumericUpDown();
             pictureBox1 = new PictureBox();
             pic_Id = new PictureBox();
@@ -49,7 +50,6 @@
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            label4 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nup_Kg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -81,11 +81,22 @@
             groupBox1.Controls.Add(dtg_ListaViajes);
             groupBox1.Controls.Add(panel2);
             groupBox1.Controls.Add(panel1);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(720, 469);
+            groupBox1.Size = new Size(719, 469);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(618, 163);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 17);
+            label4.TabIndex = 93;
+            label4.Text = "PRINCIPAL";
             // 
             // nup_Kg
             // 
@@ -251,7 +262,7 @@
             panel1.Controls.Add(label5);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 33);
+            panel1.Size = new Size(719, 33);
             panel1.TabIndex = 67;
             // 
             // lbl_NombreCliente
@@ -283,16 +294,6 @@
             label5.Size = new Size(275, 30);
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(618, 163);
-            label4.Name = "label4";
-            label4.Size = new Size(73, 17);
-            label4.TabIndex = 93;
-            label4.Text = "PRINCIPAL";
             // 
             // Frm_Cliente_Modificacion_Viaje
             // 

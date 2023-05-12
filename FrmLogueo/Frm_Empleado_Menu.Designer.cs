@@ -73,6 +73,7 @@
             misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
             misDatosToolStripMenuItem.Size = new Size(144, 34);
             misDatosToolStripMenuItem.Text = "Mis datos";
+            misDatosToolStripMenuItem.Click += misDatosToolStripMenuItem_Click;
             // 
             // clienteToolStripMenuItem
             // 

@@ -84,6 +84,16 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Lista_Viajes.Dock = DockStyle.Fill;
             frm_Empleado_Lista_Viajes.Show();
         }
+
+        private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Datos frm_Empleado_Datos = new Frm_Empleado_Datos();
+            frm_Empleado_Datos.Empleado = Repositorio_Empleados.BuscarEmpleado(usuarioInstanciado);
+            frm_Empleado_Datos.MdiParent = this;
+            frm_Empleado_Datos.Dock = DockStyle.Fill;
+            frm_Empleado_Datos.Show();
+            
+        }
     }
 
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    internal class Repositorio_Empleados
+    public class Repositorio_Empleados
     {
         private static List<Empleado> listaEmpleado = new List<Empleado>();
 
@@ -21,6 +21,19 @@ namespace TransporteRodriguez
             ListaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", true, 4, "Desarrollador Web"));
             ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, "Contador General"));
 
+        }
+        public static Empleado BuscarEmpleado(Usuario usuarioUno)
+        {
+            Empleado? retorno = null;
+            foreach (Empleado empleado in ListaEmpleado)
+            {
+                if (empleado == usuarioUno)
+                {
+                    retorno = empleado;
+                    break;
+                }
+            }
+            return retorno;
         }
     }
 }

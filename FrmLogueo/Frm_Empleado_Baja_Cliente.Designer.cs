@@ -126,6 +126,7 @@
             txt_BajaNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_BajaNombre.Location = new Point(155, 122);
             txt_BajaNombre.Name = "txt_BajaNombre";
+            txt_BajaNombre.ReadOnly = true;
             txt_BajaNombre.Size = new Size(180, 25);
             txt_BajaNombre.TabIndex = 75;
             txt_BajaNombre.TextAlign = HorizontalAlignment.Center;
@@ -187,8 +188,6 @@
             Name = "Frm_Empleado_Baja_Cliente";
             Text = "Frm_Empleado_Baja_Cliente";
             Load += Frm_Empleado_Baja_Cliente_Load;
-            Controls.SetChildIndex(pnl_PanelSup, 0);
-            Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(dtg_ListarClientes, 0);
             Controls.SetChildIndex(lbl_ClienteBaja, 0);
             Controls.SetChildIndex(lbl_Nombe, 0);

@@ -282,10 +282,11 @@
             Controls.Add(dtg_ListarClientes);
             Controls.Add(grp_DatosNuevoCliente);
             Name = "Frm_Empleado_Modificacion_Cliente";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Frm_Empleado_Modificacion_Cliente";
             Load += Frm_Empleado_Modificacion_Cliente_Load;
-            Controls.SetChildIndex(pnl_PanelSup, 0);
-            Controls.SetChildIndex(panel2, 0);
+          //  Controls.SetChildIndex(pnl_PanelSup, 0);
+            //Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(grp_DatosNuevoCliente, 0);
             Controls.SetChildIndex(dtg_ListarClientes, 0);
             pnl_PanelSup.ResumeLayout(false);
