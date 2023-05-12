@@ -149,6 +149,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+
         public static int CalcularIdViaje()
         {
             int retorno;
@@ -212,6 +213,23 @@ namespace TransporteRodriguez
                 }
             }
             return retorno;
+        }
+        public static Cliente BuscarCliente(int idCliente)
+        {
+            Cliente cliente = null;
+            //int contador = 0;
+            foreach (Cliente clienteAuxliar in listaClientes)
+            {
+                if (clienteAuxliar.IdCliente == idCliente)
+                {
+
+                    cliente = clienteAuxliar;
+                    break;
+                }
+               // contador = contador + 1;
+            }
+            //indice = contador;
+            return cliente;
         }
         public static Cliente BuscarCliente(Usuario usuarioUno)
         {

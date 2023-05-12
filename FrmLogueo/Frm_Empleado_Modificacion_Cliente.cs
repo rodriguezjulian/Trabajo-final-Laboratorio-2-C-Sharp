@@ -30,53 +30,73 @@ namespace WF_TransporteRodriguez
             #region DATAGRID
 
             dtg_ListarClientes.DataSource = Sistema.ListaClientes;
+            dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdCliente",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Nombre",
                 HeaderText = "Nombre",
-                DisplayIndex = 0
+                DisplayIndex = 1
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "DireccionBSAS",
                 HeaderText = "Dirección",
-                DisplayIndex = 1
+                DisplayIndex = 2
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Rubro",
                 HeaderText = "Rubro",
-                DisplayIndex = 2
+                DisplayIndex = 3
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Mail",
                 HeaderText = "Mail",
-                DisplayIndex = 3
+                DisplayIndex = 4
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Estado",
                 HeaderText = "Estado",
-                DisplayIndex = 4
+                DisplayIndex = 5
             });
             #endregion
         }
 
-
-
-        private void dtg_ListarClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtg_ListarClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_ModNombre.Text= dtg_ListarClientes.CurrentRow.Cells[0].Value.ToString();
-            txt_ModDireccion.Text = dtg_ListarClientes.CurrentRow.Cells[1].Value.ToString();
-            cbo_Rubro.Text = dtg_ListarClientes.CurrentRow.Cells[2].Value.ToString();
-            txt_ModMail.Text = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
-            // = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
+            txt_ID.Text = dtg_ListarClientes.CurrentRow.Cells[0].Value.ToString();
+            txt_ModNombre.Text = dtg_ListarClientes.CurrentRow.Cells[1].Value.ToString();
+            txt_ModDireccion.Text = dtg_ListarClientes.CurrentRow.Cells[2].Value.ToString();
+            cbo_Rubro.Text = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
+            txt_ModMail.Text = dtg_ListarClientes.CurrentRow.Cells[4].Value.ToString();
+        }
+        private void pic_ReservarViajar_Click(object sender, EventArgs e)
+        {
+            if (txt_ID.Text != "")
+            {
+                Cliente cliente = Sistema.BuscarCliente(int.Parse(txt_ID.Text));
+                cliente.Nombre = txt_ModNombre.Text;
+                cliente.Rubro = cbo_Rubro.Text;
+                cliente.Mail = txt_ModMail.Text;
+                cliente.DireccionBSAS = txt_ModDireccion.Text;
+                MessageBox.Show(cliente.ToString());
+            }
+            else
+            {
+                MessageBox.Show("ERROR, Seleccione cliente a modificar");
+            }
         }
     }
 }

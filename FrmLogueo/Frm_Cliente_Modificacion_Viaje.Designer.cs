@@ -216,6 +216,7 @@
             dtg_ListarViajes.Location = new Point(0, 183);
             dtg_ListarViajes.Name = "dtg_ListarViajes";
             dtg_ListarViajes.RowTemplate.Height = 25;
+            dtg_ListarViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarViajes.Size = new Size(720, 286);
             dtg_ListarViajes.TabIndex = 69;
             // 

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Modificacion_Cliente));
             grp_DatosNuevoCliente = new GroupBox();
+            label4 = new Label();
+            txt_ID = new TextBox();
             pictureBox9 = new PictureBox();
             label3 = new Label();
             cbo_Rubro = new ComboBox();
@@ -55,6 +57,10 @@
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).BeginInit();
             SuspendLayout();
             // 
+            // pic_ReservarViajar
+            // 
+            pic_ReservarViajar.Click += pic_ReservarViajar_Click;
+            // 
             // pic_Cancelar
             // 
             pic_Cancelar.Click += pic_Cancelar_Click;
@@ -67,6 +73,8 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.Controls.Add(label4);
+            grp_DatosNuevoCliente.Controls.Add(txt_ID);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
             grp_DatosNuevoCliente.Controls.Add(label3);
             grp_DatosNuevoCliente.Controls.Add(cbo_Rubro);
@@ -84,7 +92,27 @@
             grp_DatosNuevoCliente.Size = new Size(623, 129);
             grp_DatosNuevoCliente.TabIndex = 71;
             grp_DatosNuevoCliente.TabStop = false;
-            grp_DatosNuevoCliente.Text = "Datos por ingresar";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(258, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(22, 17);
+            label4.TabIndex = 56;
+            label4.Text = "ID";
+            // 
+            // txt_ID
+            // 
+            txt_ID.BackColor = Color.FromArgb(255, 255, 192);
+            txt_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_ID.Location = new Point(258, 38);
+            txt_ID.Name = "txt_ID";
+            txt_ID.ReadOnly = true;
+            txt_ID.Size = new Size(51, 25);
+            txt_ID.TabIndex = 55;
+            txt_ID.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox9
             // 
@@ -121,7 +149,7 @@
             txt_ModNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ModNombre.Location = new Point(62, 38);
             txt_ModNombre.Name = "txt_ModNombre";
-            txt_ModNombre.Size = new Size(247, 25);
+            txt_ModNombre.Size = new Size(180, 25);
             txt_ModNombre.TabIndex = 42;
             txt_ModNombre.TextAlign = HorizontalAlignment.Center;
             // 
@@ -207,14 +235,16 @@
             // 
             // dtg_ListarClientes
             // 
+            dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarClientes.Location = new Point(95, 181);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.RowTemplate.Height = 25;
+            dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarClientes.Size = new Size(623, 276);
             dtg_ListarClientes.TabIndex = 55;
-            
-            dtg_ListarClientes.CellContentClick += dtg_ListarClientes_CellContentClick;
+            dtg_ListarClientes.CellClick += dtg_ListarClientes_CellClick;
+       
             // 
             // Frm_Empleado_Modificacion_Cliente
             // 
@@ -262,5 +292,7 @@
         private Label label2;
         private PictureBox pictureBox5;
         private DataGridView dtg_ListarClientes;
+        private Label label4;
+        private TextBox txt_ID;
     }
 }

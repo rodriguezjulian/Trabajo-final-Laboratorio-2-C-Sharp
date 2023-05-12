@@ -39,5 +39,15 @@ namespace TransporteRodriguez
         {
             return !(uno == dos);
         }
+        public override string ToString()
+        {
+            StringBuilder miCadena = new StringBuilder();
+            miCadena.AppendLine("DATOS DEL CLIENTE");
+            miCadena.AppendLine("Nombre: "+ Nombre);
+            miCadena.AppendLine("Direccion: " + DireccionBSAS);
+            miCadena.AppendLine("Mail: "+ Mail);
+            miCadena.AppendLine("Rubro: " + Rubro);
+            return miCadena.ToString();
+        }
     }
 }
