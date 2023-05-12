@@ -136,6 +136,7 @@
             dtg_ListarClientes.Location = new Point(107, 46);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.RowTemplate.Height = 25;
+            dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarClientes.Size = new Size(614, 418);
             dtg_ListarClientes.TabIndex = 72;
             // 

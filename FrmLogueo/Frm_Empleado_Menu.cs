@@ -74,7 +74,11 @@ namespace WF_TransporteRodriguez
             actualizarPanel(pnl_Padre, frm_Empleado_Listar_Clientes);
         }
 
-
+        private void bajarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Baja_Cliente frm_Empleado_Baja_Cliente = new Frm_Empleado_Baja_Cliente();
+            actualizarPanel(pnl_Padre, frm_Empleado_Baja_Cliente);
+        }
     }
 
 }

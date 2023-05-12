@@ -104,6 +104,7 @@
             bajarToolStripMenuItem.Name = "bajarToolStripMenuItem";
             bajarToolStripMenuItem.Size = new Size(181, 34);
             bajarToolStripMenuItem.Text = "Bajar";
+            bajarToolStripMenuItem.Click += bajarToolStripMenuItem_Click;
             // 
             // listarToolStripMenuItem
             // 
