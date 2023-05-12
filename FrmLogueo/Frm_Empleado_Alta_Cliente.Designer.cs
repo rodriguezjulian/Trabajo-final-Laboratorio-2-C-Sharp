@@ -50,6 +50,7 @@
             panel1 = new Panel();
             label11 = new Label();
             pnl_AltaCliente = new Panel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -246,16 +247,18 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(10, 315);
+            label9.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(-3, 312);
             label9.Name = "label9";
-            label9.Size = new Size(53, 15);
+            label9.Size = new Size(95, 13);
             label9.TabIndex = 47;
-            label9.Text = "Cancelar";
+            label9.Text = "Volver a pantalla ";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 128, 0);
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(pic_Cancelar);
             panel1.Controls.Add(label8);
@@ -285,6 +288,16 @@
             pnl_AltaCliente.Name = "pnl_AltaCliente";
             pnl_AltaCliente.Size = new Size(200, 33);
             pnl_AltaCliente.TabIndex = 58;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(13, 325);
+            label4.Name = "label4";
+            label4.Size = new Size(52, 13);
+            label4.TabIndex = 48;
+            label4.Text = "principal";
             // 
             // Frm_Empleado_Alta_Cliente
             // 
@@ -339,5 +352,6 @@
         private Panel panel1;
         private Label label11;
         private Panel pnl_AltaCliente;
+        private Label label4;
     }
 }

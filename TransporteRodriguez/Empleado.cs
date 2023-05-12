@@ -9,7 +9,7 @@ namespace TransporteRodriguez
     public class Empleado : Usuario
     {
         private short _idEmpleado;
-        private string? _puesto;
+        private string _puesto;
         public Empleado(string nombre, string contraseña) : base(nombre, contraseña) { }
         public Empleado(string nombre, string contraseña, string mail, bool estado, short idEmpleado, string puesto) : 
             base(nombre, contraseña, mail, estado)
@@ -17,10 +17,8 @@ namespace TransporteRodriguez
             this.IdEmpleado = idEmpleado;
             this.Puesto = puesto;
         }
-
-
         public short IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
-        public string? Puesto { get => _puesto; set => _puesto = value; }
+        public string Puesto { get => _puesto; set => _puesto = value; }
         public static bool operator ==(Empleado uno, Usuario dos)
         {
             bool retorno = false;
@@ -34,6 +32,14 @@ namespace TransporteRodriguez
         {
             return !(uno == dos);
         }
-
+        public bool Equals(Empleado uno, Usuario dos)
+        {
+            bool retorno = false;
+            if ((uno.Nombre == dos.Nombre) && (uno.Contraseña == dos.Contraseña))
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
     }
 }

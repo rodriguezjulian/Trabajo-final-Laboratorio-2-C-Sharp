@@ -22,7 +22,7 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+            //  Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
         private void Frm_Empleado_Modificacion_Cliente_Load(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace WF_TransporteRodriguez
                 cliente.Rubro = cbo_Rubro.Text;
                 cliente.Mail = txt_ModMail.Text;
                 cliente.DireccionBSAS = txt_ModDireccion.Text;
-                MessageBox.Show("DATOS DEL CLIENTE "+ cliente.ToString());
+                MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());
                 dtg_ListarClientes.DataSource = null;
                 dtg_ListarClientes.Rows.Clear();
                 dtg_ListarClientes.AutoGenerateColumns = false;

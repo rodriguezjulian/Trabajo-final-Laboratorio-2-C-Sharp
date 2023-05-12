@@ -17,6 +17,7 @@ namespace WF_TransporteRodriguez
     {
         Usuario empleadoInstanciado;
         Cliente nuevoCliente;
+
         public Frm_Empleado_Alta_Cliente()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+            // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)

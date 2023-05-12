@@ -49,7 +49,6 @@
             pictureBox2 = new PictureBox();
             lbl_NombreUsuario = new Label();
             label1 = new Label();
-            pnl_Padre = new Panel();
             tmr_Menu = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
@@ -218,13 +217,6 @@
             label1.TabIndex = 29;
             label1.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // pnl_Padre
-            // 
-            pnl_Padre.Location = new Point(158, 35);
-            pnl_Padre.Name = "pnl_Padre";
-            pnl_Padre.Size = new Size(720, 468);
-            pnl_Padre.TabIndex = 32;
-            // 
             // tmr_Menu
             // 
             tmr_Menu.Enabled = true;
@@ -234,7 +226,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(879, 505);
-            Controls.Add(pnl_Padre);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.None;
@@ -276,6 +267,5 @@
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.Timer tmr_Menu;
         private ToolStripMenuItem misDatosToolStripMenuItem;
-        public static Panel pnl_Padre;
     }
 }

@@ -29,61 +29,60 @@ namespace WF_TransporteRodriguez
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
-
-            actualizarPanel(pnl_Padre, hora);
+            Frm_Hora frm_Hora = new Frm_Hora();
+            frm_Hora.MdiParent = this;
+            frm_Hora.Dock = DockStyle.Fill;
+            frm_Hora.Show();
         }
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Alta_Cliente frm_Empleado_Alta_Cliente = new Frm_Empleado_Alta_Cliente();
-            actualizarPanel(pnl_Padre, frm_Empleado_Alta_Cliente);
+            frm_Empleado_Alta_Cliente.MdiParent = this;
+            frm_Empleado_Alta_Cliente.Dock = DockStyle.Fill;
+            frm_Empleado_Alta_Cliente.Show();
         }
         private void moToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Modificacion_Cliente frm_Empleado_Modificacion_Cliente = new Frm_Empleado_Modificacion_Cliente();
-            actualizarPanel(pnl_Padre, frm_Empleado_Modificacion_Cliente);
+            frm_Empleado_Modificacion_Cliente.MdiParent = this;
+            frm_Empleado_Modificacion_Cliente.Dock = DockStyle.Fill;
+            frm_Empleado_Modificacion_Cliente.Show();
         }
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_Empleados_Lista_Vehiculos Frm_Empleados_Lista_Vehiculos = new Frm_Empleados_Lista_Vehiculos();
-            actualizarPanel(pnl_Padre, Frm_Empleados_Lista_Vehiculos);
+            Frm_Empleados_Lista_Vehiculos.MdiParent = this;
+            Frm_Empleados_Lista_Vehiculos.Dock = DockStyle.Fill;
+            Frm_Empleados_Lista_Vehiculos.Show();
         }
-        /* private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
-         {
-             Frm_Empleados_Lista_Vehiculos frmListarVehiculos = new Frm_Empleados_Lista_Vehiculos();
-             frmListarVehiculos.UsuarioInstanciado = usuarioInstanciado;
-             actualizarPanel(pnl_Padre, frmListarVehiculos);
-             //frmListarVehiculos.Show();
-         }*/
+
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide(); // Oculta el formulario actual
             login.Show();
         }
-        public static void actualizarPanel(Panel pln_Padre, Form hijo)
-        {
-            pnl_Padre.Controls.Clear();
-            hijo.TopLevel = false;
-            pnl_Padre.Controls.Add(hijo);
-            hijo.Dock = DockStyle.Fill;
-            hijo.Show();
-        }
-
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Listar_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Listar_Clientes();
-            actualizarPanel(pnl_Padre, frm_Empleado_Listar_Clientes);
+            frm_Empleado_Listar_Clientes.MdiParent = this;
+            frm_Empleado_Listar_Clientes.Dock = DockStyle.Fill;
+            frm_Empleado_Listar_Clientes.Show();
         }
 
         private void bajarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Baja_Cliente frm_Empleado_Baja_Cliente = new Frm_Empleado_Baja_Cliente();
-            actualizarPanel(pnl_Padre, frm_Empleado_Baja_Cliente);
+            frm_Empleado_Baja_Cliente.MdiParent = this;
+            frm_Empleado_Baja_Cliente.Dock = DockStyle.Fill;
+            frm_Empleado_Baja_Cliente.Show();
         }
 
         private void turnosOcupadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Lista_Viajes frm_Empleado_Lista_Viajes = new Frm_Empleado_Lista_Viajes();
-            actualizarPanel(pnl_Padre, frm_Empleado_Lista_Viajes);
+            frm_Empleado_Lista_Viajes.MdiParent = this;
+            frm_Empleado_Lista_Viajes.Dock = DockStyle.Fill;
+            frm_Empleado_Lista_Viajes.Show();
         }
     }
 

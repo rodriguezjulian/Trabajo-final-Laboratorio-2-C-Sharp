@@ -55,6 +55,10 @@ namespace WF_TransporteRodriguez
         private void FrmMenuCliente_Load(object sender, EventArgs e)
         {
             clienteInstanciado = Repositorio_Clientes.BuscarCliente(usuarioInstanciado);
+            Frm_Hora frm_Hora = new Frm_Hora();
+            frm_Hora.MdiParent = this;
+            frm_Hora.Dock = DockStyle.Fill;
+            frm_Hora.Show();
         }
 
         private void modificarViajeToolStripMenuItem1_Click(object sender, EventArgs e)

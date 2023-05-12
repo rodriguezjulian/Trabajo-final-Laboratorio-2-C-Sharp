@@ -78,7 +78,7 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+            // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
         private void pic_Guardar_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace WF_TransporteRodriguez
             if (txt_BajaID.Text != "")
             {
                 Cliente cliente = Repositorio_Clientes.BuscarCliente(int.Parse(txt_BajaID.Text));
-                if (cliente.Estado ==true)
+                if (cliente.Estado == true)
                 {
                     cliente.Estado = false;
                     MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
