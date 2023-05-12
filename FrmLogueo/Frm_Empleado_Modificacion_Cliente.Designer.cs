@@ -38,8 +38,8 @@
             pictureBox3 = new PictureBox();
             pictureBox6 = new PictureBox();
             label6 = new Label();
-            txt_AltaDireccion = new TextBox();
-            txt_AltaMail = new TextBox();
+            txt_ModDireccion = new TextBox();
+            txt_ModMail = new TextBox();
             label2 = new Label();
             pictureBox5 = new PictureBox();
             dtg_ListarClientes = new DataGridView();
@@ -75,8 +75,8 @@
             grp_DatosNuevoCliente.Controls.Add(pictureBox3);
             grp_DatosNuevoCliente.Controls.Add(pictureBox6);
             grp_DatosNuevoCliente.Controls.Add(label6);
-            grp_DatosNuevoCliente.Controls.Add(txt_AltaDireccion);
-            grp_DatosNuevoCliente.Controls.Add(txt_AltaMail);
+            grp_DatosNuevoCliente.Controls.Add(txt_ModDireccion);
+            grp_DatosNuevoCliente.Controls.Add(txt_ModMail);
             grp_DatosNuevoCliente.Controls.Add(label2);
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
             grp_DatosNuevoCliente.Location = new Point(95, 46);
@@ -165,25 +165,25 @@
             label6.TabIndex = 52;
             label6.Text = "Direccion";
             // 
-            // txt_AltaDireccion
+            // txt_ModDireccion
             // 
-            txt_AltaDireccion.BackColor = Color.FromArgb(255, 255, 192);
-            txt_AltaDireccion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaDireccion.Location = new Point(364, 38);
-            txt_AltaDireccion.Name = "txt_AltaDireccion";
-            txt_AltaDireccion.Size = new Size(249, 25);
-            txt_AltaDireccion.TabIndex = 51;
-            txt_AltaDireccion.TextAlign = HorizontalAlignment.Center;
+            txt_ModDireccion.BackColor = Color.FromArgb(255, 255, 192);
+            txt_ModDireccion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_ModDireccion.Location = new Point(364, 38);
+            txt_ModDireccion.Name = "txt_ModDireccion";
+            txt_ModDireccion.Size = new Size(249, 25);
+            txt_ModDireccion.TabIndex = 51;
+            txt_ModDireccion.TextAlign = HorizontalAlignment.Center;
             // 
-            // txt_AltaMail
+            // txt_ModMail
             // 
-            txt_AltaMail.BackColor = Color.FromArgb(255, 255, 192);
-            txt_AltaMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_AltaMail.Location = new Point(62, 91);
-            txt_AltaMail.Name = "txt_AltaMail";
-            txt_AltaMail.Size = new Size(247, 25);
-            txt_AltaMail.TabIndex = 48;
-            txt_AltaMail.TextAlign = HorizontalAlignment.Center;
+            txt_ModMail.BackColor = Color.FromArgb(255, 255, 192);
+            txt_ModMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_ModMail.Location = new Point(62, 91);
+            txt_ModMail.Name = "txt_ModMail";
+            txt_ModMail.Size = new Size(247, 25);
+            txt_ModMail.TabIndex = 48;
+            txt_ModMail.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -213,6 +213,8 @@
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.Size = new Size(623, 276);
             dtg_ListarClientes.TabIndex = 55;
+            
+            dtg_ListarClientes.CellContentClick += dtg_ListarClientes_CellContentClick;
             // 
             // Frm_Empleado_Modificacion_Cliente
             // 
@@ -255,8 +257,8 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox6;
         private Label label6;
-        private TextBox txt_AltaDireccion;
-        private TextBox txt_AltaMail;
+        private TextBox txt_ModDireccion;
+        private TextBox txt_ModMail;
         private Label label2;
         private PictureBox pictureBox5;
         private DataGridView dtg_ListarClientes;

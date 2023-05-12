@@ -55,7 +55,7 @@ namespace WF_TransporteRodriguez
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Mail",
-                HeaderText = "Correo Electrónico",
+                HeaderText = "Mail",
                 DisplayIndex = 3
             });
 
@@ -66,6 +66,17 @@ namespace WF_TransporteRodriguez
                 DisplayIndex = 4
             });
             #endregion
+        }
+
+
+
+        private void dtg_ListarClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_ModNombre.Text= dtg_ListarClientes.CurrentRow.Cells[0].Value.ToString();
+            txt_ModDireccion.Text = dtg_ListarClientes.CurrentRow.Cells[1].Value.ToString();
+            cbo_Rubro.Text = dtg_ListarClientes.CurrentRow.Cells[2].Value.ToString();
+            txt_ModMail.Text = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
+            // = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
