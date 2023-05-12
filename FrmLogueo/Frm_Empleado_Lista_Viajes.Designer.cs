@@ -33,12 +33,13 @@
             pic_Volver = new PictureBox();
             pnl_PanelSup = new Panel();
             lbl_ListarViajes = new Label();
-            btn_ViajesRealizados = new Button();
             dtg_ListaViajes = new DataGridView();
+            groupBox1 = new GroupBox();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
             pnl_PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // pnl_Izquierdo
@@ -84,50 +85,51 @@
             // 
             lbl_ListarViajes.AutoSize = true;
             lbl_ListarViajes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ListarViajes.Location = new Point(0, 6);
+            lbl_ListarViajes.Location = new Point(3, 4);
             lbl_ListarViajes.Name = "lbl_ListarViajes";
             lbl_ListarViajes.Size = new Size(158, 30);
             lbl_ListarViajes.TabIndex = 71;
             lbl_ListarViajes.Text = "LISTAR VIAJES";
             // 
-            // btn_ViajesRealizados
-            // 
-            btn_ViajesRealizados.BackColor = Color.FromArgb(255, 192, 192);
-            btn_ViajesRealizados.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_ViajesRealizados.Location = new Point(446, 4);
-            btn_ViajesRealizados.Name = "btn_ViajesRealizados";
-            btn_ViajesRealizados.Size = new Size(242, 36);
-            btn_ViajesRealizados.TabIndex = 74;
-            btn_ViajesRealizados.Text = "Viajes realizados";
-            btn_ViajesRealizados.UseVisualStyleBackColor = false;
-            // 
             // dtg_ListaViajes
             // 
+            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListaViajes.Location = new Point(113, 58);
+            dtg_ListaViajes.Location = new Point(107, 64);
             dtg_ListaViajes.Name = "dtg_ListaViajes";
             dtg_ListaViajes.RowTemplate.Height = 25;
-            dtg_ListaViajes.Size = new Size(607, 410);
+            dtg_ListaViajes.Size = new Size(613, 404);
             dtg_ListaViajes.TabIndex = 75;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dtg_ListaViajes);
+            groupBox1.Controls.Add(pnl_PanelSup);
+            groupBox1.Controls.Add(pnl_Izquierdo);
+            groupBox1.Dock = DockStyle.Bottom;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(720, 469);
+            groupBox1.TabIndex = 76;
+            groupBox1.TabStop = false;
             // 
             // Frm_Empleado_Lista_Viajes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
-            Controls.Add(dtg_ListaViajes);
-            Controls.Add(btn_ViajesRealizados);
-            Controls.Add(pnl_PanelSup);
-            Controls.Add(pnl_Izquierdo);
+            Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Lista_Viajes";
             Text = "Frm_Empleado_Lista_Viajes";
+            Load += Frm_Empleado_Lista_Viajes_Load;
             pnl_Izquierdo.ResumeLayout(false);
             pnl_Izquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
             pnl_PanelSup.ResumeLayout(false);
             pnl_PanelSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -138,7 +140,7 @@
         private PictureBox pic_Volver;
         private Panel pnl_PanelSup;
         private Label lbl_ListarViajes;
-        private Button btn_ViajesRealizados;
         private DataGridView dtg_ListaViajes;
+        private GroupBox groupBox1;
     }
 }

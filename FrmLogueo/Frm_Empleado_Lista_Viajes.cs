@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransporteRodriguez;
 
 namespace WF_TransporteRodriguez
 {
@@ -21,6 +22,50 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
+        }
+
+        private void Frm_Empleado_Lista_Viajes_Load(object sender, EventArgs e)
+        {
+
+            dtg_ListaViajes.DataSource = Repositorio_Viajes.ListaViajes;
+            dtg_ListaViajes.AutoGenerateColumns = false;
+
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdViaje",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "FechaViaje",
+                HeaderText = "Fecha",
+                DisplayIndex = 1
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "nombreCliente",
+                HeaderText = "Nombre",
+                DisplayIndex = 2
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "DireccionSalida",
+                HeaderText = "Salida",
+                DisplayIndex = 3
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "ProvinciaDestino",
+                HeaderText = "Destino",
+                DisplayIndex = 4
+            });
+            dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Precio",
+                HeaderText = "Precio",
+                DisplayIndex = 5
+            });
         }
     }
 }
