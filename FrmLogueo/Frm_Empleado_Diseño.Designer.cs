@@ -49,7 +49,7 @@
             // 
             pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
             pnl_PanelSup.Controls.Add(lbl_Opcion);
-            pnl_PanelSup.Location = new Point(89, 0);
+            pnl_PanelSup.Location = new Point(89, 33);
             pnl_PanelSup.Name = "pnl_PanelSup";
             pnl_PanelSup.Size = new Size(315, 40);
             pnl_PanelSup.TabIndex = 69;
@@ -73,7 +73,7 @@
             panel2.Controls.Add(lbl_Cancelar);
             panel2.Controls.Add(lbl_Guardar);
             panel2.Controls.Add(lbl_Acciones);
-            panel2.Location = new Point(0, 0);
+            panel2.Location = new Point(0, 33);
             panel2.Name = "panel2";
             panel2.Size = new Size(89, 468);
             panel2.TabIndex = 70;
@@ -130,17 +130,16 @@
             // 
             panel1.Controls.Add(pnl_PanelSup);
             panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 469);
+            panel1.Size = new Size(720, 502);
             panel1.TabIndex = 76;
             // 
             // Frm_Empleado_Diseño
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(720, 469);
+            ClientSize = new Size(720, 502);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Diseño";
@@ -165,6 +164,6 @@
         public Label lbl_Guardar;
         public Label lbl_Acciones;
         public Label lbl_Opcion;
-        private Panel panel1;
+        public Panel panel1;
     }
 }

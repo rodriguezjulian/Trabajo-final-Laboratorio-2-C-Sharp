@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
             groupBox1 = new GroupBox();
-            label4 = new Label();
             nup_Kg = new NumericUpDown();
             pictureBox1 = new PictureBox();
             pic_Id = new PictureBox();
@@ -41,7 +40,6 @@
             label1 = new Label();
             pic_EditarViaje = new PictureBox();
             lbl_RerservarViaje = new Label();
-            label7 = new Label();
             pic_CancelarModificacion = new PictureBox();
             dtg_ListaViajes = new DataGridView();
             panel2 = new Panel();
@@ -65,7 +63,6 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(nup_Kg);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(pic_Id);
@@ -76,7 +73,6 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(pic_EditarViaje);
             groupBox1.Controls.Add(lbl_RerservarViaje);
-            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(pic_CancelarModificacion);
             groupBox1.Controls.Add(dtg_ListaViajes);
             groupBox1.Controls.Add(panel2);
@@ -88,21 +84,12 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(618, 163);
-            label4.Name = "label4";
-            label4.Size = new Size(73, 17);
-            label4.TabIndex = 93;
-            label4.Text = "PRINCIPAL";
-            // 
             // nup_Kg
             // 
             nup_Kg.Location = new Point(63, 154);
             nup_Kg.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
             nup_Kg.Name = "nup_Kg";
+            nup_Kg.ReadOnly = true;
             nup_Kg.Size = new Size(165, 23);
             nup_Kg.TabIndex = 92;
             // 
@@ -197,16 +184,6 @@
             lbl_RerservarViaje.Size = new Size(171, 17);
             lbl_RerservarViaje.TabIndex = 78;
             lbl_RerservarViaje.Text = "ID DE VIAJE A MODIFICAR";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(618, 141);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 17);
-            label7.TabIndex = 76;
-            label7.Text = "PANTALLA ";
             // 
             // pic_CancelarModificacion
             // 
@@ -331,7 +308,6 @@
         protected Label label6;
         private DataGridView dtg_ListaViajes;
         private PictureBox pic_CancelarModificacion;
-        protected Label label7;
         protected Label lbl_RerservarViaje;
         private PictureBox pic_EditarViaje;
         protected Label label1;
@@ -343,6 +319,5 @@
         private PictureBox pictureBox1;
         private PictureBox pic_Id;
         private NumericUpDown nup_Kg;
-        protected Label label4;
     }
 }

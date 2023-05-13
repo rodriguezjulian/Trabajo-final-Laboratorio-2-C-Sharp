@@ -41,10 +41,15 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Persona).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_ID).BeginInit();
             SuspendLayout();
+            // 
+            // pnl_PanelSup
+            // 
+            pnl_PanelSup.Location = new Point(88, 33);
             // 
             // panel2
             // 
@@ -77,11 +82,32 @@
             lbl_Opcion.Size = new Size(153, 30);
             lbl_Opcion.Text = "BAJA CLIENTE";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(lbl_ClienteBaja);
+            panel1.Controls.Add(lbl_ID);
+            panel1.Controls.Add(pic_ID);
+            panel1.Controls.Add(txt_BajaID);
+            panel1.Controls.Add(dtg_ListarClientes);
+            panel1.Controls.Add(lbl_Nombe);
+            panel1.Controls.Add(pic_Persona);
+            panel1.Controls.Add(txt_BajaNombre);
+            panel1.Controls.SetChildIndex(txt_BajaNombre, 0);
+            panel1.Controls.SetChildIndex(pic_Persona, 0);
+            panel1.Controls.SetChildIndex(lbl_Nombe, 0);
+            panel1.Controls.SetChildIndex(dtg_ListarClientes, 0);
+            panel1.Controls.SetChildIndex(panel2, 0);
+            panel1.Controls.SetChildIndex(pnl_PanelSup, 0);
+            panel1.Controls.SetChildIndex(txt_BajaID, 0);
+            panel1.Controls.SetChildIndex(pic_ID, 0);
+            panel1.Controls.SetChildIndex(lbl_ID, 0);
+            panel1.Controls.SetChildIndex(lbl_ClienteBaja, 0);
+            // 
             // dtg_ListarClientes
             // 
             dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarClientes.Location = new Point(90, 155);
+            dtg_ListarClientes.Location = new Point(89, 198);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -94,7 +120,7 @@
             lbl_ClienteBaja.AutoSize = true;
             lbl_ClienteBaja.BackColor = Color.FromArgb(255, 192, 192);
             lbl_ClienteBaja.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ClienteBaja.Location = new Point(95, 52);
+            lbl_ClienteBaja.Location = new Point(89, 89);
             lbl_ClienteBaja.Name = "lbl_ClienteBaja";
             lbl_ClienteBaja.Size = new Size(346, 25);
             lbl_ClienteBaja.TabIndex = 72;
@@ -104,7 +130,7 @@
             // 
             lbl_Nombe.AutoSize = true;
             lbl_Nombe.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Nombe.Location = new Point(95, 92);
+            lbl_Nombe.Location = new Point(95, 114);
             lbl_Nombe.Name = "lbl_Nombe";
             lbl_Nombe.Size = new Size(58, 17);
             lbl_Nombe.TabIndex = 73;
@@ -113,7 +139,7 @@
             // pic_Persona
             // 
             pic_Persona.Image = Properties.Resources.persona;
-            pic_Persona.Location = new Point(105, 112);
+            pic_Persona.Location = new Point(105, 135);
             pic_Persona.Name = "pic_Persona";
             pic_Persona.Size = new Size(44, 35);
             pic_Persona.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,9 +148,9 @@
             // 
             // txt_BajaNombre
             // 
-            txt_BajaNombre.BackColor = Color.FromArgb(255, 255, 192);
+            txt_BajaNombre.BackColor = Color.FromArgb(224, 224, 224);
             txt_BajaNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_BajaNombre.Location = new Point(155, 122);
+            txt_BajaNombre.Location = new Point(155, 145);
             txt_BajaNombre.Name = "txt_BajaNombre";
             txt_BajaNombre.ReadOnly = true;
             txt_BajaNombre.Size = new Size(180, 25);
@@ -133,9 +159,9 @@
             // 
             // txt_BajaID
             // 
-            txt_BajaID.BackColor = Color.FromArgb(255, 255, 192);
+            txt_BajaID.BackColor = Color.FromArgb(224, 224, 224);
             txt_BajaID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_BajaID.Location = new Point(408, 122);
+            txt_BajaID.Location = new Point(408, 145);
             txt_BajaID.Name = "txt_BajaID";
             txt_BajaID.ReadOnly = true;
             txt_BajaID.Size = new Size(51, 25);
@@ -146,7 +172,7 @@
             // 
             lbl_ID.AutoSize = true;
             lbl_ID.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ID.Location = new Point(408, 102);
+            lbl_ID.Location = new Point(408, 114);
             lbl_ID.Name = "lbl_ID";
             lbl_ID.Size = new Size(22, 17);
             lbl_ID.TabIndex = 77;
@@ -155,7 +181,7 @@
             // pic_ID
             // 
             pic_ID.Image = Properties.Resources.ID;
-            pic_ID.Location = new Point(358, 114);
+            pic_ID.Location = new Point(358, 135);
             pic_ID.Name = "pic_ID";
             pic_ID.Size = new Size(44, 35);
             pic_ID.SizeMode = PictureBoxSizeMode.Zoom;
@@ -176,37 +202,22 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(720, 469);
-            Controls.Add(pic_ID);
-            Controls.Add(lbl_ID);
-            Controls.Add(txt_BajaID);
-            Controls.Add(txt_BajaNombre);
-            Controls.Add(pic_Persona);
-            Controls.Add(lbl_Nombe);
-            Controls.Add(lbl_ClienteBaja);
-            Controls.Add(dtg_ListarClientes);
+            ClientSize = new Size(720, 502);
             Name = "Frm_Empleado_Baja_Cliente";
             Text = "Frm_Empleado_Baja_Cliente";
             Load += Frm_Empleado_Baja_Cliente_Load;
-            Controls.SetChildIndex(dtg_ListarClientes, 0);
-            Controls.SetChildIndex(lbl_ClienteBaja, 0);
-            Controls.SetChildIndex(lbl_Nombe, 0);
-            Controls.SetChildIndex(pic_Persona, 0);
-            Controls.SetChildIndex(txt_BajaNombre, 0);
-            Controls.SetChildIndex(txt_BajaID, 0);
-            Controls.SetChildIndex(lbl_ID, 0);
-            Controls.SetChildIndex(pic_ID, 0);
             pnl_PanelSup.ResumeLayout(false);
             pnl_PanelSup.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Persona).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_ID).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

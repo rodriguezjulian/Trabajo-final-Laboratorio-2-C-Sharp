@@ -45,7 +45,6 @@
             grp_CargosFijos = new GroupBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             grp_Viajes = new GroupBox();
-            label7 = new Label();
             pic_Cancelar = new PictureBox();
             lbl_RerservarViaje = new Label();
             pic_ReservarViajar = new PictureBox();
@@ -61,7 +60,6 @@
             label5 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            label8 = new Label();
             grp_CargosFijos.SuspendLayout();
             grp_Viajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
@@ -113,6 +111,7 @@
             // 
             txt_Nombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txt_Nombre.BackColor = Color.FromArgb(255, 255, 192);
+            txt_Nombre.Cursor = Cursors.No;
             txt_Nombre.Enabled = false;
             txt_Nombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Nombre.Location = new Point(2, 28);
@@ -125,6 +124,7 @@
             // txt_DireccionSalida
             // 
             txt_DireccionSalida.BackColor = Color.FromArgb(255, 255, 192);
+            txt_DireccionSalida.Cursor = Cursors.No;
             txt_DireccionSalida.Enabled = false;
             txt_DireccionSalida.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_DireccionSalida.Location = new Point(2, 87);
@@ -144,6 +144,7 @@
             // 
             // cbo_Provincias
             // 
+            cbo_Provincias.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_Provincias.FormattingEnabled = true;
             cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
             cbo_Provincias.Location = new Point(2, 143);
@@ -199,8 +200,6 @@
             // 
             grp_Viajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             grp_Viajes.BackColor = Color.FromArgb(255, 255, 192);
-            grp_Viajes.Controls.Add(label8);
-            grp_Viajes.Controls.Add(label7);
             grp_Viajes.Controls.Add(pic_Cancelar);
             grp_Viajes.Controls.Add(lbl_RerservarViaje);
             grp_Viajes.Controls.Add(pic_ReservarViajar);
@@ -214,16 +213,6 @@
             grp_Viajes.Size = new Size(720, 469);
             grp_Viajes.TabIndex = 66;
             grp_Viajes.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(603, 342);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 17);
-            label7.TabIndex = 75;
-            label7.Text = "PANTALLA ";
             // 
             // pic_Cancelar
             // 
@@ -285,6 +274,7 @@
             nup_Kilos.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
             nup_Kilos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nup_Kilos.Name = "nup_Kilos";
+            nup_Kilos.ReadOnly = true;
             nup_Kilos.Size = new Size(251, 23);
             nup_Kilos.TabIndex = 70;
             nup_Kilos.Value = new decimal(new int[] { 1, 0, 0, 0 });
@@ -364,16 +354,6 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(605, 359);
-            label8.Name = "label8";
-            label8.Size = new Size(73, 17);
-            label8.TabIndex = 76;
-            label8.Text = "PRINCIPAL";
-            // 
             // Frm_Cliente_Alta_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -428,12 +408,10 @@
         protected Label lbl_RerservarViaje;
         private PictureBox pic_ReservarViajar;
         private GroupBox grp_DatosViaje;
-        protected Label label7;
         private PictureBox pic_Cancelar;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private NumericUpDown nup_Kilos;
         protected Label lbl_NombreClient;
-        protected Label label8;
     }
 }

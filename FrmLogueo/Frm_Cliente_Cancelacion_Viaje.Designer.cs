@@ -42,10 +42,8 @@
             pic_EliminarViaje = new PictureBox();
             pic_Id = new PictureBox();
             pic_Cancelar = new PictureBox();
-            label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             pln_CancelarViaje.SuspendLayout();
@@ -195,16 +193,6 @@
             pic_Cancelar.MouseEnter += pic_Cancelar_MouseEnter;
             pic_Cancelar.MouseLeave += pic_Cancelar_MouseLeave;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(569, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 17);
-            label1.TabIndex = 90;
-            label1.Text = "PANTALLA ";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -226,26 +214,14 @@
             panel1.Size = new Size(731, 33);
             panel1.TabIndex = 92;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(569, 69);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 17);
-            label3.TabIndex = 93;
-            label3.Text = "PRINCIPAL";
-            // 
             // Frm_Cliente_Cancelacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 469);
-            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(pic_Cancelar);
             Controls.Add(dtg_ListaViajes);
             Controls.Add(pic_Id);
@@ -285,11 +261,9 @@
         protected Label lbl_NombreClient;
         private PictureBox pic_Id;
         private PictureBox pic_Cancelar;
-        protected Label label1;
         protected Label label2;
         private Panel panel1;
         private Panel pln_CancelarViaje;
         protected Label lbl_Cancelar;
-        protected Label label3;
     }
 }

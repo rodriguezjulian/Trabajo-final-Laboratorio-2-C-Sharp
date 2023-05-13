@@ -89,6 +89,7 @@ namespace WF_TransporteRodriguez
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             this.Close();
             //Frm_Login anterior = new Frm_Login(); // Crea una instancia del formulario anterior
             login.Show();

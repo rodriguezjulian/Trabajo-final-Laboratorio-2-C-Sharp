@@ -45,7 +45,7 @@
             dtg_Listar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_Listar.BackgroundColor = Color.White;
             dtg_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_Listar.Location = new Point(107, 39);
+            dtg_Listar.Location = new Point(107, 72);
             dtg_Listar.Name = "dtg_Listar";
             dtg_Listar.RowTemplate.Height = 25;
             dtg_Listar.Size = new Size(614, 418);
@@ -56,7 +56,7 @@
             pnl_Izquierdo.BackColor = Color.FromArgb(255, 128, 0);
             pnl_Izquierdo.Controls.Add(lbl_Volver);
             pnl_Izquierdo.Controls.Add(pic_Volver);
-            pnl_Izquierdo.Location = new Point(0, 0);
+            pnl_Izquierdo.Location = new Point(0, 33);
             pnl_Izquierdo.Name = "pnl_Izquierdo";
             pnl_Izquierdo.Size = new Size(107, 468);
             pnl_Izquierdo.TabIndex = 10;
@@ -85,7 +85,7 @@
             // 
             pnl_PanelSup.BackColor = Color.FromArgb(255, 128, 0);
             pnl_PanelSup.Controls.Add(lbl_Listar);
-            pnl_PanelSup.Location = new Point(107, 0);
+            pnl_PanelSup.Location = new Point(107, 33);
             pnl_PanelSup.Name = "pnl_PanelSup";
             pnl_PanelSup.Size = new Size(614, 40);
             pnl_PanelSup.TabIndex = 70;
@@ -104,7 +104,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(720, 469);
+            ClientSize = new Size(720, 502);
             Controls.Add(pnl_PanelSup);
             Controls.Add(pnl_Izquierdo);
             Controls.Add(dtg_Listar);

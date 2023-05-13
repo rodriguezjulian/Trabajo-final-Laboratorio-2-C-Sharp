@@ -50,6 +50,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
+            panel1.SuspendLayout();
             grp_DatosNuevoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -58,10 +59,15 @@
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).BeginInit();
             SuspendLayout();
             // 
+            // pnl_PanelSup
+            // 
+            pnl_PanelSup.Location = new Point(88, 33);
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
             panel2.Controls.Add(label5);
+            panel2.Location = new Point(0, 33);
             panel2.Controls.SetChildIndex(lbl_Acciones, 0);
             panel2.Controls.SetChildIndex(lbl_Guardar, 0);
             panel2.Controls.SetChildIndex(lbl_Cancelar, 0);
@@ -89,6 +95,10 @@
             lbl_Opcion.Size = new Size(219, 30);
             lbl_Opcion.Text = "MODIFICAR CLIENTE";
             // 
+            // panel1
+            // 
+            panel1.Size = new Size(720, 502);
+            // 
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
@@ -106,7 +116,7 @@
             grp_DatosNuevoCliente.Controls.Add(txt_ModMail);
             grp_DatosNuevoCliente.Controls.Add(label2);
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
-            grp_DatosNuevoCliente.Location = new Point(95, 46);
+            grp_DatosNuevoCliente.Location = new Point(95, 79);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
             grp_DatosNuevoCliente.Size = new Size(623, 129);
             grp_DatosNuevoCliente.TabIndex = 71;
@@ -124,7 +134,7 @@
             // 
             // txt_ID
             // 
-            txt_ID.BackColor = Color.FromArgb(255, 255, 192);
+            txt_ID.BackColor = Color.FromArgb(224, 224, 224);
             txt_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ID.Location = new Point(258, 38);
             txt_ID.Name = "txt_ID";
@@ -256,7 +266,7 @@
             // 
             dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarClientes.Location = new Point(95, 181);
+            dtg_ListarClientes.Location = new Point(95, 210);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -278,15 +288,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(720, 469);
+            ClientSize = new Size(720, 502);
             Controls.Add(dtg_ListarClientes);
             Controls.Add(grp_DatosNuevoCliente);
             Name = "Frm_Empleado_Modificacion_Cliente";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Frm_Empleado_Modificacion_Cliente";
             Load += Frm_Empleado_Modificacion_Cliente_Load;
-          //  Controls.SetChildIndex(pnl_PanelSup, 0);
-            //Controls.SetChildIndex(panel2, 0);
+            Controls.SetChildIndex(panel1, 0);
             Controls.SetChildIndex(grp_DatosNuevoCliente, 0);
             Controls.SetChildIndex(dtg_ListarClientes, 0);
             pnl_PanelSup.ResumeLayout(false);
@@ -295,6 +304,7 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).EndInit();
+            panel1.ResumeLayout(false);
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();

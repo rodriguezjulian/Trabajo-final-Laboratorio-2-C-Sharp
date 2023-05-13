@@ -48,9 +48,9 @@
             pic_Cancelar = new PictureBox();
             label9 = new Label();
             panel1 = new Panel();
+            label4 = new Label();
             label11 = new Label();
             pnl_AltaCliente = new Panel();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -186,7 +186,7 @@
             grp_DatosNuevoCliente.Controls.Add(txt_AltaMail);
             grp_DatosNuevoCliente.Controls.Add(label2);
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
-            grp_DatosNuevoCliente.Location = new Point(242, 71);
+            grp_DatosNuevoCliente.Location = new Point(240, 98);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
             grp_DatosNuevoCliente.Size = new Size(317, 339);
             grp_DatosNuevoCliente.TabIndex = 48;
@@ -270,6 +270,16 @@
             panel1.Size = new Size(89, 469);
             panel1.TabIndex = 41;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(13, 325);
+            label4.Name = "label4";
+            label4.Size = new Size(52, 13);
+            label4.TabIndex = 48;
+            label4.Text = "principal";
+            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -284,20 +294,10 @@
             // 
             pnl_AltaCliente.BackColor = Color.FromArgb(255, 128, 0);
             pnl_AltaCliente.Controls.Add(label11);
-            pnl_AltaCliente.Location = new Point(86, 0);
+            pnl_AltaCliente.Location = new Point(86, 32);
             pnl_AltaCliente.Name = "pnl_AltaCliente";
             pnl_AltaCliente.Size = new Size(200, 33);
             pnl_AltaCliente.TabIndex = 58;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(13, 325);
-            label4.Name = "label4";
-            label4.Size = new Size(52, 13);
-            label4.TabIndex = 48;
-            label4.Text = "principal";
             // 
             // Frm_Empleado_Alta_Cliente
             // 

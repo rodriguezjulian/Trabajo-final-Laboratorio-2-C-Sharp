@@ -37,6 +37,7 @@ namespace WF_TransporteRodriguez
 
             if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
+                //CREAR METODO -- 
                 Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.CalcularIdViaje(), txt_Nombre.Text, txt_DireccionSalida.Text,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
                 Repositorio_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
@@ -80,5 +81,7 @@ namespace WF_TransporteRodriguez
             this.Hide();
             this.Close();
         }
+
+
     }
 }
