@@ -13,7 +13,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Baja_Cliente : Frm_Empleado_Diseño
     {
-        List<Viaje> clientesActivos;
+        List<Cliente> clientesActivos;
         public Frm_Empleado_Baja_Cliente()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Baja_Cliente_Load(object sender, EventArgs e)
         {
-            List<Cliente> clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+            clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
             OrganizarDtg(clientesActivos);
         }
 
@@ -50,12 +50,12 @@ namespace WF_TransporteRodriguez
                     cliente.Estado = false;
                     MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
                     dtg_ListarClientes.DataSource = null;
-                    dtg_ListarClientes.Rows.Clear();
+                    //dtg_ListarClientes.Rows.Clear();
                     dtg_ListarClientes.AutoGenerateColumns = false;
                     dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
                     dtg_ListarClientes.Columns.Clear();
 
-                    List<Cliente> clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+                    clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
                     OrganizarDtg(clientesActivos);
 
                 }

@@ -19,13 +19,14 @@ namespace TransporteRodriguez
 
         public Vehiculo() { }
 
-        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string patente, bool _estado)
+        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string patente, bool estado)
         {
             _idVehiculo = idVehiculo;
             _marcaVehiculo = marcaVehiculo;
             _capacidadDeCarga = capacidadDeCarga; 
             _color = color;
             _patente = patente;
+            _estado = estado;
         }
 
         public int IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }

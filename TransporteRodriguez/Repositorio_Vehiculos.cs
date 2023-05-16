@@ -15,11 +15,11 @@ namespace TransporteRodriguez
 
         public static void AgregarVehiculos()
         {
-            listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "ABC123", true));
-            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "DEF456", true));
-            listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "GHI789", true));
-            listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "JKL012", true));
-            listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "MNO345",true));
+            listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
+            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", false));
+            listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
+            listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
+            listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS",true));
         }
         public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
@@ -46,13 +46,13 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public static bool VerificarPatente(string patenteIngresada)
+        public static bool VerificarFormatoPatente(string patenteIngresada)
         {
             bool retorno = true;
             // Verificar longitud del string
             if (patenteIngresada.Length != 6)
             {
-                retorno= false;
+                retorno = false;
             }
 
             // Verificar caracteres individualmente
@@ -60,14 +60,43 @@ namespace TransporteRodriguez
             {
                 if (i < 3 && !char.IsDigit(patenteIngresada[i])) // Los primeros tres caracteres deben ser dígitos
                 {
-                    retorno =false;
+                    retorno = false;
                 }
                 if (i >= 3 && !char.IsLetter(patenteIngresada[i])) // Los últimos tres caracteres deben ser letras
                 {
-                    retorno= false;
+                    retorno = false;
                 }
             }
-
+            return retorno;
+        }
+        public static bool VerificarExistenciaPatente(string patenteIngresada)
+        {
+            bool retorno = true;
+            foreach (Vehiculo vehiculo in ListaVehiculos)
+            {
+                if (vehiculo.Patente == patenteIngresada)
+                {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
+        // retona 0 todo bien || 1 esta mal el formato || 2 ya existe la patente
+        public static int VerificarPatente(string patenteIngresada)
+        {
+            int retorno = 0;
+            string patenteAuxiliar = patenteIngresada.ToUpper();
+            if (VerificarFormatoPatente(patenteAuxiliar) != true)
+            {
+                retorno = 1;
+            }
+            else
+            {
+                if (VerificarExistenciaPatente(patenteAuxiliar) !=true)
+                {
+                    retorno = 2;
+                }
+            }
             return retorno;
         }
         public static int CalcularIdVehiculo()
@@ -77,5 +106,23 @@ namespace TransporteRodriguez
             retorno = (clienteUltimo.IdVehiculo) + 1;
             return retorno;
         }
+        public static Vehiculo BuscarVehiculo(int idCliente)
+        {
+            Vehiculo vehiculo = null;
+            //int contador = 0;
+            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
+            {
+                if (vehiculoAuxiliar.IdVehiculo== idCliente)
+                {
+
+                    vehiculo = vehiculoAuxiliar;
+                    break;
+                }
+                // contador = contador + 1;
+            }
+            //indice = contador;
+            return vehiculo;
+        }
+
     }
 }

@@ -27,7 +27,7 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (Repositorio_Vehiculos.VerificarPatente(txt_AltaPatente.Text) == true)
+            if (Repositorio_Vehiculos.VerificarPatente(txt_AltaPatente.Text) == 0)
             {
                 Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.CalcularIdVehiculo(), (Marcas)cbo_Marca.SelectedItem,
                     (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text,true));
@@ -35,7 +35,15 @@ namespace WF_TransporteRodriguez
             }
             else
             {
-                MessageBox.Show("ERROR, Verifique la patente ingresada\n");
+                if (Repositorio_Vehiculos.VerificarPatente(txt_AltaPatente.Text) == 1)
+                {
+                    MessageBox.Show("ERROR, Verifique la patente ingresada\n");
+                }
+                else
+                {
+                    MessageBox.Show("ERROR, La patente ingresada pertenece a un vehiculo existente\n");
+                }
+                
             }
         }
         private void pic_Cancelar_Click(object sender, EventArgs e)

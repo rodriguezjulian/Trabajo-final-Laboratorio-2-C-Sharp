@@ -45,6 +45,7 @@ namespace WF_TransporteRodriguez
                 viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
                 viajeAux.KilosATransportar = (float)nup_Kg.Value;
                 viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+                dtg_ListaViajes.Columns.Clear();
                 OrganizarDataGridViajes(viajesCliente);
                 MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
             }

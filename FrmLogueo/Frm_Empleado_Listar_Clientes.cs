@@ -31,7 +31,7 @@ namespace WF_TransporteRodriguez
             if (Repositorio_Clientes.FiltrarClientes(listaClientesBaja))
             {
                 dtg_ListarClientes.DataSource = null;
-                dtg_ListarClientes.Rows.Clear();
+                dtg_ListarClientes.Columns.Clear();
                 dtg_ListarClientes.AutoGenerateColumns = false;
                 dtg_ListarClientes.DataSource = listaClientesBaja;
                 ConfigurarDTG();
@@ -88,7 +88,6 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Baja_Vehiculo : Frm_Empleado_Diseño
     {
+        List<Vehiculo> vehiculosActivos;
         public Frm_Empleado_Baja_Vehiculo()
         {
             InitializeComponent();
@@ -20,12 +21,35 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Baja_Vehiculo_Load(object sender, EventArgs e)
         {
-            OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
+            vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+            OrganizarDataGridVehiculos(vehiculosActivos);
         }
-        public void OrganizarDataGridVehiculos(List<Vehiculo> ListaVehiculos)
+        private void pic_Guardar_Click(object sender, EventArgs e)
+        {
+            if (txt_BajaID.Text != "")
+            {
+                Vehiculo vehiculo = new Vehiculo();
+                vehiculo = Repositorio_Vehiculos.BuscarVehiculo(int.Parse(txt_BajaID.Text));
+                vehiculo.Estado = false;
+                dtg_Listar.Columns.Clear();
+                vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+                OrganizarDataGridVehiculos(vehiculosActivos);
+                MessageBox.Show("Vehiculo con patente " + vehiculo.Patente + " dado de baja satisfactoriamente.");
+            }
+            else
+            {
+                MessageBox.Show("Error, elija una vehiculo para dar de baja.");
+            }
+        }
+        private void dtg_Listar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_BajaID.Text = dtg_Listar.CurrentRow.Cells[0].Value.ToString();
+            txt_BajaPatente.Text = dtg_Listar.CurrentRow.Cells[3].Value.ToString();
+        }
+        public void OrganizarDataGridVehiculos(List<Vehiculo> vehiculosActivos)
         {
             dtg_Listar.AutoGenerateColumns = false;
-            dtg_Listar.DataSource = Repositorio_Vehiculos.ListaVehiculos;
+            dtg_Listar.DataSource = vehiculosActivos;
 
             dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -38,26 +62,32 @@ namespace WF_TransporteRodriguez
             {
                 DataPropertyName = "MarcaVehiculo",
                 HeaderText = "Marca",
-                DisplayIndex = 2
+                DisplayIndex = 1
             });
             dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "CapacidadDeCarga",
                 HeaderText = "Carga Soportada",
-                DisplayIndex = 3
+                DisplayIndex = 2
             });
             dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Patente",
                 HeaderText = "Patente",
-                DisplayIndex = 4
+                DisplayIndex = 3
             });
             dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Color",
                 HeaderText = "Color",
-                DisplayIndex = 5
+                DisplayIndex = 4
             });
+        }
+
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }
