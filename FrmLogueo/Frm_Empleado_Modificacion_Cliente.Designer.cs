@@ -45,7 +45,6 @@
             label2 = new Label();
             pictureBox5 = new PictureBox();
             dtg_ListarClientes = new DataGridView();
-            label5 = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
@@ -66,14 +65,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
-            panel2.Controls.Add(label5);
-            panel2.Location = new Point(0, 33);
-            panel2.Controls.SetChildIndex(lbl_Acciones, 0);
-            panel2.Controls.SetChildIndex(lbl_Guardar, 0);
-            panel2.Controls.SetChildIndex(lbl_Cancelar, 0);
-            panel2.Controls.SetChildIndex(pic_Cancelar, 0);
-            panel2.Controls.SetChildIndex(pic_Guardar, 0);
-            panel2.Controls.SetChildIndex(label5, 0);
             // 
             // pic_Guardar
             // 
@@ -87,17 +78,13 @@
             // 
             lbl_Cancelar.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Cancelar.Location = new Point(-2, 324);
-            lbl_Cancelar.Size = new Size(92, 13);
-            lbl_Cancelar.Text = "Volver a pantalla";
+            lbl_Cancelar.Size = new Size(0, 13);
+            lbl_Cancelar.Text = "";
             // 
             // lbl_Opcion
             // 
             lbl_Opcion.Size = new Size(219, 30);
             lbl_Opcion.Text = "MODIFICAR CLIENTE";
-            // 
-            // panel1
-            // 
-            panel1.Size = new Size(720, 502);
             // 
             // grp_DatosNuevoCliente
             // 
@@ -274,16 +261,6 @@
             dtg_ListarClientes.TabIndex = 55;
             dtg_ListarClientes.CellClick += dtg_ListarClientes_CellClick;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(13, 337);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 13);
-            label5.TabIndex = 76;
-            label5.Text = "principal";
-            // 
             // Frm_Empleado_Modificacion_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,6 +310,5 @@
         private DataGridView dtg_ListarClientes;
         private Label label4;
         private TextBox txt_ID;
-        private Label label5;
     }
 }

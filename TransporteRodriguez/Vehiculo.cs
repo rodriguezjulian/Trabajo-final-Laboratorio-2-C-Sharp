@@ -15,10 +15,11 @@ namespace TransporteRodriguez
         private int _capacidadDeCarga;
         private Colores _color;
         private string _patente;
+        private bool _estado;
 
         public Vehiculo() { }
 
-        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string patente)
+        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string patente, bool _estado)
         {
             _idVehiculo = idVehiculo;
             _marcaVehiculo = marcaVehiculo;
@@ -32,5 +33,6 @@ namespace TransporteRodriguez
         public int CapacidadDeCarga { get => _capacidadDeCarga; set => _capacidadDeCarga = value; }
         public Colores Color { get => _color; set => _color = value; }
         public string Patente { get => _patente; set => _patente = value; }
+        public bool Estado { get => _estado; set => _estado = value; }
     }
 }

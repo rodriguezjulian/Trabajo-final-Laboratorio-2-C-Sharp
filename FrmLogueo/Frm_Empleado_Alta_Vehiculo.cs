@@ -30,13 +30,18 @@ namespace WF_TransporteRodriguez
             if (Repositorio_Vehiculos.VerificarPatente(txt_AltaPatente.Text) == true)
             {
                 Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.CalcularIdVehiculo(), (Marcas)cbo_Marca.SelectedItem,
-                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text));
+                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text,true));
                 MessageBox.Show("Vehiculo dado de alta satisfactoriamente\n");
             }
             else
             {
                 MessageBox.Show("ERROR, Verifique la patente ingresada\n");
             }
+        }
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

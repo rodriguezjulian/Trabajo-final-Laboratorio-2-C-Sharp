@@ -22,7 +22,6 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            //  Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
         private void Frm_Empleado_Modificacion_Cliente_Load(object sender, EventArgs e)

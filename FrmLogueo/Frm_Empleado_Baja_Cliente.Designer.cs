@@ -105,7 +105,7 @@
             // 
             // dtg_ListarClientes
             // 
-            dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarClientes.Location = new Point(89, 198);
             dtg_ListarClientes.Name = "dtg_ListarClientes";

@@ -109,6 +109,14 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Alta_Vehiculo.Dock = DockStyle.Fill;
             frm_Empleado_Alta_Vehiculo.Show();
         }
+
+        private void bajaVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Baja_Vehiculo frm_Empleado_Baja_Vehiculo = new Frm_Empleado_Baja_Vehiculo();
+            frm_Empleado_Baja_Vehiculo.MdiParent = this;
+            frm_Empleado_Baja_Vehiculo.Dock = DockStyle.Fill;
+            frm_Empleado_Baja_Vehiculo.Show();
+        }
     }
 
 }

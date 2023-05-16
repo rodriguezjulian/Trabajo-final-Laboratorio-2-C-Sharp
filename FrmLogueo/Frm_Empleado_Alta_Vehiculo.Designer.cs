@@ -68,6 +68,15 @@
             // 
             pic_Guardar.Click += pic_Guardar_Click;
             // 
+            // pic_Cancelar
+            // 
+            pic_Cancelar.Click += pic_Cancelar_Click;
+            // 
+            // lbl_Cancelar
+            // 
+            lbl_Cancelar.Size = new Size(0, 15);
+            lbl_Cancelar.Text = "";
+            // 
             // lbl_Opcion
             // 
             lbl_Opcion.Size = new Size(188, 30);

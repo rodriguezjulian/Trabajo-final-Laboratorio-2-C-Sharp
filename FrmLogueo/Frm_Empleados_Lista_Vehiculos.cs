@@ -21,13 +21,50 @@ namespace WF_TransporteRodriguez
         }
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
-            dtg_Listar.DataSource = Repositorio_Vehiculos.ListaVehiculos;
+
+            OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
         }
         private void pic_Volver_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();
-            // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
+        }
+        public void OrganizarDataGridVehiculos(List<Vehiculo> ListaVehiculos)
+        {
+            dtg_Listar.AutoGenerateColumns = false;
+            dtg_Listar.DataSource = Repositorio_Vehiculos.ListaVehiculos;
+     
+            dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdVehiculo",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
+
+            dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "MarcaVehiculo",
+                HeaderText = "Marca",
+                DisplayIndex = 2
+            });
+            dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "CapacidadDeCarga",
+                HeaderText = "Carga Soportada",
+                DisplayIndex = 3
+            });
+            dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Patente",
+                HeaderText = "Patente",
+                DisplayIndex = 4
+            });
+            dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Color",
+                HeaderText = "Color",
+                DisplayIndex = 5
+            });
         }
     }
 }

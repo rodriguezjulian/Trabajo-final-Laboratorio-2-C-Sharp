@@ -132,6 +132,7 @@
             bajaVehiculoToolStripMenuItem.Name = "bajaVehiculoToolStripMenuItem";
             bajaVehiculoToolStripMenuItem.Size = new Size(180, 34);
             bajaVehiculoToolStripMenuItem.Text = "Baja ";
+            bajaVehiculoToolStripMenuItem.Click += bajaVehiculoToolStripMenuItem_Click;
             // 
             // listarVehiculoToolStripMenuItem
             // 
