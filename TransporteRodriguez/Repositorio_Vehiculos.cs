@@ -21,12 +21,12 @@ namespace TransporteRodriguez
             listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "JKL012"));
             listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "MNO345"));
         }
-        public static short RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
+        public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
             float cargaSoportada;
             Viaje viajeAxuliar;
             //vehiculos aptos para transportar la cantidad de kilos.
-            short retorno = 0;
+            int retorno = 0;
             foreach (Vehiculo vehiculo in listaVehiculos)
             {
                 cargaSoportada = vehiculo.CapacidadDeCarga;
@@ -44,6 +44,37 @@ namespace TransporteRodriguez
                     }
                 }
             }
+            return retorno;
+        }
+        public static bool VerificarPatente(string patenteIngresada)
+        {
+            bool retorno = true;
+            // Verificar longitud del string
+            if (patenteIngresada.Length != 6)
+            {
+                retorno= false;
+            }
+
+            // Verificar caracteres individualmente
+            for (int i = 0; i < patenteIngresada.Length; i++)
+            {
+                if (i < 3 && !char.IsDigit(patenteIngresada[i])) // Los primeros tres caracteres deben ser dígitos
+                {
+                    retorno =false;
+                }
+                if (i >= 3 && !char.IsLetter(patenteIngresada[i])) // Los últimos tres caracteres deben ser letras
+                {
+                    retorno= false;
+                }
+            }
+
+            return retorno;
+        }
+        public static int CalcularIdVehiculo()
+        {
+            int retorno;
+            Vehiculo clienteUltimo = ListaVehiculos[ListaVehiculos.Count - 1];
+            retorno = (clienteUltimo.IdVehiculo) + 1;
             return retorno;
         }
     }

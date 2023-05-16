@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Clientes
+    public static class Repositorio_Clientes 
     {
         private static List<Cliente> listaClientes = new List<Cliente>();
 
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
 
-        public static void AgregarCliente()
+      // public static void AgregarCliente()
+       public static void AgregarCliente()
         {
             ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
             ListaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", true, 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));
@@ -82,6 +83,5 @@ namespace TransporteRodriguez
             //indice = contador;
             return cliente;
         }
-
     }
 }

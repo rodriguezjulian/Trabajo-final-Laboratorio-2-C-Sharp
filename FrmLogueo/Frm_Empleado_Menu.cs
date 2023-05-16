@@ -94,13 +94,20 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Datos.Show();
 
         }
-
-        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleados_Lista_Vehiculos Frm_Empleados_Lista_Vehiculos = new Frm_Empleados_Lista_Vehiculos();
             Frm_Empleados_Lista_Vehiculos.MdiParent = this;
             Frm_Empleados_Lista_Vehiculos.Dock = DockStyle.Fill;
             Frm_Empleados_Lista_Vehiculos.Show();
+        }
+
+        private void crearVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Empleado_Alta_Vehiculo frm_Empleado_Alta_Vehiculo = new Frm_Empleado_Alta_Vehiculo();
+            frm_Empleado_Alta_Vehiculo.MdiParent = this;
+            frm_Empleado_Alta_Vehiculo.Dock = DockStyle.Fill;
+            frm_Empleado_Alta_Vehiculo.Show();
         }
     }
 

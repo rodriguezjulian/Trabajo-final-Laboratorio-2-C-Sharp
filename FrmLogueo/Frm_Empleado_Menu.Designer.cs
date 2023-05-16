@@ -37,6 +37,9 @@
             bajarToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
             vehiculosToolStripMenuItem = new ToolStripMenuItem();
+            crearVehiculoToolStripMenuItem = new ToolStripMenuItem();
+            bajaVehiculoToolStripMenuItem = new ToolStripMenuItem();
+            listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -110,12 +113,32 @@
             // 
             // vehiculosToolStripMenuItem
             // 
+            vehiculosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearVehiculoToolStripMenuItem, bajaVehiculoToolStripMenuItem, listarVehiculoToolStripMenuItem });
             vehiculosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             vehiculosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             vehiculosToolStripMenuItem.Size = new Size(144, 34);
             vehiculosToolStripMenuItem.Text = "Vehiculos";
-            vehiculosToolStripMenuItem.Click += vehiculosToolStripMenuItem_Click;
+            // 
+            // crearVehiculoToolStripMenuItem
+            // 
+            crearVehiculoToolStripMenuItem.Name = "crearVehiculoToolStripMenuItem";
+            crearVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            crearVehiculoToolStripMenuItem.Text = "Crear ";
+            crearVehiculoToolStripMenuItem.Click += crearVehiculoToolStripMenuItem_Click;
+            // 
+            // bajaVehiculoToolStripMenuItem
+            // 
+            bajaVehiculoToolStripMenuItem.Name = "bajaVehiculoToolStripMenuItem";
+            bajaVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            bajaVehiculoToolStripMenuItem.Text = "Baja ";
+            // 
+            // listarVehiculoToolStripMenuItem
+            // 
+            listarVehiculoToolStripMenuItem.Name = "listarVehiculoToolStripMenuItem";
+            listarVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            listarVehiculoToolStripMenuItem.Text = "Listar";
+            listarVehiculoToolStripMenuItem.Click += listarVehiculoToolStripMenuItem_Click;
             // 
             // turnosOcupadosToolStripMenuItem
             // 
@@ -225,5 +248,8 @@
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.Timer tmr_Menu;
         private ToolStripMenuItem misDatosToolStripMenuItem;
+        private ToolStripMenuItem crearVehiculoToolStripMenuItem;
+        private ToolStripMenuItem bajaVehiculoToolStripMenuItem;
+        private ToolStripMenuItem listarVehiculoToolStripMenuItem;
     }
 }
