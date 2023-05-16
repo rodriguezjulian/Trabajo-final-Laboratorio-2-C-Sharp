@@ -31,6 +31,6 @@ namespace TransporteRodriguez
         public Marcas MarcaVehiculo { get => _marcaVehiculo; set => _marcaVehiculo = value; }
         public int CapacidadDeCarga { get => _capacidadDeCarga; set => _capacidadDeCarga = value; }
         public Colores Color { get => _color; set => _color = value; }
-        public string? Patente { get => _patente; set => _patente = value; }
+        public string Patente { get => _patente; set => _patente = value; }
     }
 }

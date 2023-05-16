@@ -29,10 +29,8 @@ namespace WF_TransporteRodriguez
         {
             if (Repositorio_Vehiculos.VerificarPatente(txt_AltaPatente.Text) == true)
             {
-                /*Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.CalcularIdVehiculo(), cbo_Marca.SelectedItem.ToString(),
-                    nup_Kilos.Value, cbo_Color.SelectedItem.ToString(), txt_AltaPatente.Text));*/
-                    
-
+                Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.CalcularIdVehiculo(), (Marcas)cbo_Marca.SelectedItem,
+                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text));
                 MessageBox.Show("Vehiculo dado de alta satisfactoriamente\n");
             }
             else
