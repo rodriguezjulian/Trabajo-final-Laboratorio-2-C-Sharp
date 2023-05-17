@@ -55,7 +55,7 @@ namespace TransporteRodriguez
         }*/
         public static Cliente BuscarCliente(Usuario usuarioUno)
         {
-            Cliente? retorno = null;
+            Cliente retorno = null;
             foreach (Cliente cliente in ListaClientes)
             {
                 if (cliente == usuarioUno)

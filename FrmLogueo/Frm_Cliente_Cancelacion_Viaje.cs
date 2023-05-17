@@ -25,9 +25,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
-            // dtg_ListaViajes.DataSource = viajesCliente;
-            // OrganizarDataGridViajes()
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
             OrganizarDataGridViajes(viajesCliente);
             lbl_NombreClient.Text = cliente.Nombre;
         }
@@ -41,7 +39,7 @@ namespace WF_TransporteRodriguez
                 && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 Repositorio_Viajes.ListaViajes.Remove(viajeAux);
-                viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre);
+                viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
                 OrganizarDataGridViajes(viajesCliente);
             }
             else

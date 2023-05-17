@@ -24,7 +24,7 @@ namespace TransporteRodriguez
         }
         public static Empleado BuscarEmpleado(Usuario usuarioUno)
         {
-            Empleado? retorno = null;
+            Empleado retorno = null;
             foreach (Empleado empleado in ListaEmpleado)
             {
                 if (empleado == usuarioUno)

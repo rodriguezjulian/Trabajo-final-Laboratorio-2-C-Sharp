@@ -147,9 +147,9 @@
             // dtp_FechaDeViaje
             // 
             dtp_FechaDeViaje.Location = new Point(251, 101);
-            dtp_FechaDeViaje.MinDate = new DateTime(2023, 5, 9, 0, 0, 0, 0);
+            dtp_FechaDeViaje.MinDate = new DateTime(2000, 11, 16, 0, 0, 0, 0);
             dtp_FechaDeViaje.Name = "dtp_FechaDeViaje";
-            dtp_FechaDeViaje.Size = new Size(200, 23);
+            dtp_FechaDeViaje.Size = new Size(222, 23);
             dtp_FechaDeViaje.TabIndex = 81;
             // 
             // label1
@@ -200,7 +200,7 @@
             // 
             // dtg_ListaViajes
             // 
-            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListaViajes.BackgroundColor = Color.White;
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListaViajes.Location = new Point(0, 183);

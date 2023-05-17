@@ -22,7 +22,7 @@ namespace TransporteRodriguez
 
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
-            Usuario? retorno = null;
+            Usuario retorno = null;
 
             foreach (Empleado empleado in Repositorio_Empleados.ListaEmpleado)
             {

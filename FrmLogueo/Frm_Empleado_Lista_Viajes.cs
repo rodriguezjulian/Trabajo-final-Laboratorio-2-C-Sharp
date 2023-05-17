@@ -13,6 +13,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Lista_Viajes : Form
     {
+        List<Viaje> listaAuxiliar;
         public Frm_Empleado_Lista_Viajes()
         {
             InitializeComponent();
@@ -69,6 +70,19 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Precio",
                 DisplayIndex = 5
             });
+        }
+
+        private void btn_ViajesRealizados_Click(object sender, EventArgs e)
+        {
+            listaAuxiliar = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje < DateTime.Now);
+            dtg_ListaViajes.Columns.Clear();
+            OrganizarDataGridViajes(listaAuxiliar);
+        }
+
+        private void btn_Todos_Click(object sender, EventArgs e)
+        {
+            dtg_ListaViajes.Columns.Clear();
+            OrganizarDataGridViajes(Repositorio_Viajes.ListaViajes);
         }
     }
 }

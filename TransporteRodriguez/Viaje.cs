@@ -10,16 +10,16 @@ namespace TransporteRodriguez
         // nose si podria hacer que viaje herede de cliente los datos de nombre cliente y direccion de salida
     {
         private int _idViaje;
-        private string? _nombreCliente;
-        private string? _direccionSalida; // que seria la direccion del cliente
-        private string? _provinciaDestino;
+        private string _nombreCliente;
+        private string _direccionSalida; // que seria la direccion del cliente
+        private string _provinciaDestino;
         private float _kilosATransportar;
         private float _precio;
         private int _idVehiculo;
         private DateTime _fechaViaje;
 
-        public Viaje(int idViaje, string? nombreCliente, 
-            string? direccionSalida, string? provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje)
+        public Viaje(int idViaje, string nombreCliente, 
+            string direccionSalida, string provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje)
         {
             _idViaje = idViaje;
             _nombreCliente = nombreCliente;
@@ -36,9 +36,9 @@ namespace TransporteRodriguez
             _fechaViaje = fechaViaje;
         }
         public int IdViaje { get => _idViaje; set => _idViaje = value; }
-        public string? NombreCliente { get => _nombreCliente; set => _nombreCliente = value; }
-        public string? DireccionSalida { get => _direccionSalida; set => _direccionSalida = value; }
-        public string? ProvinciaDestino { get => _provinciaDestino; set => _provinciaDestino = value; }
+        public string NombreCliente { get => _nombreCliente; set => _nombreCliente = value; }
+        public string DireccionSalida { get => _direccionSalida; set => _direccionSalida = value; }
+        public string ProvinciaDestino { get => _provinciaDestino; set => _provinciaDestino = value; }
         public float Precio { get => _precio; set => _precio = value; }
         public int IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
