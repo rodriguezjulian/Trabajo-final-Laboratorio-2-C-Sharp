@@ -52,7 +52,6 @@
             pic_Mail = new PictureBox();
             pic_Persona = new PictureBox();
             pictureBox1 = new PictureBox();
-            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
@@ -334,23 +333,12 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(611, 358);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 21);
-            label7.TabIndex = 105;
-            label7.Text = "Volver";
-            // 
             // Frm_Cliente_Datos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(704, 430);
-            Controls.Add(label7);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Controls.Add(panel3);
@@ -375,7 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)pic_Persona).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -404,6 +391,5 @@
         private PictureBox pic_Mail;
         private PictureBox pic_Persona;
         private PictureBox pictureBox1;
-        private Label label7;
     }
 }

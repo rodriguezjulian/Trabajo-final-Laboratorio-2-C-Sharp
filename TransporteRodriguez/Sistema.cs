@@ -14,8 +14,6 @@ namespace TransporteRodriguez
 
         static Sistema()
         { }
-        
-
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario retorno = null;

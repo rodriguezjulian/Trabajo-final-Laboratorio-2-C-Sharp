@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgt_ListarViajes = new DataGridView();
+            dtg_ListaViajes = new DataGridView();
             grp_ListarViajesCliente = new GroupBox();
+            btn_ViajesTodos = new Button();
+            btn_ViajesPendientes = new Button();
+            btn_ViajesRealizados = new Button();
             pic_Atras = new PictureBox();
-            lbl_Volver = new Label();
             panel2 = new Panel();
             lbl_Listar = new Label();
             panel1 = new Panel();
             lbl_NombreCliente = new Label();
             pic_Persona = new PictureBox();
             lbl_TransporteRodriguez = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgt_ListarViajes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Atras).BeginInit();
             panel2.SuspendLayout();
@@ -46,32 +48,70 @@
             ((System.ComponentModel.ISupportInitialize)pic_Persona).BeginInit();
             SuspendLayout();
             // 
-            // dgt_ListarViajes
+            // dtg_ListaViajes
             // 
-            dgt_ListarViajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgt_ListarViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgt_ListarViajes.BackgroundColor = Color.White;
-            dgt_ListarViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgt_ListarViajes.Location = new Point(3, 114);
-            dgt_ListarViajes.Name = "dgt_ListarViajes";
-            dgt_ListarViajes.RowTemplate.Height = 25;
-            dgt_ListarViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgt_ListarViajes.Size = new Size(717, 343);
-            dgt_ListarViajes.TabIndex = 0;
+            dtg_ListaViajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_ListaViajes.BackgroundColor = Color.White;
+            dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListaViajes.Location = new Point(3, 114);
+            dtg_ListaViajes.Name = "dtg_ListaViajes";
+            dtg_ListaViajes.RowTemplate.Height = 25;
+            dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg_ListaViajes.Size = new Size(717, 343);
+            dtg_ListaViajes.TabIndex = 0;
             // 
             // grp_ListarViajesCliente
             // 
             grp_ListarViajesCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grp_ListarViajesCliente.Controls.Add(btn_ViajesTodos);
+            grp_ListarViajesCliente.Controls.Add(btn_ViajesPendientes);
+            grp_ListarViajesCliente.Controls.Add(btn_ViajesRealizados);
             grp_ListarViajesCliente.Controls.Add(pic_Atras);
-            grp_ListarViajesCliente.Controls.Add(lbl_Volver);
             grp_ListarViajesCliente.Controls.Add(panel2);
             grp_ListarViajesCliente.Controls.Add(panel1);
-            grp_ListarViajesCliente.Controls.Add(dgt_ListarViajes);
+            grp_ListarViajesCliente.Controls.Add(dtg_ListaViajes);
             grp_ListarViajesCliente.Location = new Point(0, 0);
             grp_ListarViajesCliente.Name = "grp_ListarViajesCliente";
             grp_ListarViajesCliente.Size = new Size(738, 469);
             grp_ListarViajesCliente.TabIndex = 1;
             grp_ListarViajesCliente.TabStop = false;
+            // 
+            // btn_ViajesTodos
+            // 
+            btn_ViajesTodos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_ViajesTodos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ViajesTodos.Location = new Point(253, 85);
+            btn_ViajesTodos.Name = "btn_ViajesTodos";
+            btn_ViajesTodos.Size = new Size(93, 23);
+            btn_ViajesTodos.TabIndex = 110;
+            btn_ViajesTodos.Text = "TODOS";
+            btn_ViajesTodos.UseVisualStyleBackColor = false;
+            btn_ViajesTodos.Click += btn_ViajesTodos_Click;
+            // 
+            // btn_ViajesPendientes
+            // 
+            btn_ViajesPendientes.BackColor = Color.FromArgb(255, 192, 192);
+            btn_ViajesPendientes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ViajesPendientes.Location = new Point(451, 85);
+            btn_ViajesPendientes.Name = "btn_ViajesPendientes";
+            btn_ViajesPendientes.Size = new Size(93, 23);
+            btn_ViajesPendientes.TabIndex = 109;
+            btn_ViajesPendientes.Text = "PENDIENTES";
+            btn_ViajesPendientes.UseVisualStyleBackColor = false;
+            btn_ViajesPendientes.Click += btn_ViajesPendientes_Click;
+            // 
+            // btn_ViajesRealizados
+            // 
+            btn_ViajesRealizados.BackColor = Color.FromArgb(192, 255, 192);
+            btn_ViajesRealizados.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ViajesRealizados.Location = new Point(352, 85);
+            btn_ViajesRealizados.Name = "btn_ViajesRealizados";
+            btn_ViajesRealizados.Size = new Size(93, 23);
+            btn_ViajesRealizados.TabIndex = 108;
+            btn_ViajesRealizados.Text = "REALIZADOS";
+            btn_ViajesRealizados.UseVisualStyleBackColor = false;
+            btn_ViajesRealizados.Click += btn_ViajesRealizados_Click;
             // 
             // pic_Atras
             // 
@@ -83,16 +123,6 @@
             pic_Atras.TabIndex = 107;
             pic_Atras.TabStop = false;
             pic_Atras.Click += pic_Atras_Click;
-            // 
-            // lbl_Volver
-            // 
-            lbl_Volver.AutoSize = true;
-            lbl_Volver.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Volver.Location = new Point(603, 39);
-            lbl_Volver.Name = "lbl_Volver";
-            lbl_Volver.Size = new Size(59, 21);
-            lbl_Volver.TabIndex = 106;
-            lbl_Volver.Text = "Volver";
             // 
             // panel2
             // 
@@ -165,9 +195,8 @@
             Name = "Frm_Cliente_Lista_Viajes";
             Text = "FrmListarViajesCliente";
             Load += FrmListarViajesCliente_Load;
-            ((System.ComponentModel.ISupportInitialize)dgt_ListarViajes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).EndInit();
             grp_ListarViajesCliente.ResumeLayout(false);
-            grp_ListarViajesCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Atras).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -179,7 +208,7 @@
 
         #endregion
 
-        private DataGridView dgt_ListarViajes;
+        private DataGridView dtg_ListaViajes;
         private GroupBox grp_ListarViajesCliente;
         protected Panel panel1;
         protected Label lbl_NombreCliente;
@@ -187,7 +216,9 @@
         protected Label lbl_TransporteRodriguez;
         private Panel panel2;
         protected Label lbl_Listar;
-        protected Label lbl_Volver;
         private PictureBox pic_Atras;
+        private Button btn_ViajesPendientes;
+        private Button btn_ViajesRealizados;
+        private Button btn_ViajesTodos;
     }
 }
