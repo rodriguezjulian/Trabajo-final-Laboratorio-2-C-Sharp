@@ -16,6 +16,7 @@ namespace WF_TransporteRodriguez
     {
         Cliente cliente;
         List<Viaje> viajesCliente;
+        Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
         public Frm_Cliente_Cancelacion_Viaje()
         {
             InitializeComponent();
@@ -33,14 +34,16 @@ namespace WF_TransporteRodriguez
         private void pic_EliminarViaje_Click(object sender, EventArgs e)
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
-            Viaje viajeAux;
-            Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
-            viajeAux= repositorio_Viajes.BuscarInstancia(int.Parse(txt_IdDeViajeACancelar.Text));
-            if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
+            Viaje viajeAux;   
+            if (txt_IdDeViajeACancelar.Text!="")
             {
-                Repositorio_Viajes.ListaViajes.Remove(viajeAux);
-                viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
-                OrganizarDataGridViajes(viajesCliente);
+                viajeAux = repositorio_Viajes.BuscarInstancia(int.Parse(txt_IdDeViajeACancelar.Text));
+                if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
+                {
+                    Repositorio_Viajes.ListaViajes.Remove(viajeAux);
+                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
+                    OrganizarDataGridViajes(viajesCliente);
+                }
             }
             else
             {

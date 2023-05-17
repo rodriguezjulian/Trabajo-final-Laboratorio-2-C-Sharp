@@ -29,7 +29,6 @@ namespace WF_TransporteRodriguez
             OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
-
         }
 
         private void pic_EditarViaje_Click(object sender, EventArgs e)
@@ -44,7 +43,8 @@ namespace WF_TransporteRodriguez
                 {
                     viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
                     viajeAux.KilosATransportar = (float)nup_Kg.Value;
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje < DateTime.Now);
+                    dtg_ListaViajes.Columns.Clear();
+                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
                     MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
                 }
@@ -53,6 +53,18 @@ namespace WF_TransporteRodriguez
             {
                 MessageBox.Show("Verifique datos ingresados. \n");
             }
+        }
+        private void pic_CancelarModificacion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
+        private void dtg_ListarViajes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_IdDeViajeAModificar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
+            dtp_FechaDeViaje.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
+            nup_Kg.Text = dtg_ListaViajes.CurrentRow.Cells[3].Value.ToString();
         }
         #region EVENTOS PARA EL MOUSE
         private void pic_EditarViaje_MouseEnter(object sender, EventArgs e)
@@ -75,18 +87,7 @@ namespace WF_TransporteRodriguez
             pic_CancelarModificacion.BackColor = Color.Transparent;
         }
         #endregion
-        private void pic_CancelarModificacion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            this.Close();
-        }
 
-        private void dtg_ListarViajes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txt_IdDeViajeAModificar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
-            dtp_FechaDeViaje.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
-            nup_Kg.Text = dtg_ListaViajes.CurrentRow.Cells[3].Value.ToString();
-        }
         public void OrganizarDataGridViajes(List<Viaje> viajesClient)
         {
             dtg_ListaViajes.AutoGenerateColumns = false;

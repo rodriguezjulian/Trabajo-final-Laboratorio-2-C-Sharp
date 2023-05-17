@@ -64,3 +64,4 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Lista_Viajes.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Alta_Vehiculo.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Baja_Vehiculo.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Menu.resources

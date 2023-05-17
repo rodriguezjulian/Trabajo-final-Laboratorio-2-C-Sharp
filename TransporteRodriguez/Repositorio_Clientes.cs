@@ -32,14 +32,6 @@ namespace TransporteRodriguez
                 ListaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));
             }
         }
-
-       /* public static int CalcularIdCliente()
-        {
-            int retorno;
-            Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
-            retorno = (clienteUltimo.IdCliente) + 1;
-            return retorno;
-        }*/
         public override int CalcularId()
         {
             int retorno;
@@ -79,6 +71,13 @@ namespace TransporteRodriguez
 
             return retorno;
         }
+        /* public static int CalcularIdCliente()
+ {
+     int retorno;
+     Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
+     retorno = (clienteUltimo.IdCliente) + 1;
+     return retorno;
+ }*/
         /*  public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
           {
               bool retorno = false;

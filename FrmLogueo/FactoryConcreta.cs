@@ -9,6 +9,8 @@ namespace WF_TransporteRodriguez
 {
     public class FactoryConcreta : FactoryCreador
     {
+        Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
+        Empleado empleadoAuxiliar;
         public override Form CrearFormulario(Usuario usuario)
         {
             Form formulario=null;
@@ -18,9 +20,17 @@ namespace WF_TransporteRodriguez
             usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
-                 Frm_Empleado_Menu menuEmpleado = new Frm_Empleado_Menu();//INSTANCIO AL EMPLEADO
-                menuEmpleado.UsuarioInstanciado = usuarioAuxiliar;
-                formulario =menuEmpleado;
+                empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);
+                if (empleadoAuxiliar.Puesto == "Sistemas")
+                {
+
+                }
+                else
+                {
+                    Frm_Empleado_Menu menuEmpleado = new Frm_Empleado_Menu();//INSTANCIO AL EMPLEADO
+                    menuEmpleado.EmpleadoInstanciado = empleadoAuxiliar;
+                    formulario = menuEmpleado;
+                }
             }
             else
             {

@@ -38,7 +38,12 @@ namespace WF_TransporteRodriguez
             this.Close();
             // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
-
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)
         {
             //MessageBox.Show(cbo_Rubro.SelectedItem.ToString());

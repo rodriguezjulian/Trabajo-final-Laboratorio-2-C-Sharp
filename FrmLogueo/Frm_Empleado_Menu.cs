@@ -15,12 +15,12 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Menu : Form
     {
-        //List<Cliente> listaEmpleados;
-        Usuario usuarioInstanciado;
+        Empleado empleadoInstanciado;
         static public Frm_Hora hora = new Frm_Hora();
-        public Usuario UsuarioInstanciado { get => usuarioInstanciado; set => usuarioInstanciado = value; }
+       
         private static Frm_Login login;
         public static Frm_Login Login { get => login; set => login = value; }
+        public Empleado EmpleadoInstanciado { get => empleadoInstanciado; set => empleadoInstanciado = value; }
 
         public Frm_Empleado_Menu()
         {
@@ -28,7 +28,7 @@ namespace WF_TransporteRodriguez
         }
         private void FrmMenuEmpleado_Load(object sender, EventArgs e)
         {
-            lbl_NombreUsuario.Text = UsuarioInstanciado.Nombre;
+            lbl_NombreUsuario.Text = empleadoInstanciado.Nombre;
             Frm_Hora frm_Hora = new Frm_Hora();
             frm_Hora.MdiParent = this;
             frm_Hora.Dock = DockStyle.Fill;
@@ -88,9 +88,8 @@ namespace WF_TransporteRodriguez
         private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Datos frm_Empleado_Datos = new Frm_Empleado_Datos();
-            // frm_Empleado_Datos.Empleado = Repositorio_Empleados.BuscarEmpleado(usuarioInstanciado);
             Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
-            frm_Empleado_Datos.Empleado = repositorio_Empleados.BuscarInstancia(usuarioInstanciado);
+            frm_Empleado_Datos.Empleado = empleadoInstanciado;
             frm_Empleado_Datos.MdiParent = this;
             frm_Empleado_Datos.Dock = DockStyle.Fill;
             frm_Empleado_Datos.Show();

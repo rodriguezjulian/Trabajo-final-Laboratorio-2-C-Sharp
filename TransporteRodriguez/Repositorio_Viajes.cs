@@ -26,17 +26,7 @@ namespace TransporteRodriguez
                 "Corrientes", 1800, 10500, 5, new DateTime(2021, 05, 11, 0, 0, 0)));
             }
         }
-      /*  public static void AgregarViajes()
-        {
-            ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
-            "Salta", 200, 10000, 1, new DateTime(2023, 08, 11, 0, 0, 0)));
-            ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
-            "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
-            ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
-           "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0)));
-            ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
-            "Corrientes", 1800, 10500, 5, new DateTime(2021, 05, 11, 0, 0, 0)));
-        }*/
+
         public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
             bool retorno = true;
@@ -68,23 +58,7 @@ namespace TransporteRodriguez
             }
             return precio;
         }
-       /* public static bool buscarViaje(int idViaje, out Viaje viajeEncontrado)
-        {
-            viajeEncontrado = null;
-            bool retorno = false;
 
-            foreach (Viaje viajeAxuliar in ListaViajes)
-            {
-                if (viajeAxuliar.IdViaje == idViaje)
-                {
-                    viajeEncontrado = viajeAxuliar;
-                    retorno = true;
-                    break;
-                }
-
-            }
-            return retorno;
-        }*/
         public override Viaje BuscarInstancia( int idViaje)
         {
             Viaje viajeEncontrado = null;
@@ -101,15 +75,6 @@ namespace TransporteRodriguez
             
             return viajeEncontrado;
         }
-
-
-       /* public static int CalcularIdViaje()
-        {
-            int retorno;
-            Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
-            retorno = (viajeUltimo.IdViaje) + 1;
-            return retorno;
-        }*/
         public override int CalcularId()
         {
             int retorno;
@@ -117,6 +82,42 @@ namespace TransporteRodriguez
             retorno = (viajeUltimo.IdViaje) + 1;
             return retorno;
         }
+        /*  public static void AgregarViajes()
+  {
+      ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
+      "Salta", 200, 10000, 1, new DateTime(2023, 08, 11, 0, 0, 0)));
+      ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
+      "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
+      ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
+     "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0)));
+      ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
+      "Corrientes", 1800, 10500, 5, new DateTime(2021, 05, 11, 0, 0, 0)));
+  }*/
+        /* public static bool buscarViaje(int idViaje, out Viaje viajeEncontrado)
+ {
+     viajeEncontrado = null;
+     bool retorno = false;
+
+     foreach (Viaje viajeAxuliar in ListaViajes)
+     {
+         if (viajeAxuliar.IdViaje == idViaje)
+         {
+             viajeEncontrado = viajeAxuliar;
+             retorno = true;
+             break;
+         }
+
+     }
+     return retorno;
+ }*/
+        /* public static int CalcularIdViaje()
+         {
+             int retorno;
+             Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
+             retorno = (viajeUltimo.IdViaje) + 1;
+             return retorno;
+         }*/
+
 
     }
 }

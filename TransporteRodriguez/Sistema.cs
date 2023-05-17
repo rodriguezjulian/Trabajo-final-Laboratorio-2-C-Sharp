@@ -39,15 +39,15 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public static void PoblarListas(){
-
+        public static void PoblarListas()
+        {
             Repositorio_Empleados repositorio_empleados = new Repositorio_Empleados();
-            repositorio_empleados.Agregar();
-            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
-            repositorio_Clientes.Agregar();
-            Repositorio_Vehiculos repositorio_Vehiculos = new Repositorio_Vehiculos();
-            repositorio_Vehiculos.Agregar();
             Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
+            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+            Repositorio_Vehiculos repositorio_Vehiculos = new Repositorio_Vehiculos();
+            repositorio_empleados.Agregar();
+            repositorio_Clientes.Agregar();
+            repositorio_Vehiculos.Agregar();  
             repositorio_Viajes.Agregar();
         }
 
