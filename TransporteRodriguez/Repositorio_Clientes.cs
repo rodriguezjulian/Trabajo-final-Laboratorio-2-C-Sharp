@@ -33,30 +33,21 @@ namespace TransporteRodriguez
             }
         }
 
-        public static int CalcularIdCliente()
+       /* public static int CalcularIdCliente()
+        {
+            int retorno;
+            Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
+            retorno = (clienteUltimo.IdCliente) + 1;
+            return retorno;
+        }*/
+        public override int CalcularId()
         {
             int retorno;
             Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
             retorno = (clienteUltimo.IdCliente) + 1;
             return retorno;
         }
-        /*  public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
-          {
-              bool retorno = false;
-
-              foreach (Cliente clienteAuxiliar in ListaClientes)
-              {
-                  if (clienteAuxiliar.Estado == false)
-                  {
-                      //ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
-                      listaClientesBaja.Add(new Cliente(clienteAuxiliar.Nombre, clienteAuxiliar.Contraseña, clienteAuxiliar.Mail, clienteAuxiliar.Estado,
-                          clienteAuxiliar.IdCliente, clienteAuxiliar.DireccionBSAS, clienteAuxiliar.Rubro));
-                      retorno = true;
-                  }
-              }
-              return retorno;
-          }*/
-        public override Cliente BuscarInstancia(int idCliente) 
+        public override Cliente BuscarInstancia(int idCliente)
         {
             Cliente cliente = null;
             foreach (Cliente clienteAuxliar in listaClientes)
@@ -88,6 +79,23 @@ namespace TransporteRodriguez
 
             return retorno;
         }
+        /*  public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
+          {
+              bool retorno = false;
+
+              foreach (Cliente clienteAuxiliar in ListaClientes)
+              {
+                  if (clienteAuxiliar.Estado == false)
+                  {
+                      //ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
+                      listaClientesBaja.Add(new Cliente(clienteAuxiliar.Nombre, clienteAuxiliar.Contraseña, clienteAuxiliar.Mail, clienteAuxiliar.Estado,
+                          clienteAuxiliar.IdCliente, clienteAuxiliar.DireccionBSAS, clienteAuxiliar.Rubro));
+                      retorno = true;
+                  }
+              }
+              return retorno;
+          }*/
+
         /*public static Cliente BuscarCliente(int idCliente)
           {
               Cliente retorno = null;

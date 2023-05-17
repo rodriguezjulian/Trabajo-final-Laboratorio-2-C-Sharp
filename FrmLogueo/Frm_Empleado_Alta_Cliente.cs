@@ -17,6 +17,8 @@ namespace WF_TransporteRodriguez
     {
         Usuario empleadoInstanciado;
         Cliente nuevoCliente;
+        Repositorio_Clientes repositorio_Clientes=new Repositorio_Clientes();
+
 
         public Frm_Empleado_Alta_Cliente()
         {
@@ -43,7 +45,7 @@ namespace WF_TransporteRodriguez
             if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "" && txt_AltaDireccion.Text != "")
             {
                 Repositorio_Clientes.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, Usuario.generarContraseña(), txt_AltaMail.Text, true,
-                 Repositorio_Clientes.CalcularIdCliente(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
+                 repositorio_Clientes.CalcularId(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
 
                 MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
             }

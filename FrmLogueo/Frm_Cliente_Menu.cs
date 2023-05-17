@@ -92,7 +92,6 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            //Frm_Login anterior = new Frm_Login(); // Crea una instancia del formulario anterior
             login.Show();
         }
     }

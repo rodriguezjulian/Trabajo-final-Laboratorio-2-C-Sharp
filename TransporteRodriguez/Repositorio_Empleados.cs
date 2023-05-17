@@ -41,6 +41,13 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public override int CalcularId()
+        {
+            int retorno;
+            Empleado ultimo = ListaEmpleado[ListaEmpleado.Count - 1];
+            retorno = (ultimo.IdEmpleado) + 1;
+            return retorno;
+        }
         /* public static void AgregarEmpleado()
          {
              ListaEmpleado.Add(new Empleado("Usuario", "Contraseña", "juan.perez@gmail.com", true, 1, "Gerente de Ventas"));
@@ -51,18 +58,18 @@ namespace TransporteRodriguez
              ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, "Contador General"));
 
          }*/
-       /* public static Empleado BuscarEmpleado(Usuario usuarioUno)
-        {
-            Empleado retorno = null;
-            foreach (Empleado empleado in ListaEmpleado)
-            {
-                if (empleado == usuarioUno)
-                {
-                    retorno = empleado;
-                    break;
-                }
-            }
-            return retorno;
-        }*/
+        /* public static Empleado BuscarEmpleado(Usuario usuarioUno)
+         {
+             Empleado retorno = null;
+             foreach (Empleado empleado in ListaEmpleado)
+             {
+                 if (empleado == usuarioUno)
+                 {
+                     retorno = empleado;
+                     break;
+                 }
+             }
+             return retorno;
+         }*/
     }
 }

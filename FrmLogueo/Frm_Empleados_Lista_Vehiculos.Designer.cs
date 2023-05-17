@@ -30,7 +30,6 @@
         {
             dtg_Listar = new DataGridView();
             pnl_Izquierdo = new Panel();
-            lbl_Volver = new Label();
             pic_Volver = new PictureBox();
             pnl_PanelSup = new Panel();
             lbl_Listar = new Label();
@@ -57,21 +56,11 @@
             // pnl_Izquierdo
             // 
             pnl_Izquierdo.BackColor = Color.FromArgb(255, 128, 0);
-            pnl_Izquierdo.Controls.Add(lbl_Volver);
             pnl_Izquierdo.Controls.Add(pic_Volver);
             pnl_Izquierdo.Location = new Point(0, 33);
             pnl_Izquierdo.Name = "pnl_Izquierdo";
             pnl_Izquierdo.Size = new Size(107, 468);
             pnl_Izquierdo.TabIndex = 10;
-            // 
-            // lbl_Volver
-            // 
-            lbl_Volver.AutoSize = true;
-            lbl_Volver.Location = new Point(12, 233);
-            lbl_Volver.Name = "lbl_Volver";
-            lbl_Volver.Size = new Size(87, 15);
-            lbl_Volver.TabIndex = 2;
-            lbl_Volver.Text = "Menu principal";
             // 
             // pic_Volver
             // 
@@ -157,7 +146,6 @@
             Load += FrmListarVehiculos_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_Listar).EndInit();
             pnl_Izquierdo.ResumeLayout(false);
-            pnl_Izquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
             pnl_PanelSup.ResumeLayout(false);
             pnl_PanelSup.PerformLayout();
@@ -167,7 +155,6 @@
         #endregion
         private DataGridView dtg_Listar;
         private Panel pnl_Izquierdo;
-        private Label lbl_Volver;
         private PictureBox pic_Volver;
         private Panel pnl_PanelSup;
         private Label lbl_Listar;

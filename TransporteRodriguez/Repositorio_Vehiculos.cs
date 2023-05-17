@@ -24,14 +24,33 @@ namespace TransporteRodriguez
                 listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));
             }
         }
-      /*  public static void AgregarVehiculos()
+        public override int CalcularId()
         {
-            listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
-            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
-            listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
-            listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
-            listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS",true));
-        }*/
+            int retorno;
+            Vehiculo ultimo = ListaVehiculos[ListaVehiculos.Count - 1];
+            retorno = (ultimo.IdVehiculo) + 1;
+            return retorno;
+        }
+
+
+
+        public override Vehiculo BuscarInstancia(int idCliente)
+        {
+            Vehiculo vehiculo = null;
+            //int contador = 0;
+            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
+            {
+                if (vehiculoAuxiliar.IdVehiculo == idCliente)
+                {
+
+                    vehiculo = vehiculoAuxiliar;
+                    break;
+                }
+            }
+            return vehiculo;
+
+        }
+
         public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
             float cargaSoportada;
@@ -110,51 +129,45 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public static int CalcularIdVehiculo()
-        {
-            int retorno;
-            Vehiculo clienteUltimo = ListaVehiculos[ListaVehiculos.Count - 1];
-            retorno = (clienteUltimo.IdVehiculo) + 1;
-            return retorno;
-        }
-       /* public override Vehiculo BuscarInstancia(object usuarioUno)
-        {
-            Vehiculo retorno = null;
-            return retorno;
-        }*/
-       /* public static Vehiculo BuscarVehiculo(int idCliente)
-        {
-            Vehiculo vehiculo = null;
-            //int contador = 0;
-            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
-            {
-                if (vehiculoAuxiliar.IdVehiculo== idCliente)
-                {
+        /*  public static void AgregarVehiculos()
+  {
+      listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
+      listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
+      listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
+      listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
+      listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS",true));
+  }*/
+        /*  public static int CalcularIdVehiculo()
+          {
+              int retorno;
+              Vehiculo clienteUltimo = ListaVehiculos[ListaVehiculos.Count - 1];
+              retorno = (clienteUltimo.IdVehiculo) + 1;
+              return retorno;
+          }*/
 
-                    vehiculo = vehiculoAuxiliar;
-                    break;
-                }
-                // contador = contador + 1;
-            }
-            //indice = contador;
-            return vehiculo;
-        }*/
-        public override Vehiculo BuscarInstancia(int idCliente)
-        {
-            Vehiculo vehiculo = null; 
-            //int contador = 0;
-            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
-            {
-                if (vehiculoAuxiliar.IdVehiculo == idCliente)
-                {
+        /* public override Vehiculo BuscarInstancia(object usuarioUno)
+         {
+             Vehiculo retorno = null;
+             return retorno;
+         }*/
+        /* public static Vehiculo BuscarVehiculo(int idCliente)
+         {
+             Vehiculo vehiculo = null;
+             //int contador = 0;
+             foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
+             {
+                 if (vehiculoAuxiliar.IdVehiculo== idCliente)
+                 {
 
-                    vehiculo = vehiculoAuxiliar;
-                    break;
-                }
-            }       
-            return vehiculo;
+                     vehiculo = vehiculoAuxiliar;
+                     break;
+                 }
+                 // contador = contador + 1;
+             }
+             //indice = contador;
+             return vehiculo;
+         }*/
 
-        }
 
     }
 }
