@@ -15,6 +15,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleados_Lista_Vehiculos : Form
     {
+        List<Vehiculo> listaAxuliar;
         public Frm_Empleados_Lista_Vehiculos()
         {
             InitializeComponent();
@@ -32,8 +33,8 @@ namespace WF_TransporteRodriguez
         public void OrganizarDataGridVehiculos(List<Vehiculo> ListaVehiculos)
         {
             dtg_Listar.AutoGenerateColumns = false;
-            dtg_Listar.DataSource = Repositorio_Vehiculos.ListaVehiculos;
-     
+            dtg_Listar.DataSource = ListaVehiculos;
+
             dtg_Listar.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "IdVehiculo",
@@ -65,6 +66,25 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Color",
                 DisplayIndex = 5
             });
+        }
+
+        private void btn_DeBaja_Click(object sender, EventArgs e)
+        {
+            listaAxuliar = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == false);
+            dtg_Listar.Columns.Clear();
+            OrganizarDataGridVehiculos(listaAxuliar);
+        }
+
+        private void btn_Todos_Click(object sender, EventArgs e)
+        {
+            OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
+        }
+
+        private void btn_VehiculosActivos_Click(object sender, EventArgs e)
+        {
+            listaAxuliar = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+            dtg_Listar.Columns.Clear();
+            OrganizarDataGridVehiculos(listaAxuliar);
         }
     }
 }

@@ -41,6 +41,8 @@
             dtg_ListarClientes = new DataGridView();
             btn_DeBaja = new Button();
             panel1 = new Panel();
+            btn_Todos = new Button();
+            btn_Activos = new Button();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
             pnl_PanelSup.SuspendLayout();
@@ -134,31 +136,33 @@
             // 
             // dtg_ListarClientes
             // 
-            dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListarClientes.BackgroundColor = Color.White;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarClientes.Location = new Point(112, 75);
+            dtg_ListarClientes.Location = new Point(112, 88);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_ListarClientes.Size = new Size(595, 392);
+            dtg_ListarClientes.Size = new Size(595, 379);
             dtg_ListarClientes.TabIndex = 72;
             // 
             // btn_DeBaja
             // 
             btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);
             btn_DeBaja.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_DeBaja.Location = new Point(453, 5);
+            btn_DeBaja.Location = new Point(609, 46);
             btn_DeBaja.Name = "btn_DeBaja";
-            btn_DeBaja.Size = new Size(242, 36);
+            btn_DeBaja.Size = new Size(98, 36);
             btn_DeBaja.TabIndex = 73;
-            btn_DeBaja.Text = "Clientes dados de baja";
+            btn_DeBaja.Text = "INACTIVOS";
             btn_DeBaja.UseVisualStyleBackColor = false;
             btn_DeBaja.Click += btn_DeBaja_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Bottom;
+            panel1.Controls.Add(btn_Todos);
+            panel1.Controls.Add(btn_Activos);
             panel1.Controls.Add(pnl_PanelSup);
             panel1.Controls.Add(btn_DeBaja);
             panel1.Controls.Add(pnl_Izquierdo);
@@ -167,6 +171,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(720, 469);
             panel1.TabIndex = 3;
+            // 
+            // btn_Todos
+            // 
+            btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_Todos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Todos.Location = new Point(401, 46);
+            btn_Todos.Name = "btn_Todos";
+            btn_Todos.Size = new Size(98, 36);
+            btn_Todos.TabIndex = 75;
+            btn_Todos.Text = "TODOS";
+            btn_Todos.UseVisualStyleBackColor = false;
+            btn_Todos.Click += btn_Todos_Click;
+            // 
+            // btn_Activos
+            // 
+            btn_Activos.BackColor = Color.FromArgb(192, 255, 192);
+            btn_Activos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Activos.Location = new Point(505, 46);
+            btn_Activos.Name = "btn_Activos";
+            btn_Activos.Size = new Size(98, 36);
+            btn_Activos.TabIndex = 74;
+            btn_Activos.Text = "ACTIVOS";
+            btn_Activos.UseVisualStyleBackColor = false;
+            btn_Activos.Click += btn_Activos_Click;
             // 
             // Frm_Empleado_Listar_Clientes
             // 
@@ -203,5 +231,7 @@
         private DataGridView dtg_ListarClientes;
         private Button btn_DeBaja;
         private Panel panel1;
+        private Button btn_Todos;
+        private Button btn_Activos;
     }
 }

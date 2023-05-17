@@ -106,13 +106,6 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Mail",
                 DisplayIndex = 4
             });
-
-            dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Estado",
-                HeaderText = "Estado",
-                DisplayIndex = 5
-            });
         }
     }
 }

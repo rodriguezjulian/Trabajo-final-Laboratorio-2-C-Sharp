@@ -34,6 +34,9 @@
             pic_Volver = new PictureBox();
             pnl_PanelSup = new Panel();
             lbl_Listar = new Label();
+            btn_DeBaja = new Button();
+            btn_VehiculosActivos = new Button();
+            btn_Todos = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_Listar).BeginInit();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
@@ -42,13 +45,13 @@
             // 
             // dtg_Listar
             // 
-            dtg_Listar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg_Listar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_Listar.BackgroundColor = Color.White;
             dtg_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_Listar.Location = new Point(107, 72);
+            dtg_Listar.Location = new Point(113, 147);
             dtg_Listar.Name = "dtg_Listar";
             dtg_Listar.RowTemplate.Height = 25;
-            dtg_Listar.Size = new Size(614, 418);
+            dtg_Listar.Size = new Size(595, 343);
             dtg_Listar.TabIndex = 9;
             // 
             // pnl_Izquierdo
@@ -100,11 +103,50 @@
             lbl_Listar.TabIndex = 71;
             lbl_Listar.Text = "LISTAR VEHICULOS";
             // 
+            // btn_DeBaja
+            // 
+            btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);
+            btn_DeBaja.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_DeBaja.Location = new Point(343, 105);
+            btn_DeBaja.Name = "btn_DeBaja";
+            btn_DeBaja.Size = new Size(95, 36);
+            btn_DeBaja.TabIndex = 74;
+            btn_DeBaja.Text = "INACTIVOS";
+            btn_DeBaja.UseVisualStyleBackColor = false;
+            btn_DeBaja.Click += btn_DeBaja_Click;
+            // 
+            // btn_VehiculosActivos
+            // 
+            btn_VehiculosActivos.BackColor = Color.FromArgb(192, 255, 192);
+            btn_VehiculosActivos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_VehiculosActivos.Location = new Point(242, 105);
+            btn_VehiculosActivos.Name = "btn_VehiculosActivos";
+            btn_VehiculosActivos.Size = new Size(95, 36);
+            btn_VehiculosActivos.TabIndex = 75;
+            btn_VehiculosActivos.Text = "ACTIVOS";
+            btn_VehiculosActivos.UseVisualStyleBackColor = false;
+            btn_VehiculosActivos.Click += btn_VehiculosActivos_Click;
+            // 
+            // btn_Todos
+            // 
+            btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_Todos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Todos.Location = new Point(141, 105);
+            btn_Todos.Name = "btn_Todos";
+            btn_Todos.Size = new Size(95, 36);
+            btn_Todos.TabIndex = 76;
+            btn_Todos.Text = "TODOS";
+            btn_Todos.UseVisualStyleBackColor = false;
+            btn_Todos.Click += btn_Todos_Click;
+            // 
             // Frm_Empleados_Lista_Vehiculos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 502);
+            Controls.Add(btn_Todos);
+            Controls.Add(btn_VehiculosActivos);
+            Controls.Add(btn_DeBaja);
             Controls.Add(pnl_PanelSup);
             Controls.Add(pnl_Izquierdo);
             Controls.Add(dtg_Listar);
@@ -129,5 +171,8 @@
         private PictureBox pic_Volver;
         private Panel pnl_PanelSup;
         private Label lbl_Listar;
+        private Button btn_DeBaja;
+        private Button btn_VehiculosActivos;
+        private Button btn_Todos;
     }
 }

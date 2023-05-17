@@ -37,7 +37,7 @@ namespace TransporteRodriguez
             retorno = (clienteUltimo.IdCliente) + 1;
             return retorno;
         }
-        public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
+      /*  public static bool FiltrarClientes(List<Cliente> listaClientesBaja)
         {
             bool retorno = false;
 
@@ -52,7 +52,7 @@ namespace TransporteRodriguez
                 }
             }
             return retorno;
-        }
+        }*/
         public static Cliente BuscarCliente(Usuario usuarioUno)
         {
             Cliente? retorno = null;

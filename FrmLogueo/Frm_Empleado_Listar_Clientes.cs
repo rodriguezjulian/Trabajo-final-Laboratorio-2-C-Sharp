@@ -14,80 +14,88 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Listar_Clientes : Form
     {
-        private static List<Cliente> listaClientesBaja = new List<Cliente>();
+        private static List<Cliente> listaClientesAuxiliar = new List<Cliente>();
         public Frm_Empleado_Listar_Clientes()
         {
             InitializeComponent();
         }
         private void Frm_Empleado_Listar_Clientes_Load(object sender, EventArgs e)
         {
-            dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
-            dtg_ListarClientes.AutoGenerateColumns = false;
-            ConfigurarDTG();
+            ConfigurarDTG(Repositorio_Clientes.ListaClientes);
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-
-            if (Repositorio_Clientes.FiltrarClientes(listaClientesBaja))
-            {
-                dtg_ListarClientes.DataSource = null;
-                dtg_ListarClientes.Columns.Clear();
-                dtg_ListarClientes.AutoGenerateColumns = false;
-                dtg_ListarClientes.DataSource = listaClientesBaja;
-                ConfigurarDTG();
-            }
-            else
-            {
-                MessageBox.Show("No existen clientes dados de baja.\n");
-            }
+            listaClientesAuxiliar = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == false);
+            dtg_ListarClientes.Columns.Clear();
+            ConfigurarDTG(listaClientesAuxiliar);
         }
-        private void ConfigurarDTG()
+        private void ConfigurarDTG(List<Cliente> listaClientesAuxiliar)
         {
 
-            #region DATAGRID
-
+            dtg_ListarClientes.AutoGenerateColumns = false;
+            dtg_ListarClientes.DataSource = listaClientesAuxiliar;
+            //#region DATAGRID
+            dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdCliente",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Nombre",
                 HeaderText = "Nombre",
-                DisplayIndex = 0
+                DisplayIndex = 1
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "DireccionBSAS",
                 HeaderText = "Dirección",
-                DisplayIndex = 1
+                DisplayIndex = 2
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Rubro",
                 HeaderText = "Rubro",
-                DisplayIndex = 2
+                DisplayIndex = 3
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Mail",
                 HeaderText = "Correo Electrónico",
-                DisplayIndex = 3
+                DisplayIndex = 4
             });
 
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "Estado",
                 HeaderText = "Estado",
-                DisplayIndex = 4
+                DisplayIndex = 5
             });
-            #endregion
+            //#endregion
         }
 
         private void pic_Volver_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();
+        }
+
+        private void btn_Activos_Click(object sender, EventArgs e)
+        {
+            listaClientesAuxiliar = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+            dtg_ListarClientes.Columns.Clear();
+            ConfigurarDTG(listaClientesAuxiliar);
+        }
+
+        private void btn_Todos_Click(object sender, EventArgs e)
+        {
+            dtg_ListarClientes.Columns.Clear();
+            ConfigurarDTG(Repositorio_Clientes.ListaClientes);
         }
     }
 }
