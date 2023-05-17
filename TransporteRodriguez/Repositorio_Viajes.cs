@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Viajes
+    public class Repositorio_Viajes : Repositorio_Padre
     {
         private static List<Viaje> listaViajes = new List<Viaje>();
 
         public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
 
-        public static void AgregarViajes()
+        public override void Agregar()
+        {
+            if (ListaViajes.Count==0)
+            {
+                ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
+                "Salta", 200, 10000, 1, new DateTime(2023, 08, 11, 0, 0, 0)));
+                ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
+                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
+                ListaViajes.Add(new Viaje(3, "Laura Fernández", "Av. Santa Fe 2468",
+               "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0)));
+                ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
+                "Corrientes", 1800, 10500, 5, new DateTime(2021, 05, 11, 0, 0, 0)));
+            }
+        }
+      /*  public static void AgregarViajes()
         {
             ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",
             "Salta", 200, 10000, 1, new DateTime(2023, 08, 11, 0, 0, 0)));
@@ -22,7 +36,7 @@ namespace TransporteRodriguez
            "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0)));
             ListaViajes.Add(new Viaje(2, "Javier Díaz", "Av. Córdoba 6789",
             "Corrientes", 1800, 10500, 5, new DateTime(2021, 05, 11, 0, 0, 0)));
-        }
+        }*/
         public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
             bool retorno = true;

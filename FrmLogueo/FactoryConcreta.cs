@@ -11,8 +11,10 @@ namespace WF_TransporteRodriguez
     {
         public override Form CrearFormulario(Usuario usuario)
         {
-            Form? formulario=null;
-            Usuario? usuarioAuxiliar=null;
+            Form formulario=null;
+            Usuario usuarioAuxiliar=null;
+         
+            Sistema.PoblarListas();
             usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {

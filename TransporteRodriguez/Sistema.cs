@@ -12,13 +12,9 @@ namespace TransporteRodriguez
 
         private static List<Empleado> listaEmpleado = new List<Empleado>();
 
-         static Sistema()
-         {
-                Repositorio_Viajes.AgregarViajes();
-                Repositorio_Vehiculos.AgregarVehiculos();
-                Repositorio_Clientes.AgregarCliente();
-                Repositorio_Empleados.AgregarEmpleado();
-         }
+        static Sistema()
+        { }
+        
 
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
@@ -45,6 +41,18 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public static void PoblarListas(){
+
+            Repositorio_Empleados repositorio_empleados = new Repositorio_Empleados();
+            repositorio_empleados.Agregar();
+            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+            repositorio_Clientes.Agregar();
+            Repositorio_Vehiculos repositorio_Vehiculos = new Repositorio_Vehiculos();
+            repositorio_Vehiculos.Agregar();
+            Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
+            repositorio_Viajes.Agregar();
+        }
+
     }
 }
 

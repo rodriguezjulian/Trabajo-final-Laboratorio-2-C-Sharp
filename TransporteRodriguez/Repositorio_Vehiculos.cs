@@ -7,20 +7,31 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Vehiculos
+    public class Repositorio_Vehiculos : Repositorio_Padre
     {
         private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
 
         public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
 
-        public static void AgregarVehiculos()
+        public override void Agregar()
+        {
+            if(ListaVehiculos.Count==0) 
+            {
+                listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
+                listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
+                listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
+                listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
+                listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));
+            }
+        }
+      /*  public static void AgregarVehiculos()
         {
             listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
-            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", false));
+            listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
             listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
             listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
             listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS",true));
-        }
+        }*/
         public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
             float cargaSoportada;
@@ -31,7 +42,7 @@ namespace TransporteRodriguez
             {
                 cargaSoportada = vehiculo.CapacidadDeCarga;
                 //busco 1 vehiculo que soporte el peso
-                if (cargaSoportada >= kilos)
+                if (cargaSoportada >= kilos && vehiculo.Estado==true)
                 {
                     //CREO UN VIAJE CON ESE VEHICULO EN ESA FECHA
                     viajeAxuliar = new(vehiculo.IdVehiculo, fechaSolicitada);

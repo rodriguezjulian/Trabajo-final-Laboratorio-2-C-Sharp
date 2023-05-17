@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public static class Repositorio_Padre
+    public abstract class Repositorio_Padre
     {
-        public static void Agregar(){ }
+        public abstract void Agregar();
         
 
     }
