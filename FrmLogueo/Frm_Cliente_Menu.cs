@@ -18,6 +18,7 @@ namespace WF_TransporteRodriguez
         public Usuario usuarioInstanciado;
         Cliente clienteInstanciado;
         static Frm_Login login;
+        Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
         public Frm_Cliente_Menu()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmMenuCliente_Load(object sender, EventArgs e)
         {
-            clienteInstanciado = Repositorio_Clientes.BuscarCliente(usuarioInstanciado);
+            clienteInstanciado = repositorio_Clientes.BuscarInstancia(usuarioInstanciado);
             Frm_Hora frm_Hora = new Frm_Hora();
             frm_Hora.MdiParent = this;
             frm_Hora.Dock = DockStyle.Fill;

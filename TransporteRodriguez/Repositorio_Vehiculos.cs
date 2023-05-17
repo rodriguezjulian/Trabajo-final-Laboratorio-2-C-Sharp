@@ -122,7 +122,7 @@ namespace TransporteRodriguez
             Vehiculo retorno = null;
             return retorno;
         }*/
-        public static Vehiculo BuscarVehiculo(int idCliente)
+       /* public static Vehiculo BuscarVehiculo(int idCliente)
         {
             Vehiculo vehiculo = null;
             //int contador = 0;
@@ -138,6 +138,22 @@ namespace TransporteRodriguez
             }
             //indice = contador;
             return vehiculo;
+        }*/
+        public override Vehiculo BuscarInstancia(int idCliente)
+        {
+            Vehiculo vehiculo = null; 
+            //int contador = 0;
+            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
+            {
+                if (vehiculoAuxiliar.IdVehiculo == idCliente)
+                {
+
+                    vehiculo = vehiculoAuxiliar;
+                    break;
+                }
+            }       
+            return vehiculo;
+
         }
 
     }

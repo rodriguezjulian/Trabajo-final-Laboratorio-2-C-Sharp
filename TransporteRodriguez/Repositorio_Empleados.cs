@@ -27,7 +27,7 @@ namespace TransporteRodriguez
         public override Empleado BuscarInstancia(object usuarioUno)
         {
             Empleado retorno = null;
-            if (usuarioUno is Usuario)
+            if (usuarioUno is Empleado)
             {
                 foreach (Empleado empleado in ListaEmpleado)
                 {

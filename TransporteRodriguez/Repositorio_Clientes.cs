@@ -56,28 +56,9 @@ namespace TransporteRodriguez
               }
               return retorno;
           }*/
-        public override Cliente BuscarInstancia(object usuarioUno) 
-        {
-            Cliente retorno = null;
-            return retorno;
-        }
-        public static Cliente BuscarCliente(Usuario usuarioUno)
-        {
-            Cliente retorno = null;
-            foreach (Cliente cliente in ListaClientes)
-            {
-                if (cliente == usuarioUno)
-                {
-                    retorno = cliente;
-                    break;
-                }
-            }
-            return retorno;
-        }
-        public static Cliente BuscarCliente(int idCliente)
+        public override Cliente BuscarInstancia(int idCliente) 
         {
             Cliente cliente = null;
-            //int contador = 0;
             foreach (Cliente clienteAuxliar in listaClientes)
             {
                 if (clienteAuxliar.IdCliente == idCliente)
@@ -86,11 +67,57 @@ namespace TransporteRodriguez
                     cliente = clienteAuxliar;
                     break;
                 }
-                // contador = contador + 1;
             }
-            //indice = contador;
             return cliente;
         }
+
+        public override Cliente BuscarInstancia(object usuarioUno)
+        {
+            Cliente retorno = null;
+            if (usuarioUno is Cliente)
+            {
+                foreach (Cliente cliente in ListaClientes)
+                {
+                    if (cliente == usuarioUno)
+                    {
+                        retorno = cliente;
+                        break;
+                    }
+                }
+            }
+
+            return retorno;
+        }
+        /*public static Cliente BuscarCliente(int idCliente)
+          {
+              Cliente retorno = null;
+              foreach (Cliente cliente in ListaClientes)
+              {
+                  if (cliente == usuarioUno)
+                  {
+                      retorno = cliente;
+                      break;
+                  }
+              }
+              return retorno;
+          }*/
+        /* public static Cliente BuscarCliente(int idCliente)
+         {
+             Cliente cliente = null;
+             //int contador = 0;
+             foreach (Cliente clienteAuxliar in listaClientes)
+             {
+                 if (clienteAuxliar.IdCliente == idCliente)
+                 {
+
+                     cliente = clienteAuxliar;
+                     break;
+                 }
+                 // contador = contador + 1;
+             }
+             //indice = contador;
+             return cliente;
+         }*/
         /* public static void AgregarCliente()
         {
             ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));

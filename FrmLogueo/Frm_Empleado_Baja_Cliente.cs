@@ -40,10 +40,10 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-
+            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
             if (txt_BajaID.Text != "")
             {
-                Cliente cliente = Repositorio_Clientes.BuscarCliente(int.Parse(txt_BajaID.Text));
+                Cliente cliente = repositorio_Clientes.BuscarInstancia(int.Parse(txt_BajaID.Text));
                 if (cliente.Estado == true)
                 {
                     cliente.Estado = false;

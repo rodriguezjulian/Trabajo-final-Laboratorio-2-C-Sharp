@@ -14,6 +14,7 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Empleado_Baja_Vehiculo : Frm_Empleado_Diseño
     {
         List<Vehiculo> vehiculosActivos;
+        Repositorio_Vehiculos repositorio_Vehiculos =new Repositorio_Vehiculos();
         public Frm_Empleado_Baja_Vehiculo()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace WF_TransporteRodriguez
             if (txt_BajaID.Text != "")
             {
                 Vehiculo vehiculo = new Vehiculo();
-                vehiculo = Repositorio_Vehiculos.BuscarVehiculo(int.Parse(txt_BajaID.Text));
+                vehiculo = repositorio_Vehiculos.BuscarInstancia(int.Parse(txt_BajaID.Text));
                 vehiculo.Estado = false;
                 dtg_Listar.Columns.Clear();
                 vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);

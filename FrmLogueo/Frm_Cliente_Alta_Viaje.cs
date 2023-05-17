@@ -16,6 +16,7 @@ namespace WF_TransporteRodriguez
         Usuario clienteInstanciado;
         Cliente cliente;
         Viaje viajeAux;
+        Repositorio_Clientes repositorio_Clientes=new Repositorio_Clientes();
         public Frm_Cliente_Alta_Viaje()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace WF_TransporteRodriguez
         public Usuario ClienteInstanciado { get => clienteInstanciado; set => clienteInstanciado = value; }
         private void FrmViaje_Load(object sender, EventArgs e)
         {
-            cliente = Repositorio_Clientes.BuscarCliente(clienteInstanciado);
+            cliente = repositorio_Clientes.BuscarInstancia(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
