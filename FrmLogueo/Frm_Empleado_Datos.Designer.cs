@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Datos));
             panel3 = new Panel();
-            lbl_Volver = new Label();
             pic_Volver = new PictureBox();
             groupBox1 = new GroupBox();
             pic_Cargo = new PictureBox();
@@ -60,21 +59,11 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(255, 128, 0);
-            panel3.Controls.Add(lbl_Volver);
             panel3.Controls.Add(pic_Volver);
-            panel3.Location = new Point(0, 0);
+            panel3.Location = new Point(0, 33);
             panel3.Name = "panel3";
-            panel3.Size = new Size(69, 430);
+            panel3.Size = new Size(69, 468);
             panel3.TabIndex = 71;
-            // 
-            // lbl_Volver
-            // 
-            lbl_Volver.AutoSize = true;
-            lbl_Volver.Location = new Point(12, 257);
-            lbl_Volver.Name = "lbl_Volver";
-            lbl_Volver.Size = new Size(39, 15);
-            lbl_Volver.TabIndex = 107;
-            lbl_Volver.Text = "Volver";
             // 
             // pic_Volver
             // 
@@ -101,7 +90,7 @@
             groupBox1.Controls.Add(txt_Id);
             groupBox1.Controls.Add(lbl_RerservarViaje);
             groupBox1.Controls.Add(pic_Id);
-            groupBox1.Location = new Point(206, 58);
+            groupBox1.Location = new Point(206, 91);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(332, 339);
             groupBox1.TabIndex = 104;
@@ -244,7 +233,7 @@
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(69, 0);
+            panel2.Location = new Point(69, 33);
             panel2.Name = "panel2";
             panel2.Size = new Size(315, 40);
             panel2.TabIndex = 105;
@@ -263,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 430);
+            ClientSize = new Size(720, 502);
             Controls.Add(panel2);
             Controls.Add(groupBox1);
             Controls.Add(panel3);
@@ -273,7 +262,6 @@
             Text = "Frm_Empleado_Datos";
             Load += Frm_Empleado_Datos_Load;
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -303,7 +291,6 @@
         private PictureBox pic_Cargo;
         private TextBox txt_Cargo;
         private Label label1;
-        private Label lbl_Volver;
         private PictureBox pic_Volver;
     }
 }

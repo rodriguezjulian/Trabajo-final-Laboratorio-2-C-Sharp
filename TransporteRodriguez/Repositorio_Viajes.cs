@@ -68,7 +68,7 @@ namespace TransporteRodriguez
             }
             return precio;
         }
-        public static bool buscarViaje(int idViaje, out Viaje viajeEncontrado)
+       /* public static bool buscarViaje(int idViaje, out Viaje viajeEncontrado)
         {
             viajeEncontrado = null;
             bool retorno = false;
@@ -84,8 +84,23 @@ namespace TransporteRodriguez
 
             }
             return retorno;
-        }
+        }*/
+        public override Viaje BuscarInstancia( int idViaje)
+        {
+            Viaje viajeEncontrado = null;
 
+
+            foreach (Viaje viajeAxuliar in ListaViajes)
+            {
+                if (viajeAxuliar.IdViaje == idViaje)
+                {
+                    viajeEncontrado = viajeAxuliar;
+                    break;
+                }
+            }
+            
+            return viajeEncontrado;
+        }
         public static int CalcularIdViaje()
         {
             int retorno;

@@ -117,6 +117,11 @@ namespace TransporteRodriguez
             retorno = (clienteUltimo.IdVehiculo) + 1;
             return retorno;
         }
+       /* public override Vehiculo BuscarInstancia(object usuarioUno)
+        {
+            Vehiculo retorno = null;
+            return retorno;
+        }*/
         public static Vehiculo BuscarVehiculo(int idCliente)
         {
             Vehiculo vehiculo = null;

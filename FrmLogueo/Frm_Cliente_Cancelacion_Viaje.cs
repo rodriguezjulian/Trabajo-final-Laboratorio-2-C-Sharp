@@ -34,9 +34,9 @@ namespace WF_TransporteRodriguez
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
             Viaje viajeAux;
-
-            if (Repositorio_Viajes.buscarViaje(int.Parse(txt_IdDeViajeACancelar.Text), out viajeAux) == true
-                && viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
+            Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
+            viajeAux= repositorio_Viajes.BuscarInstancia(int.Parse(txt_IdDeViajeACancelar.Text));
+            if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
             {
                 Repositorio_Viajes.ListaViajes.Remove(viajeAux);
                 viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);

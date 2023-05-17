@@ -9,7 +9,15 @@ namespace TransporteRodriguez
     public abstract class Repositorio_Padre
     {
         public abstract void Agregar();
-        
+        //public abstract void Eliminar();
+        public virtual object BuscarInstancia(object uno)
+        {
+            return null;
+        }
+        public virtual object BuscarInstancia(int i)
+        {
+            return null;
+        }
 
     }
 }

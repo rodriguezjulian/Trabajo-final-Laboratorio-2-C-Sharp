@@ -36,7 +36,6 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
-            // Frm_Empleado_Menu.actualizarPanel(Frm_Empleado_Menu.pnl_Padre, Frm_Empleado_Menu.hora);
         }
 
         private void pic_Guardar_Click(object sender, EventArgs e)
@@ -50,7 +49,6 @@ namespace WF_TransporteRodriguez
                     cliente.Estado = false;
                     MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
                     dtg_ListarClientes.DataSource = null;
-                    //dtg_ListarClientes.Rows.Clear();
                     dtg_ListarClientes.AutoGenerateColumns = false;
                     dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
                     dtg_ListarClientes.Columns.Clear();
