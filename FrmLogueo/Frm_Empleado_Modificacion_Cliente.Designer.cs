@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Modificacion_Cliente));
             grp_DatosNuevoCliente = new GroupBox();
+            pictureBox1 = new PictureBox();
+            cbo_Mail = new ComboBox();
             label4 = new Label();
             txt_ID = new TextBox();
             pictureBox9 = new PictureBox();
@@ -51,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             panel1.SuspendLayout();
             grp_DatosNuevoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -89,6 +92,8 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.Controls.Add(pictureBox1);
+            grp_DatosNuevoCliente.Controls.Add(cbo_Mail);
             grp_DatosNuevoCliente.Controls.Add(label4);
             grp_DatosNuevoCliente.Controls.Add(txt_ID);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
@@ -105,9 +110,29 @@
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
             grp_DatosNuevoCliente.Location = new Point(95, 79);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
-            grp_DatosNuevoCliente.Size = new Size(623, 129);
+            grp_DatosNuevoCliente.Size = new Size(623, 155);
             grp_DatosNuevoCliente.TabIndex = 71;
             grp_DatosNuevoCliente.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(23, 114);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 58;
+            pictureBox1.TabStop = false;
+            // 
+            // cbo_Mail
+            // 
+            cbo_Mail.FormattingEnabled = true;
+            cbo_Mail.Items.AddRange(new object[] { "@gmail.com", "@hotmail.com", "@yahoo.com", "@transporterodriguez.com" });
+            cbo_Mail.Location = new Point(61, 122);
+            cbo_Mail.Name = "cbo_Mail";
+            cbo_Mail.Size = new Size(181, 23);
+            cbo_Mail.TabIndex = 57;
+            cbo_Mail.KeyPress += cbo_Mail_KeyPress;
             // 
             // label4
             // 
@@ -225,7 +250,7 @@
             txt_ModMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ModMail.Location = new Point(62, 91);
             txt_ModMail.Name = "txt_ModMail";
-            txt_ModMail.Size = new Size(247, 25);
+            txt_ModMail.Size = new Size(180, 25);
             txt_ModMail.TabIndex = 48;
             txt_ModMail.TextAlign = HorizontalAlignment.Center;
             // 
@@ -253,12 +278,12 @@
             // 
             dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarClientes.Location = new Point(95, 210);
+            dtg_ListarClientes.Location = new Point(95, 240);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.ReadOnly = true;
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_ListarClientes.Size = new Size(623, 276);
+            dtg_ListarClientes.Size = new Size(623, 246);
             dtg_ListarClientes.TabIndex = 55;
             dtg_ListarClientes.CellClick += dtg_ListarClientes_CellClick;
             // 
@@ -285,6 +310,7 @@
             panel1.ResumeLayout(false);
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -311,5 +337,7 @@
         private DataGridView dtg_ListarClientes;
         private Label label4;
         private TextBox txt_ID;
+        private ComboBox cbo_Mail;
+        private PictureBox pictureBox1;
     }
 }

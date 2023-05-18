@@ -29,6 +29,30 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public static string ObtenerTipoMail(string mailCompleto)
+        {
+            string tipoMail = "";
+            int arrobaIndex = mailCompleto.IndexOf("@");
+
+            if (arrobaIndex != -1 && arrobaIndex < mailCompleto.Length - 1)
+            {
+                tipoMail = mailCompleto.Substring(arrobaIndex + 1);
+            }
+            return tipoMail;
+        }
+        public static string ObtenerUsuarioMail(string mailCompleto)
+        {
+            string usuarioMail = "";
+            int arrobaIndex = mailCompleto.IndexOf("@");
+
+            if (arrobaIndex != -1)
+            {
+                usuarioMail = mailCompleto.Substring(0, arrobaIndex);
+            }
+
+            return usuarioMail;
+        }
+
         public static string generarContraseña()
         {
             Random random = new Random();

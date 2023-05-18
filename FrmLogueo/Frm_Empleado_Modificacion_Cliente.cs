@@ -81,27 +81,38 @@ namespace WF_TransporteRodriguez
             txt_ModNombre.Text = dtg_ListarClientes.CurrentRow.Cells[1].Value.ToString();
             txt_ModDireccion.Text = dtg_ListarClientes.CurrentRow.Cells[2].Value.ToString();
             cbo_Rubro.Text = dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
-            txt_ModMail.Text = dtg_ListarClientes.CurrentRow.Cells[4].Value.ToString();
+            //cbo_Mail.Text= dtg_ListarClientes.CurrentRow.Cells[3].Value.ToString();
+            txt_ModMail.Text = Sistema.ObtenerUsuarioMail(dtg_ListarClientes.CurrentRow.Cells[4].Value.ToString());
+            cbo_Mail.Text = Sistema.ObtenerTipoMail(dtg_ListarClientes.CurrentRow.Cells[4].Value.ToString());
         }
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (txt_ID.Text != "")
+            Cliente cliente;
+            if(!string.IsNullOrEmpty(txt_ID.Text))
             {
-                Cliente cliente = repositorio_Clientes.BuscarInstanciaId(int.Parse(txt_ID.Text));
-                cliente.Nombre = txt_ModNombre.Text;
-                cliente.Rubro = cbo_Rubro.Text;
-                cliente.Mail = txt_ModMail.Text;
-                cliente.DireccionBSAS = txt_ModDireccion.Text;
-                MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());
-                dtg_ListarClientes.DataSource = null;
-                dtg_ListarClientes.Rows.Clear();
-                dtg_ListarClientes.AutoGenerateColumns = false;
-                dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
+                if (repositorio_Clientes.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text,
+                txt_ModMail.Text, cbo_Mail.Text, txt_ModDireccion.Text, cbo_Rubro.Text, out cliente))
+                {
+                    MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());
+                    dtg_ListarClientes.DataSource = null;
+                    dtg_ListarClientes.Rows.Clear();
+                    dtg_ListarClientes.AutoGenerateColumns = false;
+                    dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
+                }
+                else
+                {
+                    MessageBox.Show("ERROR, Revise datos ingresados");
+                }
             }
             else
             {
                 MessageBox.Show("ERROR, Seleccione cliente a modificar");
             }
+        }
+
+        private void cbo_Mail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

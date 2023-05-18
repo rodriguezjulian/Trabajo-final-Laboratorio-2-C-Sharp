@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace TransporteRodriguez
 {
@@ -67,7 +68,6 @@ namespace TransporteRodriguez
                     }
                 }
             }
-
             return retorno;
         }
         public bool CrearCliente(string nombre, string mail,string tipoMail ,string direccion, string rubro)
@@ -79,6 +79,23 @@ namespace TransporteRodriguez
             {
                  ListaClientes.Add(new Cliente(nombre, Sistema.generarContraseña(), mailFinal, true,
                  CalcularId(), direccion, rubro));
+                retorno = true;
+            }
+            return retorno;
+        }
+        public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, string direccion, string rubro, out Cliente clienteOut)
+        {
+            bool retorno=false;
+            string mailFinal;
+            clienteOut = null;
+            if (Validaciones.VerificarNombre(nombre) && !string.IsNullOrEmpty(direccion) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+            {
+                Cliente cliente = BuscarInstanciaId(id);
+                clienteOut = cliente;
+                cliente.Nombre = nombre;
+                cliente.Rubro=rubro;
+                cliente.Mail = mailFinal;
+                cliente.DireccionBSAS = direccion;
                 retorno = true;
             }
             return retorno;
