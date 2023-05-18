@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            menuStrip1 = new MenuStrip();
+            mnu_Empleado = new MenuStrip();
             misDatosToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
@@ -48,21 +48,21 @@
             lbl_NombreUsuario = new Label();
             label1 = new Label();
             tmr_Menu = new System.Windows.Forms.Timer(components);
-            menuStrip1.SuspendLayout();
+            mnu_Empleado.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // menuStrip1
+            // mnu_Empleado
             // 
-            menuStrip1.BackColor = Color.FromArgb(255, 192, 128);
-            menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, cerrarSesionToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(157, 505);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            mnu_Empleado.BackColor = Color.FromArgb(255, 192, 128);
+            mnu_Empleado.Dock = DockStyle.Left;
+            mnu_Empleado.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, cerrarSesionToolStripMenuItem });
+            mnu_Empleado.Location = new Point(0, 0);
+            mnu_Empleado.Name = "mnu_Empleado";
+            mnu_Empleado.Size = new Size(157, 505);
+            mnu_Empleado.TabIndex = 0;
+            mnu_Empleado.Text = "menuStrip1";
             // 
             // misDatosToolStripMenuItem
             // 
@@ -123,21 +123,21 @@
             // crearVehiculoToolStripMenuItem
             // 
             crearVehiculoToolStripMenuItem.Name = "crearVehiculoToolStripMenuItem";
-            crearVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            crearVehiculoToolStripMenuItem.Size = new Size(143, 34);
             crearVehiculoToolStripMenuItem.Text = "Crear ";
             crearVehiculoToolStripMenuItem.Click += crearVehiculoToolStripMenuItem_Click;
             // 
             // bajaVehiculoToolStripMenuItem
             // 
             bajaVehiculoToolStripMenuItem.Name = "bajaVehiculoToolStripMenuItem";
-            bajaVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            bajaVehiculoToolStripMenuItem.Size = new Size(143, 34);
             bajaVehiculoToolStripMenuItem.Text = "Baja ";
             bajaVehiculoToolStripMenuItem.Click += bajaVehiculoToolStripMenuItem_Click;
             // 
             // listarVehiculoToolStripMenuItem
             // 
             listarVehiculoToolStripMenuItem.Name = "listarVehiculoToolStripMenuItem";
-            listarVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            listarVehiculoToolStripMenuItem.Size = new Size(143, 34);
             listarVehiculoToolStripMenuItem.Text = "Listar";
             listarVehiculoToolStripMenuItem.Click += listarVehiculoToolStripMenuItem_Click;
             // 
@@ -214,16 +214,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(879, 505);
             Controls.Add(panel1);
-            Controls.Add(menuStrip1);
+            Controls.Add(mnu_Empleado);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = mnu_Empleado;
             Name = "Frm_Empleado_Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += FrmMenuEmpleado_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            mnu_Empleado.ResumeLayout(false);
+            mnu_Empleado.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -233,7 +233,7 @@
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip mnu_Empleado;
         private ToolStripMenuItem clienteToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem;
         private ToolStripMenuItem moToolStripMenuItem;

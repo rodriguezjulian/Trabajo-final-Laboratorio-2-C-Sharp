@@ -23,7 +23,9 @@ namespace WF_TransporteRodriguez
                 empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);
                 if (empleadoAuxiliar.Puesto == "Sistemas")
                 {
-
+                    Frm_Admin_Menu menuEmpleado = new Frm_Admin_Menu();//INSTANCIO AL EMPLEADO
+                    menuEmpleado.EmpleadoInstanciado = empleadoAuxiliar;
+                    formulario = menuEmpleado;
                 }
                 else
                 {

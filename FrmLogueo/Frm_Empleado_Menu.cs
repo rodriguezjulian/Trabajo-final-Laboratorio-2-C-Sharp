@@ -15,11 +15,14 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Menu : Form
     {
-        Empleado empleadoInstanciado;
-        static public Frm_Hora hora = new Frm_Hora();
-       
+        private Empleado empleadoInstanciado;
+        
+
         private static Frm_Login login;
+
+        static public Frm_Hora hora = new Frm_Hora();
         public static Frm_Login Login { get => login; set => login = value; }
+
         public Empleado EmpleadoInstanciado { get => empleadoInstanciado; set => empleadoInstanciado = value; }
 
         public Frm_Empleado_Menu()

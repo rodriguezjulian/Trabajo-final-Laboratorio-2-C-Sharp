@@ -42,6 +42,7 @@
             btn_cerrar = new PictureBox();
             btn_HardCodearEmpleado = new Button();
             btn_HardCodearCliente = new Button();
+            btn_Admin = new Button();
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).BeginInit();
             pnl_TransporteRodriguez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -174,12 +175,23 @@
             btn_HardCodearCliente.UseVisualStyleBackColor = true;
             btn_HardCodearCliente.Click += btn_HardCodearCliente_Click;
             // 
+            // btn_Admin
+            // 
+            btn_Admin.Location = new Point(12, 160);
+            btn_Admin.Name = "btn_Admin";
+            btn_Admin.Size = new Size(75, 23);
+            btn_Admin.TabIndex = 30;
+            btn_Admin.Text = "Admin";
+            btn_Admin.UseVisualStyleBackColor = true;
+            btn_Admin.Click += btn_Admin_Click;
+            // 
             // Frm_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(800, 267);
+            Controls.Add(btn_Admin);
             Controls.Add(btn_HardCodearCliente);
             Controls.Add(btn_HardCodearEmpleado);
             Controls.Add(pnl_TransporteRodriguez);
@@ -219,5 +231,6 @@
         private Label label1;
         private Button btn_HardCodearEmpleado;
         private Button btn_HardCodearCliente;
+        private Button btn_Admin;
     }
 }

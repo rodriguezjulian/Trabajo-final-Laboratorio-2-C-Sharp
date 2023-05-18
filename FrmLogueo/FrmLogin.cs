@@ -20,6 +20,7 @@ namespace FrmLogueo
             {
                 Frm_Cliente_Menu.Login = this;
                 Frm_Empleado_Menu.Login = this;
+                Frm_Admin_Menu.Login = this;
                 formulario.Show();
                 this.Hide();
             }
@@ -40,7 +41,7 @@ namespace FrmLogueo
             Application.Exit();
         }
 
-       private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+        private void Frm_Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult confirmacion = MessageBox.Show("Esta seguro que quiere salir?", "Cierre"
              , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -48,7 +49,7 @@ namespace FrmLogueo
             {
                 //Application.Exit();
                 e.Cancel = true;//para cancelar la salida
-              }
+            }
         }
 
         private void btn_HardCodearEmpleado_Click(object sender, EventArgs e)
@@ -60,6 +61,12 @@ namespace FrmLogueo
         {
             txt_LoginUsuario.Text = "Javier Díaz";
             txt_Contraseña.Text = "javier333";
+        }
+
+        private void btn_Admin_Click(object sender, EventArgs e)
+        {
+            txt_LoginUsuario.Text = "María García";
+            txt_Contraseña.Text = "miClaveSegura";
         }
     }
 }
