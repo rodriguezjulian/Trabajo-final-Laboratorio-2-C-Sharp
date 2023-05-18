@@ -44,7 +44,7 @@ namespace WF_TransporteRodriguez
             }
             else
             {
-                MessageBox.Show("Verifique datos ingresados. \n");
+                MessageBox.Show("Seleccione viaje \n");
             }
         }
         #region EVENTOS PARA EL MOUSE

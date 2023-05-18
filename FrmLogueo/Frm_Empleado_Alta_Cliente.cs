@@ -19,7 +19,7 @@ namespace WF_TransporteRodriguez
         Usuario empleadoInstanciado;
         Cliente nuevoCliente;
         //Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
-     
+
 
         public Frm_Empleado_Alta_Cliente()
         {

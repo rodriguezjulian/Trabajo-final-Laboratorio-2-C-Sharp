@@ -32,7 +32,6 @@
             label1 = new Label();
             txt_AltaNombre = new TextBox();
             pictureBox3 = new PictureBox();
-            label2 = new Label();
             txt_AltaMail = new TextBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -42,7 +41,7 @@
             label3 = new Label();
             grp_DatosNuevoCliente = new GroupBox();
             pictureBox1 = new PictureBox();
-            label7 = new Label();
+            lbl_TipoMail = new Label();
             cbo_Mail = new ComboBox();
             pictureBox9 = new PictureBox();
             label5 = new Label();
@@ -54,6 +53,7 @@
             label4 = new Label();
             label11 = new Label();
             pnl_AltaCliente = new Panel();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -95,16 +95,6 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 43;
             pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(62, 96);
-            label2.Name = "label2";
-            label2.Size = new Size(35, 17);
-            label2.TabIndex = 47;
-            label2.Text = "Mail";
             // 
             // txt_AltaMail
             // 
@@ -179,8 +169,9 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
-            grp_DatosNuevoCliente.Controls.Add(pictureBox1);
             grp_DatosNuevoCliente.Controls.Add(label7);
+            grp_DatosNuevoCliente.Controls.Add(pictureBox1);
+            grp_DatosNuevoCliente.Controls.Add(lbl_TipoMail);
             grp_DatosNuevoCliente.Controls.Add(cbo_Mail);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
             grp_DatosNuevoCliente.Controls.Add(label3);
@@ -192,7 +183,6 @@
             grp_DatosNuevoCliente.Controls.Add(label6);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaDireccion);
             grp_DatosNuevoCliente.Controls.Add(txt_AltaMail);
-            grp_DatosNuevoCliente.Controls.Add(label2);
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
             grp_DatosNuevoCliente.Location = new Point(240, 98);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
@@ -211,15 +201,15 @@
             pictureBox1.TabIndex = 57;
             pictureBox1.TabStop = false;
             // 
-            // label7
+            // lbl_TipoMail
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(67, 145);
-            label7.Name = "label7";
-            label7.Size = new Size(86, 17);
-            label7.TabIndex = 56;
-            label7.Text = "Tipo de mail";
+            lbl_TipoMail.AutoSize = true;
+            lbl_TipoMail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_TipoMail.Location = new Point(67, 145);
+            lbl_TipoMail.Name = "lbl_TipoMail";
+            lbl_TipoMail.Size = new Size(86, 17);
+            lbl_TipoMail.TabIndex = 56;
+            lbl_TipoMail.Text = "Tipo de mail";
             // 
             // cbo_Mail
             // 
@@ -337,6 +327,16 @@
             pnl_AltaCliente.Size = new Size(200, 33);
             pnl_AltaCliente.TabIndex = 58;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(68, 96);
+            label7.Name = "label7";
+            label7.Size = new Size(89, 17);
+            label7.TabIndex = 58;
+            label7.Text = "Mail, sin \"@\"";
+            // 
             // Frm_Empleado_Alta_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -373,7 +373,6 @@
         private Label label1;
         private TextBox txt_AltaNombre;
         private PictureBox pictureBox3;
-        private Label label2;
         private TextBox txt_AltaMail;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
@@ -393,7 +392,8 @@
         private Panel pnl_AltaCliente;
         private Label label4;
         private PictureBox pictureBox1;
-        private Label label7;
+        private Label lbl_TipoMail;
         private ComboBox cbo_Mail;
+        private Label label7;
     }
 }

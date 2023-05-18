@@ -41,7 +41,7 @@ namespace TransporteRodriguez
             }
             return empleado;
         }
-        
+
         public override int CalcularId()
         {
             int retorno;
@@ -73,6 +73,32 @@ namespace TransporteRodriguez
                 empleado.Estado = false;
             }
             return empleado;
+        }
+        public bool CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
+        {
+            string mailFinal;
+            bool retorno = false;
+            if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+            {
+                ListaEmpleado.Add(new Empleado(nombre, Sistema.generarContraseña(), mailFinal, true, CalcularId(), puesto));
+
+                retorno = true;
+            }
+            return retorno;
+        }
+        public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, Puestos puesto)
+        {
+            string mailFinal;
+            bool retorno = false;
+            if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+            {
+                retorno=true;
+                Empleado empleado = Repositorio_Empleados.Repo_Empleados.BuscarInstanciaId(id);
+                empleado.Nombre = nombre;
+                empleado.Puesto = puesto;
+                empleado.Mail = mailFinal;
+            }
+            return retorno;
         }
     }
 }

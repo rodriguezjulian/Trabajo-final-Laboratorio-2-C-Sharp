@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Modificacion_Empleado));
             dtg_ListarEmpleados = new DataGridView();
             grp_DatosNuevoCliente = new GroupBox();
+            pictureBox1 = new PictureBox();
+            cbo_Mail = new ComboBox();
             btn_Todos = new Button();
             btn_DeBaja = new Button();
             btn_Activos = new Button();
@@ -43,8 +45,8 @@
             label1 = new Label();
             pictureBox3 = new PictureBox();
             txt_ModMail = new TextBox();
-            label2 = new Label();
             pictureBox5 = new PictureBox();
+            label2 = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
@@ -52,6 +54,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarEmpleados).BeginInit();
             grp_DatosNuevoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -97,18 +100,21 @@
             dtg_ListarEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListarEmpleados.BackgroundColor = Color.White;
             dtg_ListarEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_ListarEmpleados.Location = new Point(94, 214);
+            dtg_ListarEmpleados.Location = new Point(94, 239);
             dtg_ListarEmpleados.Name = "dtg_ListarEmpleados";
             dtg_ListarEmpleados.ReadOnly = true;
             dtg_ListarEmpleados.RowTemplate.Height = 25;
             dtg_ListarEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtg_ListarEmpleados.Size = new Size(623, 276);
+            dtg_ListarEmpleados.Size = new Size(623, 251);
             dtg_ListarEmpleados.TabIndex = 71;
             dtg_ListarEmpleados.CellClick += dtg_ListarEmpleados_CellClick;
             // 
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.Controls.Add(label2);
+            grp_DatosNuevoCliente.Controls.Add(pictureBox1);
+            grp_DatosNuevoCliente.Controls.Add(cbo_Mail);
             grp_DatosNuevoCliente.Controls.Add(btn_Todos);
             grp_DatosNuevoCliente.Controls.Add(btn_DeBaja);
             grp_DatosNuevoCliente.Controls.Add(btn_Activos);
@@ -121,13 +127,32 @@
             grp_DatosNuevoCliente.Controls.Add(label1);
             grp_DatosNuevoCliente.Controls.Add(pictureBox3);
             grp_DatosNuevoCliente.Controls.Add(txt_ModMail);
-            grp_DatosNuevoCliente.Controls.Add(label2);
             grp_DatosNuevoCliente.Controls.Add(pictureBox5);
             grp_DatosNuevoCliente.Location = new Point(94, 79);
             grp_DatosNuevoCliente.Name = "grp_DatosNuevoCliente";
-            grp_DatosNuevoCliente.Size = new Size(623, 129);
+            grp_DatosNuevoCliente.Size = new Size(623, 154);
             grp_DatosNuevoCliente.TabIndex = 72;
             grp_DatosNuevoCliente.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(23, 119);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 35);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 80;
+            pictureBox1.TabStop = false;
+            // 
+            // cbo_Mail
+            // 
+            cbo_Mail.FormattingEnabled = true;
+            cbo_Mail.Items.AddRange(new object[] { "@gmail.com", "@hotmail.com", "@yahoo.com", "@transporterodriguez.com" });
+            cbo_Mail.Location = new Point(61, 122);
+            cbo_Mail.Name = "cbo_Mail";
+            cbo_Mail.Size = new Size(247, 23);
+            cbo_Mail.TabIndex = 79;
+            cbo_Mail.KeyPress += cbo_Mail_KeyPress;
             // 
             // btn_Todos
             // 
@@ -257,16 +282,6 @@
             txt_ModMail.TabIndex = 48;
             txt_ModMail.TextAlign = HorizontalAlignment.Center;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(62, 70);
-            label2.Name = "label2";
-            label2.Size = new Size(35, 17);
-            label2.TabIndex = 47;
-            label2.Text = "Mail";
-            // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
@@ -276,6 +291,16 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 49;
             pictureBox5.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(64, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 17);
+            label2.TabIndex = 81;
+            label2.Text = "Mail, sin \"@\"";
             // 
             // Frm_Admin_Modificacion_Empleado
             // 
@@ -295,6 +320,7 @@
             ((System.ComponentModel.ISupportInitialize)dtg_ListarEmpleados).EndInit();
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -314,10 +340,12 @@
         private Label label1;
         private PictureBox pictureBox3;
         private TextBox txt_ModMail;
-        private Label label2;
         private PictureBox pictureBox5;
         private Button btn_Activos;
         private Button btn_DeBaja;
         private Button btn_Todos;
+        private ComboBox cbo_Mail;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

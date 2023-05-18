@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Alta_Empleado));
             grp_DatosNuevoCliente = new GroupBox();
+            pic_Flecha = new PictureBox();
+            cbo_Mail = new ComboBox();
+            lbl_TipoMail = new Label();
             pictureBox9 = new PictureBox();
             lbl_Puesto = new Label();
             cbo_Puesto = new ComboBox();
@@ -45,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             panel1.SuspendLayout();
             grp_DatosNuevoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_Flecha).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -83,6 +87,9 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.Controls.Add(pic_Flecha);
+            grp_DatosNuevoCliente.Controls.Add(cbo_Mail);
+            grp_DatosNuevoCliente.Controls.Add(lbl_TipoMail);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
             grp_DatosNuevoCliente.Controls.Add(lbl_Puesto);
             grp_DatosNuevoCliente.Controls.Add(cbo_Puesto);
@@ -99,10 +106,40 @@
             grp_DatosNuevoCliente.TabStop = false;
             grp_DatosNuevoCliente.Text = "Datos por ingresar";
             // 
+            // pic_Flecha
+            // 
+            pic_Flecha.Image = (Image)resources.GetObject("pic_Flecha.Image");
+            pic_Flecha.Location = new Point(12, 193);
+            pic_Flecha.Name = "pic_Flecha";
+            pic_Flecha.Size = new Size(44, 35);
+            pic_Flecha.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_Flecha.TabIndex = 61;
+            pic_Flecha.TabStop = false;
+            // 
+            // cbo_Mail
+            // 
+            cbo_Mail.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbo_Mail.FormattingEnabled = true;
+            cbo_Mail.Items.AddRange(new object[] { "@gmail.com", "@hotmail.com", "@yahoo.com", "@transporterodriguez.com" });
+            cbo_Mail.Location = new Point(70, 213);
+            cbo_Mail.Name = "cbo_Mail";
+            cbo_Mail.Size = new Size(247, 23);
+            cbo_Mail.TabIndex = 58;
+            // 
+            // lbl_TipoMail
+            // 
+            lbl_TipoMail.AutoSize = true;
+            lbl_TipoMail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_TipoMail.Location = new Point(70, 193);
+            lbl_TipoMail.Name = "lbl_TipoMail";
+            lbl_TipoMail.Size = new Size(86, 17);
+            lbl_TipoMail.TabIndex = 57;
+            lbl_TipoMail.Text = "Tipo de mail";
+            // 
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(14, 221);
+            pictureBox9.Location = new Point(12, 261);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(48, 45);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,7 +150,7 @@
             // 
             lbl_Puesto.AutoSize = true;
             lbl_Puesto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Puesto.Location = new Point(67, 215);
+            lbl_Puesto.Location = new Point(70, 253);
             lbl_Puesto.Name = "lbl_Puesto";
             lbl_Puesto.Size = new Size(50, 17);
             lbl_Puesto.TabIndex = 54;
@@ -121,9 +158,10 @@
             // 
             // cbo_Puesto
             // 
+            cbo_Puesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_Puesto.FormattingEnabled = true;
             cbo_Puesto.Items.AddRange(new object[] { "Libros", "Electrodosmesticos", "Muebles", "Ropa", "Juguetes", "Calzado", "Hogar", "Mascotas", "Computacion" });
-            cbo_Puesto.Location = new Point(68, 243);
+            cbo_Puesto.Location = new Point(68, 273);
             cbo_Puesto.Name = "cbo_Puesto";
             cbo_Puesto.Size = new Size(249, 23);
             cbo_Puesto.TabIndex = 53;
@@ -174,9 +212,9 @@
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(70, 130);
             label2.Name = "label2";
-            label2.Size = new Size(35, 17);
+            label2.Size = new Size(89, 17);
             label2.TabIndex = 47;
-            label2.Text = "Mail";
+            label2.Text = "Mail, sin \"@\"";
             // 
             // pictureBox5
             // 
@@ -204,6 +242,7 @@
             panel1.ResumeLayout(false);
             grp_DatosNuevoCliente.ResumeLayout(false);
             grp_DatosNuevoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_Flecha).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -222,5 +261,8 @@
         private TextBox txt_AltaMail;
         private Label label2;
         private PictureBox pictureBox5;
+        private Label lbl_TipoMail;
+        private ComboBox cbo_Mail;
+        private PictureBox pic_Flecha;
     }
 }

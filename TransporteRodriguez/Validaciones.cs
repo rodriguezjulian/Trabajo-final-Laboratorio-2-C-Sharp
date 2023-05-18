@@ -64,5 +64,57 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public static bool VerificarExistenciaPatente(string patenteIngresada)
+        {
+            bool retorno = true;
+            foreach (Vehiculo vehiculo in Repositorio_Vehiculos.ListaVehiculos)
+            {
+                if (vehiculo.Patente == patenteIngresada)
+                {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
+        public static int VerificarPatente(string patenteIngresada)
+        {
+            int retorno = 0;
+            string patenteAuxiliar = patenteIngresada.ToUpper();
+            if (VerificarFormatoPatente(patenteAuxiliar) != true)
+            {
+                retorno = 1;
+            }
+            else
+            {
+                if (VerificarExistenciaPatente(patenteAuxiliar) != true)
+                {
+                    retorno = 2;
+                }
+            }
+            return retorno;
+        }
+        public static bool VerificarFormatoPatente(string patenteIngresada)
+        {
+            bool retorno = true;
+            // Verificar longitud del string
+            if (patenteIngresada.Length != 6)
+            {
+                retorno = false;
+            }
+
+            // Verificar caracteres individualmente
+            for (int i = 0; i < patenteIngresada.Length; i++)
+            {
+                if (i < 3 && !char.IsDigit(patenteIngresada[i])) // Los primeros tres caracteres deben ser dígitos
+                {
+                    retorno = false;
+                }
+                if (i >= 3 && !char.IsLetter(patenteIngresada[i])) // Los últimos tres caracteres deben ser letras
+                {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
     }
 }

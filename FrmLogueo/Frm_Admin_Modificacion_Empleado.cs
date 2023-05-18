@@ -14,7 +14,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Admin_Modificacion_Empleado : Frm_Empleado_Diseño
     {
-       // Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
+        // Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
         private static List<Empleado> listaEmpleadosAuxiliar = new List<Empleado>();
         public Frm_Admin_Modificacion_Empleado()
         {
@@ -32,26 +32,31 @@ namespace WF_TransporteRodriguez
             txt_ID.Text = dtg_ListarEmpleados.CurrentRow.Cells[0].Value.ToString();
             txt_ModNombre.Text = dtg_ListarEmpleados.CurrentRow.Cells[1].Value.ToString();
             cbo_Puesto.Text = dtg_ListarEmpleados.CurrentRow.Cells[2].Value.ToString();
-            txt_ModMail.Text = dtg_ListarEmpleados.CurrentRow.Cells[3].Value.ToString();
+            txt_ModMail.Text = Sistema.ObtenerUsuarioMail(dtg_ListarEmpleados.CurrentRow.Cells[3].Value.ToString());
+            cbo_Mail.Text = Sistema.ObtenerTipoMail(dtg_ListarEmpleados.CurrentRow.Cells[3].Value.ToString());
+
         }
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (txt_ID.Text != "")
+            if (!string.IsNullOrEmpty(txt_ID.Text))
             {
-                Empleado empleado = Repositorio_Empleados.Repo_Empleados.BuscarInstanciaId(int.Parse(txt_ID.Text));
-                empleado.Nombre = txt_ModNombre.Text;
-                empleado.Puesto = (Puestos)cbo_Puesto.SelectedItem;
-                empleado.Mail = txt_ModMail.Text;
-
-                dtg_ListarEmpleados.DataSource = null;
-                dtg_ListarEmpleados.Rows.Clear();
-                dtg_ListarEmpleados.AutoGenerateColumns = false;
-                dtg_ListarEmpleados.DataSource = Repositorio_Empleados.ListaEmpleado;
+                if (Repositorio_Empleados.Repo_Empleados.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text, txt_ModMail.Text,
+                     cbo_Mail.Text, (Puestos)cbo_Puesto.SelectedItem))
+                {
+                    MessageBox.Show("Datos acuatilizados satisfactoriamente.");
+                    dtg_ListarEmpleados.DataSource = null;
+                    dtg_ListarEmpleados.Columns.Clear();
+                    ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR, Revise datos ingresados");
+                }
             }
             else
             {
-                MessageBox.Show("ERROR, Seleccione empleado a modificar");
+                MessageBox.Show("ERROR, Seleccione empleado a modificar.");
             }
         }
 
@@ -73,6 +78,8 @@ namespace WF_TransporteRodriguez
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)
         {
             #region DATA GRID 
+
+
             dtg_ListarEmpleados.AutoGenerateColumns = false;
             dtg_ListarEmpleados.DataSource = ListaEmpleado;
 
@@ -116,6 +123,11 @@ namespace WF_TransporteRodriguez
             listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
             dtg_ListarEmpleados.Columns.Clear();
             ConfigurarDTG(listaEmpleadosAuxiliar);
+        }
+
+        private void cbo_Mail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

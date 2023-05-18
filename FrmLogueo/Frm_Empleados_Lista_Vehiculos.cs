@@ -77,6 +77,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
+            dtg_Listar.Columns.Clear();
             OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
         }
 
