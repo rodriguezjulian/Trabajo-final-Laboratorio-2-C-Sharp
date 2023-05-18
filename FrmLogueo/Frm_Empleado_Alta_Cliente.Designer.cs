@@ -78,7 +78,7 @@
             txt_AltaNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaNombre.Location = new Point(64, 68);
             txt_AltaNombre.Name = "txt_AltaNombre";
-            txt_AltaNombre.Size = new Size(247, 25);
+            txt_AltaNombre.Size = new Size(250, 25);
             txt_AltaNombre.TabIndex = 42;
             txt_AltaNombre.TextAlign = HorizontalAlignment.Center;
             // 

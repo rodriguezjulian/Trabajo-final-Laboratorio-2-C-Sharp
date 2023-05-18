@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Enumerado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace WF_TransporteRodriguez
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
                 empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);
-                if (empleadoAuxiliar.Puesto == "Sistemas")
+                if (empleadoAuxiliar.Puesto == Puestos.Sistemas)
                 {
                     Frm_Admin_Menu menuEmpleado = new Frm_Admin_Menu();//INSTANCIO AL EMPLEADO
                     menuEmpleado.EmpleadoInstanciado = empleadoAuxiliar;

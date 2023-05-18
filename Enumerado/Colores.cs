@@ -16,4 +16,12 @@
         Volkswagen,
         Iveco
     }
+    public enum Puestos
+     {
+         Ventas,
+         Sistemas,
+         Administracion,
+         Volkswagen,
+         Cobranzas
+     }
 }

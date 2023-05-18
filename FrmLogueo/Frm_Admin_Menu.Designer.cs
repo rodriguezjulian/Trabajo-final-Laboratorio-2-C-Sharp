@@ -35,6 +35,7 @@
             mnu_Admin = new MenuStrip();
             misDatosToolStripMenuItem = new ToolStripMenuItem();
             empleadosToolStripMenuItem = new ToolStripMenuItem();
+            crearToolStripMenuItem1 = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
             moToolStripMenuItem = new ToolStripMenuItem();
@@ -114,11 +115,19 @@
             // 
             // empleadosToolStripMenuItem
             // 
+            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem1 });
             empleadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             empleadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             empleadosToolStripMenuItem.Size = new Size(144, 34);
             empleadosToolStripMenuItem.Text = "Empleados";
+            // 
+            // crearToolStripMenuItem1
+            // 
+            crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
+            crearToolStripMenuItem1.Size = new Size(137, 34);
+            crearToolStripMenuItem1.Text = "Crear";
+            crearToolStripMenuItem1.Click += crearToolStripMenuItem1_Click;
             // 
             // clienteToolStripMenuItem
             // 
@@ -127,7 +136,7 @@
             clienteToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             clienteToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(137, 34);
+            clienteToolStripMenuItem.Size = new Size(144, 34);
             clienteToolStripMenuItem.Text = "Clientes";
             // 
             // crearToolStripMenuItem
@@ -247,5 +256,6 @@
         private ToolStripMenuItem turnosOcupadosToolStripMenuItem;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private ToolStripMenuItem empleadosToolStripMenuItem;
+        private ToolStripMenuItem crearToolStripMenuItem1;
     }
 }

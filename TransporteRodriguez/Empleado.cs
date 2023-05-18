@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Enumerado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,17 @@ namespace TransporteRodriguez
 {
     public class Empleado : Usuario
     {
-        private short _idEmpleado;
-        private string _puesto;
+        private int _idEmpleado;
+        private Puestos _puesto;
         public Empleado(string nombre, string contraseña) : base(nombre, contraseña) { }
-        public Empleado(string nombre, string contraseña, string mail, bool estado, short idEmpleado, string puesto) : 
+        public Empleado(string nombre, string contraseña, string mail, bool estado, int idEmpleado, Puestos puesto) : 
             base(nombre, contraseña, mail, estado)
         {
             this.IdEmpleado = idEmpleado;
             this.Puesto = puesto;
         }
-        public short IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
-        public string Puesto { get => _puesto; set => _puesto = value; }
+        public int IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
+        public Puestos Puesto { get => _puesto; set => _puesto = value; }
         public static bool operator ==(Empleado uno, Usuario dos)
         {
             bool retorno = false;

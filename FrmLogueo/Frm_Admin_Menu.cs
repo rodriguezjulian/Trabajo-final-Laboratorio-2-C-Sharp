@@ -120,5 +120,13 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Lista_Viajes.Dock = DockStyle.Fill;
             frm_Empleado_Lista_Viajes.Show();
         }
+
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_Admin_Alta_Empleado frm_Admin_Alta_Empleado = new Frm_Admin_Alta_Empleado();
+            frm_Admin_Alta_Empleado.MdiParent = this;
+            frm_Admin_Alta_Empleado.Dock = DockStyle.Fill;
+            frm_Admin_Alta_Empleado.Show();
+        }
     }
 }
