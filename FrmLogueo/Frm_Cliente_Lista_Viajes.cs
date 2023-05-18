@@ -57,7 +57,7 @@ namespace WF_TransporteRodriguez
         }
         public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
         {
-          
+
             dtg_ListaViajes.AutoGenerateColumns = false;
             dtg_ListaViajes.DataSource = viajesCliente;
 

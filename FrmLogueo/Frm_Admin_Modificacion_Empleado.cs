@@ -53,9 +53,6 @@ namespace WF_TransporteRodriguez
             });
             #endregion
             cbo_Puesto.DataSource = Enum.GetValues(typeof(Puestos));
-            //cbo_Puesto.SelectedValue = -1;
-
-
         }
 
         private void dtg_ListarEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)

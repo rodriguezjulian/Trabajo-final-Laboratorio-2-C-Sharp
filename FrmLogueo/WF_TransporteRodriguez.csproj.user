@@ -4,6 +4,12 @@
     <Compile Update="Frm_Admin_Alta_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Admin_Baja_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_Admin_Lista_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Admin_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -43,7 +49,7 @@
     <Compile Update="Frm_Empleado_Datos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Frm_Empleado_Listar_Clientes.cs">
+    <Compile Update="Frm_Empleado_Lista_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Frm_Empleado_Lista_Viajes.cs">

@@ -43,7 +43,7 @@ namespace WF_TransporteRodriguez
             Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
             if (txt_BajaID.Text != "")
             {
-                Cliente cliente = repositorio_Clientes.BuscarInstancia(int.Parse(txt_BajaID.Text));
+                Cliente cliente = repositorio_Clientes.BuscarInstanciaId(int.Parse(txt_BajaID.Text));
                 if (cliente.Estado == true)
                 {
                     cliente.Estado = false;

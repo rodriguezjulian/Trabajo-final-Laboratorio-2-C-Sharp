@@ -49,6 +49,7 @@
             dtg_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_Listar.Location = new Point(113, 147);
             dtg_Listar.Name = "dtg_Listar";
+            dtg_Listar.ReadOnly = true;
             dtg_Listar.RowTemplate.Height = 25;
             dtg_Listar.Size = new Size(595, 343);
             dtg_Listar.TabIndex = 9;

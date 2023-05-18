@@ -34,8 +34,8 @@ namespace WF_TransporteRodriguez
         private void pic_EliminarViaje_Click(object sender, EventArgs e)
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
-            Viaje viajeAux;   
-            if (txt_IdDeViajeACancelar.Text!="")
+            Viaje viajeAux;
+            if (txt_IdDeViajeACancelar.Text != "")
             {
                 viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeACancelar.Text));
                 if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)

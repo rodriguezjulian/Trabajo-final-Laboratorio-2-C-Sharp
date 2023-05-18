@@ -106,9 +106,11 @@
             // dtg_ListarClientes
             // 
             dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_ListarClientes.BackgroundColor = Color.White;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarClientes.Location = new Point(89, 198);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
+            dtg_ListarClientes.ReadOnly = true;
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarClientes.Size = new Size(623, 292);
@@ -172,7 +174,7 @@
             // 
             lbl_ID.AutoSize = true;
             lbl_ID.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ID.Location = new Point(408, 114);
+            lbl_ID.Location = new Point(408, 125);
             lbl_ID.Name = "lbl_ID";
             lbl_ID.Size = new Size(22, 17);
             lbl_ID.TabIndex = 77;
@@ -187,6 +189,7 @@
             pic_ID.SizeMode = PictureBoxSizeMode.Zoom;
             pic_ID.TabIndex = 78;
             pic_ID.TabStop = false;
+         
             // 
             // label9
             // 

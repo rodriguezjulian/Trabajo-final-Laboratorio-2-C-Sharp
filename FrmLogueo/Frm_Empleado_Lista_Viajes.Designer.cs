@@ -85,9 +85,11 @@
             // dtg_ListaViajes
             // 
             dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_ListaViajes.BackgroundColor = Color.White;
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListaViajes.Location = new Point(107, 64);
             dtg_ListaViajes.Name = "dtg_ListaViajes";
+            dtg_ListaViajes.ReadOnly = true;
             dtg_ListaViajes.RowTemplate.Height = 25;
             dtg_ListaViajes.Size = new Size(613, 404);
             dtg_ListaViajes.TabIndex = 75;

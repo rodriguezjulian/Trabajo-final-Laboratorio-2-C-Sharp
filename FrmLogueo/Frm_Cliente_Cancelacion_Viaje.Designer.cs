@@ -130,6 +130,7 @@
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListaViajes.Location = new Point(0, 155);
             dtg_ListaViajes.Name = "dtg_ListaViajes";
+            dtg_ListaViajes.ReadOnly = true;
             dtg_ListaViajes.RowTemplate.Height = 25;
             dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListaViajes.Size = new Size(721, 318);

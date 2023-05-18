@@ -78,7 +78,7 @@ namespace WF_TransporteRodriguez
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Empleado_Listar_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Listar_Clientes();
+            Frm_Empleado_Lista_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Lista_Clientes();
             frm_Empleado_Listar_Clientes.MdiParent = this;
             frm_Empleado_Listar_Clientes.Dock = DockStyle.Fill;
             frm_Empleado_Listar_Clientes.Show();
@@ -135,6 +135,22 @@ namespace WF_TransporteRodriguez
             frm_Admin_Modificacion_Empleado.MdiParent = this;
             frm_Admin_Modificacion_Empleado.Dock = DockStyle.Fill;
             frm_Admin_Modificacion_Empleado.Show();
+        }
+
+        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
+            frm_Admin_Baja_Empleado.MdiParent = this;
+            frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
+            frm_Admin_Baja_Empleado.Show();
+        }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_Admin_Lista_Empleado frm_Admin_Lista_Empleado = new Frm_Admin_Lista_Empleado();
+            frm_Admin_Lista_Empleado.MdiParent = this;
+            frm_Admin_Lista_Empleado.Dock = DockStyle.Fill;
+            frm_Admin_Lista_Empleado.Show();
         }
     }
 }

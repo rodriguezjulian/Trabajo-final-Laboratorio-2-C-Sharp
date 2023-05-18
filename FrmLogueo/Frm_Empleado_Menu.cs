@@ -66,7 +66,7 @@ namespace WF_TransporteRodriguez
         }
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Empleado_Listar_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Listar_Clientes();
+            Frm_Empleado_Lista_Clientes frm_Empleado_Listar_Clientes = new Frm_Empleado_Lista_Clientes();
             frm_Empleado_Listar_Clientes.MdiParent = this;
             frm_Empleado_Listar_Clientes.Dock = DockStyle.Fill;
             frm_Empleado_Listar_Clientes.Show();

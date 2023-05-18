@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             //PASAR A REPOSITORIO
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje =>viaje.FechaViaje > DateTime.Now && viaje.NombreCliente == cliente.Nombre);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.NombreCliente == cliente.Nombre);
             OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
@@ -35,7 +35,7 @@ namespace WF_TransporteRodriguez
         {
             Viaje viajeAux;
             Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
-            
+
             if (txt_IdDeViajeAModificar.Text != "")
             {
                 viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));

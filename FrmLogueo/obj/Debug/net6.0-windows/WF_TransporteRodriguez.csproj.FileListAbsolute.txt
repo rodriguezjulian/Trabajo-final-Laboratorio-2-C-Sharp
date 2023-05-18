@@ -59,7 +59,6 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Modificacion_Cliente.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Hora.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Datos.resources
-C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Listar_Clientes.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Baja_Cliente.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Lista_Viajes.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Alta_Vehiculo.resources
@@ -67,3 +66,6 @@ C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Menu.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Alta_Empleado.resources
 C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Modificacion_Empleado.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Baja_Empleado.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Lista_Clientes.resources
+C:\Users\Julian Rodriguez\Desktop\ppLaboratorio2\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Lista_Empleado.resources
