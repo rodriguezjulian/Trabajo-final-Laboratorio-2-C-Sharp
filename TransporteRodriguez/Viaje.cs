@@ -57,7 +57,7 @@ namespace TransporteRodriguez
         {
             return !(uno == dos);
         }
-        public override string ToString()
+       public override string ToString()
         {
             StringBuilder miCadena = new StringBuilder();
            // miCadena.AppendLine("VIAJE CONFIRMADO");

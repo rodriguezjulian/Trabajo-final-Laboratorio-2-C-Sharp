@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace WF_TransporteRodriguez
         Usuario empleadoInstanciado;
         Cliente nuevoCliente;
         Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
-
+     
 
         public Frm_Empleado_Alta_Cliente()
         {
@@ -30,6 +31,7 @@ namespace WF_TransporteRodriguez
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
             cbo_Rubro.SelectedIndex = 2;
+            cbo_Mail.SelectedIndex = 1;
         }
 
         private void pic_Cancelar_Click(object sender, EventArgs e)
@@ -46,12 +48,8 @@ namespace WF_TransporteRodriguez
         /// <param name="e"></param>
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)
         {
-            //MessageBox.Show(cbo_Rubro.SelectedItem.ToString());
-            if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "" && txt_AltaDireccion.Text != "")
+            if (repositorio_Clientes.Crear(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()))
             {
-                Repositorio_Clientes.ListaClientes.Add(new Cliente(txt_AltaNombre.Text, Usuario.generarContraseña(), txt_AltaMail.Text, true,
-                 repositorio_Clientes.CalcularId(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()));
-
                 MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
             }
             else

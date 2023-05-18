@@ -71,6 +71,63 @@ namespace TransporteRodriguez
 
             return retorno;
         }
+        public bool VerificarMail(string mail)
+        {
+            bool retorno = true;
+            foreach (char caracter in mail)
+            {
+                if (caracter == '@')
+                {
+                    return false;
+                }
+            }
+            return retorno;
+        }
+        public bool CrearMail(string mail, string opcionCbo, out string mailFinal)
+        {
+            bool retorno = false;
+            mailFinal = "";
+            if (mail != "")
+            {
+                if (VerificarMail(mail))
+                {
+                    mailFinal = mail + opcionCbo;
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
+        public bool VerificarNombre(string nombre)
+        {
+            bool retorno = true;
+            if (nombre != "")
+            {
+                foreach (char caracter in nombre)
+                {
+                    if (char.IsDigit(caracter))
+                    {
+                        retorno = false;
+                    }
+                }
+            }
+            else
+            {
+                retorno = false;
+            }
+            return retorno;
+        }
+        public bool Crear(string nombre, string mail,string tipoMail ,string direccion, string rubro)
+        {
+            string mailFinal;
+            bool retorno = false;
+            if (VerificarNombre(nombre) &&  direccion != "" && CrearMail(mail, tipoMail,out mailFinal))
+            {
+                 ListaClientes.Add(new Cliente(nombre, Usuario.generarContraseña(), mailFinal, true,
+                 CalcularId(), direccion, rubro));
+                retorno = true;
+            }
+            return retorno;
+        }
         /* public static int CalcularIdCliente()
  {
      int retorno;

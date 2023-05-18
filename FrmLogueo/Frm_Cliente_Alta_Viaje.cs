@@ -30,7 +30,7 @@ namespace WF_TransporteRodriguez
             txt_Nombre.Text = cliente.Nombre;
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
-            dtp_FechaDeViaje.MinDate = DateTime.Today;
+            dtp_FechaDeViaje.MinDate = DateTime.Today.AddDays(1);
             lbl_NombreClient.Text = cliente.Nombre;
         }
 

@@ -43,6 +43,7 @@ namespace WF_TransporteRodriguez
                 {
                     viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
                     viajeAux.KilosATransportar = (float)nup_Kg.Value;
+                    viajeAux.ProvinciaDestino = cbo_Provincias.SelectedItem.ToString();
                     dtg_ListaViajes.Columns.Clear();
                     viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
@@ -65,6 +66,7 @@ namespace WF_TransporteRodriguez
             txt_IdDeViajeAModificar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
             dtp_FechaDeViaje.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
             nup_Kg.Text = dtg_ListaViajes.CurrentRow.Cells[3].Value.ToString();
+            cbo_Provincias.Text= dtg_ListaViajes.CurrentRow.Cells[5].Value.ToString();
         }
         #region EVENTOS PARA EL MOUSE
         private void pic_EditarViaje_MouseEnter(object sender, EventArgs e)
@@ -136,6 +138,11 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Precio",
                 DisplayIndex = 6
             });
+        }
+
+        private void cbo_Provincias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
             groupBox1 = new GroupBox();
+            cbo_Provincias = new ComboBox();
             nup_Kg = new NumericUpDown();
             pictureBox1 = new PictureBox();
             pic_Id = new PictureBox();
@@ -63,6 +64,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
+            groupBox1.Controls.Add(cbo_Provincias);
             groupBox1.Controls.Add(nup_Kg);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(pic_Id);
@@ -83,6 +85,16 @@
             groupBox1.Size = new Size(719, 469);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // cbo_Provincias
+            // 
+            cbo_Provincias.FormattingEnabled = true;
+            cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
+            cbo_Provincias.Location = new Point(251, 154);
+            cbo_Provincias.Name = "cbo_Provincias";
+            cbo_Provincias.Size = new Size(222, 23);
+            cbo_Provincias.TabIndex = 93;
+            cbo_Provincias.KeyPress += cbo_Provincias_KeyPress;
             // 
             // nup_Kg
             // 
@@ -140,9 +152,9 @@
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(251, 81);
             label2.Name = "label2";
-            label2.Size = new Size(96, 17);
+            label2.Size = new Size(49, 17);
             label2.TabIndex = 82;
-            label2.Text = "NUEVA FECHA";
+            label2.Text = "FECHA";
             // 
             // dtp_FechaDeViaje
             // 
@@ -320,5 +332,6 @@
         private PictureBox pictureBox1;
         private PictureBox pic_Id;
         private NumericUpDown nup_Kg;
+        private ComboBox cbo_Provincias;
     }
 }

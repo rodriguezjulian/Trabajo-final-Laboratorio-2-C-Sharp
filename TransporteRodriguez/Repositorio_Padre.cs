@@ -13,6 +13,7 @@ namespace TransporteRodriguez
         public abstract int CalcularId();
 
         public abstract object BuscarInstanciaId(int i);
+       // public abstract string Mostrar(object uno);
         public virtual object BuscarInstancia(object uno)
         {
             return null;
