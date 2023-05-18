@@ -129,6 +129,15 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public override Vehiculo DarDeBaja(int ID)
+        {
+            Vehiculo vehiculo = BuscarInstanciaId(ID);
+            if (vehiculo.Estado == true)
+            {
+                vehiculo.Estado = false;
+            }
+            return vehiculo;
+        }
         /*  public static void AgregarVehiculos()
   {
       listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));

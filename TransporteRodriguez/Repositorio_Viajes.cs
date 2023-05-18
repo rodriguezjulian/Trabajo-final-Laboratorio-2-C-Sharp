@@ -82,6 +82,12 @@ namespace TransporteRodriguez
             retorno = (viajeUltimo.IdViaje) + 1;
             return retorno;
         }
+        public override Viaje DarDeBaja(int ID)
+        {
+            Viaje viaje = BuscarInstanciaId(ID);
+            ListaViajes.Remove(viaje);
+            return viaje;
+        }
         /*  public static void AgregarViajes()
   {
       ListaViajes.Add(new Viaje(1, "María García", "Calle 25 de Mayo 5678",

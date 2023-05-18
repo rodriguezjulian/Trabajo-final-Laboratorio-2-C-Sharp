@@ -70,10 +70,10 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (txt_BajaID.Text != "")
+            if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
-                Empleado empleado = repositorio_Empleados.BuscarInstanciaId(int.Parse(txt_BajaID.Text));
-                empleado.Estado = false;
+                Empleado empleado = repositorio_Empleados.DarDeBaja(int.Parse(txt_BajaID.Text));
+                
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();
                 dtg_ListarEmpleados.AutoGenerateColumns = false;

@@ -44,6 +44,8 @@
             pic_Cancelar = new PictureBox();
             label2 = new Label();
             panel1 = new Panel();
+            txt_Fecha = new TextBox();
+            lbl_Fecha = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             pln_CancelarViaje.SuspendLayout();
@@ -215,12 +217,35 @@
             panel1.Size = new Size(731, 33);
             panel1.TabIndex = 92;
             // 
+            // txt_Fecha
+            // 
+            txt_Fecha.BackColor = Color.FromArgb(224, 224, 224);
+            txt_Fecha.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Fecha.Location = new Point(245, 108);
+            txt_Fecha.Name = "txt_Fecha";
+            txt_Fecha.ReadOnly = true;
+            txt_Fecha.Size = new Size(162, 25);
+            txt_Fecha.TabIndex = 93;
+            txt_Fecha.TextAlign = HorizontalAlignment.Center;
+            // 
+            // lbl_Fecha
+            // 
+            lbl_Fecha.AutoSize = true;
+            lbl_Fecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Fecha.Location = new Point(242, 87);
+            lbl_Fecha.Name = "lbl_Fecha";
+            lbl_Fecha.Size = new Size(49, 17);
+            lbl_Fecha.TabIndex = 94;
+            lbl_Fecha.Text = "FECHA";
+            // 
             // Frm_Cliente_Cancelacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 469);
+            Controls.Add(lbl_Fecha);
+            Controls.Add(txt_Fecha);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(pic_Cancelar);
@@ -266,5 +291,7 @@
         private Panel panel1;
         private Panel pln_CancelarViaje;
         protected Label lbl_Cancelar;
+        private TextBox txt_Fecha;
+        protected Label lbl_Fecha;
     }
 }

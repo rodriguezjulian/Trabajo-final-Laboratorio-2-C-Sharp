@@ -27,11 +27,11 @@ namespace WF_TransporteRodriguez
         }
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (txt_BajaID.Text != "")
+            if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
-                Vehiculo vehiculo = new Vehiculo();
-                vehiculo = repositorio_Vehiculos.BuscarInstanciaId(int.Parse(txt_BajaID.Text));
-                vehiculo.Estado = false;
+
+                Vehiculo vehiculo = repositorio_Vehiculos.DarDeBaja(int.Parse(txt_BajaID.Text));
+            
                 dtg_Listar.Columns.Clear();
                 vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
                 OrganizarDataGridVehiculos(vehiculosActivos);

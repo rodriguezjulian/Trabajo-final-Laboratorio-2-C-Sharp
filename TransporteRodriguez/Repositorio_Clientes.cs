@@ -100,5 +100,15 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        public override Cliente DarDeBaja(int ID)
+        {
+            Cliente cliente =BuscarInstanciaId(ID);
+            if (cliente.Estado == true)
+            {
+                cliente.Estado = false;
+            }
+            return cliente;
+        }
+
     }
 }

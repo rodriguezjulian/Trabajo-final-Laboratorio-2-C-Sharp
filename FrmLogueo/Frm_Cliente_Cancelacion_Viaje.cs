@@ -35,12 +35,13 @@ namespace WF_TransporteRodriguez
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
             Viaje viajeAux;
-            if (txt_IdDeViajeACancelar.Text != "")
+            if (!string.IsNullOrEmpty(txt_IdDeViajeACancelar.Text))
             {
-                viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeACancelar.Text));
-                if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
+                //viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeACancelar.Text));
+                if (DateTime.Parse(txt_Fecha.Text) > DateTime.Today)
                 {
-                    Repositorio_Viajes.ListaViajes.Remove(viajeAux);
+                    //Repositorio_Viajes.ListaViajes.Remove(viajeAux);
+                    repositorio_Viajes.DarDeBaja(int.Parse(txt_IdDeViajeACancelar.Text));
                     viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
                 }
@@ -79,12 +80,13 @@ namespace WF_TransporteRodriguez
         private void dtg_ListarViajes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_IdDeViajeACancelar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
+            txt_Fecha.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
         }
         public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
         {
-            dtg_ListaViajes.DataSource = viajesCliente;
+            
             dtg_ListaViajes.AutoGenerateColumns = false;
-
+            dtg_ListaViajes.DataSource = viajesCliente;
             dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "IdViaje",
