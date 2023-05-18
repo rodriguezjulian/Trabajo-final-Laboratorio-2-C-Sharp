@@ -15,6 +15,7 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Admin_Modificacion_Empleado : Frm_Empleado_Diseño
     {
         Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
+        private static List<Empleado> listaEmpleadosAuxiliar = new List<Empleado>();
         public Frm_Admin_Modificacion_Empleado()
         {
             InitializeComponent();
@@ -22,36 +23,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Modificacion_Empleado_Load(object sender, EventArgs e)
         {
-            #region DATA GRID 
-            dtg_ListarEmpleados.AutoGenerateColumns = false;
-            dtg_ListarEmpleados.DataSource = Repositorio_Empleados.ListaEmpleado;
-
-            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "IdEmpleado",
-                HeaderText = "ID",
-                DisplayIndex = 0
-            });
-            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Nombre",
-                HeaderText = "Nombre",
-                DisplayIndex = 1
-            });
-
-            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Puesto",
-                HeaderText = "Puesto",
-                DisplayIndex = 2
-            });
-            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Mail",
-                HeaderText = "Mail",
-                DisplayIndex = 3
-            });
-            #endregion
+            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
             cbo_Puesto.DataSource = Enum.GetValues(typeof(Puestos));
         }
 
@@ -92,6 +64,58 @@ namespace WF_TransporteRodriguez
         {
             this.Hide();
             this.Close();
+        }
+
+        private void btn_Todos_Click(object sender, EventArgs e)
+        {
+            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+        }
+        private void ConfigurarDTG(List<Empleado> ListaEmpleado)
+        {
+            #region DATA GRID 
+            dtg_ListarEmpleados.AutoGenerateColumns = false;
+            dtg_ListarEmpleados.DataSource = ListaEmpleado;
+
+            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "IdEmpleado",
+                HeaderText = "ID",
+                DisplayIndex = 0
+            });
+            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Nombre",
+                HeaderText = "Nombre",
+                DisplayIndex = 1
+            });
+
+            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Puesto",
+                HeaderText = "Puesto",
+                DisplayIndex = 2
+            });
+            dtg_ListarEmpleados.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Mail",
+                HeaderText = "Mail",
+                DisplayIndex = 3
+            });
+            #endregion
+        }
+
+        private void btn_Activos_Click(object sender, EventArgs e)
+        {
+            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == true);
+            dtg_ListarEmpleados.Columns.Clear();
+            ConfigurarDTG(listaEmpleadosAuxiliar);
+        }
+
+        private void btn_DeBaja_Click(object sender, EventArgs e)
+        {
+            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
+            dtg_ListarEmpleados.Columns.Clear();
+            ConfigurarDTG(listaEmpleadosAuxiliar);
         }
     }
 }

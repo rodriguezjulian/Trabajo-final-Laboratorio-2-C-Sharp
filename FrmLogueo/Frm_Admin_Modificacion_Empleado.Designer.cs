@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Modificacion_Empleado));
             dtg_ListarEmpleados = new DataGridView();
             grp_DatosNuevoCliente = new GroupBox();
+            btn_Todos = new Button();
+            btn_DeBaja = new Button();
+            btn_Activos = new Button();
             label4 = new Label();
             txt_ID = new TextBox();
             pictureBox9 = new PictureBox();
@@ -53,6 +56,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
+            // 
+            // pnl_PanelSup
+            // 
+            pnl_PanelSup.Location = new Point(87, 33);
             // 
             // panel2
             // 
@@ -102,6 +109,9 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.Controls.Add(btn_Todos);
+            grp_DatosNuevoCliente.Controls.Add(btn_DeBaja);
+            grp_DatosNuevoCliente.Controls.Add(btn_Activos);
             grp_DatosNuevoCliente.Controls.Add(label4);
             grp_DatosNuevoCliente.Controls.Add(txt_ID);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
@@ -118,6 +128,42 @@
             grp_DatosNuevoCliente.Size = new Size(623, 129);
             grp_DatosNuevoCliente.TabIndex = 72;
             grp_DatosNuevoCliente.TabStop = false;
+            // 
+            // btn_Todos
+            // 
+            btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_Todos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Todos.Location = new Point(321, 79);
+            btn_Todos.Name = "btn_Todos";
+            btn_Todos.Size = new Size(98, 36);
+            btn_Todos.TabIndex = 78;
+            btn_Todos.Text = "TODOS";
+            btn_Todos.UseVisualStyleBackColor = false;
+            btn_Todos.Click += btn_Todos_Click;
+            // 
+            // btn_DeBaja
+            // 
+            btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);
+            btn_DeBaja.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_DeBaja.Location = new Point(525, 80);
+            btn_DeBaja.Name = "btn_DeBaja";
+            btn_DeBaja.Size = new Size(98, 36);
+            btn_DeBaja.TabIndex = 77;
+            btn_DeBaja.Text = "INACTIVOS";
+            btn_DeBaja.UseVisualStyleBackColor = false;
+            btn_DeBaja.Click += btn_DeBaja_Click;
+            // 
+            // btn_Activos
+            // 
+            btn_Activos.BackColor = Color.FromArgb(192, 255, 192);
+            btn_Activos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Activos.Location = new Point(424, 80);
+            btn_Activos.Name = "btn_Activos";
+            btn_Activos.Size = new Size(98, 36);
+            btn_Activos.TabIndex = 76;
+            btn_Activos.Text = "ACTIVOS";
+            btn_Activos.UseVisualStyleBackColor = false;
+            btn_Activos.Click += btn_Activos_Click;
             // 
             // label4
             // 
@@ -270,5 +316,8 @@
         private TextBox txt_ModMail;
         private Label label2;
         private PictureBox pictureBox5;
+        private Button btn_Activos;
+        private Button btn_DeBaja;
+        private Button btn_Todos;
     }
 }

@@ -79,7 +79,7 @@ namespace WF_TransporteRodriguez
                 dtg_ListarEmpleados.AutoGenerateColumns = false;
                 empleadosActivos = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == true);
                 dtg_ListarEmpleados.DataSource = empleadosActivos;
-                MessageBox.Show("Empleado modificado satisfactoriamente");
+                MessageBox.Show("Baja satisfactoria");
             }
             else
             {

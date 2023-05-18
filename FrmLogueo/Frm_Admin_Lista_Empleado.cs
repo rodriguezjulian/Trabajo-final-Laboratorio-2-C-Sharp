@@ -32,7 +32,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
-            dtg_ListarEmpleados.DataSource = Repositorio_Empleados.ListaEmpleado;
+            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
         }
 
         private void btn_Activos_Click(object sender, EventArgs e)
