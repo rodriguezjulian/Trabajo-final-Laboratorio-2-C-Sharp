@@ -39,10 +39,10 @@ namespace TransporteRodriguez
             retorno = (clienteUltimo.IdCliente) + 1;
             return retorno;
         }
-        public override Cliente BuscarInstancia(int idCliente)
+        public override Cliente BuscarInstanciaId(int idCliente)
         {
             Cliente cliente = null;
-            foreach (Cliente clienteAuxliar in listaClientes)
+            foreach (Cliente clienteAuxliar in ListaClientes)
             {
                 if (clienteAuxliar.IdCliente == idCliente)
                 {

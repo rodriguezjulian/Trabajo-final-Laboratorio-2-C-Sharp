@@ -255,6 +255,7 @@
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarClientes.Location = new Point(95, 210);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
+            dtg_ListarClientes.ReadOnly = true;
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarClientes.Size = new Size(623, 276);

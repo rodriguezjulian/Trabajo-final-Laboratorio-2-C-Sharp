@@ -46,7 +46,7 @@ namespace WF_TransporteRodriguez
                 Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
                 dtp_FechaDeViaje.Value.Date));
 
-                viajeAux=repositorio_Viajes.BuscarInstancia(repositorio_Viajes.CalcularId() - 1);
+                viajeAux=repositorio_Viajes.BuscarInstanciaId(repositorio_Viajes.CalcularId() - 1);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;

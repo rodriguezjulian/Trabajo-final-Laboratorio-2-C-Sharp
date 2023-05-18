@@ -38,7 +38,7 @@ namespace WF_TransporteRodriguez
             
             if (txt_IdDeViajeAModificar.Text != "")
             {
-                viajeAux = repositorio_Viajes.BuscarInstancia(int.Parse(txt_IdDeViajeAModificar.Text));
+                viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));
                 if (viajeAux.NombreCliente == Cliente.Nombre)
                 {
                     viajeAux.FechaViaje = dtp_FechaDeViaje.Value;

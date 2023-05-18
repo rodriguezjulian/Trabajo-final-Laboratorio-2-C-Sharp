@@ -128,5 +128,13 @@ namespace WF_TransporteRodriguez
             frm_Admin_Alta_Empleado.Dock = DockStyle.Fill;
             frm_Admin_Alta_Empleado.Show();
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Admin_Modificacion_Empleado frm_Admin_Modificacion_Empleado = new Frm_Admin_Modificacion_Empleado();
+            frm_Admin_Modificacion_Empleado.MdiParent = this;
+            frm_Admin_Modificacion_Empleado.Dock = DockStyle.Fill;
+            frm_Admin_Modificacion_Empleado.Show();
+        }
     }
 }

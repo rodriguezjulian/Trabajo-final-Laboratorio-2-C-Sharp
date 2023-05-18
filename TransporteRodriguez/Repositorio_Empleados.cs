@@ -25,6 +25,29 @@ namespace TransporteRodriguez
             }
 
         }
+
+        public override Empleado BuscarInstanciaId(int idEmpleado)
+        {
+            Empleado empleado = null;
+            foreach (Empleado empleadoAuxiliar in ListaEmpleado)
+            {
+                if (empleadoAuxiliar.IdEmpleado == idEmpleado)
+                {
+
+                    empleado = empleadoAuxiliar;
+                    break;
+                }
+            }
+            return empleado;
+        }
+    
+        public override int CalcularId()
+        {
+            int retorno;
+            Empleado ultimo = ListaEmpleado[ListaEmpleado.Count - 1];
+            retorno = (ultimo.IdEmpleado) + 1;
+            return retorno;
+        }
         public override Empleado BuscarInstancia(object usuarioUno)
         {
             Empleado retorno = null;
@@ -40,13 +63,6 @@ namespace TransporteRodriguez
                 }
 
             }
-            return retorno;
-        }
-        public override int CalcularId()
-        {
-            int retorno;
-            Empleado ultimo = ListaEmpleado[ListaEmpleado.Count - 1];
-            retorno = (ultimo.IdEmpleado) + 1;
             return retorno;
         }
         /* public static void AgregarEmpleado()

@@ -47,6 +47,7 @@
             listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
+            modificarToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             mnu_Admin.SuspendLayout();
@@ -115,7 +116,7 @@
             // 
             // empleadosToolStripMenuItem
             // 
-            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem1 });
+            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem1, modificarToolStripMenuItem });
             empleadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             empleadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
@@ -125,7 +126,7 @@
             // crearToolStripMenuItem1
             // 
             crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
-            crearToolStripMenuItem1.Size = new Size(137, 34);
+            crearToolStripMenuItem1.Size = new Size(181, 34);
             crearToolStripMenuItem1.Text = "Crear";
             crearToolStripMenuItem1.Click += crearToolStripMenuItem1_Click;
             // 
@@ -179,21 +180,21 @@
             // crearVehiculoToolStripMenuItem
             // 
             crearVehiculoToolStripMenuItem.Name = "crearVehiculoToolStripMenuItem";
-            crearVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            crearVehiculoToolStripMenuItem.Size = new Size(143, 34);
             crearVehiculoToolStripMenuItem.Text = "Crear ";
             crearVehiculoToolStripMenuItem.Click += crearVehiculoToolStripMenuItem_Click;
             // 
             // bajaVehiculoToolStripMenuItem
             // 
             bajaVehiculoToolStripMenuItem.Name = "bajaVehiculoToolStripMenuItem";
-            bajaVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            bajaVehiculoToolStripMenuItem.Size = new Size(143, 34);
             bajaVehiculoToolStripMenuItem.Text = "Baja ";
             bajaVehiculoToolStripMenuItem.Click += bajaVehiculoToolStripMenuItem_Click;
             // 
             // listarVehiculoToolStripMenuItem
             // 
             listarVehiculoToolStripMenuItem.Name = "listarVehiculoToolStripMenuItem";
-            listarVehiculoToolStripMenuItem.Size = new Size(180, 34);
+            listarVehiculoToolStripMenuItem.Size = new Size(143, 34);
             listarVehiculoToolStripMenuItem.Text = "Listar";
             listarVehiculoToolStripMenuItem.Click += listarVehiculoToolStripMenuItem_Click;
             // 
@@ -213,6 +214,13 @@
             cerrarSesionToolStripMenuItem.Size = new Size(144, 34);
             cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
+            // 
+            // modificarToolStripMenuItem
+            // 
+            modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            modificarToolStripMenuItem.Size = new Size(181, 34);
+            modificarToolStripMenuItem.Text = "Modificar";
+            modificarToolStripMenuItem.Click += modificarToolStripMenuItem_Click;
             // 
             // Frm_Admin_Menu
             // 
@@ -257,5 +265,6 @@
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private ToolStripMenuItem empleadosToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem1;
+        private ToolStripMenuItem modificarToolStripMenuItem;
     }
 }

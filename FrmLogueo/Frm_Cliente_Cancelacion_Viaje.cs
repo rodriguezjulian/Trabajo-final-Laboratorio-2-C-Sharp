@@ -37,7 +37,7 @@ namespace WF_TransporteRodriguez
             Viaje viajeAux;   
             if (txt_IdDeViajeACancelar.Text!="")
             {
-                viajeAux = repositorio_Viajes.BuscarInstancia(int.Parse(txt_IdDeViajeACancelar.Text));
+                viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeACancelar.Text));
                 if (viajeAux.NombreCliente == Cliente.Nombre && viajeAux.FechaViaje > DateTime.Today)
                 {
                     Repositorio_Viajes.ListaViajes.Remove(viajeAux);

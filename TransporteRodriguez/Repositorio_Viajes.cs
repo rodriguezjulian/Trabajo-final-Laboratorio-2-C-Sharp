@@ -59,7 +59,7 @@ namespace TransporteRodriguez
             return precio;
         }
 
-        public override Viaje BuscarInstancia( int idViaje)
+        public override Viaje BuscarInstanciaId( int idViaje)
         {
             Viaje viajeEncontrado = null;
 

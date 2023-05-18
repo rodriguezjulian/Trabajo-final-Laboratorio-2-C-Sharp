@@ -49,5 +49,6 @@ namespace TransporteRodriguez
             miCadena.AppendLine("Rubro: " + Rubro);
             return miCadena.ToString();
         }
+
     }
 }

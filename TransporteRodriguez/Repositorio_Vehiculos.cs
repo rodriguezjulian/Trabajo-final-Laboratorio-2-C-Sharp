@@ -34,7 +34,7 @@ namespace TransporteRodriguez
 
 
 
-        public override Vehiculo BuscarInstancia(int idCliente)
+        public override Vehiculo BuscarInstanciaId(int idCliente)
         {
             Vehiculo vehiculo = null;
             //int contador = 0;
