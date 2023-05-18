@@ -21,7 +21,6 @@
          Ventas,
          Sistemas,
          Administracion,
-         Volkswagen,
          Cobranzas
      }
 }

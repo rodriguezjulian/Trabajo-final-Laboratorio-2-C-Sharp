@@ -87,7 +87,7 @@ namespace WF_TransporteRodriguez
         {
             if (txt_ID.Text != "")
             {
-                Cliente cliente = repositorio_Clientes.BuscarInstancia(int.Parse(txt_ID.Text));
+                Cliente cliente = repositorio_Clientes.BuscarInstanciaId(int.Parse(txt_ID.Text));
                 cliente.Nombre = txt_ModNombre.Text;
                 cliente.Rubro = cbo_Rubro.Text;
                 cliente.Mail = txt_ModMail.Text;

@@ -53,6 +53,8 @@ namespace WF_TransporteRodriguez
             });
             #endregion
             cbo_Puesto.DataSource = Enum.GetValues(typeof(Puestos));
+            //cbo_Puesto.SelectedValue = -1;
+
 
         }
 
@@ -60,7 +62,7 @@ namespace WF_TransporteRodriguez
         {
             txt_ID.Text = dtg_ListarEmpleados.CurrentRow.Cells[0].Value.ToString();
             txt_ModNombre.Text = dtg_ListarEmpleados.CurrentRow.Cells[1].Value.ToString();
-            txt_Puesto.Text = dtg_ListarEmpleados.CurrentRow.Cells[2].Value.ToString();
+            cbo_Puesto.Text = dtg_ListarEmpleados.CurrentRow.Cells[2].Value.ToString();
             txt_ModMail.Text = dtg_ListarEmpleados.CurrentRow.Cells[3].Value.ToString();
         }
 
@@ -68,12 +70,31 @@ namespace WF_TransporteRodriguez
         {
             if (txt_ID.Text != "")
             {
-               
+                Empleado empleado = repositorio_Empleados.BuscarInstanciaId(int.Parse(txt_ID.Text));
+                empleado.Nombre = txt_ModNombre.Text;
+                empleado.Puesto = (Puestos)cbo_Puesto.SelectedItem;
+                empleado.Mail = txt_ModMail.Text;
+
+                dtg_ListarEmpleados.DataSource = null;
+                dtg_ListarEmpleados.Rows.Clear();
+                dtg_ListarEmpleados.AutoGenerateColumns = false;
+                dtg_ListarEmpleados.DataSource = Repositorio_Empleados.ListaEmpleado;
             }
             else
             {
                 MessageBox.Show("ERROR, Seleccione empleado a modificar");
             }
+        }
+
+        private void cbo_Puesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

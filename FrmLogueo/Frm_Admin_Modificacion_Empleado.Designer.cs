@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Modificacion_Empleado));
             dtg_ListarEmpleados = new DataGridView();
             grp_DatosNuevoCliente = new GroupBox();
-            txt_Puesto = new TextBox();
-            label3 = new Label();
             label4 = new Label();
             txt_ID = new TextBox();
             pictureBox9 = new PictureBox();
@@ -56,9 +54,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(255, 128, 0);
+            // 
             // pic_Guardar
             // 
             pic_Guardar.Click += pic_Guardar_Click;
+            // 
+            // pic_Cancelar
+            // 
+            pic_Cancelar.Click += pic_Cancelar_Click;
             // 
             // lbl_Cancelar
             // 
@@ -82,6 +88,7 @@
             // dtg_ListarEmpleados
             // 
             dtg_ListarEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_ListarEmpleados.BackgroundColor = Color.White;
             dtg_ListarEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_ListarEmpleados.Location = new Point(94, 214);
             dtg_ListarEmpleados.Name = "dtg_ListarEmpleados";
@@ -95,8 +102,6 @@
             // grp_DatosNuevoCliente
             // 
             grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
-            grp_DatosNuevoCliente.Controls.Add(txt_Puesto);
-            grp_DatosNuevoCliente.Controls.Add(label3);
             grp_DatosNuevoCliente.Controls.Add(label4);
             grp_DatosNuevoCliente.Controls.Add(txt_ID);
             grp_DatosNuevoCliente.Controls.Add(pictureBox9);
@@ -113,27 +118,6 @@
             grp_DatosNuevoCliente.Size = new Size(623, 129);
             grp_DatosNuevoCliente.TabIndex = 72;
             grp_DatosNuevoCliente.TabStop = false;
-            // 
-            // txt_Puesto
-            // 
-            txt_Puesto.BackColor = Color.FromArgb(255, 255, 192);
-            txt_Puesto.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Puesto.Location = new Point(369, 38);
-            txt_Puesto.Name = "txt_Puesto";
-            txt_Puesto.ReadOnly = true;
-            txt_Puesto.Size = new Size(180, 25);
-            txt_Puesto.TabIndex = 58;
-            txt_Puesto.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(369, 70);
-            label3.Name = "label3";
-            label3.Size = new Size(131, 17);
-            label3.TabIndex = 57;
-            label3.Text = "Puestos disponibles";
             // 
             // label4
             // 
@@ -180,12 +164,12 @@
             // 
             cbo_Puesto.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbo_Puesto.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbo_Puesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_Puesto.FormattingEnabled = true;
-            cbo_Puesto.Location = new Point(369, 90);
+            cbo_Puesto.Location = new Point(365, 40);
             cbo_Puesto.Name = "cbo_Puesto";
             cbo_Puesto.Size = new Size(249, 23);
             cbo_Puesto.TabIndex = 53;
+            cbo_Puesto.KeyPress += cbo_Puesto_KeyPress;
             // 
             // txt_ModNombre
             // 
@@ -286,7 +270,5 @@
         private TextBox txt_ModMail;
         private Label label2;
         private PictureBox pictureBox5;
-        private TextBox txt_Puesto;
-        private Label label3;
     }
 }
