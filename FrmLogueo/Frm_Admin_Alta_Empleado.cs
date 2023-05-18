@@ -31,7 +31,7 @@ namespace WF_TransporteRodriguez
             if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "")
             {
                 Repositorio_Empleados.ListaEmpleado.Add(new Empleado(txt_AltaNombre.Text,
-                    Usuario.generarContraseña(), txt_AltaMail.Text, true, repositorio_Empleados.CalcularId(), (Puestos)cbo_Puesto.SelectedItem));
+                    Sistema.generarContraseña(), txt_AltaMail.Text, true, repositorio_Empleados.CalcularId(), (Puestos)cbo_Puesto.SelectedItem));
 
                 MessageBox.Show("Empleado dado de alta satisfactoriamente\n");
             }

@@ -37,16 +37,7 @@
         {
             return true;
         }
-        public static string generarContraseña()
-        {
-            Random random = new Random();
-            string numeros = "";
-            for (int i = 0; i < 5; i++)
-            {
-                numeros += random.Next(0, 100).ToString() + " ";
-            }
-            return numeros;
-        }
+
         public virtual int generarId()
         {
             return 0;

@@ -18,7 +18,7 @@ namespace WF_TransporteRodriguez
             Usuario usuarioAuxiliar=null;
          
             Sistema.PoblarListas();
-            usuarioAuxiliar = Sistema.ValidarUsuario(usuario);
+            usuarioAuxiliar = Validaciones.ValidarUsuario(usuario);
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
                 empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);

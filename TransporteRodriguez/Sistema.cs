@@ -14,30 +14,30 @@ namespace TransporteRodriguez
 
         static Sistema()
         { }
-        public static Usuario ValidarUsuario(Usuario usuarioUno)
+        
+        public static bool CrearMail(string mail, string opcionCbo, out string mailFinal)
         {
-            Usuario retorno = null;
-
-            foreach (Empleado empleado in Repositorio_Empleados.ListaEmpleado)
+            bool retorno = false;
+            mailFinal = "";
+            if (mail != "")
             {
-                if (empleado == usuarioUno && empleado.Estado == true)
+                if (Validaciones.VerificarMail(mail))
                 {
-                    retorno = empleado;
-                    break;
-                }
-            }
-            if (retorno == null)
-            {
-                foreach (Cliente cliente in Repositorio_Clientes.ListaClientes)
-                {
-                    if (cliente == usuarioUno && cliente.Estado == true)
-                    {
-                        retorno = cliente;
-                        break;
-                    }
+                    mailFinal = mail + opcionCbo;
+                    retorno = true;
                 }
             }
             return retorno;
+        }
+        public static string generarContraseña()
+        {
+            Random random = new Random();
+            string numeros = "";
+            for (int i = 0; i < 5; i++)
+            {
+                numeros += random.Next(0, 100).ToString() + " ";
+            }
+            return numeros;
         }
         public static void PoblarListas()
         {
