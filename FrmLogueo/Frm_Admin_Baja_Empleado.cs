@@ -14,7 +14,6 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Admin_Baja_Empleado : Frm_Empleado_Diseño
     {
-        Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
         List<Empleado> empleadosActivos;
         public Frm_Admin_Baja_Empleado()
         {
@@ -72,7 +71,7 @@ namespace WF_TransporteRodriguez
         {
             if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
-                Empleado empleado = repositorio_Empleados.DarDeBaja(int.Parse(txt_BajaID.Text));
+                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaja(int.Parse(txt_BajaID.Text));
                 
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();

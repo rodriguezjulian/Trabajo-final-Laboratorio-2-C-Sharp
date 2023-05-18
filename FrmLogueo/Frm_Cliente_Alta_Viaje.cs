@@ -16,8 +16,8 @@ namespace WF_TransporteRodriguez
         Usuario clienteInstanciado;
         Cliente cliente;
         Viaje viajeAux;
-        Repositorio_Clientes repositorio_Clientes=new Repositorio_Clientes();
-        Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
+       // Repositorio_Clientes repositorio_Clientes=new Repositorio_Clientes();
+    
         public Frm_Cliente_Alta_Viaje()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace WF_TransporteRodriguez
         public Usuario ClienteInstanciado { get => clienteInstanciado; set => clienteInstanciado = value; }
         private void FrmViaje_Load(object sender, EventArgs e)
         {
-            cliente = repositorio_Clientes.BuscarInstancia(clienteInstanciado);
+            cliente = Repositorio_Clientes.Repo_Clientes.BuscarInstancia(clienteInstanciado);
             txt_Nombre.Text = cliente.Nombre;
             txt_DireccionSalida.Text = cliente.DireccionBSAS;
             cbo_Provincias.SelectedIndex = 0;
@@ -40,13 +40,13 @@ namespace WF_TransporteRodriguez
             if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
             {
                 //CREAR METODO -- VERIFICAR 
-                Repositorio_Viajes.ListaViajes.Add(new Viaje(repositorio_Viajes.CalcularId(), txt_Nombre.Text, txt_DireccionSalida.Text,
+                Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.Repo_Viajes.CalcularId(), txt_Nombre.Text, txt_DireccionSalida.Text,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
-                Repositorio_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
+                Repositorio_Viajes.Repo_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
                 Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
                 dtp_FechaDeViaje.Value.Date));
 
-                viajeAux=repositorio_Viajes.BuscarInstanciaId(repositorio_Viajes.CalcularId() - 1);
+                viajeAux= Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(Repositorio_Viajes.Repo_Viajes.CalcularId() - 1);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;

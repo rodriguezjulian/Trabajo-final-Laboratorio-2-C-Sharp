@@ -14,7 +14,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Admin_Alta_Empleado : Frm_Empleado_Diseño
     {
-        Repositorio_Empleados repositorio_Empleados=new Repositorio_Empleados ();
+       // Repositorio_Empleados repositorio_Empleados=new Repositorio_Empleados ();
         public Frm_Admin_Alta_Empleado()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace WF_TransporteRodriguez
             if (txt_AltaNombre.Text != "" && txt_AltaMail.Text != "")
             {
                 Repositorio_Empleados.ListaEmpleado.Add(new Empleado(txt_AltaNombre.Text,
-                    Sistema.generarContraseña(), txt_AltaMail.Text, true, repositorio_Empleados.CalcularId(), (Puestos)cbo_Puesto.SelectedItem));
+                    Sistema.generarContraseña(), txt_AltaMail.Text, true, Repositorio_Empleados.Repo_Empleados.CalcularId(), (Puestos)cbo_Puesto.SelectedItem));
 
                 MessageBox.Show("Empleado dado de alta satisfactoriamente\n");
             }

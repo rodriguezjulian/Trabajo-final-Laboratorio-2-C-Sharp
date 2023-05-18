@@ -14,7 +14,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Admin_Modificacion_Empleado : Frm_Empleado_Diseño
     {
-        Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
+       // Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
         private static List<Empleado> listaEmpleadosAuxiliar = new List<Empleado>();
         public Frm_Admin_Modificacion_Empleado()
         {
@@ -39,7 +39,7 @@ namespace WF_TransporteRodriguez
         {
             if (txt_ID.Text != "")
             {
-                Empleado empleado = repositorio_Empleados.BuscarInstanciaId(int.Parse(txt_ID.Text));
+                Empleado empleado = Repositorio_Empleados.Repo_Empleados.BuscarInstanciaId(int.Parse(txt_ID.Text));
                 empleado.Nombre = txt_ModNombre.Text;
                 empleado.Puesto = (Puestos)cbo_Puesto.SelectedItem;
                 empleado.Mail = txt_ModMail.Text;

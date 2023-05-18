@@ -9,9 +9,6 @@ namespace TransporteRodriguez
 {
     public static class Sistema
     {
-
-        private static List<Empleado> listaEmpleado = new List<Empleado>();
-
         static Sistema()
         { }
         
@@ -65,14 +62,10 @@ namespace TransporteRodriguez
         }
         public static void PoblarListas()
         {
-            Repositorio_Empleados repositorio_empleados = new Repositorio_Empleados();
-            Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
-            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
-            Repositorio_Vehiculos repositorio_Vehiculos = new Repositorio_Vehiculos();
-            repositorio_empleados.Agregar();
-            repositorio_Clientes.Agregar();
-            repositorio_Vehiculos.Agregar();  
-            repositorio_Viajes.Agregar();
+            Repositorio_Empleados.Repo_Empleados.Agregar();  
+            Repositorio_Clientes.Repo_Clientes.Agregar();
+            Repositorio_Vehiculos.Repo_Vehiculos.Agregar();
+            Repositorio_Viajes.Repo_Viajes.Agregar();
         }
 
     }

@@ -91,7 +91,7 @@ namespace WF_TransporteRodriguez
         private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Datos frm_Empleado_Datos = new Frm_Empleado_Datos();
-            Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
+           // Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
             frm_Empleado_Datos.Empleado = empleadoInstanciado;
             frm_Empleado_Datos.MdiParent = this;
             frm_Empleado_Datos.Dock = DockStyle.Fill;

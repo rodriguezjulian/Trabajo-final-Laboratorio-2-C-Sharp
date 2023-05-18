@@ -10,8 +10,10 @@ namespace TransporteRodriguez
     public class Repositorio_Clientes : Repositorio_Padre
     {
         private static List<Cliente> listaClientes = new List<Cliente>();
-
+        private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
+
+        public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
 
         public override void Agregar()
         {

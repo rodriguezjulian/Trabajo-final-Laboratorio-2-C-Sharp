@@ -10,8 +10,10 @@ namespace TransporteRodriguez
     public class Repositorio_Vehiculos : Repositorio_Padre
     {
         private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
-
+        private readonly static Repositorio_Vehiculos repo_Vehiculos = new Repositorio_Vehiculos();
         public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
+
+        public static Repositorio_Vehiculos Repo_Vehiculos => repo_Vehiculos;
 
         public override void Agregar()
         {

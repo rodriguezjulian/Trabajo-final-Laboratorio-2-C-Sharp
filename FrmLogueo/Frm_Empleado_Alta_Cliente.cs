@@ -18,7 +18,7 @@ namespace WF_TransporteRodriguez
     {
         Usuario empleadoInstanciado;
         Cliente nuevoCliente;
-        Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+        //Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
      
 
         public Frm_Empleado_Alta_Cliente()
@@ -48,7 +48,7 @@ namespace WF_TransporteRodriguez
         /// <param name="e"></param>
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)
         {
-            if (repositorio_Clientes.CrearCliente(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()))
+            if (Repositorio_Clientes.Repo_Clientes.CrearCliente(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()))
             {
                 MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
             }

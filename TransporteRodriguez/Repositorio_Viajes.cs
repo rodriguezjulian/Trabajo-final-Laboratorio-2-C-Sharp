@@ -9,8 +9,10 @@ namespace TransporteRodriguez
     public class Repositorio_Viajes : Repositorio_Padre
     {
         private static List<Viaje> listaViajes = new List<Viaje>();
-
+        private readonly static Repositorio_Viajes repo_Viajes = new Repositorio_Viajes();
         public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
+
+        public static Repositorio_Viajes Repo_Viajes => repo_Viajes;
 
         public override void Agregar()
         {
@@ -41,7 +43,7 @@ namespace TransporteRodriguez
             return retorno;
         }
         //Este metodo es clave para despues poder comparar la fecha ingresada con la existente
-        public static float calcularPrecioViaje(int provincia, float kilosTransportados)
+        public float calcularPrecioViaje(int provincia, float kilosTransportados)
         {
             float precio = 0;
             switch (provincia)

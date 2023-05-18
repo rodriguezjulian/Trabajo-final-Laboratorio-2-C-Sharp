@@ -13,7 +13,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Modificacion_Cliente : Frm_Empleado_Diseño
     {
-        Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+        //Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
         public Frm_Empleado_Modificacion_Cliente()
         {
             InitializeComponent();
@@ -90,7 +90,7 @@ namespace WF_TransporteRodriguez
             Cliente cliente;
             if(!string.IsNullOrEmpty(txt_ID.Text))
             {
-                if (repositorio_Clientes.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text,
+                if (Repositorio_Clientes.Repo_Clientes.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text,
                 txt_ModMail.Text, cbo_Mail.Text, txt_ModDireccion.Text, cbo_Rubro.Text, out cliente))
                 {
                     MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());

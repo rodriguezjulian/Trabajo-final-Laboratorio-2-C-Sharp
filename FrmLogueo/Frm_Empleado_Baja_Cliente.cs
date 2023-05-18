@@ -40,10 +40,10 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+           // Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
             if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
-                    Cliente cliente = repositorio_Clientes.DarDeBaja(int.Parse(txt_BajaID.Text));
+                    Cliente cliente = Repositorio_Clientes.Repo_Clientes.DarDeBaja(int.Parse(txt_BajaID.Text));
                     MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
 
                     dtg_ListarClientes.DataSource = null;

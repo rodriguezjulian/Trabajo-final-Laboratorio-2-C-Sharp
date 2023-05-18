@@ -10,8 +10,11 @@ namespace TransporteRodriguez
     public class Repositorio_Empleados : Repositorio_Padre
     {
         private static List<Empleado> listaEmpleado = new List<Empleado>();
-
+        private readonly static Repositorio_Empleados repo_Empleados = new Repositorio_Empleados();
         public static List<Empleado> ListaEmpleado { get => listaEmpleado; set => listaEmpleado = value; }
+
+        public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
+
         public override void Agregar()
         {
             if (ListaEmpleado.Count == 0)

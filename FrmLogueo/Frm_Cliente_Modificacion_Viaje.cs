@@ -34,11 +34,10 @@ namespace WF_TransporteRodriguez
         private void pic_EditarViaje_Click(object sender, EventArgs e)
         {
             Viaje viajeAux;
-            Repositorio_Viajes repositorio_Viajes = new Repositorio_Viajes();
 
             if (txt_IdDeViajeAModificar.Text != "")
             {
-                viajeAux = repositorio_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));
+                viajeAux = Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));
                 if (viajeAux.NombreCliente == Cliente.Nombre)
                 {
                     viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
