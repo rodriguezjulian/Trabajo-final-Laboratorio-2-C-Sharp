@@ -8,6 +8,11 @@ namespace TransporteRodriguez
 {
     public static class Validaciones
     {
+        /// <summary>
+        /// Verificamos que string no se incluya un numero ni este vacio ("") o null
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns></returns>
         public static bool VerificarNombre(string nombre)
         {
             bool retorno = true;
@@ -27,6 +32,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Verificamos que en el cuerpo del mail antes del @ no se incluya un @
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <returns></returns>
         public static bool VerificarMail(string mail)
         {
             bool retorno = true;
@@ -39,6 +49,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Validamos que el usuario logueado este incluido en la lista de clientes o empleados estando activos
+        /// </summary>
+        /// <param name="usuarioUno"></param>
+        /// <returns></returns>
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario retorno = null;
@@ -64,6 +79,12 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Verificamos que la patente ingresada al crear un vehiculo no este cargada en sistema asociada a otro vehiculo.
+        /// No pueden existir 2 vehiculos con la misma patente.
+        /// </summary>
+        /// <param name="patenteIngresada"></param>
+        /// <returns></returns>
         public static bool VerificarExistenciaPatente(string patenteIngresada)
         {
             bool retorno = true;
@@ -76,7 +97,13 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        // retona 0 todo bien || 1 esta mal el formato || 2 ya existe la patente
+
+        /// <summary>
+        /// Apoyandonos en VerificarPatente y en VerificarExistenciaPatente, validamos el ingreso de la misma con una sola llamada.
+        /// retona 0 todo bien || 1 esta mal el formato || 2 ya existe la patente
+        /// </summary>
+        /// <param name="patenteIngresada"></param>
+        /// <returns></returns>
         public static int VerificarPatente(string patenteIngresada)
         {
             int retorno = 0;
@@ -94,6 +121,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Verificaremos el correcto formato de la patente ingresada 
+        /// </summary>
+        /// <param name="patenteIngresada"></param>
+        /// <returns></returns>
         public static bool VerificarFormatoPatente(string patenteIngresada)
         {
             bool retorno = true;

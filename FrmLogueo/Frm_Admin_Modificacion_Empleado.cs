@@ -73,6 +73,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
+            dtg_ListarEmpleados.Columns.Clear();
             ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
         }
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)

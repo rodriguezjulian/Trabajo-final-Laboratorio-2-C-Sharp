@@ -14,7 +14,9 @@ namespace TransporteRodriguez
         public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
 
         public static Repositorio_Vehiculos Repo_Vehiculos => repo_Vehiculos;
-
+        /// <summary>
+        /// Hardcodeo de vehiculos
+        /// </summary>
         public override void Agregar()
         {
             if(ListaVehiculos.Count==0) 
@@ -26,6 +28,10 @@ namespace TransporteRodriguez
                 listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));
             }
         }
+        /// <summary>
+        /// Calcular el id de un nuevo vehiculo segun el ultimo 
+        /// </summary>
+        /// <returns></returns>
         public override int CalcularId()
         {
             int retorno;
@@ -35,7 +41,11 @@ namespace TransporteRodriguez
         }
 
 
-
+        /// <summary>
+        /// Se obtiene la direccion de memoria de la instancia a travez de su id
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
         public override Vehiculo BuscarInstanciaId(int idCliente)
         {
             Vehiculo vehiculo = null;
@@ -52,7 +62,13 @@ namespace TransporteRodriguez
             return vehiculo;
 
         }
-
+        /// <summary>
+        /// A partir de un determinado peso y luego teniendo en cuenta la fecha de viaje, se busca retornar el
+        /// id de un vehiculo disponible
+        /// </summary>
+        /// <param name="kilos"></param>kilos a transportar
+        /// <param name="fechaSolicitada"></param>fecha en la que se realizaria el viaje
+        /// <returns></returns>
         public static int RetornarVehiculoDisponible(float kilos, DateTime fechaSolicitada)
         {
             float cargaSoportada;
@@ -78,6 +94,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Baja logica para la instancia
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public override Vehiculo DarDeBaja(int ID)
         {
             Vehiculo vehiculo = BuscarInstanciaId(ID);

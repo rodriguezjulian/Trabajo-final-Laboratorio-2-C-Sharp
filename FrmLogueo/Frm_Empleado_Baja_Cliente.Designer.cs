@@ -36,7 +36,6 @@
             txt_BajaID = new TextBox();
             lbl_ID = new Label();
             pic_ID = new PictureBox();
-            label9 = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
@@ -54,13 +53,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 128, 0);
-            panel2.Controls.Add(label9);
-            panel2.Controls.SetChildIndex(lbl_Acciones, 0);
-            panel2.Controls.SetChildIndex(lbl_Guardar, 0);
-            panel2.Controls.SetChildIndex(lbl_Cancelar, 0);
-            panel2.Controls.SetChildIndex(pic_Cancelar, 0);
-            panel2.Controls.SetChildIndex(pic_Guardar, 0);
-            panel2.Controls.SetChildIndex(label9, 0);
             // 
             // pic_Guardar
             // 
@@ -74,8 +66,8 @@
             // 
             lbl_Cancelar.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Cancelar.Location = new Point(-2, 324);
-            lbl_Cancelar.Size = new Size(95, 13);
-            lbl_Cancelar.Text = "Volver a pantalla ";
+            lbl_Cancelar.Size = new Size(0, 13);
+            lbl_Cancelar.Text = "";
             // 
             // lbl_Opcion
             // 
@@ -189,17 +181,6 @@
             pic_ID.SizeMode = PictureBoxSizeMode.Zoom;
             pic_ID.TabIndex = 78;
             pic_ID.TabStop = false;
-         
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(16, 339);
-            label9.Name = "label9";
-            label9.Size = new Size(51, 13);
-            label9.TabIndex = 76;
-            label9.Text = "Principal";
             // 
             // Frm_Empleado_Baja_Cliente
             // 
@@ -233,6 +214,5 @@
         private TextBox txt_BajaID;
         private Label lbl_ID;
         private PictureBox pic_ID;
-        private Label label9;
     }
 }

@@ -14,7 +14,9 @@ namespace TransporteRodriguez
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
 
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
-
+      /// <summary>
+      /// Hardcodeo de Clientes
+      /// </summary>
         public override void Agregar()
         {
             if (ListaClientes.Count == 0)
@@ -35,6 +37,10 @@ namespace TransporteRodriguez
                 ListaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));
             }
         }
+        /// <summary>
+        /// Calcular el id de un nuevo cliente  segun el ultimo 
+        /// </summary>
+        /// <returns></returns>
         public override int CalcularId()
         {
             int retorno;
@@ -42,6 +48,11 @@ namespace TransporteRodriguez
             retorno = (clienteUltimo.IdCliente) + 1;
             return retorno;
         }
+        /// <summary>
+        /// Se obtiene la direccion de memoria de la instancia a travez de su id
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
         public override Cliente BuscarInstanciaId(int idCliente)
         {
             Cliente cliente = null;
@@ -56,6 +67,11 @@ namespace TransporteRodriguez
             }
             return cliente;
         }
+        /// <summary>
+        /// Buscar instancia utilizando una sobre carga en el ==
+        /// </summary>
+        /// <param name="usuarioUno"></param>
+        /// <returns></returns>
         public override Cliente BuscarInstancia(object usuarioUno)
         {
             Cliente retorno = null;
@@ -72,6 +88,16 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Se crea una nueva instancia apoyandonos con distintas funciones como son  VerificarNombre,CrearMail,generarContraseña,CalcularId para
+        /// evitar errores de cualquier tipo.
+        /// </summary>
+        /// <param name="nombre"></param>Ingresado por el usuario, no podra contener numero (VerificarNombre)
+        /// <param name="mail"></param>Ingresado por el usuario, no podra contener @ (CrearMail)
+        /// <param name="tipoMail"></param>Elegido desde un combo Box para evitar errores
+        /// <param name="direccion"></param>
+        /// <param name="rubro"></param>Elegido desde un combo Box para encasillar categorias
+        /// <returns></returns>
         public bool CrearCliente(string nombre, string mail,string tipoMail ,string direccion, string rubro)
         {
             string mailFinal;
@@ -85,6 +111,18 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Se realizaran las mismas verificaciones que al crear la instancia y nos apoyaremos de BuscarInstanciaId para afectar directamente
+        /// a esa misma instancia
+        /// </summary>
+        /// <param name="id"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - NO se modifica
+        /// <param name="nombre"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="mail"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="tipoMail"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro- MODIFICABLE
+        /// <param name="direccion"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="rubro"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="clienteOut"></param> Se devuelve la instancia para mostrar con MessageBox.Show un resumen de los datos del cliente (stringBuilder)
+        /// <returns></returns>
         public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, string direccion, string rubro, out Cliente clienteOut)
         {
             bool retorno=false;
@@ -102,6 +140,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Baja logica del cliente apoyada por BuscarInstanciaId
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public override Cliente DarDeBaja(int ID)
         {
             Cliente cliente =BuscarInstanciaId(ID);

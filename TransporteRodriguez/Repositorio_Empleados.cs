@@ -14,7 +14,9 @@ namespace TransporteRodriguez
         public static List<Empleado> ListaEmpleado { get => listaEmpleado; set => listaEmpleado = value; }
 
         public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
-
+        /// <summary>
+        /// Hardcodeo de Empleados
+        /// </summary>
         public override void Agregar()
         {
             if (ListaEmpleado.Count == 0)
@@ -26,7 +28,11 @@ namespace TransporteRodriguez
                 ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, Puestos.Cobranzas));
             }
         }
-
+        /// <summary>
+        /// Se obtiene la direccion de memoria de la instancia a travez de su id
+        /// </summary>Se obtiene la direccion de memoria de la instancia a travez de su id
+        /// <param name="idEmpleado"></param>
+        /// <returns></returns>
         public override Empleado BuscarInstanciaId(int idEmpleado)
         {
             Empleado empleado = null;
@@ -41,7 +47,10 @@ namespace TransporteRodriguez
             }
             return empleado;
         }
-
+        /// <summary>
+        /// Calcular el id de un nuevo cliente  segun el ultimo 
+        /// </summary>
+        /// <returns></returns>
         public override int CalcularId()
         {
             int retorno;
@@ -49,6 +58,11 @@ namespace TransporteRodriguez
             retorno = (ultimo.IdEmpleado) + 1;
             return retorno;
         }
+        /// <summary>
+        ///  Buscar instancia utilizando una sobre carga en el ==
+        /// </summary>
+        /// <param name="usuarioUno"></param>
+        /// <returns></returns>
         public override Empleado BuscarInstancia(object usuarioUno)
         {
             Empleado retorno = null;
@@ -65,6 +79,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Baja logica del cliente apoyada por BuscarInstanciaId
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public override Empleado DarDeBaja(int ID)
         {
             Empleado empleado = BuscarInstanciaId(ID);
@@ -74,6 +93,15 @@ namespace TransporteRodriguez
             }
             return empleado;
         }
+        /// <summary>
+        /// Se crea una nueva instancia apoyandonos con distintas funciones como son  VerificarNombre,CrearMail,generarContraseña,CalcularId para
+        /// evitar errores de cualquier tipo
+        /// </summary>
+        /// <param name="nombre"></param>Ingresado por el usuario, no podra contener numero (VerificarNombre)
+        /// <param name="mail"></param>Ingresado por el usuario, no podra contener @ (CrearMail)
+        /// <param name="tipoMail"></param>Elegido desde un combo Box para evitar errores
+        /// <param name="puesto"></param>Elegido desde un combo Box 
+        /// <returns></returns>
         public bool CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
         {
             string mailFinal;
@@ -86,6 +114,16 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// Se realizaran las mismas verificaciones que al crear la instancia y nos apoyaremos de BuscarInstanciaId para afectar directamente
+        /// a esa misma instancia
+        /// </summary>
+        /// <param name="id"></param>segun empleado elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - NO se modifica
+        /// <param name="nombre"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="mail"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="tipoMail"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <param name="puesto"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
+        /// <returns></returns>
         public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, Puestos puesto)
         {
             string mailFinal;

@@ -40,18 +40,18 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-           // Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
+            // Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
             if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
-                    Cliente cliente = Repositorio_Clientes.Repo_Clientes.DarDeBaja(int.Parse(txt_BajaID.Text));
-                    MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
+                Cliente cliente = Repositorio_Clientes.Repo_Clientes.DarDeBaja(int.Parse(txt_BajaID.Text));
+                MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
 
-                    dtg_ListarClientes.DataSource = null;
-                    dtg_ListarClientes.AutoGenerateColumns = false;
-                    dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
-                    dtg_ListarClientes.Columns.Clear();
-                    clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
-                    OrganizarDtg(clientesActivos);
+                dtg_ListarClientes.DataSource = null;
+                dtg_ListarClientes.AutoGenerateColumns = false;
+                dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
+                dtg_ListarClientes.Columns.Clear();
+                clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+                OrganizarDtg(clientesActivos);
 
             }
             else

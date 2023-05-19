@@ -11,7 +11,13 @@ namespace TransporteRodriguez
     {
         static Sistema()
         { }
-        
+        /// <summary>
+        /// Se crea un mail a partir del parametro mail que contendra la direccion sin @ y el tipo de mail elegido desde un combo box
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <param name="opcionCbo"></param>
+        /// <param name="mailFinal"></param> se devuelve el mail definitivo que  luego formara parte de distintos tipos de objeto
+        /// <returns></returns>
         public static bool CrearMail(string mail, string opcionCbo, out string mailFinal)
         {
             bool retorno = false;
@@ -26,6 +32,11 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        /// <summary>
+        /// A la hora de modificar el mail, debemos obtener el tipo descomponiendo al mail completo y obteniendo solo lo que esta a partir del @
+        /// </summary>
+        /// <param name="mailCompleto"></param>
+        /// <returns></returns>
         public static string ObtenerTipoMail(string mailCompleto)
         {
             string tipoMail = "";
@@ -37,6 +48,11 @@ namespace TransporteRodriguez
             }
             return tipoMail;
         }
+        /// <summary>
+        /// A la hora de modificar el mail, debemos obtener el cuerpo del mail que se encuentre antes del @
+        /// </summary>
+        /// <param name="mailCompleto"></param>
+        /// <returns></returns>
         public static string ObtenerUsuarioMail(string mailCompleto)
         {
             string usuarioMail = "";
@@ -49,7 +65,10 @@ namespace TransporteRodriguez
 
             return usuarioMail;
         }
-
+        /// <summary>
+        /// Generaremos una contraseña random por seguridad
+        /// </summary>
+        /// <returns></returns>
         public static string generarContraseña()
         {
             Random random = new Random();
@@ -60,6 +79,9 @@ namespace TransporteRodriguez
             }
             return numeros;
         }
+        /// <summary>
+        /// poblamos todas las listas apoyandonos en el metodo Agregar() incluido en cada repositorio especifico
+        /// </summary>
         public static void PoblarListas()
         {
             Repositorio_Empleados.Repo_Empleados.Agregar();  
