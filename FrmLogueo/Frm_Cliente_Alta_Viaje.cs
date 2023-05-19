@@ -16,8 +16,7 @@ namespace WF_TransporteRodriguez
         Usuario clienteInstanciado;
         Cliente cliente;
         Viaje viajeAux;
-       // Repositorio_Clientes repositorio_Clientes=new Repositorio_Clientes();
-    
+
         public Frm_Cliente_Alta_Viaje()
         {
             InitializeComponent();
@@ -32,14 +31,16 @@ namespace WF_TransporteRodriguez
             cbo_Provincias.SelectedIndex = 0;
             dtp_FechaDeViaje.MinDate = DateTime.Today.AddDays(1);
             lbl_NombreClient.Text = cliente.Nombre;
+            txt_IdCliente.Text = cliente.IdCliente.ToString();
+
         }
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            if (Repositorio_Viajes.Repo_Viajes.CrearViaje(txt_Nombre.Text, txt_DireccionSalida.Text, cbo_Provincias.SelectedIndex, 
+            if (Repositorio_Viajes.Repo_Viajes.CrearViaje(int.Parse(txt_IdCliente.Text), txt_Nombre.Text, txt_DireccionSalida.Text, cbo_Provincias.SelectedIndex,
                 cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value, dtp_FechaDeViaje.Value.Date))
             {
-                viajeAux= Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(Repositorio_Viajes.Repo_Viajes.CalcularId() - 1);
+                viajeAux = Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(Repositorio_Viajes.Repo_Viajes.CalcularId() - 1);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
                 anterior.usuarioInstanciado = clienteInstanciado;
@@ -77,7 +78,5 @@ namespace WF_TransporteRodriguez
             this.Hide();
             this.Close();
         }
-
-
     }
 }

@@ -64,7 +64,7 @@ namespace WF_TransporteRodriguez
             dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "IdViaje",
-                HeaderText = "ID",
+                HeaderText = "ID VIAJE",
                 DisplayIndex = 0
             });
             dtg_ListaViajes.Columns.Add(new DataGridViewTextBoxColumn()

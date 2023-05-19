@@ -49,6 +49,8 @@
             lbl_RerservarViaje = new Label();
             pic_ReservarViajar = new PictureBox();
             grp_DatosViaje = new GroupBox();
+            lbl_Id = new Label();
+            txt_IdCliente = new TextBox();
             nup_Kilos = new NumericUpDown();
             dtp_FechaDeViaje = new DateTimePicker();
             panel3 = new Panel();
@@ -252,6 +254,8 @@
             // 
             // grp_DatosViaje
             // 
+            grp_DatosViaje.Controls.Add(lbl_Id);
+            grp_DatosViaje.Controls.Add(txt_IdCliente);
             grp_DatosViaje.Controls.Add(nup_Kilos);
             grp_DatosViaje.Controls.Add(dtp_FechaDeViaje);
             grp_DatosViaje.Controls.Add(cbo_Provincias);
@@ -267,6 +271,25 @@
             grp_DatosViaje.Size = new Size(304, 327);
             grp_DatosViaje.TabIndex = 70;
             grp_DatosViaje.TabStop = false;
+            // 
+            // lbl_Id
+            // 
+            lbl_Id.AutoSize = true;
+            lbl_Id.Location = new Point(270, 9);
+            lbl_Id.Name = "lbl_Id";
+            lbl_Id.Size = new Size(18, 15);
+            lbl_Id.TabIndex = 71;
+            lbl_Id.Text = "ID";
+            // 
+            // txt_IdCliente
+            // 
+            txt_IdCliente.BackColor = Color.FromArgb(255, 255, 192);
+            txt_IdCliente.Enabled = false;
+            txt_IdCliente.Location = new Point(263, 28);
+            txt_IdCliente.Name = "txt_IdCliente";
+            txt_IdCliente.ReadOnly = true;
+            txt_IdCliente.Size = new Size(35, 23);
+            txt_IdCliente.TabIndex = 67;
             // 
             // nup_Kilos
             // 
@@ -413,5 +436,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private NumericUpDown nup_Kilos;
         protected Label lbl_NombreClient;
+        private Label lbl_Id;
+        private TextBox txt_IdCliente;
     }
 }

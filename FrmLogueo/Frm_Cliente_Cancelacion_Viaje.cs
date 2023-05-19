@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now);
             OrganizarDataGridViajes(viajesCliente);
             lbl_NombreClient.Text = cliente.Nombre;
         }
@@ -38,8 +38,13 @@ namespace WF_TransporteRodriguez
                 if (DateTime.Parse(txt_Fecha.Text) > DateTime.Today)
                 {
                     Repositorio_Viajes.Repo_Viajes.DarDeBaja(int.Parse(txt_IdDeViajeACancelar.Text));
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
+                    dtg_ListaViajes.Columns.Clear();
+                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
+                    txt_IdDeViajeACancelar .Text= "";
+                    txt_Fecha.Text = "";
+
+                    MessageBox.Show("Viaje cancelado \n");
                 }
             }
             else

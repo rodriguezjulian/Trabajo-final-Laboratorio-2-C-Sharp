@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             //PASAR A REPOSITORIO
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.NombreCliente == cliente.Nombre);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente);
             OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
@@ -38,13 +38,14 @@ namespace WF_TransporteRodriguez
             if (txt_IdDeViajeAModificar.Text != "")
             {
                 viajeAux = Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));
-                if (viajeAux.NombreCliente == Cliente.Nombre)
+                if (viajeAux.IdCliente == Cliente.IdCliente)
                 {
                     viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
                     viajeAux.KilosATransportar = (float)nup_Kg.Value;
                     viajeAux.ProvinciaDestino = cbo_Provincias.SelectedItem.ToString();
                     dtg_ListaViajes.Columns.Clear();
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
+                    // viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
+                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
                     MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
                 }

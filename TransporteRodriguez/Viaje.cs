@@ -10,6 +10,7 @@ namespace TransporteRodriguez
         // nose si podria hacer que viaje herede de cliente los datos de nombre cliente y direccion de salida
     {
         private int _idViaje;
+        private int _idCliente;
         private string _nombreCliente;
         private string _direccionSalida; // que seria la direccion del cliente
         private string _provinciaDestino;
@@ -18,10 +19,11 @@ namespace TransporteRodriguez
         private int _idVehiculo;
         private DateTime _fechaViaje;
 
-        public Viaje(int idViaje, string nombreCliente, 
+        public Viaje(int idCliente,int idViaje,  string nombreCliente, 
             string direccionSalida, string provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje)
         {
             _idViaje = idViaje;
+            _idCliente = idCliente;
             _nombreCliente = nombreCliente;
             _direccionSalida = direccionSalida;
             _provinciaDestino = provinciaDestino;
@@ -43,6 +45,7 @@ namespace TransporteRodriguez
         public int IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
         public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
+        public int IdCliente { get => _idCliente; set => _idCliente = value; }
 
         public static bool operator ==(Viaje uno, Viaje dos)
         {
