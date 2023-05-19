@@ -34,25 +34,24 @@ namespace WF_TransporteRodriguez
         private void pic_EditarViaje_Click(object sender, EventArgs e)
         {
             Viaje viajeAux;
-
-            if (txt_IdDeViajeAModificar.Text != "")
+            if (!string.IsNullOrEmpty(txt_IdDeViajeAModificar.Text))
             {
-                viajeAux = Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(int.Parse(txt_IdDeViajeAModificar.Text));
-                if (viajeAux.IdCliente == Cliente.IdCliente)
+                if (Repositorio_Viajes.Repo_Viajes.ModificarViaje(int.Parse(txt_IdDeViajeAModificar.Text), Cliente, dtp_FechaDeViaje.Value, (float)nup_Kg.Value, cbo_Provincias.Text, out viajeAux))
                 {
-                    viajeAux.FechaViaje = dtp_FechaDeViaje.Value;
-                    viajeAux.KilosATransportar = (float)nup_Kg.Value;
-                    viajeAux.ProvinciaDestino = cbo_Provincias.SelectedItem.ToString();
+
                     dtg_ListaViajes.Columns.Clear();
-                    // viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.NombreCliente == cliente.Nombre && viaje.FechaViaje > DateTime.Now);
                     viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now);
                     OrganizarDataGridViajes(viajesCliente);
                     MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
                 }
+                else
+                {
+                    MessageBox.Show("No es posible modificar el viaje por falta de disponibilidad de vehiculo. \n");
+                }
             }
             else
             {
-                MessageBox.Show("Verifique datos ingresados. \n");
+                MessageBox.Show("Seleccione viaje a modificar. \n");
             }
         }
         private void pic_CancelarModificacion_Click(object sender, EventArgs e)

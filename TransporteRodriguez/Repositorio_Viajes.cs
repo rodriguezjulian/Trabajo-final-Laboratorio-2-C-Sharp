@@ -20,7 +20,7 @@ namespace TransporteRodriguez
             if (ListaViajes.Count==0)
             {
                 ListaViajes.Add(new Viaje(2,1, "María García", "Calle 25 de Mayo 5678",
-                "Salta", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0)));
+                "Misiones", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0)));
                 ListaViajes.Add(new Viaje(7,2, "Javier Díaz", "Av. Córdoba 6789",
                 "Corrientes", 1800, 10500, 5, new DateTime(2022, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
                 ListaViajes.Add(new Viaje(6,3, "Laura Fernández", "Av. Santa Fe 2468",
@@ -44,18 +44,18 @@ namespace TransporteRodriguez
             return retorno;
         }
         //Este metodo es clave para despues poder comparar la fecha ingresada con la existente
-        public float calcularPrecioViaje(int provincia, float kilosTransportados)
+        public float calcularPrecioViaje(string provincia, float kilosTransportados)
         {
             float precio = 0;
-            switch (provincia)
+            switch (provincia.ToLower())
             {
-                case 0:
+                case "santa fe":
                     precio = (kilosTransportados * 200) + 4000;
                     break;
-                case 1:
+                case "corrientes":
                     precio = (kilosTransportados * 200) + 6000;
                     break;
-                case 2:
+                case "misiones":
                     precio = (kilosTransportados * 200) + 8000;
                     break;
             }
@@ -92,15 +92,43 @@ namespace TransporteRodriguez
             return viaje;
         }
 
-        public bool CrearViaje(int idCliente,string nombre, string direccionSalida,int provinciaDest, string provinciaDestino, float cargaKg, DateTime fecha)
+        public bool CrearViaje(int idCliente,string nombre, string direccionSalida, string provinciaDestino, float cargaKg, DateTime fecha)
         {
             bool retorno = false;
             if (Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha) != 0) 
             {
                 retorno = true;
                 Repositorio_Viajes.ListaViajes.Add(new Viaje(idCliente, CalcularId(), nombre, direccionSalida, provinciaDestino, cargaKg,
-                calcularPrecioViaje(provinciaDest, cargaKg), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha), fecha.Date));
+                calcularPrecioViaje(provinciaDestino, cargaKg), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha), fecha.Date));
             }
+            return retorno;
+        }
+        public bool ModificarViaje(int idViaje,Cliente cliente, DateTime fecha, float kg ,string destino, out Viaje viaje)
+        {
+            bool retorno = false;
+            Viaje viajeAux=null;
+            int idVehiculoOriginal;
+            viaje=null;
+            viajeAux =BuscarInstanciaId(idViaje);
+            idVehiculoOriginal = viajeAux.IdVehiculo;
+            viajeAux.IdVehiculo = 0;
+            if (Repositorio_Vehiculos.RetornarVehiculoDisponible(kg, fecha)!=0)
+            {
+                retorno = true;
+                viaje = viajeAux;
+                viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kg, fecha);
+                viajeAux.Precio = calcularPrecioViaje(destino, kg);
+                viajeAux.FechaViaje = fecha;
+                viajeAux.KilosATransportar = kg;
+                viajeAux.ProvinciaDestino = destino;
+            }
+            //ESTO LO HAGO PORQUE CUANDO QUIERO MODIFICAR EL DESTINO POSIBLEMENTE SEA EL MISMO CAMION EL QUE HAGA EL VIAJE
+            //SI NO LO LIBERO AL MENOS MOMENTANEAMENTE, SIEMPRE TENDRA OCUPADA LA FECHA.
+            if (retorno==false)
+            {
+                viajeAux.IdVehiculo = idVehiculoOriginal;
+            }
+            
             return retorno;
         }
     }

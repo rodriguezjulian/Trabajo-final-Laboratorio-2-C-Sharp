@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
             groupBox1 = new GroupBox();
+            lbl_ListaDeViajesPendientes = new Label();
             cbo_Provincias = new ComboBox();
             nup_Kg = new NumericUpDown();
             pictureBox1 = new PictureBox();
@@ -49,7 +50,6 @@
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            lbl_ListaDeViajesPendientes = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nup_Kg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,10 +88,20 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
+            // lbl_ListaDeViajesPendientes
+            // 
+            lbl_ListaDeViajesPendientes.AutoSize = true;
+            lbl_ListaDeViajesPendientes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_ListaDeViajesPendientes.Location = new Point(492, 163);
+            lbl_ListaDeViajesPendientes.Name = "lbl_ListaDeViajesPendientes";
+            lbl_ListaDeViajesPendientes.Size = new Size(191, 17);
+            lbl_ListaDeViajesPendientes.TabIndex = 96;
+            lbl_ListaDeViajesPendientes.Text = "LISTA DE VIAJES PENDIENTES";
+            // 
             // cbo_Provincias
             // 
             cbo_Provincias.FormattingEnabled = true;
-            cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
+            cbo_Provincias.Items.AddRange(new object[] { "Santa fe", "Corrientes", "Misiones" });
             cbo_Provincias.Location = new Point(251, 154);
             cbo_Provincias.Name = "cbo_Provincias";
             cbo_Provincias.Size = new Size(222, 23);
@@ -286,16 +296,6 @@
             label5.Size = new Size(275, 30);
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
-            // 
-            // lbl_ListaDeViajesPendientes
-            // 
-            lbl_ListaDeViajesPendientes.AutoSize = true;
-            lbl_ListaDeViajesPendientes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_ListaDeViajesPendientes.Location = new Point(492, 163);
-            lbl_ListaDeViajesPendientes.Name = "lbl_ListaDeViajesPendientes";
-            lbl_ListaDeViajesPendientes.Size = new Size(191, 17);
-            lbl_ListaDeViajesPendientes.TabIndex = 96;
-            lbl_ListaDeViajesPendientes.Text = "LISTA DE VIAJES PENDIENTES";
             // 
             // Frm_Cliente_Modificacion_Viaje
             // 

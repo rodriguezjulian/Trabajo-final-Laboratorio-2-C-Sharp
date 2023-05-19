@@ -148,7 +148,7 @@
             // 
             cbo_Provincias.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_Provincias.FormattingEnabled = true;
-            cbo_Provincias.Items.AddRange(new object[] { "Santa fe ", "Corrientes ", "Misiones" });
+            cbo_Provincias.Items.AddRange(new object[] { "Santa fe", "Corrientes", "Misiones" });
             cbo_Provincias.Location = new Point(2, 143);
             cbo_Provincias.Name = "cbo_Provincias";
             cbo_Provincias.Size = new Size(255, 23);
