@@ -76,6 +76,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+        // retona 0 todo bien || 1 esta mal el formato || 2 ya existe la patente
         public static int VerificarPatente(string patenteIngresada)
         {
             int retorno = 0;

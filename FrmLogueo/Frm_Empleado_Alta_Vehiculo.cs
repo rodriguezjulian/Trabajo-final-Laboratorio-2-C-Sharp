@@ -15,7 +15,7 @@ namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Alta_Vehiculo : Frm_Empleado_Diseño
     {
-       // Repositorio_Vehiculos repositorio_Vehiculos=new Repositorio_Vehiculos();
+        // Repositorio_Vehiculos repositorio_Vehiculos=new Repositorio_Vehiculos();
         public Frm_Empleado_Alta_Vehiculo()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace WF_TransporteRodriguez
             if (Validaciones.VerificarPatente(txt_AltaPatente.Text) == 0)
             {
                 Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.Repo_Vehiculos.CalcularId(), (Marcas)cbo_Marca.SelectedItem,
-                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text,true));
+                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text, true));
                 MessageBox.Show("Vehiculo dado de alta satisfactoriamente\n");
             }
             else
@@ -44,7 +44,7 @@ namespace WF_TransporteRodriguez
                 {
                     MessageBox.Show("ERROR, La patente ingresada pertenece a un vehiculo existente\n");
                 }
-                
+
             }
         }
         private void pic_Cancelar_Click(object sender, EventArgs e)

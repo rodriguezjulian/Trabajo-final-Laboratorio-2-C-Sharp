@@ -36,16 +36,9 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-           
-            if (Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value) != 0)
+            if (Repositorio_Viajes.Repo_Viajes.CrearViaje(txt_Nombre.Text, txt_DireccionSalida.Text, cbo_Provincias.SelectedIndex, 
+                cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value, dtp_FechaDeViaje.Value.Date))
             {
-                //CREAR METODO -- VERIFICAR 
-                Repositorio_Viajes.ListaViajes.Add(new Viaje(Repositorio_Viajes.Repo_Viajes.CalcularId(), txt_Nombre.Text, txt_DireccionSalida.Text,
-                cbo_Provincias.SelectedItem.ToString(), (float)nup_Kilos.Value,
-                Repositorio_Viajes.Repo_Viajes.calcularPrecioViaje(cbo_Provincias.SelectedIndex, (float)nup_Kilos.Value),
-                Repositorio_Vehiculos.RetornarVehiculoDisponible((float)nup_Kilos.Value, dtp_FechaDeViaje.Value),
-                dtp_FechaDeViaje.Value.Date));
-
                 viajeAux= Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(Repositorio_Viajes.Repo_Viajes.CalcularId() - 1);
                 MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
                 Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();

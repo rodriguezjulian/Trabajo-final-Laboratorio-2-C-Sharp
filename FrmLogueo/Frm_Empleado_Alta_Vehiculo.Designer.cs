@@ -217,9 +217,9 @@
             lbl_Patente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_Patente.Location = new Point(62, 85);
             lbl_Patente.Name = "lbl_Patente";
-            lbl_Patente.Size = new Size(55, 17);
+            lbl_Patente.Size = new Size(138, 17);
             lbl_Patente.TabIndex = 47;
-            lbl_Patente.Text = "Patente";
+            lbl_Patente.Text = "Patente, Ej \"111AAA\"";
             // 
             // pictureBox5
             // 

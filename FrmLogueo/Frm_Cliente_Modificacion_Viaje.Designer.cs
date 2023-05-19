@@ -49,6 +49,7 @@
             lbl_NombreCliente = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            lbl_ListaDeViajesPendientes = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nup_Kg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -64,6 +65,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
+            groupBox1.Controls.Add(lbl_ListaDeViajesPendientes);
             groupBox1.Controls.Add(cbo_Provincias);
             groupBox1.Controls.Add(nup_Kg);
             groupBox1.Controls.Add(pictureBox1);
@@ -285,6 +287,16 @@
             label5.TabIndex = 30;
             label5.Text = "TRANSPORTE RODRIGUEZ";
             // 
+            // lbl_ListaDeViajesPendientes
+            // 
+            lbl_ListaDeViajesPendientes.AutoSize = true;
+            lbl_ListaDeViajesPendientes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_ListaDeViajesPendientes.Location = new Point(492, 163);
+            lbl_ListaDeViajesPendientes.Name = "lbl_ListaDeViajesPendientes";
+            lbl_ListaDeViajesPendientes.Size = new Size(191, 17);
+            lbl_ListaDeViajesPendientes.TabIndex = 96;
+            lbl_ListaDeViajesPendientes.Text = "LISTA DE VIAJES PENDIENTES";
+            // 
             // Frm_Cliente_Modificacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,5 +345,6 @@
         private PictureBox pic_Id;
         private NumericUpDown nup_Kg;
         private ComboBox cbo_Provincias;
+        private Label lbl_ListaDeViajesPendientes;
     }
 }

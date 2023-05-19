@@ -78,10 +78,6 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-
-        
-        // retona 0 todo bien || 1 esta mal el formato || 2 ya existe la patente
-
         public override Vehiculo DarDeBaja(int ID)
         {
             Vehiculo vehiculo = BuscarInstanciaId(ID);
@@ -91,45 +87,5 @@ namespace TransporteRodriguez
             }
             return vehiculo;
         }
-        /*  public static void AgregarVehiculos()
-  {
-      listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
-      listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
-      listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
-      listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
-      listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS",true));
-  }*/
-        /*  public static int CalcularIdVehiculo()
-          {
-              int retorno;
-              Vehiculo clienteUltimo = ListaVehiculos[ListaVehiculos.Count - 1];
-              retorno = (clienteUltimo.IdVehiculo) + 1;
-              return retorno;
-          }*/
-
-        /* public override Vehiculo BuscarInstancia(object usuarioUno)
-         {
-             Vehiculo retorno = null;
-             return retorno;
-         }*/
-        /* public static Vehiculo BuscarVehiculo(int idCliente)
-         {
-             Vehiculo vehiculo = null;
-             //int contador = 0;
-             foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
-             {
-                 if (vehiculoAuxiliar.IdVehiculo== idCliente)
-                 {
-
-                     vehiculo = vehiculoAuxiliar;
-                     break;
-                 }
-                 // contador = contador + 1;
-             }
-             //indice = contador;
-             return vehiculo;
-         }*/
-
-
     }
 }

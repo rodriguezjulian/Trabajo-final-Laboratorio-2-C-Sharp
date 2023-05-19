@@ -46,6 +46,7 @@
             panel1 = new Panel();
             txt_Fecha = new TextBox();
             lbl_Fecha = new Label();
+            lbl_ListaDeViajesPendientes = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_IconoPersona).BeginInit();
             pnl_CancelarViaje.SuspendLayout();
             pln_CancelarViaje.SuspendLayout();
@@ -238,12 +239,23 @@
             lbl_Fecha.TabIndex = 94;
             lbl_Fecha.Text = "FECHA";
             // 
+            // lbl_ListaDeViajesPendientes
+            // 
+            lbl_ListaDeViajesPendientes.AutoSize = true;
+            lbl_ListaDeViajesPendientes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_ListaDeViajesPendientes.Location = new Point(3, 136);
+            lbl_ListaDeViajesPendientes.Name = "lbl_ListaDeViajesPendientes";
+            lbl_ListaDeViajesPendientes.Size = new Size(191, 17);
+            lbl_ListaDeViajesPendientes.TabIndex = 95;
+            lbl_ListaDeViajesPendientes.Text = "LISTA DE VIAJES PENDIENTES";
+            // 
             // Frm_Cliente_Cancelacion_Viaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 469);
+            Controls.Add(lbl_ListaDeViajesPendientes);
             Controls.Add(lbl_Fecha);
             Controls.Add(txt_Fecha);
             Controls.Add(panel1);
@@ -293,5 +305,6 @@
         protected Label lbl_Cancelar;
         private TextBox txt_Fecha;
         protected Label lbl_Fecha;
+        private Label lbl_ListaDeViajesPendientes;
     }
 }

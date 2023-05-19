@@ -65,7 +65,7 @@ namespace WF_TransporteRodriguez
             txt_IdDeViajeAModificar.Text = dtg_ListaViajes.CurrentRow.Cells[0].Value.ToString();
             dtp_FechaDeViaje.Text = dtg_ListaViajes.CurrentRow.Cells[1].Value.ToString();
             nup_Kg.Text = dtg_ListaViajes.CurrentRow.Cells[3].Value.ToString();
-            cbo_Provincias.Text= dtg_ListaViajes.CurrentRow.Cells[5].Value.ToString();
+            cbo_Provincias.Text = dtg_ListaViajes.CurrentRow.Cells[5].Value.ToString();
         }
         #region EVENTOS PARA EL MOUSE
         private void pic_EditarViaje_MouseEnter(object sender, EventArgs e)
