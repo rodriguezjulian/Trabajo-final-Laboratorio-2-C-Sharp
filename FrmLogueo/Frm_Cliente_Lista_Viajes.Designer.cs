@@ -30,6 +30,7 @@
         {
             dtg_ListaViajes = new DataGridView();
             grp_ListarViajesCliente = new GroupBox();
+            btn_Cancelados = new Button();
             btn_ViajesTodos = new Button();
             btn_ViajesPendientes = new Button();
             btn_ViajesRealizados = new Button();
@@ -40,7 +41,6 @@
             lbl_NombreCliente = new Label();
             pic_Persona = new PictureBox();
             lbl_TransporteRodriguez = new Label();
-            btn_Cancelados = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Atras).BeginInit();
@@ -79,6 +79,18 @@
             grp_ListarViajesCliente.Size = new Size(738, 469);
             grp_ListarViajesCliente.TabIndex = 1;
             grp_ListarViajesCliente.TabStop = false;
+            // 
+            // btn_Cancelados
+            // 
+            btn_Cancelados.BackColor = Color.Red;
+            btn_Cancelados.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Cancelados.Location = new Point(495, 85);
+            btn_Cancelados.Name = "btn_Cancelados";
+            btn_Cancelados.Size = new Size(93, 23);
+            btn_Cancelados.TabIndex = 111;
+            btn_Cancelados.Text = "CANCELADOS";
+            btn_Cancelados.UseVisualStyleBackColor = false;
+            btn_Cancelados.Click += btn_Cancelados_Click;
             // 
             // btn_ViajesTodos
             // 
@@ -187,18 +199,6 @@
             lbl_TransporteRodriguez.Size = new Size(275, 30);
             lbl_TransporteRodriguez.TabIndex = 30;
             lbl_TransporteRodriguez.Text = "TRANSPORTE RODRIGUEZ";
-            // 
-            // btn_Cancelados
-            // 
-            btn_Cancelados.BackColor = Color.FromArgb(255, 192, 192);
-            btn_Cancelados.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Cancelados.Location = new Point(495, 85);
-            btn_Cancelados.Name = "btn_Cancelados";
-            btn_Cancelados.Size = new Size(93, 23);
-            btn_Cancelados.TabIndex = 111;
-            btn_Cancelados.Text = "CANCELADOS";
-            btn_Cancelados.UseVisualStyleBackColor = false;
-            btn_Cancelados.Click += btn_Cancelados_Click;
             // 
             // Frm_Cliente_Lista_Viajes
             // 
