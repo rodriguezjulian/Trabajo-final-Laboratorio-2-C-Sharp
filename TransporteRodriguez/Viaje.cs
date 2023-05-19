@@ -18,9 +18,10 @@ namespace TransporteRodriguez
         private float _precio;
         private int _idVehiculo;
         private DateTime _fechaViaje;
+        private bool _estado;
 
         public Viaje(int idCliente,int idViaje,  string nombreCliente, 
-            string direccionSalida, string provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje)
+            string direccionSalida, string provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje, bool estado)
         {
             _idViaje = idViaje;
             _idCliente = idCliente;
@@ -31,6 +32,7 @@ namespace TransporteRodriguez
             _precio = precio;
             _idVehiculo = idVehiculo;
             _fechaViaje = fechaViaje;
+            _estado = estado;
         }
         public Viaje(int idVehiculo, DateTime fechaViaje)
         {
@@ -46,6 +48,7 @@ namespace TransporteRodriguez
         public DateTime FechaViaje { get => _fechaViaje; set => _fechaViaje = value; }
         public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
+        public bool Estado { get => _estado; set => _estado = value; }
 
         public static bool operator ==(Viaje uno, Viaje dos)
         {

@@ -40,6 +40,7 @@
             lbl_NombreCliente = new Label();
             pic_Persona = new PictureBox();
             lbl_TransporteRodriguez = new Label();
+            btn_Cancelados = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_ListaViajes).BeginInit();
             grp_ListarViajesCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Atras).BeginInit();
@@ -65,6 +66,7 @@
             // grp_ListarViajesCliente
             // 
             grp_ListarViajesCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grp_ListarViajesCliente.Controls.Add(btn_Cancelados);
             grp_ListarViajesCliente.Controls.Add(btn_ViajesTodos);
             grp_ListarViajesCliente.Controls.Add(btn_ViajesPendientes);
             grp_ListarViajesCliente.Controls.Add(btn_ViajesRealizados);
@@ -82,7 +84,7 @@
             // 
             btn_ViajesTodos.BackColor = Color.FromArgb(192, 255, 255);
             btn_ViajesTodos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_ViajesTodos.Location = new Point(253, 85);
+            btn_ViajesTodos.Location = new Point(198, 85);
             btn_ViajesTodos.Name = "btn_ViajesTodos";
             btn_ViajesTodos.Size = new Size(93, 23);
             btn_ViajesTodos.TabIndex = 110;
@@ -94,7 +96,7 @@
             // 
             btn_ViajesPendientes.BackColor = Color.FromArgb(255, 192, 192);
             btn_ViajesPendientes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_ViajesPendientes.Location = new Point(451, 85);
+            btn_ViajesPendientes.Location = new Point(396, 85);
             btn_ViajesPendientes.Name = "btn_ViajesPendientes";
             btn_ViajesPendientes.Size = new Size(93, 23);
             btn_ViajesPendientes.TabIndex = 109;
@@ -106,7 +108,7 @@
             // 
             btn_ViajesRealizados.BackColor = Color.FromArgb(192, 255, 192);
             btn_ViajesRealizados.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_ViajesRealizados.Location = new Point(352, 85);
+            btn_ViajesRealizados.Location = new Point(297, 85);
             btn_ViajesRealizados.Name = "btn_ViajesRealizados";
             btn_ViajesRealizados.Size = new Size(93, 23);
             btn_ViajesRealizados.TabIndex = 108;
@@ -186,6 +188,18 @@
             lbl_TransporteRodriguez.TabIndex = 30;
             lbl_TransporteRodriguez.Text = "TRANSPORTE RODRIGUEZ";
             // 
+            // btn_Cancelados
+            // 
+            btn_Cancelados.BackColor = Color.FromArgb(255, 192, 192);
+            btn_Cancelados.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Cancelados.Location = new Point(495, 85);
+            btn_Cancelados.Name = "btn_Cancelados";
+            btn_Cancelados.Size = new Size(93, 23);
+            btn_Cancelados.TabIndex = 111;
+            btn_Cancelados.Text = "CANCELADOS";
+            btn_Cancelados.UseVisualStyleBackColor = false;
+            btn_Cancelados.Click += btn_Cancelados_Click;
+            // 
             // Frm_Cliente_Lista_Viajes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,5 +235,6 @@
         private Button btn_ViajesPendientes;
         private Button btn_ViajesRealizados;
         private Button btn_ViajesTodos;
+        private Button btn_Cancelados;
     }
 }

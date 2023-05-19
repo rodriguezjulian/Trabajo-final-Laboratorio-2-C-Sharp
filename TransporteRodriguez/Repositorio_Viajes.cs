@@ -22,13 +22,13 @@ namespace TransporteRodriguez
             if (ListaViajes.Count==0)
             {
                 ListaViajes.Add(new Viaje(2,1, "María García", "Calle 25 de Mayo 5678",
-                "Misiones", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0)));
+                "Misiones", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0),true));
                 ListaViajes.Add(new Viaje(7,2, "Javier Díaz", "Av. Córdoba 6789",
-                "Corrientes", 1800, 10500, 5, new DateTime(2022, 05, 11, 0, 0, 0)));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
+                "Corrientes", 1800, 10500, 5, new DateTime(2022, 05, 11, 0, 0, 0),true));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
                 ListaViajes.Add(new Viaje(6,3, "Laura Fernández", "Av. Santa Fe 2468",
-               "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0)));
+               "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0), true));
                 ListaViajes.Add(new Viaje(7,4, "Javier Díaz", "Av. Córdoba 6789",
-                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0)));
+                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0), true));
             }
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace TransporteRodriguez
             {
                 retorno = true;
                 ListaViajes.Add(new Viaje(idCliente, CalcularId(), nombre, direccionSalida, provinciaDestino, cargaKg,
-                calcularPrecioViaje(provinciaDestino, cargaKg), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha), fecha.Date));
+                calcularPrecioViaje(provinciaDestino, cargaKg), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha), fecha.Date,true));
             }
             return retorno;
         }
@@ -172,7 +172,10 @@ namespace TransporteRodriguez
         public override Viaje DarDeBaja(int ID)
         {
             Viaje viaje = BuscarInstanciaId(ID);
-            ListaViajes.Remove(viaje);
+            if (viaje.Estado == true)
+            {
+                viaje.Estado = false;
+            }
             return viaje;
         }
     }

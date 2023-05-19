@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             //PASAR A REPOSITORIO
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente);
+            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente && viaje.Estado==true);
             OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
@@ -40,7 +40,7 @@ namespace WF_TransporteRodriguez
                 {
 
                     dtg_ListaViajes.Columns.Clear();
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now);
+                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado==true);
                     OrganizarDataGridViajes(viajesCliente);
                     MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
                 }

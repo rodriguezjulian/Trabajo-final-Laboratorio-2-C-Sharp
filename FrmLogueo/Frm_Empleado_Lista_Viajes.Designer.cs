@@ -34,6 +34,7 @@
             lbl_ListarViajes = new Label();
             dtg_ListaViajes = new DataGridView();
             gpb_ListarViajes = new GroupBox();
+            btn_ViajesCancelados = new Button();
             btn_Todos = new Button();
             btn_ViajesRealizados = new Button();
             pnl_Izquierdo.SuspendLayout();
@@ -96,6 +97,7 @@
             // 
             // gpb_ListarViajes
             // 
+            gpb_ListarViajes.Controls.Add(btn_ViajesCancelados);
             gpb_ListarViajes.Controls.Add(btn_Todos);
             gpb_ListarViajes.Controls.Add(btn_ViajesRealizados);
             gpb_ListarViajes.Controls.Add(dtg_ListaViajes);
@@ -108,13 +110,25 @@
             gpb_ListarViajes.TabIndex = 76;
             gpb_ListarViajes.TabStop = false;
             // 
+            // btn_ViajesCancelados
+            // 
+            btn_ViajesCancelados.BackColor = Color.FromArgb(255, 192, 192);
+            btn_ViajesCancelados.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ViajesCancelados.Location = new Point(608, 22);
+            btn_ViajesCancelados.Name = "btn_ViajesCancelados";
+            btn_ViajesCancelados.Size = new Size(111, 36);
+            btn_ViajesCancelados.TabIndex = 78;
+            btn_ViajesCancelados.Text = "CANCELADOS";
+            btn_ViajesCancelados.UseVisualStyleBackColor = false;
+            btn_ViajesCancelados.Click += btn_ViajesCancelados_Click;
+            // 
             // btn_Todos
             // 
             btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
             btn_Todos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Todos.Location = new Point(461, 22);
+            btn_Todos.Location = new Point(424, 22);
             btn_Todos.Name = "btn_Todos";
-            btn_Todos.Size = new Size(102, 36);
+            btn_Todos.Size = new Size(76, 36);
             btn_Todos.TabIndex = 77;
             btn_Todos.Text = "TODOS";
             btn_Todos.UseVisualStyleBackColor = false;
@@ -124,9 +138,9 @@
             // 
             btn_ViajesRealizados.BackColor = Color.FromArgb(192, 255, 192);
             btn_ViajesRealizados.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_ViajesRealizados.Location = new Point(579, 22);
+            btn_ViajesRealizados.Location = new Point(501, 22);
             btn_ViajesRealizados.Name = "btn_ViajesRealizados";
-            btn_ViajesRealizados.Size = new Size(105, 36);
+            btn_ViajesRealizados.Size = new Size(102, 36);
             btn_ViajesRealizados.TabIndex = 76;
             btn_ViajesRealizados.Text = "REALIZADOS";
             btn_ViajesRealizados.UseVisualStyleBackColor = false;
@@ -161,5 +175,6 @@
         private GroupBox gpb_ListarViajes;
         private Button btn_ViajesRealizados;
         private Button btn_Todos;
+        private Button btn_ViajesCancelados;
     }
 }
