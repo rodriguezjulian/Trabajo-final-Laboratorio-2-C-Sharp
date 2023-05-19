@@ -169,6 +169,11 @@ namespace TransporteRodriguez
             
             return retorno;
         }
+        /// <summary>
+        /// Baja logica apoyada en el metodo BuscarInstanciaId
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public override Viaje DarDeBaja(int ID)
         {
             Viaje viaje = BuscarInstanciaId(ID);
