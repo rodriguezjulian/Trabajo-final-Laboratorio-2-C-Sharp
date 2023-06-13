@@ -19,7 +19,7 @@ namespace FrmLogueo
             if ((formulario = factoryConcreta.CrearFormulario(usuario)) != null)
             {
                 Frm_Cliente_Menu.Login = this;
-                Frm_Empleado_Menu.Login = this;
+                
                 Frm_Admin_Menu.Login = this;
                 formulario.Show();
                 this.Hide();

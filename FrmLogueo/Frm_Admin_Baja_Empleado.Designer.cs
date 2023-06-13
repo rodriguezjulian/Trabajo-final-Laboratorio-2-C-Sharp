@@ -100,9 +100,9 @@
             lbl_ClienteBaja.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_ClienteBaja.Location = new Point(89, 89);
             lbl_ClienteBaja.Name = "lbl_ClienteBaja";
-            lbl_ClienteBaja.Size = new Size(346, 25);
+            lbl_ClienteBaja.Size = new Size(373, 25);
             lbl_ClienteBaja.TabIndex = 73;
-            lbl_ClienteBaja.Text = "Cliente seleccionado para dar de baja:";
+            lbl_ClienteBaja.Text = "Empleado seleccionado para dar de baja:";
             // 
             // pic_Persona
             // 
@@ -141,7 +141,6 @@
             txt_BajaID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_BajaID.Location = new Point(408, 145);
             txt_BajaID.Name = "txt_BajaID";
-            txt_BajaID.ReadOnly = true;
             txt_BajaID.Size = new Size(51, 25);
             txt_BajaID.TabIndex = 80;
             txt_BajaID.TextAlign = HorizontalAlignment.Center;

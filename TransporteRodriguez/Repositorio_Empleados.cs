@@ -79,17 +79,75 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        /// <summary>
-        /// Baja logica del cliente apoyada por BuscarInstanciaId
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
+        public bool VerificarPuesto(Empleado empleado)
+        {
+            bool retorno = false;
+            if (empleado.Puesto == Puestos.Sistemas)
+            {
+                retorno = true;
+            }
+            else
+            {
+                throw new Exception("Solo los empleados del sector sistemas pueden acceder a esta opcion");
+            }
+            return retorno;
+        }
         public override Empleado DarDeBaja(int ID)
         {
             Empleado empleado = BuscarInstanciaId(ID);
             if (empleado.Estado == true)
             {
                 empleado.Estado = false;
+            }
+            return empleado;
+        }
+        public Empleado DarDeBaj(string ID, Empleado empleadoLogueado)
+        {
+            Empleado empleado = null;
+            int idEntero;
+            if (empleado != null)
+            { 
+                if (ID != "")
+                {
+                    if (int.TryParse(ID, out idEntero))
+                    {
+                            empleado = BuscarInstanciaId(idEntero);
+                        if (empleado == null)
+                        {
+                            if (empleadoLogueado != empleado)
+                            {
+                                if (empleado.Estado == true)
+                                {
+                                    empleado.Estado = false;
+                                }
+                                else
+                                {
+                                    throw new Exception("El empleado con ese ID se encuentra ya se encontraba dado de baja");
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("No se puede eliminar asi mismo");
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Empleado no encontrado");
+                        }    
+                    }
+                    else
+                    {
+                        throw new Exception("Ingrese un numero");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Ingrese un ID");
+                }
+            }
+            else
+            {
+                throw new Exception("No se encontro un empleado con ese ID");
             }
             return empleado;
         }

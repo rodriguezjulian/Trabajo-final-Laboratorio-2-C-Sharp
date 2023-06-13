@@ -44,7 +44,7 @@ namespace TransporteRodriguez
 
             if (arrobaIndex != -1 && arrobaIndex < mailCompleto.Length - 1)
             {
-                tipoMail = mailCompleto.Substring(arrobaIndex + 1);
+                tipoMail = "@" + mailCompleto.Substring(arrobaIndex + 1);
             }
             return tipoMail;
         }
@@ -60,7 +60,7 @@ namespace TransporteRodriguez
 
             if (arrobaIndex != -1)
             {
-                usuarioMail = mailCompleto.Substring(0, arrobaIndex);
+                usuarioMail =mailCompleto.Substring(0, arrobaIndex);
             }
 
             return usuarioMail;

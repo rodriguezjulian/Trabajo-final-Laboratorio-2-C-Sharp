@@ -84,11 +84,6 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Listar_Clientes.Show();
         }
 
-        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void crearVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Empleado_Alta_Vehiculo frm_Empleado_Alta_Vehiculo = new Frm_Empleado_Alta_Vehiculo();
@@ -123,34 +118,74 @@ namespace WF_TransporteRodriguez
 
         private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_Admin_Alta_Empleado frm_Admin_Alta_Empleado = new Frm_Admin_Alta_Empleado();
-            frm_Admin_Alta_Empleado.MdiParent = this;
-            frm_Admin_Alta_Empleado.Dock = DockStyle.Fill;
-            frm_Admin_Alta_Empleado.Show();
-        }
+            try
+            {
+                Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
+                Frm_Admin_Alta_Empleado frm_Admin_Alta_Empleado = new Frm_Admin_Alta_Empleado();
+                frm_Admin_Alta_Empleado.MdiParent = this;
+                frm_Admin_Alta_Empleado.Dock = DockStyle.Fill;
+                frm_Admin_Alta_Empleado.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+        }
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Admin_Modificacion_Empleado frm_Admin_Modificacion_Empleado = new Frm_Admin_Modificacion_Empleado();
-            frm_Admin_Modificacion_Empleado.MdiParent = this;
-            frm_Admin_Modificacion_Empleado.Dock = DockStyle.Fill;
-            frm_Admin_Modificacion_Empleado.Show();
+            try
+            {
+                Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
+                Frm_Admin_Modificacion_Empleado frm_Admin_Modificacion_Empleado = new Frm_Admin_Modificacion_Empleado();
+                frm_Admin_Modificacion_Empleado.MdiParent = this;
+                frm_Admin_Modificacion_Empleado.Dock = DockStyle.Fill;
+                frm_Admin_Modificacion_Empleado.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
-            frm_Admin_Baja_Empleado.MdiParent = this;
-            frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
-            frm_Admin_Baja_Empleado.Show();
+            try
+            {
+                Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
+                
+                Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
+                frm_Admin_Baja_Empleado.Empleado= empleadoInstanciado;
+                frm_Admin_Baja_Empleado.MdiParent = this;
+                frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
+                frm_Admin_Baja_Empleado.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_Admin_Lista_Empleado frm_Admin_Lista_Empleado = new Frm_Admin_Lista_Empleado();
-            frm_Admin_Lista_Empleado.MdiParent = this;
-            frm_Admin_Lista_Empleado.Dock = DockStyle.Fill;
-            frm_Admin_Lista_Empleado.Show();
+            try
+            {
+                Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
+                Frm_Admin_Lista_Empleado frm_Admin_Lista_Empleado = new Frm_Admin_Lista_Empleado();
+                frm_Admin_Lista_Empleado.MdiParent = this;
+                frm_Admin_Lista_Empleado.Dock = DockStyle.Fill;
+                frm_Admin_Lista_Empleado.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+   
         }
     }
 }

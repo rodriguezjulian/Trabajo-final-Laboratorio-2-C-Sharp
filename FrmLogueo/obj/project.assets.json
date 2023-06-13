@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\WF_TransporteRodriguez.csproj",
+      "projectUniqueName": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\WF_TransporteRodriguez.csproj",
       "projectName": "WF_TransporteRodriguez",
-      "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\WF_TransporteRodriguez.csproj",
+      "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\WF_TransporteRodriguez.csproj",
       "packagesPath": "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\obj\\",
+      "outputPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Julian Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,8 +71,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj": {
-              "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\ppLaboratorio2\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj"
+            "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj": {
+              "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj"
             }
           }
         }

@@ -38,6 +38,7 @@
             crearToolStripMenuItem1 = new ToolStripMenuItem();
             modificarToolStripMenuItem = new ToolStripMenuItem();
             bajaToolStripMenuItem = new ToolStripMenuItem();
+            listarToolStripMenuItem1 = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
             moToolStripMenuItem = new ToolStripMenuItem();
@@ -49,7 +50,6 @@
             listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
-            listarToolStripMenuItem1 = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             mnu_Admin.SuspendLayout();
@@ -124,6 +124,7 @@
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             empleadosToolStripMenuItem.Size = new Size(144, 34);
             empleadosToolStripMenuItem.Text = "Empleados";
+            empleadosToolStripMenuItem.Click += empleadosToolStripMenuItem_Click;
             // 
             // crearToolStripMenuItem1
             // 
@@ -145,6 +146,13 @@
             bajaToolStripMenuItem.Size = new Size(181, 34);
             bajaToolStripMenuItem.Text = "Dar baja";
             bajaToolStripMenuItem.Click += bajaToolStripMenuItem_Click;
+            // 
+            // listarToolStripMenuItem1
+            // 
+            listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            listarToolStripMenuItem1.Size = new Size(181, 34);
+            listarToolStripMenuItem1.Text = "Listar";
+            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
             // 
             // clienteToolStripMenuItem
             // 
@@ -230,13 +238,6 @@
             cerrarSesionToolStripMenuItem.Size = new Size(144, 34);
             cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
-            // 
-            // listarToolStripMenuItem1
-            // 
-            listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            listarToolStripMenuItem1.Size = new Size(181, 34);
-            listarToolStripMenuItem1.Text = "Listar";
-            listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
             // 
             // Frm_Admin_Menu
             // 

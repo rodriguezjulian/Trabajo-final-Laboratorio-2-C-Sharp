@@ -15,6 +15,10 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Admin_Baja_Empleado : Frm_Empleado_Diseño
     {
         List<Empleado> empleadosActivos;
+        Empleado empleado;
+
+        public Empleado Empleado { get => empleado; set => empleado = value; }
+
         public Frm_Admin_Baja_Empleado()
         {
             InitializeComponent();
@@ -69,10 +73,11 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_BajaID.Text))
+            // if (!string.IsNullOrEmpty(txt_BajaID.Text))
+            try
             {
-                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaja(int.Parse(txt_BajaID.Text));
-                
+                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaj(txt_BajaID.Text, Empleado);
+
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();
                 dtg_ListarEmpleados.AutoGenerateColumns = false;
@@ -80,10 +85,11 @@ namespace WF_TransporteRodriguez
                 dtg_ListarEmpleados.DataSource = empleadosActivos;
                 MessageBox.Show("Baja satisfactoria");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR, Seleccione empleado a dar de baja");
+                MessageBox.Show(ex.Message);
             }
+    
         }
     }
 }
