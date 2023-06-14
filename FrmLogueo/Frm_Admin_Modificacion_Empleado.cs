@@ -15,7 +15,7 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Admin_Modificacion_Empleado : Frm_Empleado_Diseño
     {
         // Repositorio_Empleados repositorio_Empleados = new Repositorio_Empleados();
-        private static List<Empleado> listaEmpleadosAuxiliar = new List<Empleado>();
+        //private static List<Empleado> listaEmpleadosAuxiliar = new List<Empleado>();
         public Frm_Admin_Modificacion_Empleado()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Modificacion_Empleado_Load(object sender, EventArgs e)
         {
-            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
             cbo_Puesto.DataSource = Enum.GetValues(typeof(Puestos));
         }
 
@@ -39,25 +39,22 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_ID.Text))
+            try
             {
-                if (Repositorio_Empleados.Repo_Empleados.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text, txt_ModMail.Text,
-                     cbo_Mail.Text, (Puestos)cbo_Puesto.SelectedItem))
+                if (Repositorio_Empleados.Repo_Empleados.ModificarEmpleado(int.Parse(txt_ID.Text), txt_ModNombre.Text, txt_ModMail.Text,
+                        cbo_Mail.Text, (Puestos)cbo_Puesto.SelectedItem))
                 {
                     MessageBox.Show("Datos acuatilizados satisfactoriamente.");
                     dtg_ListarEmpleados.DataSource = null;
                     dtg_ListarEmpleados.Columns.Clear();
-                    ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR, Revise datos ingresados");
+                    ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR, Seleccione empleado a modificar.");
+                MessageBox.Show(ex.Message);
             }
+
         }
 
         private void cbo_Puesto_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,7 +71,7 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
         }
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)
         {
@@ -114,16 +111,16 @@ namespace WF_TransporteRodriguez
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
-            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == true);
+            //listaEmpleadosAuxiliar = Conexion_SQL.Obtener("empleados").FindAll(empleado => empleado.Estado == true);
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(listaEmpleadosAuxiliar);
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true));
         }
 
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
+            // listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(listaEmpleadosAuxiliar);
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == false));
         }
 
         private void cbo_Mail_KeyPress(object sender, KeyPressEventArgs e)

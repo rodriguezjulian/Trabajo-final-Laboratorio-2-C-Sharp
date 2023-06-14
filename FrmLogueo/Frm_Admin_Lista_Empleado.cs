@@ -27,26 +27,27 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Lista_Empleado_Load(object sender, EventArgs e)
         {
-            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+            ConfigurarDTG(listaEmpleadosAuxiliar= Conexion_SQL.ObtenerEmpleado("empleados"));
         }
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
-            ConfigurarDTG(Repositorio_Empleados.ListaEmpleado);
+            dtg_ListarEmpleados.Columns.Clear();
+            ConfigurarDTG(listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleado("empleados"));
         }
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
-            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == true);
             dtg_ListarEmpleados.Columns.Clear();
+            listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true);
+            
             ConfigurarDTG(listaEmpleadosAuxiliar);
         }
 
         private void btn_DeBaja_Click(object sender, EventArgs e)
-        {
-            listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
+        {   
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(listaEmpleadosAuxiliar);
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == false));
         }
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)
         {

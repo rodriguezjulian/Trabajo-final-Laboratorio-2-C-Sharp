@@ -38,9 +38,9 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="uno"></param>
         /// <returns></returns>
-        public virtual object BuscarInstancia(object uno)
+        public virtual T BuscarInstancia<T>(T uno)
         {
-            return null;
+            return default;
         }
 
 

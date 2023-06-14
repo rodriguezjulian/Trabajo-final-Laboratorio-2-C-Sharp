@@ -86,13 +86,13 @@ namespace TransporteRodriguez
         /// <summary>
         /// poblamos todas las listas apoyandonos en el metodo Agregar() incluido en cada repositorio especifico
         /// </summary>
-        public static void PoblarListas()
+        /*public static void PoblarListas()
         {
             Repositorio_Empleados.Repo_Empleados.Agregar();  
             Repositorio_Clientes.Repo_Clientes.Agregar();
             Repositorio_Vehiculos.Repo_Vehiculos.Agregar();
             Repositorio_Viajes.Repo_Viajes.Agregar();
-        }
+        }*/
 
     }
 }

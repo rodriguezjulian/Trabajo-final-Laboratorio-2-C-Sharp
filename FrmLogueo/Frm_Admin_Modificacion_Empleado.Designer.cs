@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Modificacion_Empleado));
             dtg_ListarEmpleados = new DataGridView();
             grp_DatosNuevoCliente = new GroupBox();
+            label2 = new Label();
             pictureBox1 = new PictureBox();
             cbo_Mail = new ComboBox();
             btn_Todos = new Button();
@@ -46,7 +47,6 @@
             pictureBox3 = new PictureBox();
             txt_ModMail = new TextBox();
             pictureBox5 = new PictureBox();
-            label2 = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
@@ -133,6 +133,16 @@
             grp_DatosNuevoCliente.Size = new Size(623, 154);
             grp_DatosNuevoCliente.TabIndex = 72;
             grp_DatosNuevoCliente.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(64, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 17);
+            label2.TabIndex = 81;
+            label2.Text = "Mail, sin \"@\"";
             // 
             // pictureBox1
             // 
@@ -235,7 +245,9 @@
             // 
             cbo_Puesto.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbo_Puesto.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbo_Puesto.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_Puesto.FormattingEnabled = true;
+            cbo_Puesto.Items.AddRange(new object[] { "sss" });
             cbo_Puesto.Location = new Point(365, 40);
             cbo_Puesto.Name = "cbo_Puesto";
             cbo_Puesto.Size = new Size(249, 23);
@@ -291,16 +303,6 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 49;
             pictureBox5.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(64, 71);
-            label2.Name = "label2";
-            label2.Size = new Size(89, 17);
-            label2.TabIndex = 81;
-            label2.Text = "Mail, sin \"@\"";
             // 
             // Frm_Admin_Modificacion_Empleado
             // 

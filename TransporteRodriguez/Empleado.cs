@@ -11,11 +11,12 @@ namespace TransporteRodriguez
     {
         private int _idEmpleado;
         private Puestos _puesto;
+        public Empleado() { }
         public Empleado(string nombre, string contraseña) : base(nombre, contraseña) { }
-        public Empleado(string nombre, string contraseña, string mail, bool estado, int idEmpleado, Puestos puesto) : 
+        public Empleado(string nombre, string contraseña, string mail, bool estado,  Puestos puesto) : 
             base(nombre, contraseña, mail, estado)
         {
-            this.IdEmpleado = idEmpleado;
+           // this.IdEmpleado = idEmpleado;
             this.Puesto = puesto;
         }
         public int IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }

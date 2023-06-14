@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Enumerado\Enumerado.csproj" />
   </ItemGroup>
 

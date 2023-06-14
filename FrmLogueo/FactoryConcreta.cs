@@ -17,11 +17,11 @@ namespace WF_TransporteRodriguez
             Form formulario=null;
             Usuario usuarioAuxiliar=null;
          
-            Sistema.PoblarListas();
+           // Sistema.PoblarListas();
             usuarioAuxiliar = Validaciones.ValidarUsuario(usuario);
             if (usuarioAuxiliar != null && usuarioAuxiliar is Empleado)
             {
-                empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);
+                    empleadoAuxiliar=repositorio_Empleados.BuscarInstancia(usuarioAuxiliar);
               
                     Frm_Admin_Menu menuEmpleado = new Frm_Admin_Menu();//INSTANCIO AL EMPLEADO
                     menuEmpleado.EmpleadoInstanciado = empleadoAuxiliar;

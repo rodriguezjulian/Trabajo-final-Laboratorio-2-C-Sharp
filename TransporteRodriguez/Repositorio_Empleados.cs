@@ -20,12 +20,12 @@ namespace TransporteRodriguez
         public void Agregar()
         {
             if (ListaEmpleado.Count == 0)
-            {
+            {/*
                 ListaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", true, 1, Puestos.Ventas));
                 ListaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", true, 2, Puestos.Sistemas));
                 ListaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", true, 3, Puestos.Administracion));
                 ListaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", true, 4, Puestos.Administracion));
-                ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, Puestos.Cobranzas));
+                ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, Puestos.Cobranzas));*/
             }
         }
         /// <summary>
@@ -35,8 +35,9 @@ namespace TransporteRodriguez
         /// <returns></returns>
         public Empleado BuscarInstanciaId(int idEmpleado)
         {
+            List<Empleado> listaEmpleados = Conexion_SQL.ObtenerEmpleado("empleados");
             Empleado empleado = null;
-            foreach (Empleado empleadoAuxiliar in ListaEmpleado)
+            foreach (Empleado empleadoAuxiliar in listaEmpleados)
             {
                 if (empleadoAuxiliar.IdEmpleado == idEmpleado)
                 {
@@ -63,18 +64,16 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="usuarioUno"></param>
         /// <returns></returns>
-        public Empleado BuscarInstancia(object usuarioUno)
+        public Empleado BuscarInstancia(Usuario usuarioUno)
         {
+            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleado("empleados");
             Empleado retorno = null;
-            if (usuarioUno is Empleado)
+            foreach (Empleado empleado in ListaEmpleados)
             {
-                foreach (Empleado empleado in ListaEmpleado)
+                if (empleado == usuarioUno && empleado.Estado == true)
                 {
-                    if (empleado == usuarioUno)
-                    {
-                        retorno = empleado;
-                        break;
-                    }
+                    retorno = empleado;
+                    break;
                 }
             }
             return retorno;
@@ -82,6 +81,7 @@ namespace TransporteRodriguez
         public bool VerificarPuesto(Empleado empleado)
         {
             bool retorno = false;
+
             if (empleado.Puesto == Puestos.Sistemas)
             {
                 retorno = true;
@@ -137,7 +137,8 @@ namespace TransporteRodriguez
                             }
                             else
                             {
-                                empleado.Estado = false;
+                                // empleado.Estado = false;
+                                Conexion_SQL.DarDeBaja(idEntero, "empleados", empleado);
                             }
                         }
                     }
@@ -147,26 +148,27 @@ namespace TransporteRodriguez
             return empleado;
 
         }
-        /// <summary>
-        /// Se crea una nueva instancia apoyandonos con distintas funciones como son  VerificarNombre,CrearMail,generarContraseña,CalcularId para
-        /// evitar errores de cualquier tipo
-        /// </summary>
-        /// <param name="nombre"></param>Ingresado por el usuario, no podra contener numero (VerificarNombre)
-        /// <param name="mail"></param>Ingresado por el usuario, no podra contener @ (CrearMail)
-        /// <param name="tipoMail"></param>Elegido desde un combo Box para evitar errores
-        /// <param name="puesto"></param>Elegido desde un combo Box 
-        /// <returns></returns>
+
+
         public bool CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
         {
             string mailFinal;
             bool retorno = false;
-          
-            if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
-            {
-                ListaEmpleado.Add(new Empleado(nombre, Sistema.generarContraseña(), mailFinal, true, CalcularId(), puesto));
 
-                retorno = true;
+            if (VerificarPuesto(puesto))
+            {
+                if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                {
+                    Empleado empleado = new Empleado(nombre, Sistema.generarContraseña(), mailFinal, true, puesto);
+                    Conexion_SQL.Insertar(empleado, "empleados");
+                    retorno = true;
+                }
             }
+            else
+            {
+                throw new Exception("ERROR, Ingrese puesto valido.");
+            }
+
             return retorno;
         }
         /// <summary>
@@ -179,19 +181,46 @@ namespace TransporteRodriguez
         /// <param name="tipoMail"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
         /// <param name="puesto"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
         /// <returns></returns>
-        public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, Puestos puesto)
+        /// 
+        public bool VerificarPuesto(Puestos puesto)
         {
-            string mailFinal;
-            bool retorno = false;
-            if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+            bool retorno = false;   
+            string puestoAux = puesto.ToString();
+            List<String> puestos = Conexion_SQL.ObtenerPuestos("puestos");
+            foreach (string p in puestos)
             {
-                retorno=true;
-                Empleado empleado = Repositorio_Empleados.Repo_Empleados.BuscarInstanciaId(id);
-                empleado.Nombre = nombre;
-                empleado.Puesto = puesto;
-                empleado.Mail = mailFinal;
+                if (puestoAux == p)
+                {
+                    retorno = true;
+                }
             }
             return retorno;
         }
+        public bool ModificarEmpleado(int id,string nombre, string mail, string tipoMail, Puestos puesto)
+         {
+             string mailFinal;
+             bool retorno = false;
+
+            if (VerificarPuesto(puesto))
+            {
+                if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                {
+                    retorno = true;
+                    Empleado empleado = BuscarInstanciaId(id);
+                    empleado.Nombre = nombre;
+                    empleado.Puesto = puesto;
+                    empleado.Mail = mailFinal;
+                    Conexion_SQL.Modificar(empleado, "empleados");
+                }
+            }
+            else
+            {
+                throw new Exception("ERROR, Ingrese puesto valido.");
+            }
+            
+
+             return retorno;
+         }
+     
     }
 }

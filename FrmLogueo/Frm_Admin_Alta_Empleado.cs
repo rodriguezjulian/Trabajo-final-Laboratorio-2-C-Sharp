@@ -30,6 +30,7 @@ namespace WF_TransporteRodriguez
             try
             {
                 Repositorio_Empleados.Repo_Empleados.CrearEmpleado(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), (Puestos)cbo_Puesto.SelectedItem);
+                MessageBox.Show("Empleado creado satisfactoriamente.");
             }
             catch (Exception ex)
             {

@@ -21,10 +21,10 @@ namespace TransporteRodriguez
             {
                 foreach (char caracter in nombre)
                 {
-                    if (char.IsDigit(caracter))
+                    if (!char.IsLetter(caracter))
                     {
                         retorno = false;
-                        throw new Exception("ERROR, Ingrese un nombre valido (sin números).");
+                        throw new Exception("ERROR, Ingrese un nombre valido (sin números ni simbolos).");
                     }
                 }
             }
@@ -62,8 +62,8 @@ namespace TransporteRodriguez
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario retorno = null;
-
-            foreach (Empleado empleado in Repositorio_Empleados.ListaEmpleado)
+            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleado( "empleados");
+            foreach (Empleado empleado in ListaEmpleados)
             {
                 if (empleado == usuarioUno && empleado.Estado == true)
                 {
