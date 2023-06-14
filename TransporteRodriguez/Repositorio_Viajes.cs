@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Viajes : Repositorio_Padre
+    public class Repositorio_Viajes : Interfaz_Padre <Viaje>
     {
         private static List<Viaje> listaViajes = new List<Viaje>();
         private readonly static Repositorio_Viajes repo_Viajes = new Repositorio_Viajes();
@@ -17,7 +17,7 @@ namespace TransporteRodriguez
         /// <summary>
         /// Hardcodeo de Viajes
         /// </summary>
-        public override void Agregar()
+        public  void Agregar()
         {
             if (ListaViajes.Count==0)
             {
@@ -77,7 +77,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="idViaje"></param>
         /// <returns></returns>
-        public override Viaje BuscarInstanciaId( int idViaje)
+        public  Viaje BuscarInstanciaId( int idViaje)
         {
             Viaje viajeEncontrado = null;
 
@@ -97,7 +97,7 @@ namespace TransporteRodriguez
         /// Calcular el id de un viaje segun el ultimo existente
         /// </summary>
         /// <returns></returns>
-        public override int CalcularId()
+        public  int CalcularId()
         {
             int retorno;
             Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
@@ -174,7 +174,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public override Viaje DarDeBaja(int ID)
+        public  Viaje DarDeBaja(int ID)
         {
             Viaje viaje = BuscarInstanciaId(ID);
             if (viaje.Estado == true)

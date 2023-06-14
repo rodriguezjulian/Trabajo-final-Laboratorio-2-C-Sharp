@@ -137,7 +137,7 @@
             // 
             // txt_BajaID
             // 
-            txt_BajaID.BackColor = Color.FromArgb(224, 224, 224);
+            txt_BajaID.BackColor = Color.FromArgb(255, 255, 192);
             txt_BajaID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_BajaID.Location = new Point(408, 145);
             txt_BajaID.Name = "txt_BajaID";

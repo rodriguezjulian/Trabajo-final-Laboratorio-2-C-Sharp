@@ -27,13 +27,13 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (Repositorio_Empleados.Repo_Empleados.CrearEmpleado(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), (Puestos)cbo_Puesto.SelectedItem))
+            try
             {
-                MessageBox.Show("Empleado dado de alta satisfactoriamente\n");
+                Repositorio_Empleados.Repo_Empleados.CrearEmpleado(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), (Puestos)cbo_Puesto.SelectedItem);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR, Verifique los datos ingresados\n");
+                MessageBox.Show(ex.Message);
             }
         }
 

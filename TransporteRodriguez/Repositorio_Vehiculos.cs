@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Vehiculos : Repositorio_Padre
+    public class Repositorio_Vehiculos : Interfaz_Padre <Vehiculo>
     {
         private static List<Vehiculo> listaVehiculos = new List<Vehiculo>();
         private readonly static Repositorio_Vehiculos repo_Vehiculos = new Repositorio_Vehiculos();
@@ -17,7 +17,7 @@ namespace TransporteRodriguez
         /// <summary>
         /// Hardcodeo de vehiculos
         /// </summary>
-        public override void Agregar()
+        public  void Agregar()
         {
             if(ListaVehiculos.Count==0) 
             {
@@ -32,7 +32,7 @@ namespace TransporteRodriguez
         /// Calcular el id de un nuevo vehiculo segun el ultimo 
         /// </summary>
         /// <returns></returns>
-        public override int CalcularId()
+        public  int CalcularId()
         {
             int retorno;
             Vehiculo ultimo = ListaVehiculos[ListaVehiculos.Count - 1];
@@ -46,7 +46,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="idCliente"></param>
         /// <returns></returns>
-        public override Vehiculo BuscarInstanciaId(int idCliente)
+        public  Vehiculo BuscarInstanciaId(int idCliente)
         {
             Vehiculo vehiculo = null;
             //int contador = 0;
@@ -99,7 +99,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public override Vehiculo DarDeBaja(int ID)
+        public  Vehiculo DarDeBaja(int ID)
         {
             Vehiculo vehiculo = BuscarInstanciaId(ID);
             if (vehiculo.Estado == true)

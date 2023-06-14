@@ -73,7 +73,6 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            // if (!string.IsNullOrEmpty(txt_BajaID.Text))
             try
             {
                 Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaj(txt_BajaID.Text, Empleado);
@@ -89,7 +88,7 @@ namespace WF_TransporteRodriguez
             {
                 MessageBox.Show(ex.Message);
             }
-    
+
         }
     }
 }

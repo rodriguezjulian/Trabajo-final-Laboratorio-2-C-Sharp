@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Empleados : Repositorio_Padre
+    public class Repositorio_Empleados : Interfaz_Padre<Empleado>
     {
         private static List<Empleado> listaEmpleado = new List<Empleado>();
         private readonly static Repositorio_Empleados repo_Empleados = new Repositorio_Empleados();
@@ -17,7 +17,7 @@ namespace TransporteRodriguez
         /// <summary>
         /// Hardcodeo de Empleados
         /// </summary>
-        public override void Agregar()
+        public void Agregar()
         {
             if (ListaEmpleado.Count == 0)
             {
@@ -33,7 +33,7 @@ namespace TransporteRodriguez
         /// </summary>Se obtiene la direccion de memoria de la instancia a travez de su id
         /// <param name="idEmpleado"></param>
         /// <returns></returns>
-        public override Empleado BuscarInstanciaId(int idEmpleado)
+        public Empleado BuscarInstanciaId(int idEmpleado)
         {
             Empleado empleado = null;
             foreach (Empleado empleadoAuxiliar in ListaEmpleado)
@@ -51,7 +51,7 @@ namespace TransporteRodriguez
         /// Calcular el id de un nuevo cliente  segun el ultimo 
         /// </summary>
         /// <returns></returns>
-        public override int CalcularId()
+        public int CalcularId()
         {
             int retorno;
             Empleado ultimo = ListaEmpleado[ListaEmpleado.Count - 1];
@@ -63,7 +63,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="usuarioUno"></param>
         /// <returns></returns>
-        public override Empleado BuscarInstancia(object usuarioUno)
+        public Empleado BuscarInstancia(object usuarioUno)
         {
             Empleado retorno = null;
             if (usuarioUno is Empleado)
@@ -92,7 +92,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public override Empleado DarDeBaja(int ID)
+        public Empleado DarDeBaja(int ID)
         {
             Empleado empleado = BuscarInstanciaId(ID);
             if (empleado.Estado == true)
@@ -105,51 +105,47 @@ namespace TransporteRodriguez
         {
             Empleado empleado = null;
             int idEntero;
-            if (empleado != null)
-            { 
-                if (ID != "")
-                {
-                    if (int.TryParse(ID, out idEntero))
-                    {
-                            empleado = BuscarInstanciaId(idEntero);
-                        if (empleado == null)
-                        {
-                            if (empleadoLogueado != empleado)
-                            {
-                                if (empleado.Estado == true)
-                                {
-                                    empleado.Estado = false;
-                                }
-                                else
-                                {
-                                    throw new Exception("El empleado con ese ID se encuentra ya se encontraba dado de baja");
-                                }
-                            }
-                            else
-                            {
-                                throw new Exception("No se puede eliminar asi mismo");
-                            }
-                        }
-                        else
-                        {
-                            throw new Exception("Empleado no encontrado");
-                        }    
-                    }
-                    else
-                    {
-                        throw new Exception("Ingrese un numero");
-                    }
-                }
-                else
-                {
-                    throw new Exception("Ingrese un ID");
-                }
+            if (ID == "")
+            {
+                throw new Exception("ERROR, Ingrese un ID o elija una fila haciendole click");
             }
             else
             {
-                throw new Exception("No se encontro un empleado con ese ID");
+                if (int.TryParse(ID, out idEntero) == false)
+                {
+                    throw new Exception("ERROR, Ingrese un numero");
+                }
+                else
+                {
+                    empleado = BuscarInstanciaId(idEntero);
+                    if (empleado is null)
+                    {
+                        throw new Exception("Empleado no encontrado");
+                    }
+                    else
+                    {
+                        if (empleadoLogueado == empleado)
+                        {
+                            throw new Exception("ERROR, No se puede eliminar asi mismo");
+
+                        }
+                        else
+                        {
+                            if (empleado.Estado == false)
+                            {
+                                throw new Exception("El empleado con ese ID ya se encontraba dado de baja");
+                            }
+                            else
+                            {
+                                empleado.Estado = false;
+                            }
+                        }
+                    }
+
+                }
             }
             return empleado;
+
         }
         /// <summary>
         /// Se crea una nueva instancia apoyandonos con distintas funciones como son  VerificarNombre,CrearMail,generarContraseña,CalcularId para
@@ -164,6 +160,7 @@ namespace TransporteRodriguez
         {
             string mailFinal;
             bool retorno = false;
+          
             if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
             {
                 ListaEmpleado.Add(new Empleado(nombre, Sistema.generarContraseña(), mailFinal, true, CalcularId(), puesto));

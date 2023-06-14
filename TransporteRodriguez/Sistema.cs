@@ -30,6 +30,10 @@ namespace TransporteRodriguez
                     retorno = true;
                 }
             }
+            else
+            {
+                throw new Exception("ERROR, Debe ingresar su mail.");
+            }
             return retorno;
         }
         /// <summary>
@@ -75,7 +79,7 @@ namespace TransporteRodriguez
             string numeros = "";
             for (int i = 0; i < 5; i++)
             {
-                numeros += random.Next(0, 100).ToString() + " ";
+                numeros += random.Next(0, 100).ToString();
             }
             return numeros;
         }

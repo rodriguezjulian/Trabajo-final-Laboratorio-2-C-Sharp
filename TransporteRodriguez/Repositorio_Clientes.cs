@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Clientes : Repositorio_Padre
+    public class Repositorio_Clientes : Interfaz_Padre <Cliente>
     {
         private static List<Cliente> listaClientes = new List<Cliente>();
         private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();
@@ -17,7 +17,7 @@ namespace TransporteRodriguez
       /// <summary>
       /// Hardcodeo de Clientes
       /// </summary>
-        public override void Agregar()
+        public  void Agregar()
         {
             if (ListaClientes.Count == 0)
             {
@@ -41,7 +41,7 @@ namespace TransporteRodriguez
         /// Calcular el id de un nuevo cliente  segun el ultimo 
         /// </summary>
         /// <returns></returns>
-        public override int CalcularId()
+        public  int CalcularId()
         {
             int retorno;
             Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
@@ -53,7 +53,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="idCliente"></param>
         /// <returns></returns>
-        public override Cliente BuscarInstanciaId(int idCliente)
+        public  Cliente BuscarInstanciaId(int idCliente)
         {
             Cliente cliente = null;
             foreach (Cliente clienteAuxliar in ListaClientes)
@@ -72,7 +72,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="usuarioUno"></param>
         /// <returns></returns>
-        public override Cliente BuscarInstancia(object usuarioUno)
+        public  Cliente BuscarInstancia(object usuarioUno)
         {
             Cliente retorno = null;
             if (usuarioUno is Cliente)
@@ -145,7 +145,7 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public override Cliente DarDeBaja(int ID)
+        public  Cliente DarDeBaja(int ID)
         {
             Cliente cliente =BuscarInstanciaId(ID);
             if (cliente.Estado == true)

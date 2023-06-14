@@ -16,6 +16,7 @@ namespace TransporteRodriguez
         public static bool VerificarNombre(string nombre)
         {
             bool retorno = true;
+
             if (!string.IsNullOrEmpty(nombre))
             {
                 foreach (char caracter in nombre)
@@ -23,12 +24,13 @@ namespace TransporteRodriguez
                     if (char.IsDigit(caracter))
                     {
                         retorno = false;
+                        throw new Exception("ERROR, Ingrese un nombre valido (sin números).");
                     }
                 }
             }
             else
             {
-                retorno = false;
+                throw new Exception("ERROR, Ingrese un nombre.");
             }
             return retorno;
         }
@@ -44,7 +46,10 @@ namespace TransporteRodriguez
             {
                 if (caracter == '@')
                 {
-                    return false;
+
+                    retorno= false;
+
+                    throw new Exception("No debes incluir @ en el cuerpo de tu mail.\n El mismo se agrega automaticamente.");
                 }
             }
             return retorno;
