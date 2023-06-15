@@ -8,6 +8,28 @@ namespace TransporteRodriguez
 {
     public static class Validaciones
     {
+        public static bool VerificarIdIngresado(string ID, out int IDINT)
+        {
+            bool retorno=false;
+            int idEntero;
+            if (ID == "")
+            {
+                throw new Exception("ERROR, Ingrese un ID o elija una fila haciendole click");
+            }
+            else
+            {
+                if (int.TryParse(ID, out idEntero) == false)
+                {
+                    throw new Exception("ERROR, Ingrese un numero como ID");
+                }
+                else
+                {
+                    IDINT = idEntero;
+                    retorno = true;
+                }
+            }
+                return retorno;
+        }
         /// <summary>
         /// Verificamos que string no se incluya un numero ni este vacio ("") o null
         /// </summary>
@@ -34,22 +56,39 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        /// <summary>
-        /// Verificamos que en el cuerpo del mail antes del @ no se incluya un @
-        /// </summary>
-        /// <param name="mail"></param>
-        /// <returns></returns>
-        public static bool VerificarMail(string mail)
+        public static bool VerificarMail(string despuesDelArroba)
+        {
+            bool retorno = false;
+            foreach (char caracter in despuesDelArroba)
+            {
+                if (caracter == 64)
+                { 
+                    retorno = true;
+                }
+            }
+            if (retorno == false)
+            {
+                throw new Exception("ERROR, Recuerde incluir el @mail \n Por ejemplo @gmail.com");
+            }
+            return retorno;
+        }
+        public static bool VerificarCuerpoMail(string mail)
         {
             bool retorno = true;
-            foreach (char caracter in mail)
+            if (string.IsNullOrEmpty(mail))
             {
-                if (caracter == '@')
+                retorno = false;
+                throw new Exception("ERROR, Ingrese cuerpo del mail.");
+            }
+            else
+            {
+                foreach (char caracter in mail)
                 {
-
-                    retorno= false;
-
-                    throw new Exception("No debes incluir @ en el cuerpo de tu mail.\n El mismo se agrega automaticamente.");
+                    if (caracter == '@')
+                    {
+                        retorno = false;
+                        throw new Exception("No debes incluir @ en el cuerpo de tu mail.\n El mismo se agrega automaticamente.");
+                    }
                 }
             }
             return retorno;

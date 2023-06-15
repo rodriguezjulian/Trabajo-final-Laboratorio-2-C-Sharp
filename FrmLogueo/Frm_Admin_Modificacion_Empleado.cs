@@ -41,7 +41,7 @@ namespace WF_TransporteRodriguez
         {
             try
             {
-                if (Repositorio_Empleados.Repo_Empleados.ModificarEmpleado(int.Parse(txt_ID.Text), txt_ModNombre.Text, txt_ModMail.Text,
+                if (Repositorio_Empleados.Repo_Empleados.ModificarEmpleado(txt_ID.Text, txt_ModNombre.Text, txt_ModMail.Text,
                         cbo_Mail.Text, (Puestos)cbo_Puesto.SelectedItem))
                 {
                     MessageBox.Show("Datos acuatilizados satisfactoriamente.");

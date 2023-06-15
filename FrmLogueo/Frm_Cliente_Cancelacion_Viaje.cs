@@ -37,7 +37,7 @@ namespace WF_TransporteRodriguez
             {
                 if (DateTime.Parse(txt_Fecha.Text) > DateTime.Today)
                 {
-                    Repositorio_Viajes.Repo_Viajes.DarDeBaja(int.Parse(txt_IdDeViajeACancelar.Text));
+                    Repositorio_Viajes.Repo_Viajes.DarDeBaja(txt_IdDeViajeACancelar.Text);
                     dtg_ListaViajes.Columns.Clear();
                     viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
                     OrganizarDataGridViajes(viajesCliente);

@@ -92,7 +92,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public Empleado DarDeBaja(int id) 
+        public Empleado DarDeBaja(string id) 
         {
             return null;
         }
@@ -100,51 +100,35 @@ namespace TransporteRodriguez
         {
             Empleado empleado = null;
             int idEntero;
-            if (ID == "")
+            if (Validaciones.VerificarIdIngresado(ID, out idEntero))
             {
-                throw new Exception("ERROR, Ingrese un ID o elija una fila haciendole click");
-            }
-            else
-            {
-                if (int.TryParse(ID, out idEntero) == false)
+                empleado = BuscarInstanciaId(idEntero);
+                if (empleado is null)
                 {
-                    throw new Exception("ERROR, Ingrese un numero");
+                    throw new Exception("Empleado no encontrado");
                 }
                 else
                 {
-                    empleado = BuscarInstanciaId(idEntero);
-                    if (empleado is null)
+                    if (empleadoLogueado == empleado)
                     {
-                        throw new Exception("Empleado no encontrado");
+                        throw new Exception("ERROR, No se puede eliminar asi mismo");
+
                     }
                     else
                     {
-                        if (empleadoLogueado == empleado)
+                        if (empleado.Estado == false)
                         {
-                            throw new Exception("ERROR, No se puede eliminar asi mismo");
-
+                            throw new Exception("El empleado con ese ID ya se encontraba dado de baja");
                         }
                         else
                         {
-                            if (empleado.Estado == false)
-                            {
-                                throw new Exception("El empleado con ese ID ya se encontraba dado de baja");
-                            }
-                            else
-                            {
-                                // empleado.Estado = false;
-                                Conexion_SQL.DarDeBaja(idEntero, "empleados", empleado);
-                            }
+                            Conexion_SQL.DarDeBaja(idEntero, "empleados", empleado);
                         }
                     }
-
                 }
             }
             return empleado;
-
         }
-
-
         public bool CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
         {
             string mailFinal;
@@ -181,6 +165,7 @@ namespace TransporteRodriguez
         {
             bool retorno = false;   
             string puestoAux = puesto.ToString();
+            
             List<String> puestos = Conexion_SQL.ObtenerPuestos("puestos");
             foreach (string p in puestos)
             {
@@ -191,29 +176,40 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public bool ModificarEmpleado(int id,string nombre, string mail, string tipoMail, Puestos puesto)
+        public bool ModificarEmpleado(string id,string nombre, string mail, string tipoMail, Puestos puesto)
          {
              string mailFinal;
              bool retorno = false;
+             int idEntero;
+            Empleado empleado = null;
 
-            if (VerificarPuesto(puesto))
+            if (Validaciones.VerificarIdIngresado(id, out idEntero))
             {
-                if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                empleado = BuscarInstanciaId(idEntero);
+                if (empleado is null)
                 {
-                    retorno = true;
-                    Empleado empleado = BuscarInstanciaId(id);
-                    empleado.Nombre = nombre;
-                    empleado.Puesto = puesto;
-                    empleado.Mail = mailFinal;
-                    Conexion_SQL.Modificar(empleado, "empleados");
+                    throw new Exception("Empleado no encontrado");
+                }
+                else
+                {
+                    if (VerificarPuesto(puesto))
+                    {
+                        if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                        {
+                            retorno = true;
+                            empleado.Nombre = nombre;
+                            empleado.Puesto = puesto;
+                            empleado.Mail = mailFinal;
+                            Conexion_SQL.Modificar(empleado, "empleados");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("ERROR, Ingrese puesto valido.");
+                    }
                 }
             }
-            else
-            {
-                throw new Exception("ERROR, Ingrese puesto valido.");
-            }
-            
-
+          
              return retorno;
          }
      

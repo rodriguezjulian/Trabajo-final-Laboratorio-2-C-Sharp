@@ -147,17 +147,15 @@ namespace TransporteRodriguez
             string mailFinal;
             clienteOut = null;
             int idEntero;
-            if (ID == "")
+            Cliente cliente = null;
+            if (Validaciones.VerificarIdIngresado(ID,out idEntero)) 
             {
-                throw new Exception("ERROR, Ingrese un ID o elija una fila haciendole click");
-            }
-            else
-            {
-                if (int.TryParse(ID, out idEntero) == false)
+                cliente = BuscarInstanciaId(idEntero);
+                if (cliente is null)
                 {
-                    throw new Exception("ERROR, Ingrese un numero");
+                    throw new Exception("Cliente no encontrado");
                 }
-                else
+                else 
                 {
                     if (direccion == "")
                     {
@@ -173,7 +171,6 @@ namespace TransporteRodriguez
                         {
                             if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
                             {
-                                Cliente cliente = BuscarInstanciaId(idEntero);
                                 cliente.Nombre = nombre;
                                 cliente.Rubro = rubro;
                                 cliente.Mail = mailFinal;
@@ -185,7 +182,7 @@ namespace TransporteRodriguez
                         }
                     }
                 }
-            }
+            }     
             return retorno;
         }
         /// <summary>
@@ -193,12 +190,29 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  Cliente DarDeBaja(int ID)
+        public  Cliente DarDeBaja(string ID)
         {
-            Cliente cliente =BuscarInstanciaId(ID);
-            if (cliente.Estado == true)
+            int idEntero;
+            Cliente cliente = null;
+
+            if (Validaciones.VerificarIdIngresado(ID, out idEntero))
             {
-                cliente.Estado = false;
+                cliente = BuscarInstanciaId(idEntero);
+                if (cliente is null)
+                {
+                    throw new Exception("Cliente no encontrado");
+                }
+                else
+                {
+                    if (cliente.Estado == false)
+                    {
+                        throw new Exception("El empleado con ese ID ya se encontraba dado de baja");
+                    }
+                    else
+                    {
+                        Conexion_SQL.DarDeBaja(idEntero, "clientes", cliente);
+                    }
+                }
             }
             return cliente;
         }

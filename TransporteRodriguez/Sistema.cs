@@ -22,18 +22,13 @@ namespace TransporteRodriguez
         {
             bool retorno = false;
             mailFinal = "";
-            if (mail != "")
-            {
-                if (Validaciones.VerificarMail(mail))
-                {
-                    mailFinal = mail + opcionCbo;
-                    retorno = true;
-                }
+
+            if (Validaciones.VerificarCuerpoMail(mail) && Validaciones.VerificarMail(opcionCbo))
+            {  
+                mailFinal = mail + opcionCbo;
+                retorno = true;
             }
-            else
-            {
-                throw new Exception("ERROR, Debe ingresar su mail.");
-            }
+            
             return retorno;
         }
         /// <summary>

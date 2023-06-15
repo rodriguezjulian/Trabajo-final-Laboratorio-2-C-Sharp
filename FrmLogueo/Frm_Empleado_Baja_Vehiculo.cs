@@ -30,7 +30,7 @@ namespace WF_TransporteRodriguez
             if (!string.IsNullOrEmpty(txt_BajaID.Text))
             {
 
-                Vehiculo vehiculo = Repositorio_Vehiculos.Repo_Vehiculos.DarDeBaja(int.Parse(txt_BajaID.Text));
+                Vehiculo vehiculo = Repositorio_Vehiculos.Repo_Vehiculos.DarDeBaja(txt_BajaID.Text);
             
                 dtg_Listar.Columns.Clear();
                 vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);

@@ -174,14 +174,14 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  Viaje DarDeBaja(int ID)
+        public  Viaje DarDeBaja(string ID)
         {
-            Viaje viaje = BuscarInstanciaId(ID);
+            /*Viaje viaje = BuscarInstanciaId(ID);
             if (viaje.Estado == true)
             {
                 viaje.Estado = false;
-            }
-            return viaje;
+            }*/
+            return null;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Baja_Cliente_Load(object sender, EventArgs e)
         {
-            clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+            clientesActivos = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
             OrganizarDtg(clientesActivos);
         }
 
@@ -40,23 +40,21 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            // Repositorio_Clientes repositorio_Clientes = new Repositorio_Clientes();
-            if (!string.IsNullOrEmpty(txt_BajaID.Text))
+            try
             {
-                Cliente cliente = Repositorio_Clientes.Repo_Clientes.DarDeBaja(int.Parse(txt_BajaID.Text));
+                Cliente cliente = Repositorio_Clientes.Repo_Clientes.DarDeBaja(txt_BajaID.Text);
                 MessageBox.Show("BAJA CONFIRMADA\n" + cliente.ToString());
 
                 dtg_ListarClientes.DataSource = null;
                 dtg_ListarClientes.AutoGenerateColumns = false;
                 dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
                 dtg_ListarClientes.Columns.Clear();
-                clientesActivos = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+                clientesActivos = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
                 OrganizarDtg(clientesActivos);
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR, Seleccione cliente a dar de baja");
+                MessageBox.Show(ex.Message);
             }
         }
         private void OrganizarDtg(List<Cliente> clientesActivos)

@@ -99,14 +99,14 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  Vehiculo DarDeBaja(int ID)
+        public  Vehiculo DarDeBaja(string ID)
         {
-            Vehiculo vehiculo = BuscarInstanciaId(ID);
+            /*Vehiculo vehiculo = BuscarInstanciaId(ID);
             if (vehiculo.Estado == true)
             {
                 vehiculo.Estado = false;
-            }
-            return vehiculo;
+            }*/
+            return null;
         }
     }
 }

@@ -212,11 +212,10 @@
             // 
             // txt_ID
             // 
-            txt_ID.BackColor = Color.FromArgb(224, 224, 224);
+            txt_ID.BackColor = Color.White;
             txt_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ID.Location = new Point(258, 38);
             txt_ID.Name = "txt_ID";
-            txt_ID.ReadOnly = true;
             txt_ID.Size = new Size(51, 25);
             txt_ID.TabIndex = 55;
             txt_ID.TextAlign = HorizontalAlignment.Center;

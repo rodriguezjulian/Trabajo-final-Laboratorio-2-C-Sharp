@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado_Modificacion_Cliente));
             grp_DatosNuevoCliente = new GroupBox();
+            label2 = new Label();
             pictureBox1 = new PictureBox();
             cbo_Mail = new ComboBox();
             label4 = new Label();
@@ -46,7 +47,6 @@
             txt_ModMail = new TextBox();
             pictureBox5 = new PictureBox();
             dtg_ListarClientes = new DataGridView();
-            label2 = new Label();
             pnl_PanelSup.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Guardar).BeginInit();
@@ -114,6 +114,16 @@
             grp_DatosNuevoCliente.TabIndex = 71;
             grp_DatosNuevoCliente.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(64, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 17);
+            label2.TabIndex = 59;
+            label2.Text = "Mail, sin \"@\"";
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -146,11 +156,10 @@
             // 
             // txt_ID
             // 
-            txt_ID.BackColor = Color.FromArgb(224, 224, 224);
+            txt_ID.BackColor = Color.White;
             txt_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ID.Location = new Point(258, 38);
             txt_ID.Name = "txt_ID";
-            txt_ID.ReadOnly = true;
             txt_ID.Size = new Size(51, 25);
             txt_ID.TabIndex = 55;
             txt_ID.TextAlign = HorizontalAlignment.Center;
@@ -277,16 +286,6 @@
             dtg_ListarClientes.Size = new Size(623, 246);
             dtg_ListarClientes.TabIndex = 55;
             dtg_ListarClientes.CellClick += dtg_ListarClientes_CellClick;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(64, 71);
-            label2.Name = "label2";
-            label2.Size = new Size(89, 17);
-            label2.TabIndex = 59;
-            label2.Text = "Mail, sin \"@\"";
             // 
             // Frm_Empleado_Modificacion_Cliente
             // 
