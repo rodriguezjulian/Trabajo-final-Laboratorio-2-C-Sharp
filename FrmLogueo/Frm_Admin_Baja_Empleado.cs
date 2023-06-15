@@ -32,7 +32,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Baja_Empleado_Load(object sender, EventArgs e)
         {
-            empleadosActivos = Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true);
+            empleadosActivos = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true);
             #region DATA GRID 
             dtg_ListarEmpleados.AutoGenerateColumns = false;
             dtg_ListarEmpleados.DataSource = empleadosActivos;
@@ -80,7 +80,7 @@ namespace WF_TransporteRodriguez
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();
                 dtg_ListarEmpleados.AutoGenerateColumns = false;
-                empleadosActivos = Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true);
+                empleadosActivos = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true);
                 dtg_ListarEmpleados.DataSource = empleadosActivos;
                 MessageBox.Show("Baja satisfactoria");
             }

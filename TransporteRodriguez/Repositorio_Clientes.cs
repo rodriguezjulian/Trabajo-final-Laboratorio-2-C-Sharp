@@ -12,7 +12,12 @@ namespace TransporteRodriguez
         private static List<Cliente> listaClientes = new List<Cliente>();
         private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
+        /*
+                 private readonly static Repositorio_Empleados repo_Empleados = new Repositorio_Empleados();
+        public static List<Empleado> ListaEmpleado { get => listaEmpleado; set => listaEmpleado = value; }
 
+        public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
+         */
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
       /// <summary>
       /// Hardcodeo de Clientes
@@ -21,7 +26,7 @@ namespace TransporteRodriguez
         {
             if (ListaClientes.Count == 0)
             {
-                ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
+               /* ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
                 ListaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", true, 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));
                 ListaClientes.Add(new Cliente("Lucas Martínez", "lucas789", "lucas.martinez@yahoo.com", true, 3, "Av. Corrientes 2468", "Muebles"));
                 ListaClientes.Add(new Cliente("Ana Rodríguez", "ana000", "ana.rodriguez@gmail.com", true, 4, "Calle Florida 4321", "Ropa"));
@@ -34,7 +39,7 @@ namespace TransporteRodriguez
                 ListaClientes.Add(new Cliente("Federico Torres", "federico777", "federico.torres@hotmail.com", true, 11, "Av. Pueyrredón 2468", "Computación"));
                 ListaClientes.Add(new Cliente("Valeria Gómez", "valeria888", "valeria.gomez@yahoo.com", true, 12, "Calle Callao 4321", "Computación"));
                 ListaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", true, 13, "Av. Córdoba 6789", "Computación"));
-                ListaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));
+                ListaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));*/
             }
         }
         /// <summary>
@@ -56,7 +61,8 @@ namespace TransporteRodriguez
         public  Cliente BuscarInstanciaId(int idCliente)
         {
             Cliente cliente = null;
-            foreach (Cliente clienteAuxliar in ListaClientes)
+            List<Cliente> lista = Conexion_SQL.ObtenerClientes("clientes");
+            foreach (Cliente clienteAuxliar in lista)
             {
                 if (clienteAuxliar.IdCliente == idCliente)
                 {
@@ -72,18 +78,16 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="usuarioUno"></param>
         /// <returns></returns>
-        public  Cliente BuscarInstancia(object usuarioUno)
+        public Cliente BuscarInstancia(Usuario usuarioUno)
         {
+            List<Cliente> ListaClientes = Conexion_SQL.ObtenerClientes("clientes");
             Cliente retorno = null;
-            if (usuarioUno is Cliente)
+            foreach (Cliente cliente in ListaClientes)
             {
-                foreach (Cliente cliente in ListaClientes)
+                if (cliente == usuarioUno && cliente.Estado == true)
                 {
-                    if (cliente == usuarioUno)
-                    {
-                        retorno = cliente;
-                        break;
-                    }
+                    retorno = cliente;
+                    break;
                 }
             }
             return retorno;
@@ -102,12 +106,26 @@ namespace TransporteRodriguez
         {
             string mailFinal;
             bool retorno = false;
-            
-            if (Validaciones.VerificarNombre(nombre) && !string.IsNullOrEmpty(direccion) && Sistema.CrearMail(mail, tipoMail,out mailFinal))
+            if (direccion == "")
             {
-                 ListaClientes.Add(new Cliente(nombre, Sistema.generarContraseña(), mailFinal, true,
-                 CalcularId(), direccion, rubro));
-                retorno = true;
+                throw new Exception("ERROR, Ingrese direccion del nuevo cliente");
+            }
+            else
+            {
+                if (rubro == "")
+                {
+                    throw new Exception("ERROR, Ingrese rubro del nuevo cliente");
+                }
+                else
+                {
+                    if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                    {
+                        Cliente cliente = new Cliente(nombre, Sistema.generarContraseña(), mailFinal, true, direccion, rubro);
+                        Conexion_SQL.Insertar(cliente, "clientes");
+                        //ListaClientes.Add(new Cliente(nombre, Sistema.generarContraseña(), mailFinal, true,CalcularId(), direccion, rubro));
+                        retorno = true;
+                    }
+                }
             }
             return retorno;
         }
@@ -123,20 +141,50 @@ namespace TransporteRodriguez
         /// <param name="rubro"></param>segun cliente elegido en un dataGridView se obtiene mediante la propiedad y se pasa como parametro - MODIFICABLE
         /// <param name="clienteOut"></param> Se devuelve la instancia para mostrar con MessageBox.Show un resumen de los datos del cliente (stringBuilder)
         /// <returns></returns>
-        public bool ModificarCliente(int id,string nombre, string mail, string tipoMail, string direccion, string rubro, out Cliente clienteOut)
+        public bool ModificarCliente(string ID,string nombre, string mail, string tipoMail, string direccion, string rubro, out Cliente clienteOut)
         {
             bool retorno=false;
             string mailFinal;
             clienteOut = null;
-            if (Validaciones.VerificarNombre(nombre) && !string.IsNullOrEmpty(direccion) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+            int idEntero;
+            if (ID == "")
             {
-                Cliente cliente = BuscarInstanciaId(id);
-                clienteOut = cliente;
-                cliente.Nombre = nombre;
-                cliente.Rubro=rubro;
-                cliente.Mail = mailFinal;
-                cliente.DireccionBSAS = direccion;
-                retorno = true;
+                throw new Exception("ERROR, Ingrese un ID o elija una fila haciendole click");
+            }
+            else
+            {
+                if (int.TryParse(ID, out idEntero) == false)
+                {
+                    throw new Exception("ERROR, Ingrese un numero");
+                }
+                else
+                {
+                    if (direccion == "")
+                    {
+                        throw new Exception("ERROR, Ingrese direccion del cliente");
+                    }
+                    else
+                    {
+                        if (rubro == "")
+                        {
+                            throw new Exception("ERROR, Ingrese rubro del cliente");
+                        }
+                        else
+                        {
+                            if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
+                            {
+                                Cliente cliente = BuscarInstanciaId(idEntero);
+                                cliente.Nombre = nombre;
+                                cliente.Rubro = rubro;
+                                cliente.Mail = mailFinal;
+                                cliente.DireccionBSAS = direccion;
+                                clienteOut = cliente;
+                                Conexion_SQL.Modificar(cliente, "clientes");
+                                retorno = true;
+                            }
+                        }
+                    }
+                }
             }
             return retorno;
         }

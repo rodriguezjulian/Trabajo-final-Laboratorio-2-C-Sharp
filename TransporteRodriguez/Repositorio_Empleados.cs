@@ -35,7 +35,7 @@ namespace TransporteRodriguez
         /// <returns></returns>
         public Empleado BuscarInstanciaId(int idEmpleado)
         {
-            List<Empleado> listaEmpleados = Conexion_SQL.ObtenerEmpleado("empleados");
+            List<Empleado> listaEmpleados = Conexion_SQL.ObtenerEmpleados("empleados");
             Empleado empleado = null;
             foreach (Empleado empleadoAuxiliar in listaEmpleados)
             {
@@ -66,7 +66,7 @@ namespace TransporteRodriguez
         /// <returns></returns>
         public Empleado BuscarInstancia(Usuario usuarioUno)
         {
-            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleado("empleados");
+            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleados("empleados");
             Empleado retorno = null;
             foreach (Empleado empleado in ListaEmpleados)
             {
@@ -92,14 +92,9 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public Empleado DarDeBaja(int ID)
+        public Empleado DarDeBaja(int id) 
         {
-            Empleado empleado = BuscarInstanciaId(ID);
-            if (empleado.Estado == true)
-            {
-                empleado.Estado = false;
-            }
-            return empleado;
+            return null;
         }
         public Empleado DarDeBaj(string ID, Empleado empleadoLogueado)
         {

@@ -30,7 +30,7 @@ namespace WF_TransporteRodriguez
             dtg_ListarClientes.AutoGenerateColumns = false;
             #region DATAGRID
 
-            dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
+            dtg_ListarClientes.DataSource = Conexion_SQL.ObtenerClientes("clientes");
             dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "IdCliente",
@@ -87,25 +87,18 @@ namespace WF_TransporteRodriguez
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
             Cliente cliente;
-            if (!string.IsNullOrEmpty(txt_ID.Text))
-            {
-                if (Repositorio_Clientes.Repo_Clientes.ModificarCliente(int.Parse(txt_ID.Text), txt_ModNombre.Text,
-                txt_ModMail.Text, cbo_Mail.Text, txt_ModDireccion.Text, cbo_Rubro.Text, out cliente))
-                {
-                    MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());
-                    dtg_ListarClientes.DataSource = null;
-                    dtg_ListarClientes.Rows.Clear();
-                    dtg_ListarClientes.AutoGenerateColumns = false;
-                    dtg_ListarClientes.DataSource = Repositorio_Clientes.ListaClientes;
-                }
-                else
-                {
-                    MessageBox.Show("ERROR, Revise datos ingresados");
-                }
+            try {
+                Repositorio_Clientes.Repo_Clientes.ModificarCliente(txt_ID.Text, txt_ModNombre.Text,
+                txt_ModMail.Text, cbo_Mail.Text, txt_ModDireccion.Text, cbo_Rubro.Text, out cliente);
+                MessageBox.Show("DATOS DEL CLIENTE " + cliente.ToString());
+                dtg_ListarClientes.DataSource = null;
+                dtg_ListarClientes.Rows.Clear();
+                dtg_ListarClientes.AutoGenerateColumns = false;
+                dtg_ListarClientes.DataSource = Conexion_SQL.ObtenerClientes("clientes");
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("ERROR, Seleccione cliente a modificar");
+                MessageBox.Show(ex.Message);
             }
         }
 

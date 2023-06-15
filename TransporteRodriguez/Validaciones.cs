@@ -21,7 +21,7 @@ namespace TransporteRodriguez
             {
                 foreach (char caracter in nombre)
                 {
-                    if (!char.IsLetter(caracter))
+                    if (!char.IsLetter(caracter) && caracter != 32)
                     {
                         retorno = false;
                         throw new Exception("ERROR, Ingrese un nombre valido (sin números ni simbolos).");
@@ -62,7 +62,7 @@ namespace TransporteRodriguez
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario retorno = null;
-            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleado( "empleados");
+            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleados( "empleados");
             foreach (Empleado empleado in ListaEmpleados)
             {
                 if (empleado == usuarioUno && empleado.Estado == true)
@@ -73,7 +73,8 @@ namespace TransporteRodriguez
             }
             if (retorno == null)
             {
-                foreach (Cliente cliente in Repositorio_Clientes.ListaClientes)
+                List<Cliente> lista = Conexion_SQL.ObtenerClientes("clientes");
+                foreach (Cliente cliente in lista)
                 {
                     if (cliente == usuarioUno && cliente.Estado == true)
                     {

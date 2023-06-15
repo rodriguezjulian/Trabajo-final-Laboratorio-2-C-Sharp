@@ -23,7 +23,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Modificacion_Empleado_Load(object sender, EventArgs e)
         {
-            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados"));
             cbo_Puesto.DataSource = Enum.GetValues(typeof(Puestos));
         }
 
@@ -47,7 +47,7 @@ namespace WF_TransporteRodriguez
                     MessageBox.Show("Datos acuatilizados satisfactoriamente.");
                     dtg_ListarEmpleados.DataSource = null;
                     dtg_ListarEmpleados.Columns.Clear();
-                    ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
+                    ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados"));
                 }
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados"));
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados"));
         }
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)
         {
@@ -113,14 +113,14 @@ namespace WF_TransporteRodriguez
         {
             //listaEmpleadosAuxiliar = Conexion_SQL.Obtener("empleados").FindAll(empleado => empleado.Estado == true);
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true));
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true));
         }
 
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
             // listaEmpleadosAuxiliar = Repositorio_Empleados.ListaEmpleado.FindAll(empleado => empleado.Estado == false);
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == false));
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == false));
         }
 
         private void cbo_Mail_KeyPress(object sender, KeyPressEventArgs e)

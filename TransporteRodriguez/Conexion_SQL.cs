@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
+
 namespace TransporteRodriguez
 {
     public static class Conexion_SQL
@@ -117,29 +119,54 @@ namespace TransporteRodriguez
             return lista;
 
         }
-        public static List<Empleado> ObtenerEmpleado(string nombreTabla)
+        public static List<Empleado> ObtenerEmpleados(string nombreTabla)
         {
-        mysqlConexion.Open();
-        List<Empleado> lista = new List<Empleado>();
+            mysqlConexion.Open();
+            List<Empleado> lista = new List<Empleado>();
 
-        string consulta = $"SELECT * FROM {nombreTabla}";
-        MySqlCommand query = new MySqlCommand(consulta, mysqlConexion);
+            string consulta = $"SELECT * FROM {nombreTabla}";
+            MySqlCommand query = new MySqlCommand(consulta, mysqlConexion);
 
-        MySqlDataReader lectura = query.ExecuteReader();
-        while (lectura.Read())
-        {
-            Empleado empleado = new Empleado();
-            empleado.IdEmpleado = lectura.GetInt32("IdEmpleado");
-            empleado.Puesto = (Puestos)Enum.Parse(typeof(Puestos), lectura.GetString("Puesto"));
-            //empleado.Puesto = (Puestos)Enum.Parse(typeof(Puestos),lectura.GetString("Puesto"));
-            empleado.Nombre = lectura.GetString("Nombre");
-            empleado.Contraseña = lectura.GetString("Contraseña");
-            empleado.Mail = lectura.GetString("Mail");
-            empleado.Estado = lectura.GetBoolean("Estado");
-            lista.Add(empleado);
+            MySqlDataReader lectura = query.ExecuteReader();
+            while (lectura.Read())
+            {
+                Empleado empleado = new Empleado();
+                empleado.IdEmpleado = lectura.GetInt32("IdEmpleado");
+                empleado.Puesto = (Puestos)Enum.Parse(typeof(Puestos), lectura.GetString("Puesto"));
+                //empleado.Puesto = (Puestos)Enum.Parse(typeof(Puestos),lectura.GetString("Puesto"));
+                empleado.Nombre = lectura.GetString("Nombre");
+                empleado.Contraseña = lectura.GetString("Contraseña");
+                empleado.Mail = lectura.GetString("Mail");
+                empleado.Estado = lectura.GetBoolean("Estado");
+                lista.Add(empleado);
+            }
+            mysqlConexion.Close();
+            return lista;
         }
-        mysqlConexion.Close();
-        return lista;
+        public static List<Cliente> ObtenerClientes(string nombreTabla)
+        {
+            mysqlConexion.Open();
+            List<Cliente> lista = new List<Cliente>();
+
+            string consulta = $"SELECT * FROM {nombreTabla}";
+            MySqlCommand query = new MySqlCommand(consulta, mysqlConexion);
+
+            MySqlDataReader lectura = query.ExecuteReader();
+            while (lectura.Read())
+            {
+                Cliente cliente = new Cliente();
+                cliente.Nombre = lectura.GetString("Nombre");
+                cliente.Contraseña = lectura.GetString("Contraseña");
+                cliente.Mail = lectura.GetString("Mail");
+                cliente.Estado = lectura.GetBoolean("Estado");
+                cliente.IdCliente = lectura.GetInt32("IdCliente");
+                cliente.DireccionBSAS = lectura.GetString("DireccionBSAS");
+                cliente.Rubro = lectura.GetString("Rubro");
+
+                lista.Add(cliente);
+            }
+            mysqlConexion.Close();
+            return lista;
         }
 
         public static void Modificar<T>(T gen, string nombreTabla)

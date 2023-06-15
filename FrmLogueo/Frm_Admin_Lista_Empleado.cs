@@ -27,19 +27,19 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Admin_Lista_Empleado_Load(object sender, EventArgs e)
         {
-            ConfigurarDTG(listaEmpleadosAuxiliar= Conexion_SQL.ObtenerEmpleado("empleados"));
+            ConfigurarDTG(listaEmpleadosAuxiliar= Conexion_SQL.ObtenerEmpleados("empleados"));
         }
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleado("empleados"));
+            ConfigurarDTG(listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleados("empleados"));
         }
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
             dtg_ListarEmpleados.Columns.Clear();
-            listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == true);
+            listaEmpleadosAuxiliar = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true);
             
             ConfigurarDTG(listaEmpleadosAuxiliar);
         }
@@ -47,7 +47,7 @@ namespace WF_TransporteRodriguez
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {   
             dtg_ListarEmpleados.Columns.Clear();
-            ConfigurarDTG(Conexion_SQL.ObtenerEmpleado("empleados").FindAll(empleado => empleado.Estado == false));
+            ConfigurarDTG(Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == false));
         }
         private void ConfigurarDTG(List<Empleado> ListaEmpleado)
         {

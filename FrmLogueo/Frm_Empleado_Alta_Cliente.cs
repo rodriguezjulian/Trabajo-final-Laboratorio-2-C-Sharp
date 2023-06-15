@@ -48,14 +48,17 @@ namespace WF_TransporteRodriguez
         /// <param name="e"></param>
         private void btn_GuardarCliente_Click_1(object sender, EventArgs e)
         {
-            if (Repositorio_Clientes.Repo_Clientes.CrearCliente(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString()))
+            try
             {
-                MessageBox.Show("Cliente dado de alta satisfactoriamente\n");
+                Repositorio_Clientes.Repo_Clientes.CrearCliente(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(),
+                    txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString());
+                MessageBox.Show("Cliente creado satisfactoriamente");
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("ERROR, Verifique los datos ingresados\n");
+                MessageBox.Show(ex.Message);
             }
+
         }
     }
 }

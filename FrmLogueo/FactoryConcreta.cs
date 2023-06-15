@@ -31,7 +31,9 @@ namespace WF_TransporteRodriguez
             {
                 if (usuarioAuxiliar != null && usuarioAuxiliar is Cliente)
                 {
-                     Frm_Cliente_Menu menuCliente = new Frm_Cliente_Menu();//INSTANCIO AL CLIENTE
+                    usuarioAuxiliar = Repositorio_Clientes.Repo_Clientes.BuscarInstancia(usuario);
+                     
+                    Frm_Cliente_Menu menuCliente = new Frm_Cliente_Menu();//INSTANCIO AL CLIENTE
                     menuCliente.UsuarioInstanciado = usuarioAuxiliar;
                     formulario= menuCliente;
                 }

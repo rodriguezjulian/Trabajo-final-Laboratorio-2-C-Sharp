@@ -21,6 +21,13 @@ namespace TransporteRodriguez
             DireccionBSAS = direccionBSAS;
             Rubro = rubro;
         }
+        public Cliente(string nombre, string contraseña, string mail, bool estado, string direccionBSAS, string rubro)
+    : base(nombre, contraseña, mail, estado)
+        {
+           // IdCliente = idCliente;
+            DireccionBSAS = direccionBSAS;
+            Rubro = rubro;
+        }
 
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public string DireccionBSAS { get => _direccionBSAS; set => _direccionBSAS = value; }
