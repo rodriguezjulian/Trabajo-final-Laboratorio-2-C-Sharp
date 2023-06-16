@@ -176,7 +176,8 @@ namespace TransporteRodriguez
         public static bool VerificarExistenciaPatente(string patenteIngresada)
         {
             bool retorno = true;
-            foreach (Vehiculo vehiculo in Repositorio_Vehiculos.ListaVehiculos)
+            List <Vehiculo> listaVehiculosAux = Conexion_SQL.ObtenerVehiculos("vehiculos");
+            foreach (Vehiculo vehiculo in listaVehiculosAux)
             {
                 if (vehiculo.Patente == patenteIngresada)
                 {
@@ -192,19 +193,21 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="patenteIngresada"></param>
         /// <returns></returns>
-        public static int VerificarPatente(string patenteIngresada)
+        public static bool VerificarPatente(string patenteIngresada)
         {
-            int retorno = 0;
+            bool retorno = true;
             string patenteAuxiliar = patenteIngresada.ToUpper();
             if (VerificarFormatoPatente(patenteAuxiliar) != true)
             {
-                retorno = 1;
+                retorno = false;
+                throw new Exception ("ERROR, Verifique la patente ingresada\n");
             }
             else
             {
                 if (VerificarExistenciaPatente(patenteAuxiliar) != true)
-                {
-                    retorno = 2;
+                {   
+                    retorno = false;
+                    throw new Exception("ERROR, La patente ingresada pertenece a un vehiculo existente\n");
                 }
             }
             return retorno;
@@ -233,6 +236,20 @@ namespace TransporteRodriguez
                 if (i >= 3 && !char.IsLetter(patenteIngresada[i])) // Los últimos tres caracteres deben ser letras
                 {
                     retorno = false;
+                }
+            }
+            return retorno;
+        }
+        public static bool VerificarViajesPendientes(Vehiculo vehiculo)
+        {
+            bool retorno = true;
+            List <Viaje> listaViajes=Conexion_SQL.ObtenerViajes("viajes");
+            foreach(Viaje viaje in listaViajes)
+            {
+                if(viaje.IdVehiculo == vehiculo.IdVehiculo && viaje.Estado==true && viaje.FechaViaje > DateTime.Today)
+                {
+                    retorno = false;
+                    throw new Exception("ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.");
                 }
             }
             return retorno;

@@ -19,45 +19,10 @@ namespace TransporteRodriguez
         public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
          */
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
-      /// <summary>
-      /// Hardcodeo de Clientes
-      /// </summary>
-        public  void Agregar()
-        {
-            if (ListaClientes.Count == 0)
-            {
-               /* ListaClientes.Add(new Cliente("Juan Pérez", "juan123", "juan.perez@gmail.com", true, 1, "Av. Belgrano 1234", "Libros"));
-                ListaClientes.Add(new Cliente("María García", "maria456", "maria.garcia@hotmail.com", true, 2, "Calle 25 de Mayo 5678", "Electrodomésticos"));
-                ListaClientes.Add(new Cliente("Lucas Martínez", "lucas789", "lucas.martinez@yahoo.com", true, 3, "Av. Corrientes 2468", "Muebles"));
-                ListaClientes.Add(new Cliente("Ana Rodríguez", "ana000", "ana.rodriguez@gmail.com", true, 4, "Calle Florida 4321", "Ropa"));
-                ListaClientes.Add(new Cliente("Pedro González", "pedro111", "pedro.gonzalez@hotmail.com", true, 5, "Calle Reconquista 6789", "Juguetes"));
-                ListaClientes.Add(new Cliente("Laura Fernández", "laura222", "laura.fernandez@yahoo.com", true, 6, "Av. Santa Fe 2468", "Calzado"));
-                ListaClientes.Add(new Cliente("Javier Díaz", "javier333", "javier.diaz@gmail.com", true, 7, "Calle Maipú 3456", "Hogar"));
-                ListaClientes.Add(new Cliente("Carla Castro", "carla444", "carla.castro@hotmail.com", true, 8, "Calle Lavalle 6789", "Mascotas"));
-                ListaClientes.Add(new Cliente("Martín Suárez", "martin555", "martin.suarez@yahoo.com", true, 9, "Av. San Martín 1234", "Computación"));
-                ListaClientes.Add(new Cliente("Silvia López", "silvia666", "silvia.lopez@gmail.com", true, 10, "Calle Esmeralda 5678", "Computación"));
-                ListaClientes.Add(new Cliente("Federico Torres", "federico777", "federico.torres@hotmail.com", true, 11, "Av. Pueyrredón 2468", "Computación"));
-                ListaClientes.Add(new Cliente("Valeria Gómez", "valeria888", "valeria.gomez@yahoo.com", true, 12, "Calle Callao 4321", "Computación"));
-                ListaClientes.Add(new Cliente("Pablo Ramírez", "pablo999", "pablo.ramirez@gmail.com", true, 13, "Av. Córdoba 6789", "Computación"));
-                ListaClientes.Add(new Cliente("Romina Acosta", "romina123", "romina.acosta@hotmail.com", true, 14, "Calle Mendoza 3456", "Computación"));*/
-            }
-        }
-        /// <summary>
-        /// Calcular el id de un nuevo cliente  segun el ultimo 
-        /// </summary>
-        /// <returns></returns>
-        public  int CalcularId()
-        {
-            int retorno;
-            Cliente clienteUltimo = ListaClientes[ListaClientes.Count - 1];
-            retorno = (clienteUltimo.IdCliente) + 1;
-            return retorno;
-        }
-        /// <summary>
-        /// Se obtiene la direccion de memoria de la instancia a travez de su id
-        /// </summary>
-        /// <param name="idCliente"></param>
-        /// <returns></returns>
+
+
+
+
         public  Cliente BuscarInstanciaId(int idCliente)
         {
             Cliente cliente = null;

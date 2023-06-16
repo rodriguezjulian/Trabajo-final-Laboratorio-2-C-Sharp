@@ -28,24 +28,18 @@ namespace WF_TransporteRodriguez
 
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (Validaciones.VerificarPatente(txt_AltaPatente.Text) == 0)
+            /*Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.Repo_Vehiculos.CalcularId(), (Marcas)cbo_Marca.SelectedItem,
+                (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text, true));*/
+            try
             {
-                Repositorio_Vehiculos.ListaVehiculos.Add(new Vehiculo(Repositorio_Vehiculos.Repo_Vehiculos.CalcularId(), (Marcas)cbo_Marca.SelectedItem,
-                    (int)nup_Kilos.Value, (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text, true));
-                MessageBox.Show("Vehiculo dado de alta satisfactoriamente\n");
+                Repositorio_Vehiculos.Repo_Vehiculos.CrearVehiculo((Marcas)cbo_Marca.SelectedItem, nup_Kilos.Value.ToString(), (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text);
+                MessageBox.Show("Vehiculo creado satisfactoriamente.");
             }
-            else
+            catch(Exception ex)
             {
-                if (Validaciones.VerificarPatente(txt_AltaPatente.Text) == 1)
-                {
-                    MessageBox.Show("ERROR, Verifique la patente ingresada\n");
-                }
-                else
-                {
-                    MessageBox.Show("ERROR, La patente ingresada pertenece a un vehiculo existente\n");
-                }
+                MessageBox.Show(ex.Message);
+            }
 
-            }
         }
         private void pic_Cancelar_Click(object sender, EventArgs e)
         {

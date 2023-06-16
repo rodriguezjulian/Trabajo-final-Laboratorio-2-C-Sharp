@@ -15,23 +15,7 @@ namespace TransporteRodriguez
         public static List<Viaje> ListaViajes { get => listaViajes; set => listaViajes = value; }
 
         public static Repositorio_Viajes Repo_Viajes => repo_Viajes;
-        /// <summary>
-        /// Hardcodeo de Viajes
-        /// </summary>
-        public  void Agregar()
-        {
-            if (ListaViajes.Count==0)
-            {
-                /*ListaViajes.Add(new Viaje(2,1, "María García", "Calle 25 de Mayo 5678",
-                "Misiones", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0),true));
-                ListaViajes.Add(new Viaje(7,2, "Javier Díaz", "Av. Córdoba 6789",
-                "Corrientes", 1800, 10500, 5, new DateTime(2022, 05, 11, 0, 0, 0),true));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
-                ListaViajes.Add(new Viaje(6,3, "Laura Fernández", "Av. Santa Fe 2468",
-               "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0), true));
-                ListaViajes.Add(new Viaje(7,4, "Javier Díaz", "Av. Córdoba 6789",
-                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0), true));*/
-            }
-        }
+
         /// <summary>
         /// Verificar si existe un vehiculo disponible en la fecha dada
         /// </summary>
@@ -82,11 +66,6 @@ namespace TransporteRodriguez
             }
             return precio;
         }
-        /// <summary>
-        /// Se obtiene la direccion de memoria de la instancia a travez de su id
-        /// </summary>
-        /// <param name="idViaje"></param>
-        /// <returns></returns>
         public  Viaje BuscarInstanciaId( int idViaje)
         {
             Viaje viajeEncontrado = null;
@@ -116,13 +95,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        public  int CalcularId()
-        {
-            int retorno;
-            Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
-            retorno = (viajeUltimo.IdViaje) + 1;
-           return retorno;
-        }
+
 
         /// <summary>
         /// Se creara una nueva instancia siempre y cuando se tenga un vehiculo disponible que pueda llevar esa cantidad de kg en esa fecha

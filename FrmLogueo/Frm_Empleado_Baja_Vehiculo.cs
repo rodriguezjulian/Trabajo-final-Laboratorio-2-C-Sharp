@@ -14,7 +14,6 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Empleado_Baja_Vehiculo : Frm_Empleado_Diseño
     {
         List<Vehiculo> vehiculosActivos;
-       // Repositorio_Vehiculos repositorio_Vehiculos =new Repositorio_Vehiculos();
         public Frm_Empleado_Baja_Vehiculo()
         {
             InitializeComponent();
@@ -22,24 +21,22 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Baja_Vehiculo_Load(object sender, EventArgs e)
         {
-            vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+            vehiculosActivos = Conexion_SQL.ObtenerVehiculos("vehiculos").FindAll(vehiculo => vehiculo.Estado == true);
             OrganizarDataGridVehiculos(vehiculosActivos);
         }
         private void pic_Guardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_BajaID.Text))
+            try
             {
-
                 Vehiculo vehiculo = Repositorio_Vehiculos.Repo_Vehiculos.DarDeBaja(txt_BajaID.Text);
-            
                 dtg_Listar.Columns.Clear();
-                vehiculosActivos = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+                vehiculosActivos = Conexion_SQL.ObtenerVehiculos("vehiculos").FindAll(vehiculo => vehiculo.Estado == true);
                 OrganizarDataGridVehiculos(vehiculosActivos);
                 MessageBox.Show("Vehiculo con patente " + vehiculo.Patente + " dado de baja satisfactoriamente.");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error, elija una vehiculo para dar de baja.");
+                MessageBox.Show(ex.Message);
             }
         }
         private void dtg_Listar_CellClick(object sender, DataGridViewCellEventArgs e)

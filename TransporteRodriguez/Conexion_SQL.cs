@@ -60,8 +60,6 @@ namespace TransporteRodriguez
             string consulta = $"INSERT INTO {nombreTabla} ({camposDb}) VALUES ({values})";
             query = new MySqlCommand(consulta, mysqlConexion);
 
-
-
             foreach (PropertyInfo propiedad in propiedades)
             {
                 if (propiedad.GetValue(gen) is Enum)
@@ -264,7 +262,7 @@ namespace TransporteRodriguez
                 vehiculo.IdVehiculo=lectura.GetInt32("IdVehiculo");
                 // empleado.Puesto = (Puestos)Enum.Parse(typeof(Puestos), lectura.GetString("Puesto"));
                 vehiculo.MarcaVehiculo = (Marcas)Enum.Parse(typeof(Marcas), lectura.GetString("MarcaVehiculo"));
-                vehiculo.CapacidadDeCarga = lectura.GetInt32("CapacidadDeCarga");
+                vehiculo.Carga = lectura.GetInt32("Carga");
                 vehiculo.Color = (Colores)Enum.Parse(typeof(Colores), lectura.GetString("Color"));
                 vehiculo.Patente = lectura.GetString("Patente");
                 vehiculo.Estado = lectura.GetBoolean("Estado");
@@ -274,7 +272,6 @@ namespace TransporteRodriguez
             mysqlConexion.Close();
             return lista;
         }
-
 
         public static void Modificar<T>(T gen, string nombreTabla)
         {
@@ -306,7 +303,6 @@ namespace TransporteRodriguez
             {
                 if (propiedad.GetValue(gen) is Enum)
                 {
-                    //
                     query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
                 }
                 else

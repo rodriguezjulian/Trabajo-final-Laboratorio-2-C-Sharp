@@ -14,20 +14,7 @@ namespace TransporteRodriguez
         public static List<Empleado> ListaEmpleado { get => listaEmpleado; set => listaEmpleado = value; }
 
         public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
-        /// <summary>
-        /// Hardcodeo de Empleados
-        /// </summary>
-        public void Agregar()
-        {
-            if (ListaEmpleado.Count == 0)
-            {/*
-                ListaEmpleado.Add(new Empleado("Juan Pérez", "contra123", "juan.perez@gmail.com", true, 1, Puestos.Ventas));
-                ListaEmpleado.Add(new Empleado("María García", "miClaveSegura", "maria.garcia@hotmail.com", true, 2, Puestos.Sistemas));
-                ListaEmpleado.Add(new Empleado("Carlos Fernández", "qwerty1234", "cfernandez@empresa.com", true, 3, Puestos.Administracion));
-                ListaEmpleado.Add(new Empleado("Sofía Rodríguez", "contrasena123", "sofiaro@gmail.com", true, 4, Puestos.Administracion));
-                ListaEmpleado.Add(new Empleado("Pedro González", "contra4321", "pgonzalez@empresa.com", true, 5, Puestos.Cobranzas));*/
-            }
-        }
+
         /// <summary>
         /// Se obtiene la direccion de memoria de la instancia a travez de su id
         /// </summary>Se obtiene la direccion de memoria de la instancia a travez de su id
@@ -48,17 +35,7 @@ namespace TransporteRodriguez
             }
             return empleado;
         }
-        /// <summary>
-        /// Calcular el id de un nuevo cliente  segun el ultimo 
-        /// </summary>
-        /// <returns></returns>
-        public int CalcularId()
-        {
-            int retorno;
-            Empleado ultimo = ListaEmpleado[ListaEmpleado.Count - 1];
-            retorno = (ultimo.IdEmpleado) + 1;
-            return retorno;
-        }
+
         /// <summary>
         ///  Buscar instancia utilizando una sobre carga en el ==
         /// </summary>

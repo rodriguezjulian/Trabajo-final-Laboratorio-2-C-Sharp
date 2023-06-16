@@ -1,4 +1,5 @@
 ﻿using Enumerado;
+using Org.BouncyCastle.Crypto.Tls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,31 +15,8 @@ namespace TransporteRodriguez
         public static List<Vehiculo> ListaVehiculos { get => listaVehiculos; set => listaVehiculos = value; }
 
         public static Repositorio_Vehiculos Repo_Vehiculos => repo_Vehiculos;
-        /// <summary>
-        /// Hardcodeo de vehiculos
-        /// </summary>
-        public  void Agregar()
-        {
-            if(ListaVehiculos.Count==0) 
-            {
-               /* listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
-                listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
-                listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
-                listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
-                listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));*/
-            }
-        }
-        /// <summary>
-        /// Calcular el id de un nuevo vehiculo segun el ultimo 
-        /// </summary>
-        /// <returns></returns>
-        public  int CalcularId()
-        {
-            int retorno;
-            Vehiculo ultimo = ListaVehiculos[ListaVehiculos.Count - 1];
-            retorno = (ultimo.IdVehiculo) + 1;
-            return retorno;
-        }
+
+
 
 
         /// <summary>
@@ -49,12 +27,12 @@ namespace TransporteRodriguez
         public  Vehiculo BuscarInstanciaId(int idCliente)
         {
             Vehiculo vehiculo = null;
+           List <Vehiculo> listaVehiculosAux= Conexion_SQL.ObtenerVehiculos("vehiculos");
             //int contador = 0;
-            foreach (Vehiculo vehiculoAuxiliar in ListaVehiculos)
+            foreach (Vehiculo vehiculoAuxiliar in listaVehiculosAux)
             {
                 if (vehiculoAuxiliar.IdVehiculo == idCliente)
                 {
-
                     vehiculo = vehiculoAuxiliar;
                     break;
                 }
@@ -78,7 +56,7 @@ namespace TransporteRodriguez
             List <Vehiculo>listaVehiculosAuxiliar = Conexion_SQL.ObtenerVehiculos("vehiculos");
             foreach (Vehiculo vehiculo in listaVehiculosAuxiliar)
             {
-                cargaSoportada = vehiculo.CapacidadDeCarga;
+                cargaSoportada = vehiculo.Carga;
                 //busco 1 vehiculo que soporte el peso
                 if (cargaSoportada >= kilos && vehiculo.Estado==true)
                 {
@@ -104,14 +82,59 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  Vehiculo DarDeBaja(string ID)
+        public Vehiculo DarDeBaja(string ID)
         {
-            /*Vehiculo vehiculo = BuscarInstanciaId(ID);
-            if (vehiculo.Estado == true)
+            Vehiculo vehiculo = null;
+            int idEntero;
+            if (Validaciones.VerificarIdIngresado(ID, out idEntero))
             {
-                vehiculo.Estado = false;
-            }*/
-            return null;
+                 vehiculo = BuscarInstanciaId(idEntero);
+                if (vehiculo is null)
+                {
+                    throw new Exception("ERROR, Vehiculo no encontrado.");
+                }
+                else
+                {
+                    if (vehiculo.Estado == false)
+                    {
+                        throw new Exception("ERROR, El vehiculo ya se encuentra dado de baja");
+                    }
+                    else
+                    {
+                        if(Validaciones.VerificarViajesPendientes(vehiculo))
+                        {
+                            Conexion_SQL.DarDeBaja(idEntero, "vehiculos", vehiculo);
+                            vehiculo.Estado = false;
+                        }
+                    }
+                }
+            }
+            return vehiculo;
         }
+        public bool CrearVehiculo(Marcas marca,string cargaEnKg,Colores color,string patente)
+        {
+            bool retorno = false;
+            float kgF;
+            if(float.TryParse( cargaEnKg, out kgF)== false)
+            {
+                throw new Exception("ERROR, Ingrese un numero para KG");
+            }
+            else
+            {
+                if (Validaciones.VerificarPatente(patente))
+                {
+                    Vehiculo vehiculo = new Vehiculo();
+                    vehiculo.MarcaVehiculo = marca;
+                    vehiculo.Carga = kgF;
+                    vehiculo.Color = color;
+                    vehiculo.Patente = patente;
+                    vehiculo.Estado = true;
+                    retorno = true;
+                    Conexion_SQL.Insertar(vehiculo, "vehiculos");
+                }
+            }
+            return retorno;
+        }
+
     }
 }

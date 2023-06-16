@@ -8,12 +8,6 @@ namespace TransporteRodriguez
 {
     internal interface Interfaz_Padre<T>
     {
-       
-        public abstract void Agregar();
-
-        public abstract int CalcularId();
-  
         public abstract T BuscarInstanciaId(int i);
-        //public abstract T DarDeBaja(string id);
     }
 }

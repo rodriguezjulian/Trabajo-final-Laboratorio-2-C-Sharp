@@ -71,6 +71,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(224, 224, 224);
             panel1.Controls.Add(lbl_VehiculoBaja);
             panel1.Controls.Add(lbl_Id);
             panel1.Controls.Add(txt_BajaID);
@@ -146,11 +147,10 @@
             // 
             // txt_BajaID
             // 
-            txt_BajaID.BackColor = Color.FromArgb(224, 224, 224);
+            txt_BajaID.BackColor = Color.White;
             txt_BajaID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_BajaID.Location = new Point(443, 166);
             txt_BajaID.Name = "txt_BajaID";
-            txt_BajaID.ReadOnly = true;
             txt_BajaID.Size = new Size(51, 25);
             txt_BajaID.TabIndex = 80;
             txt_BajaID.TextAlign = HorizontalAlignment.Center;

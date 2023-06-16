@@ -23,7 +23,7 @@ namespace WF_TransporteRodriguez
         private void FrmListarVehiculos_Load(object sender, EventArgs e)
         {
 
-            OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
+            OrganizarDataGridVehiculos(Conexion_SQL.ObtenerVehiculos("vehiculos"));
         }
         private void pic_Volver_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-            listaAxuliar = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == false);
+            listaAxuliar = Conexion_SQL.ObtenerVehiculos("vehiculos").FindAll(vehiculo => vehiculo.Estado == false);
             dtg_Listar.Columns.Clear();
             OrganizarDataGridVehiculos(listaAxuliar);
         }
@@ -78,12 +78,12 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_Listar.Columns.Clear();
-            OrganizarDataGridVehiculos(Repositorio_Vehiculos.ListaVehiculos);
+            OrganizarDataGridVehiculos(Conexion_SQL.ObtenerVehiculos("vehiculos"));
         }
 
         private void btn_VehiculosActivos_Click(object sender, EventArgs e)
         {
-            listaAxuliar = Repositorio_Vehiculos.ListaVehiculos.FindAll(vehiculo => vehiculo.Estado == true);
+            listaAxuliar = Conexion_SQL.ObtenerVehiculos("vehiculos").FindAll(vehiculo => vehiculo.Estado == true);
             dtg_Listar.Columns.Clear();
             OrganizarDataGridVehiculos(listaAxuliar);
         }

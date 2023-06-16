@@ -12,14 +12,14 @@ namespace TransporteRodriguez
     {
         private int _idVehiculo;
         private Marcas _marcaVehiculo;
-        private int _capacidadDeCarga;
+        private float _capacidadDeCarga;
         private Colores _color;
         private string _patente;
         private bool _estado;
 
         public Vehiculo() { }
 
-        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, int capacidadDeCarga, Colores color, string patente, bool estado)
+        public Vehiculo(int idVehiculo, Marcas marcaVehiculo, float capacidadDeCarga, Colores color, string patente, bool estado)
         {
             _idVehiculo = idVehiculo;
             _marcaVehiculo = marcaVehiculo;
@@ -31,7 +31,7 @@ namespace TransporteRodriguez
 
         public int IdVehiculo { get => _idVehiculo; set => _idVehiculo = value; }
         public Marcas MarcaVehiculo { get => _marcaVehiculo; set => _marcaVehiculo = value; }
-        public int CapacidadDeCarga { get => _capacidadDeCarga; set => _capacidadDeCarga = value; }
+        public float Carga { get => _capacidadDeCarga; set => _capacidadDeCarga = value; }
         public Colores Color { get => _color; set => _color = value; }
         public string Patente { get => _patente; set => _patente = value; }
         public bool Estado { get => _estado; set => _estado = value; }
