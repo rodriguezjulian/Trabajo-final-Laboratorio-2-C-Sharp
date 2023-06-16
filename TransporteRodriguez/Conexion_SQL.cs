@@ -276,28 +276,6 @@ namespace TransporteRodriguez
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public static void Modificar<T>(T gen, string nombreTabla)
         {
             //ABRO CONEXION
@@ -345,6 +323,7 @@ namespace TransporteRodriguez
         {
             //ABRO CONEXION
             mysqlConexion.Open();
+            int contador=0;
             //OBTENGO EL TIPO DE OBJETO PARA ASI PODER ACCEDER A LAS PROPIEDADES
             Type tipoDeObjeto = typeof(T);
             //GUARDO LAS PROPIEDADES EN UN ARRAY DE TIPO PropertyInfo
@@ -355,11 +334,11 @@ namespace TransporteRodriguez
             for (int i = 0; i < propiedades.Length - 1; i++)
             {
                 //VERIFICO QUE LA PROPIEDAD NO CONTENGA ID YA QUE EL MISMO NO SE PODRA MODIFICAR Y ES UNA PK
-                if (!propiedades[i].Name.ToLower().Contains("id"))
+                if (contador != 0)
                 {
                     camposDb.Append(propiedades[i].Name + "=@" + propiedades[i].Name + ",");
-                    break;
                 }
+                contador++;
             }
             // LA ULTIMA PROPIEDAD ACTUALIZADA SE SUMA AL StringBuilder Y QUEDA SIN LA ','
             camposDb.Append($"{propiedades[propiedades.Length - 1].Name}=@{propiedades[propiedades.Length - 1].Name}");

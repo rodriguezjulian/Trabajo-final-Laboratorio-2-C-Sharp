@@ -21,11 +21,11 @@ namespace WF_TransporteRodriguez
         }
         private void Frm_Empleado_Listar_Clientes_Load(object sender, EventArgs e)
         {
-            ConfigurarDTG(Repositorio_Clientes.ListaClientes);
+            ConfigurarDTG(Conexion_SQL.ObtenerClientes("clientes"));
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-            listaClientesAuxiliar = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == false);
+            listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == false);
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
         }
@@ -69,13 +69,6 @@ namespace WF_TransporteRodriguez
                 HeaderText = "Correo Electrónico",
                 DisplayIndex = 4
             });
-
-            dtg_ListarClientes.Columns.Add(new DataGridViewTextBoxColumn()
-            {
-                DataPropertyName = "Estado",
-                HeaderText = "Estado",
-                DisplayIndex = 5
-            });
             //#endregion
         }
 
@@ -87,7 +80,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
-            listaClientesAuxiliar = Repositorio_Clientes.ListaClientes.FindAll(cliente => cliente.Estado == true);
+            listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
         }
@@ -95,7 +88,7 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListarClientes.Columns.Clear();
-            ConfigurarDTG(Repositorio_Clientes.ListaClientes);
+            ConfigurarDTG(Conexion_SQL.ObtenerClientes("clientes"));
         }
     }
 }
