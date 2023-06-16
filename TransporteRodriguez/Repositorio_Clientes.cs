@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Clientes : Interfaz_Padre <Cliente>
+    public class Repositorio_Clientes : Interfaz_Padre <Cliente>,Interfaz_Busqueda<Cliente, Usuario>
     {
         private static List<Cliente> listaClientes = new List<Cliente>();
         private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();

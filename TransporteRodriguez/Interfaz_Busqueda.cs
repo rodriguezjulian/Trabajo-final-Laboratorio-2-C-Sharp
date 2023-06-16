@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TransporteRodriguez
 {
-    internal interface Interfaz_Padre<T>
+    internal interface Interfaz_Busqueda<T,M>
     {
-        public T BuscarInstanciaId(int i);
+        public T BuscarInstancia(M usuarioUno);
     }
 }

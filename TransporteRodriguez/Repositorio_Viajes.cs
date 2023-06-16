@@ -166,15 +166,21 @@ namespace TransporteRodriguez
                             }
                             else
                             {
-                                viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha);
-                                viajeAux.Precio = calcularPrecioViaje(destino, kgF);
-                                viajeAux.FechaViaje = fecha;
-                                viajeAux.KilosATransportar = kgF;
-                                viajeAux.ProvinciaDestino = destino;
-                                viaje = viajeAux;
-                                retorno = true;
-                                Conexion_SQL.ModificarViajes(viaje, "viajes");
-
+                                if (fecha < DateTime.Today)
+                                {
+                                    throw new Exception("ERROR, Debe elegir una fecha valida.");
+                                }
+                                else
+                                {
+                                    viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha);
+                                    viajeAux.Precio = calcularPrecioViaje(destino, kgF);
+                                    viajeAux.FechaViaje = fecha;
+                                    viajeAux.KilosATransportar = kgF;
+                                    viajeAux.ProvinciaDestino = destino;
+                                    viaje = viajeAux;
+                                    retorno = true;
+                                    Conexion_SQL.ModificarViajes(viaje, "viajes");
+                                }
                             }
                         }
                     }  
