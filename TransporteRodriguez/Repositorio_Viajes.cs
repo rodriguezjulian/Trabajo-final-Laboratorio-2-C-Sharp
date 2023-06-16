@@ -171,32 +171,40 @@ namespace TransporteRodriguez
         {
             bool retorno = false;
             Viaje viajeAux=null;
-            int idVehiculoOriginal;
             viaje=null;
             int idViajeEntero;
             float kgF;
             if (Validaciones.VerificarIdIngresado(idViaje, out idViajeEntero))
             {
                 viajeAux = BuscarInstanciaId(idViajeEntero);
-                if (viajeAux is not null && cliente.IdCliente == viajeAux.IdCliente && Validaciones.VerificarkgIngresado(kg, out kgF)
-                && Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha) != 0)
+                if (viajeAux is not null && cliente.IdCliente == viajeAux.IdCliente)
                 {
-                    //ESTO LO HAGO PORQUE CUANDO QUIERO MODIFICAR EL DESTINO POSIBLEMENTE SEA EL MISMO CAMION EL QUE HAGA EL VIAJE
-                    //SI NO LO LIBERO AL MENOS MOMENTANEAMENTE, SIEMPRE TENDRA OCUPADA LA FECHA.
-                    idVehiculoOriginal = viajeAux.IdVehiculo;
-                    viajeAux.IdVehiculo = 0;
-
-                    retorno = true;
-                    viaje = viajeAux;
-                    viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha);
-                    viajeAux.Precio = calcularPrecioViaje(destino, kgF);
-                    viajeAux.FechaViaje = fecha;
-                    viajeAux.KilosATransportar = kgF;
-                    viajeAux.ProvinciaDestino = destino;
-                    if (retorno == false)
+                    if (viajeAux.FechaViaje < DateTime.Today.AddDays(+1))
                     {
-                        viajeAux.IdVehiculo = idVehiculoOriginal;
+                        throw new Exception("Error, solo puede modificar o dar de baja viajes que aun no se han realizado.");
                     }
+                    else
+                    {
+                        if (Validaciones.VerificarkgIngresado(kg, out kgF) && Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha) != 0)
+                        {
+                            if (destino != "Santa fe" && destino != "Corrientes" && destino != "Misiones")
+                            {
+                                throw new Exception("Error, debe ingresar un destino valido:\n Santa fe\nCorrientes\nMisiones");
+                            }
+                            else
+                            {
+                                viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha);
+                                viajeAux.Precio = calcularPrecioViaje(destino, kgF);
+                                viajeAux.FechaViaje = fecha;
+                                viajeAux.KilosATransportar = kgF;
+                                viajeAux.ProvinciaDestino = destino;
+                                viaje = viajeAux;
+                                retorno = true;
+                                Conexion_SQL.ModificarViajes(viaje, "viajes");
+
+                            }
+                        }
+                    }  
                 }
                 else
                 {
@@ -206,11 +214,7 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-        /// <summary>
-        /// Baja logica apoyada en el metodo BuscarInstanciaId
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
+
         public  Viaje DarDeBaja(string ID, Cliente cliente)
         {
             int idEntero;
@@ -229,7 +233,14 @@ namespace TransporteRodriguez
                     }
                     else
                     {
-                        Conexion_SQL.DarDeBaja(idEntero, "viajes", viaje);
+                        if (viaje.FechaViaje < DateTime.Today.AddDays(+1))
+                        {
+                            throw new Exception("Error, solo puede modificar o dar de baja viajes que aun no se han realizado.");
+                        }
+                        else
+                        {
+                            Conexion_SQL.DarDeBaja(idEntero, "viajes", viaje);
+                        }
                     }
                 }
             }

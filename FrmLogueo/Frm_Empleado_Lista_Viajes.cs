@@ -27,7 +27,7 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Lista_Viajes_Load(object sender, EventArgs e)
         {
-            listaAuxiliar = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.Estado == true);
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == true);
             OrganizarDataGridViajes(listaAuxiliar);
         }
         public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
@@ -76,7 +76,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_ViajesRealizados_Click(object sender, EventArgs e)
         {
-            listaAuxiliar = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje < DateTime.Now && viaje.Estado == true);
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.FechaViaje < DateTime.Now && viaje.Estado == true);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(listaAuxiliar);
         }
@@ -84,14 +84,14 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListaViajes.Columns.Clear();
-            listaAuxiliar = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.Estado == true);
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == true);
             OrganizarDataGridViajes(listaAuxiliar);
         }
 
         private void btn_ViajesCancelados_Click(object sender, EventArgs e)
         {
             dtg_ListaViajes.Columns.Clear();
-            listaAuxiliar = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.Estado == false);
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == false);
             OrganizarDataGridViajes(listaAuxiliar);
         }
     }

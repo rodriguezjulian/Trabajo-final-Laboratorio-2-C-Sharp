@@ -25,6 +25,8 @@ namespace WF_TransporteRodriguez
 
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
+            //viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
+
             viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
             OrganizarDataGridViajes(viajesCliente);
             lbl_NombreClient.Text = cliente.Nombre;
@@ -47,12 +49,6 @@ namespace WF_TransporteRodriguez
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-           
-
-
-
         }
         #region EVENTOS PARA EL MOUSE
         private void pic_EliminarViaje_MouseLeave(object sender, EventArgs e)

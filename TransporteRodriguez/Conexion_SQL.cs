@@ -26,12 +26,11 @@ namespace TransporteRodriguez
         {
             try
             {
-                //Console.WriteLine("Conectando...");
                 mysqlConexion.Open();
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex);
+                throw new Exception("Error: " + ex);
             }
             finally
             {
@@ -330,6 +329,49 @@ namespace TransporteRodriguez
                 if (propiedad.GetValue(gen) is Enum)
                 {
                     //
+                    query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
+                }
+                else
+                {
+                    query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen));
+                }
+            }
+            //EJECUTO INSTRUCCION
+            query.ExecuteNonQuery();
+            //CIERRO CONEXION
+            mysqlConexion.Close();
+        }
+        public static void ModificarViajes<T>(T gen, string nombreTabla)
+        {
+            //ABRO CONEXION
+            mysqlConexion.Open();
+            //OBTENGO EL TIPO DE OBJETO PARA ASI PODER ACCEDER A LAS PROPIEDADES
+            Type tipoDeObjeto = typeof(T);
+            //GUARDO LAS PROPIEDADES EN UN ARRAY DE TIPO PropertyInfo
+            PropertyInfo[] propiedades = tipoDeObjeto.GetProperties();
+
+            StringBuilder camposDb = new StringBuilder();
+            //ITERO LA CATIDAD DE PROPIEDADES -1 PARA EVITAR LA ',' EN EL ULTIMO ELEMENTO
+            for (int i = 0; i < propiedades.Length - 1; i++)
+            {
+                //VERIFICO QUE LA PROPIEDAD NO CONTENGA ID YA QUE EL MISMO NO SE PODRA MODIFICAR Y ES UNA PK
+                if (!propiedades[i].Name.ToLower().Contains("id"))
+                {
+                    camposDb.Append(propiedades[i].Name + "=@" + propiedades[i].Name + ",");
+                    break;
+                }
+            }
+            // LA ULTIMA PROPIEDAD ACTUALIZADA SE SUMA AL StringBuilder Y QUEDA SIN LA ','
+            camposDb.Append($"{propiedades[propiedades.Length - 1].Name}=@{propiedades[propiedades.Length - 1].Name}");
+
+            string consulta = $"UPDATE {nombreTabla} SET {camposDb} WHERE {propiedades[0].Name} = {propiedades[0].GetValue(gen)}";
+            //ENVIO LA CONSULTA
+            query = new MySqlCommand(consulta, mysqlConexion);
+            //propiedad va ir tomando los valores de cada propiedad - de esta forma esten o no modificados los atributos, se pisaran.
+            foreach (PropertyInfo propiedad in propiedades)
+            {
+                if (propiedad.GetValue(gen) is Enum)
+                {
                     query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
                 }
                 else

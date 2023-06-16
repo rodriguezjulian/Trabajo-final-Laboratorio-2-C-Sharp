@@ -25,9 +25,12 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             //PASAR A REPOSITORIO
+          /*  dtp_FechaDeViaje.Format = DateTimePickerFormat.Custom;
+            dtp_FechaDeViaje.CustomFormat = " ";*/
+
             viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
             OrganizarDataGridViajes(viajesCliente);
-            dtp_FechaDeViaje.MinDate = DateTime.Today;
+            dtp_FechaDeViaje.MinDate = DateTime.Today.AddDays(+1);
             lbl_NombreCliente.Text = cliente.Nombre;
         }
 
