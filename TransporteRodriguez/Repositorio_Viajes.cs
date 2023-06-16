@@ -1,4 +1,5 @@
 ﻿using Enumerado;
+using Org.BouncyCastle.Crypto.Tls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,14 @@ namespace TransporteRodriguez
         {
             if (ListaViajes.Count==0)
             {
-                ListaViajes.Add(new Viaje(2,1, "María García", "Calle 25 de Mayo 5678",
+                /*ListaViajes.Add(new Viaje(2,1, "María García", "Calle 25 de Mayo 5678",
                 "Misiones", 200, 10000, 1, new DateTime(2021, 08, 11, 0, 0, 0),true));
                 ListaViajes.Add(new Viaje(7,2, "Javier Díaz", "Av. Córdoba 6789",
                 "Corrientes", 1800, 10500, 5, new DateTime(2022, 05, 11, 0, 0, 0),true));//ACA SIEMPRE SE GUARDA CON HORA MINUTO SEGUNDO 
                 ListaViajes.Add(new Viaje(6,3, "Laura Fernández", "Av. Santa Fe 2468",
                "Santa Fe", 20, 10500, 3, new DateTime(2023, 08, 11, 0, 0, 0), true));
                 ListaViajes.Add(new Viaje(7,4, "Javier Díaz", "Av. Córdoba 6789",
-                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0), true));
+                "Corrientes", 1800, 10500, 5, new DateTime(2024, 05, 11, 0, 0, 0), true));*/
             }
         }
         /// <summary>
@@ -39,14 +40,23 @@ namespace TransporteRodriguez
         public static bool VerificarDisponibilidadFecha(Viaje viajeAxuliar)
         {
             bool retorno = true;
-            foreach (Viaje viajesReservados in ListaViajes)
+            List <Viaje> listaViajesAuxiliar = Conexion_SQL.ObtenerViajes("viajes");
+            if (viajeAxuliar.FechaViaje > DateTime.Today)
             {
-                if (viajesReservados == viajeAxuliar)
+                foreach (Viaje viajesReservados in listaViajesAuxiliar)
                 {
-                    retorno = false;
-                    break;
+                    if (viajesReservados == viajeAxuliar)
+                    {
+                        retorno = false;
+                        break;
+                    }
                 }
             }
+            else
+            {
+                throw new Exception("ERROR, El plazo minimo de reserva es un dia antes. \nLa fecha mas cercana seria mañana en caso que existan vehiculos disponibles.");
+            }
+
             return retorno;
         }
         /// <summary>
@@ -80,9 +90,9 @@ namespace TransporteRodriguez
         public  Viaje BuscarInstanciaId( int idViaje)
         {
             Viaje viajeEncontrado = null;
+            List <Viaje> listaViajesAux= Conexion_SQL.ObtenerViajes("viajes");
 
-
-            foreach (Viaje viajeAxuliar in ListaViajes)
+            foreach (Viaje viajeAxuliar in listaViajesAux)
             {
                 if (viajeAxuliar.IdViaje == idViaje)
                 {
@@ -90,19 +100,28 @@ namespace TransporteRodriguez
                     break;
                 }
             }
-            
             return viajeEncontrado;
         }
-        /// <summary>
-        /// Calcular el id de un viaje segun el ultimo existente
-        /// </summary>
-        /// <returns></returns>
+        public Viaje BuscarInstancia(Viaje usuarioUno)
+        {
+            List<Viaje> listaViajes = Conexion_SQL.ObtenerViajes("viajes");
+            Viaje retorno = null;
+            foreach (Viaje viaje in listaViajes)
+            {
+                if (viaje == usuarioUno && viaje.Estado == true)
+                {
+                    retorno = viaje;
+                    break;
+                }
+            }
+            return retorno;
+        }
         public  int CalcularId()
         {
             int retorno;
             Viaje viajeUltimo = ListaViajes[ListaViajes.Count - 1];
             retorno = (viajeUltimo.IdViaje) + 1;
-            return retorno;
+           return retorno;
         }
 
         /// <summary>
@@ -116,14 +135,21 @@ namespace TransporteRodriguez
         /// <param name="cargaKg"></param>Seleccionado por el usuario desde un numericUpDown
         /// <param name="fecha"></param>Seleccionado por el usuario desde un dateTimePicker
         /// <returns></returns>
-        public bool CrearViaje(int idCliente,string nombre, string direccionSalida, string provinciaDestino, float cargaKg, DateTime fecha)
+        public bool CrearViaje(string idCliente,string nombre, string direccionSalida, string provinciaDestino, string cargaKg, DateTime fecha)
         {
             bool retorno = false;
-            if (Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha) != 0) 
+            
+            int idEntero=1;
+            float cargaKgFloat;
+            if (Validaciones.VerificarkgIngresado(cargaKg, out cargaKgFloat) == true &&Validaciones.VerificarIdIngresado(idCliente,out idEntero) == true  
+                && Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKgFloat, fecha) != 0) 
             {
                 retorno = true;
-                ListaViajes.Add(new Viaje(idCliente, CalcularId(), nombre, direccionSalida, provinciaDestino, cargaKg,
-                calcularPrecioViaje(provinciaDestino, cargaKg), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKg, fecha), fecha.Date,true));
+
+               Viaje viajeAux =new Viaje(idEntero, nombre, direccionSalida, provinciaDestino, cargaKgFloat,
+               calcularPrecioViaje(provinciaDestino, cargaKgFloat), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKgFloat, fecha), fecha.Date,true);
+               Conexion_SQL.InsertarViaje(viajeAux, "viajes");
+              
             }
             return retorno;
         }
@@ -141,32 +167,43 @@ namespace TransporteRodriguez
         /// <param name="viaje"></param>Se devuelve la direccion del viaje para que se pueda mostrar un resumen de como quedo el viaje
         /// a traves de un MessageBox.Show y un string builder creado con los datos del viaje
         /// <returns></returns>
-        public bool ModificarViaje(int idViaje,Cliente cliente, DateTime fecha, float kg ,string destino, out Viaje viaje)
+        public bool ModificarViaje(string idViaje,Cliente cliente, DateTime fecha, string kg ,string destino, out Viaje viaje)
         {
             bool retorno = false;
             Viaje viajeAux=null;
             int idVehiculoOriginal;
             viaje=null;
-            viajeAux =BuscarInstanciaId(idViaje);
-            //ESTO LO HAGO PORQUE CUANDO QUIERO MODIFICAR EL DESTINO POSIBLEMENTE SEA EL MISMO CAMION EL QUE HAGA EL VIAJE
-            //SI NO LO LIBERO AL MENOS MOMENTANEAMENTE, SIEMPRE TENDRA OCUPADA LA FECHA.
-            idVehiculoOriginal = viajeAux.IdVehiculo;
-            viajeAux.IdVehiculo = 0;
-            if (Repositorio_Vehiculos.RetornarVehiculoDisponible(kg, fecha)!=0)
+            int idViajeEntero;
+            float kgF;
+            if (Validaciones.VerificarIdIngresado(idViaje, out idViajeEntero))
             {
-                retorno = true;
-                viaje = viajeAux;
-                viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kg, fecha);
-                viajeAux.Precio = calcularPrecioViaje(destino, kg);
-                viajeAux.FechaViaje = fecha;
-                viajeAux.KilosATransportar = kg;
-                viajeAux.ProvinciaDestino = destino;
+                viajeAux = BuscarInstanciaId(idViajeEntero);
+                if (viajeAux is not null && cliente.IdCliente == viajeAux.IdCliente && Validaciones.VerificarkgIngresado(kg, out kgF)
+                && Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha) != 0)
+                {
+                    //ESTO LO HAGO PORQUE CUANDO QUIERO MODIFICAR EL DESTINO POSIBLEMENTE SEA EL MISMO CAMION EL QUE HAGA EL VIAJE
+                    //SI NO LO LIBERO AL MENOS MOMENTANEAMENTE, SIEMPRE TENDRA OCUPADA LA FECHA.
+                    idVehiculoOriginal = viajeAux.IdVehiculo;
+                    viajeAux.IdVehiculo = 0;
+
+                    retorno = true;
+                    viaje = viajeAux;
+                    viajeAux.IdVehiculo = Repositorio_Vehiculos.RetornarVehiculoDisponible(kgF, fecha);
+                    viajeAux.Precio = calcularPrecioViaje(destino, kgF);
+                    viajeAux.FechaViaje = fecha;
+                    viajeAux.KilosATransportar = kgF;
+                    viajeAux.ProvinciaDestino = destino;
+                    if (retorno == false)
+                    {
+                        viajeAux.IdVehiculo = idVehiculoOriginal;
+                    }
+                }
+                else
+                {
+                    //COMO LOS METODOS TIENEN SUS PROPIAS EXCEPCIONES, SOLO HAGO ESTA EXCEPCION cliente.IdCliente == viajeAux.IdCliente
+                    throw new Exception("ERROR, El ID de viaje no corresponde a usted.");
+                }
             }
-            if (retorno==false)
-            {
-                viajeAux.IdVehiculo = idVehiculoOriginal;
-            }
-            
             return retorno;
         }
         /// <summary>
@@ -174,13 +211,28 @@ namespace TransporteRodriguez
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  Viaje DarDeBaja(string ID)
+        public  Viaje DarDeBaja(string ID, Cliente cliente)
         {
-            /*Viaje viaje = BuscarInstanciaId(ID);
-            if (viaje.Estado == true)
+            int idEntero;
+            if (Validaciones.VerificarIdIngresado(ID, out idEntero))
             {
-                viaje.Estado = false;
-            }*/
+                Viaje viaje = BuscarInstanciaId(idEntero);
+                if (viaje is null)
+                {
+                    throw new Exception("ERROR, El ID ingresado no corresponde a ningun viaje.");
+                }
+                else
+                {
+                    if(cliente.IdCliente != viaje.IdCliente)
+                    {
+                        throw new Exception("ERROR, El ID de viaje no corresponde a usted.");
+                    }
+                    else
+                    {
+                        Conexion_SQL.DarDeBaja(idEntero, "viajes", viaje);
+                    }
+                }
+            }
             return null;
         }
     }

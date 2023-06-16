@@ -75,7 +75,7 @@ namespace WF_TransporteRodriguez
         {
             try
             {
-                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaj(txt_BajaID.Text, Empleado);
+                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaja(txt_BajaID.Text, Empleado);
 
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();

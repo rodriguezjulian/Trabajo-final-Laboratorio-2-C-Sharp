@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TransporteRodriguez
 {
     public class Viaje
-        // nose si podria hacer que viaje herede de cliente los datos de nombre cliente y direccion de salida
+    // nose si podria hacer que viaje herede de cliente los datos de nombre cliente y direccion de salida
     {
         private int _idViaje;
         private int _idCliente;
@@ -20,10 +20,11 @@ namespace TransporteRodriguez
         private DateTime _fechaViaje;
         private bool _estado;
 
-        public Viaje(int idCliente,int idViaje,  string nombreCliente, 
+        public Viaje(){}
+        public Viaje(int idCliente,  string nombreCliente, 
             string direccionSalida, string provinciaDestino, float kilosATransportar, float precio, int idVehiculo, DateTime fechaViaje, bool estado)
         {
-            _idViaje = idViaje;
+           // _idViaje = idViaje;
             _idCliente = idCliente;
             _nombreCliente = nombreCliente;
             _direccionSalida = direccionSalida;
@@ -66,8 +67,6 @@ namespace TransporteRodriguez
        public override string ToString()
         {
             StringBuilder miCadena = new StringBuilder();
-           // miCadena.AppendLine("VIAJE CONFIRMADO");
-            miCadena.AppendLine("ID VIAJE: " + IdViaje);
             miCadena.AppendLine("Direccion de Salida: " + DireccionSalida);
             miCadena.AppendLine("Provincia destino: " + ProvinciaDestino);
             miCadena.AppendLine("Precio: " + Precio);

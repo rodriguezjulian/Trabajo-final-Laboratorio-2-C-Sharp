@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmCancelarViajeCliente_Load(object sender, EventArgs e)
         {
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
             OrganizarDataGridViajes(viajesCliente);
             lbl_NombreClient.Text = cliente.Nombre;
         }
@@ -33,24 +33,26 @@ namespace WF_TransporteRodriguez
         private void pic_EliminarViaje_Click(object sender, EventArgs e)
         {
             //NO PUEDE ELIMINAR UN VIAJE QUE YA SE REALIZO
-            if (!string.IsNullOrEmpty(txt_IdDeViajeACancelar.Text))
+            try
             {
-                if (DateTime.Parse(txt_Fecha.Text) > DateTime.Today)
-                {
-                    Repositorio_Viajes.Repo_Viajes.DarDeBaja(txt_IdDeViajeACancelar.Text);
-                    dtg_ListaViajes.Columns.Clear();
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
-                    OrganizarDataGridViajes(viajesCliente);
-                    txt_IdDeViajeACancelar .Text= "";
-                    txt_Fecha.Text = "";
+                Repositorio_Viajes.Repo_Viajes.DarDeBaja(txt_IdDeViajeACancelar.Text, cliente);
+                dtg_ListaViajes.Columns.Clear();
+                viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
+                OrganizarDataGridViajes(viajesCliente);
+                txt_IdDeViajeACancelar.Text = "";
+                txt_Fecha.Text = "";
+                MessageBox.Show("Viaje cancelado exitosamente\n");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-                    MessageBox.Show("Viaje cancelado \n");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione viaje \n");
-            }
+
+           
+
+
+
         }
         #region EVENTOS PARA EL MOUSE
         private void pic_EliminarViaje_MouseLeave(object sender, EventArgs e)

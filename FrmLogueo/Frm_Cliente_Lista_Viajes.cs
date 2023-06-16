@@ -14,7 +14,7 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Cliente_Lista_Viajes : Form
     {
         Cliente cliente;
-
+        List<Viaje> viajesCliente;
         public Frm_Cliente_Lista_Viajes()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace WF_TransporteRodriguez
 
         private void FrmListarViajesCliente_Load(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
             lbl_NombreCliente.Text = cliente.Nombre;
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
@@ -38,7 +38,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_ViajesRealizados_Click(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje < DateTime.Now && viaje.Estado == true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje < DateTime.Now && viaje.Estado == true);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
         }
@@ -46,13 +46,13 @@ namespace WF_TransporteRodriguez
 
         private void btn_ViajesTodos_Click(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
         }
         private void btn_ViajesPendientes_Click(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
         }
@@ -102,7 +102,7 @@ namespace WF_TransporteRodriguez
 
         private void btn_Cancelados_Click(object sender, EventArgs e)
         {
-            List<Viaje> viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == false);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == false);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
         }

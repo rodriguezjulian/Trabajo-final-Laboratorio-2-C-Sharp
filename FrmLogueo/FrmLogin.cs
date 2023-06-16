@@ -30,11 +30,6 @@ namespace FrmLogueo
             }
         }
 
-        private void Frm_Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -58,7 +53,7 @@ namespace FrmLogueo
         }
         private void btn_HardCodearCliente_Click(object sender, EventArgs e)
         {
-            txt_LoginUsuario.Text = "Javier Díaz";
+            txt_LoginUsuario.Text = "Javier Diaz";
             txt_Contraseña.Text = "javier333";
         }
 

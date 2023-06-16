@@ -21,11 +21,11 @@ namespace TransporteRodriguez
         {
             if(ListaVehiculos.Count==0) 
             {
-                listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
+               /* listaVehiculos.Add(new Vehiculo(1, Marcas.Fiat, 1000, Colores.Rojo, "123ABC", true));
                 listaVehiculos.Add(new Vehiculo(2, Marcas.Scania, 1500, Colores.Gris, "456FFF", true));
                 listaVehiculos.Add(new Vehiculo(3, Marcas.Ford, 2000, Colores.Negro, "789SDA", true));
                 listaVehiculos.Add(new Vehiculo(4, Marcas.Volkswagen, 500, Colores.Azul, "012AAA", true));
-                listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));
+                listaVehiculos.Add(new Vehiculo(5, Marcas.Iveco, 1200, Colores.Blanco, "344SSS", true));*/
             }
         }
         /// <summary>
@@ -75,7 +75,8 @@ namespace TransporteRodriguez
             Viaje viajeAxuliar;
             //vehiculos aptos para transportar la cantidad de kilos.
             int retorno = 0;
-            foreach (Vehiculo vehiculo in listaVehiculos)
+            List <Vehiculo>listaVehiculosAuxiliar = Conexion_SQL.ObtenerVehiculos("vehiculos");
+            foreach (Vehiculo vehiculo in listaVehiculosAuxiliar)
             {
                 cargaSoportada = vehiculo.CapacidadDeCarga;
                 //busco 1 vehiculo que soporte el peso

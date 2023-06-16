@@ -294,10 +294,9 @@
             // nup_Kilos
             // 
             nup_Kilos.Location = new Point(6, 253);
-            nup_Kilos.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
-            nup_Kilos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nup_Kilos.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            nup_Kilos.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
             nup_Kilos.Name = "nup_Kilos";
-            nup_Kilos.ReadOnly = true;
             nup_Kilos.Size = new Size(251, 23);
             nup_Kilos.TabIndex = 70;
             nup_Kilos.Value = new decimal(new int[] { 1, 0, 0, 0 });

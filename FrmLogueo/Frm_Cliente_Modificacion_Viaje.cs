@@ -25,7 +25,7 @@ namespace WF_TransporteRodriguez
         private void FrmModificarViajeCliente_Load(object sender, EventArgs e)
         {
             //PASAR A REPOSITORIO
-            viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente && viaje.Estado==true);
+            viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.FechaViaje > DateTime.Now && viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
             OrganizarDataGridViajes(viajesCliente);
             dtp_FechaDeViaje.MinDate = DateTime.Today;
             lbl_NombreCliente.Text = cliente.Nombre;
@@ -34,24 +34,17 @@ namespace WF_TransporteRodriguez
         private void pic_EditarViaje_Click(object sender, EventArgs e)
         {
             Viaje viajeAux;
-            if (!string.IsNullOrEmpty(txt_IdDeViajeAModificar.Text))
+            try
             {
-                if (Repositorio_Viajes.Repo_Viajes.ModificarViaje(int.Parse(txt_IdDeViajeAModificar.Text), Cliente, dtp_FechaDeViaje.Value, (float)nup_Kg.Value, cbo_Provincias.Text, out viajeAux))
-                {
-
-                    dtg_ListaViajes.Columns.Clear();
-                    viajesCliente = Repositorio_Viajes.ListaViajes.FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado==true);
-                    OrganizarDataGridViajes(viajesCliente);
-                    MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
-                }
-                else
-                {
-                    MessageBox.Show("No es posible modificar el viaje por falta de disponibilidad de vehiculo. \n");
-                }
+                Repositorio_Viajes.Repo_Viajes.ModificarViaje(txt_IdDeViajeAModificar.Text, Cliente, dtp_FechaDeViaje.Value, ((float)nup_Kg.Value).ToString(), cbo_Provincias.Text, out viajeAux);
+                dtg_ListaViajes.Columns.Clear();
+                viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.FechaViaje > DateTime.Now && viaje.Estado == true);
+                OrganizarDataGridViajes(viajesCliente);
+                MessageBox.Show("VIAJE MODIFICADO\n" + viajeAux.ToString());
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione viaje a modificar. \n");
+                MessageBox.Show(ex.Message);
             }
         }
         private void pic_CancelarModificacion_Click(object sender, EventArgs e)

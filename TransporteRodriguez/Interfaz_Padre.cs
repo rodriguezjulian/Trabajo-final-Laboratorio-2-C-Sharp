@@ -14,6 +14,6 @@ namespace TransporteRodriguez
         public abstract int CalcularId();
   
         public abstract T BuscarInstanciaId(int i);
-        public abstract T DarDeBaja(string id);
+        //public abstract T DarDeBaja(string id);
     }
 }

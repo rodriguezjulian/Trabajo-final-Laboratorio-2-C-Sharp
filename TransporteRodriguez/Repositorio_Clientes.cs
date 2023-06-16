@@ -216,6 +216,5 @@ namespace TransporteRodriguez
             }
             return cliente;
         }
-
     }
 }

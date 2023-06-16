@@ -207,7 +207,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             FormClosing += Frm_Login_FormClosing;
-            Load += Frm_Login_Load;
             ((System.ComponentModel.ISupportInitialize)pic_CamionLogin).EndInit();
             pnl_TransporteRodriguez.ResumeLayout(false);
             pnl_TransporteRodriguez.PerformLayout();

@@ -30,6 +30,49 @@ namespace TransporteRodriguez
             }
                 return retorno;
         }
+        //NO SE PODRAN DAR DE BAJA NI MODIFICAR VIAJES QUE YA HAN EXISTIDO
+        public static bool VerificarFecha(DateTime fechaVieja)
+        {
+            bool retorno;
+            if(fechaVieja < DateTime.Today)
+            {
+                throw new Exception("ERROR, No puede modificar o dar de baja un viaje que ya se realizo.");
+            }
+            else
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+        public static bool VerificarkgIngresado(string kgS, out float kg)
+        {
+            float kgFloat;
+            bool retorno ;
+            if (kgS == "")
+            {
+                throw new Exception("ERROR, Ingrese una cantidad de KG a transportar");
+            }
+            else
+            {
+                if (float.TryParse(kgS, out kgFloat) == false)
+                {
+                    throw new Exception("ERROR, Ingrese un numero para KG") ;
+                }
+                else
+                {
+                    if ( kgFloat < 50 || kgFloat > 2000 )
+                    {
+                        throw new Exception("ERROR, Peso minimo a transportar: 50\nPeso maximo a transportar: 2000.");
+                    }
+                    else
+                    {
+                        kg = kgFloat;
+                        retorno = true;
+                    }
+                }
+            }
+            return retorno;
+        }
         /// <summary>
         /// Verificamos que string no se incluya un numero ni este vacio ("") o null
         /// </summary>

@@ -37,19 +37,16 @@ namespace WF_TransporteRodriguez
 
         private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
-            if (Repositorio_Viajes.Repo_Viajes.CrearViaje(int.Parse(txt_IdCliente.Text), txt_Nombre.Text, txt_DireccionSalida.Text,
-                cbo_Provincias.Text, (float)nup_Kilos.Value, dtp_FechaDeViaje.Value.Date))
+            try
             {
-                viajeAux = Repositorio_Viajes.Repo_Viajes.BuscarInstanciaId(Repositorio_Viajes.Repo_Viajes.CalcularId() - 1);
-                MessageBox.Show("VIAJE CONFIRMADO\n" + viajeAux.ToString());
-                Frm_Cliente_Menu anterior = new Frm_Cliente_Menu();
-                anterior.usuarioInstanciado = clienteInstanciado;
-                this.Close();
-                anterior.ShowDialog();
+                Repositorio_Viajes.Repo_Viajes.CrearViaje(txt_IdCliente.Text, txt_Nombre.Text, txt_DireccionSalida.Text,
+                  cbo_Provincias.Text, ((float)nup_Kilos.Value).ToString(), dtp_FechaDeViaje.Value.Date);
+                
+                MessageBox.Show("VIAJE CONFIRMADO\n");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR, No hay vehiculo disponible en esa fecha y con esa capacidad de carga\n");
+                MessageBox.Show(ex.Message);
             }
         }
         #region EVENTOS PARA EL MOUSE

@@ -152,11 +152,10 @@
             // 
             // txt_IdDeViajeACancelar
             // 
-            txt_IdDeViajeACancelar.BackColor = Color.FromArgb(224, 224, 224);
+            txt_IdDeViajeACancelar.BackColor = Color.White;
             txt_IdDeViajeACancelar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeACancelar.Location = new Point(66, 108);
             txt_IdDeViajeACancelar.Name = "txt_IdDeViajeACancelar";
-            txt_IdDeViajeACancelar.ReadOnly = true;
             txt_IdDeViajeACancelar.Size = new Size(162, 25);
             txt_IdDeViajeACancelar.TabIndex = 85;
             txt_IdDeViajeACancelar.TextAlign = HorizontalAlignment.Center;

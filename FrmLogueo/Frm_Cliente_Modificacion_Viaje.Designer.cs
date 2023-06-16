@@ -113,7 +113,6 @@
             nup_Kg.Location = new Point(63, 154);
             nup_Kg.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
             nup_Kg.Name = "nup_Kg";
-            nup_Kg.ReadOnly = true;
             nup_Kg.Size = new Size(165, 23);
             nup_Kg.TabIndex = 92;
             // 
@@ -149,11 +148,10 @@
             // 
             // txt_IdDeViajeAModificar
             // 
-            txt_IdDeViajeAModificar.BackColor = Color.FromArgb(224, 224, 224);
+            txt_IdDeViajeAModificar.BackColor = Color.White;
             txt_IdDeViajeAModificar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_IdDeViajeAModificar.Location = new Point(63, 99);
             txt_IdDeViajeAModificar.Name = "txt_IdDeViajeAModificar";
-            txt_IdDeViajeAModificar.ReadOnly = true;
             txt_IdDeViajeAModificar.Size = new Size(165, 25);
             txt_IdDeViajeAModificar.TabIndex = 84;
             txt_IdDeViajeAModificar.TextAlign = HorizontalAlignment.Center;
