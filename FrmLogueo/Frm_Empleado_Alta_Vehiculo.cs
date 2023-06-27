@@ -37,6 +37,7 @@ namespace WF_TransporteRodriguez
             }
             catch (Exception ex)
             {
+                Log_Errores.EscribirLogErrores(ex);
                 MessageBox.Show(ex.Message);
             }
 

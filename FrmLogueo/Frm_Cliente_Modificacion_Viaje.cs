@@ -48,6 +48,7 @@ namespace WF_TransporteRodriguez
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
             }
         }
         private void pic_CancelarModificacion_Click(object sender, EventArgs e)

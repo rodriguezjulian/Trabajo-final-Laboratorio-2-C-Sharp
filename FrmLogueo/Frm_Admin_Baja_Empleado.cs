@@ -89,6 +89,7 @@ namespace WF_TransporteRodriguez
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
             }
 
         }

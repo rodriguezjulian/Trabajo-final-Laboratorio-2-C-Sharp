@@ -50,6 +50,7 @@
             listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
+            cuentasToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             mnu_Admin.SuspendLayout();
@@ -118,7 +119,7 @@
             // 
             // empleadosToolStripMenuItem
             // 
-            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem1, modificarToolStripMenuItem, bajaToolStripMenuItem, listarToolStripMenuItem1 });
+            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem1, modificarToolStripMenuItem, bajaToolStripMenuItem, listarToolStripMenuItem1, cuentasToolStripMenuItem });
             empleadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             empleadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
@@ -239,6 +240,12 @@
             cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
             // 
+            // cuentasToolStripMenuItem
+            // 
+            cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
+            cuentasToolStripMenuItem.Size = new Size(181, 34);
+            cuentasToolStripMenuItem.Text = "Cuentas";
+            // 
             // Frm_Admin_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -285,5 +292,6 @@
         private ToolStripMenuItem modificarToolStripMenuItem;
         private ToolStripMenuItem bajaToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem1;
+        private ToolStripMenuItem cuentasToolStripMenuItem;
     }
 }

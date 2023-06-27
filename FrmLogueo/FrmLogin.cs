@@ -34,8 +34,8 @@ namespace FrmLogueo
             catch(Exception exe)
             {
                 MessageBox.Show(exe.Message);
+                Log_Errores.EscribirLogErrores(exe);
             }
-
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)

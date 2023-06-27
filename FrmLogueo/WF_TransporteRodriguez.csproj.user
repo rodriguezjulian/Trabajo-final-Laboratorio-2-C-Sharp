@@ -7,6 +7,9 @@
     <Compile Update="Frm_Admin_Baja_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Admin_Cuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Admin_Lista_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
