@@ -16,11 +16,13 @@ namespace TransporteRodriguez
         //Para consultas a la base uso query
         private static MySqlCommand query;
         //Credenciales de la conexion
-        private static String cadenaConexion = "Server=localhost;Database=bd_transporte_rodriguez;Uid=root;Pwd='';";
+        //PASAR AL CTOR
+       // private static String cadenaConexion = ;
         //El constructor se ejecutaria solo 1 vez porque es estatica la clase
         static Conexion_SQL()
         {
-            mysqlConexion = new MySqlConnection(cadenaConexion);
+            //  mysqlConexion = new MySqlConnection("Server=localhost;Database=bd_transporte_rodriguez;Uid=root;Pwd='';");
+            mysqlConexion = new MySqlConnection("Server=localhost;Port=3302;Database=bd_transporte_rodriguez;Uid=root;Pwd='';");
         }
         public static void Conectar()
         {
@@ -43,16 +45,18 @@ namespace TransporteRodriguez
 
             Type tipoDeObjeto = typeof(T);
             PropertyInfo[] propiedades = tipoDeObjeto.GetProperties();
-
+            int bandera = 0;
             StringBuilder camposDb = new StringBuilder();
             StringBuilder values = new StringBuilder();
             for (int i = 0; i < propiedades.Length - 1; i++)
             {
-                if (!propiedades[i].Name.ToLower().Contains("id"))
+                if (bandera != 0)
                 {
                     camposDb.Append(propiedades[i].Name + ",");
-                    values.Append("@" + propiedades[i].Name + ",");
+                    values.Append("@" + propiedades[i].Name + ","); 
                 }
+                bandera = 1;
+
             }
             camposDb.Append(propiedades[propiedades.Length - 1].Name);
             values.Append("@" + propiedades[propiedades.Length - 1].Name);
@@ -70,55 +74,6 @@ namespace TransporteRodriguez
                 {
                     query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen));
                 }
-            }
-            query.ExecuteNonQuery();
-            mysqlConexion.Close();
-        }
-        public static void InsertarViaje<T>(T gen, string nombreTabla)
-        {
-            mysqlConexion.Open();
-
-            Type tipoDeObjeto = typeof(T);
-            PropertyInfo[] propiedades = tipoDeObjeto.GetProperties();
-            int contador = 0;
-            StringBuilder camposDb = new StringBuilder();
-            StringBuilder values = new StringBuilder();
-            for (int i = 0; i < propiedades.Length - 1; i++)
-            {
-                if (contador!=0)
-                {
-                    camposDb.Append(propiedades[i].Name + ",");
-                    values.Append("@" + propiedades[i].Name + ",");
-                }
-                contador++;
-
-            }
-            camposDb.Append(propiedades[propiedades.Length - 1].Name);
-            values.Append("@" + propiedades[propiedades.Length - 1].Name);
-
-            string consulta = $"INSERT INTO {nombreTabla} ({camposDb}) VALUES ({values})";
-            query = new MySqlCommand(consulta, mysqlConexion);
-
-
-
-            foreach (PropertyInfo propiedad in propiedades)
-            {
-                if (propiedad.GetValue(gen) is Enum)
-                {
-                    query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
-                }
-                else
-                {
-                    if (propiedad.GetValue(gen) is DateTime)
-                    {
-                        query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
-                    }
-                    else
-                    {
-                        query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen));
-                    }
-                }
-            
             }
             query.ExecuteNonQuery();
             mysqlConexion.Close();
@@ -166,6 +121,7 @@ namespace TransporteRodriguez
         }
         public static List<Empleado> ObtenerEmpleados(string nombreTabla)
         {
+          
             mysqlConexion.Open();
             List<Empleado> lista = new List<Empleado>();
 
@@ -281,60 +237,17 @@ namespace TransporteRodriguez
             Type tipoDeObjeto = typeof(T);
             //GUARDO LAS PROPIEDADES EN UN ARRAY DE TIPO PropertyInfo
             PropertyInfo[] propiedades = tipoDeObjeto.GetProperties();
-
+            int bandera = 0;
             StringBuilder camposDb = new StringBuilder();
             //ITERO LA CATIDAD DE PROPIEDADES -1 PARA EVITAR LA ',' EN EL ULTIMO ELEMENTO
             for (int i = 0; i < propiedades.Length - 1; i++)
             {
                 //VERIFICO QUE LA PROPIEDAD NO CONTENGA ID YA QUE EL MISMO NO SE PODRA MODIFICAR Y ES UNA PK
-                if (!propiedades[i].Name.ToLower().Contains("id"))
+                if (bandera!=0)
                 {
                     camposDb.Append(propiedades[i].Name + "=@" + propiedades[i].Name + ",");
                 }
-            }
-            // LA ULTIMA PROPIEDAD ACTUALIZADA SE SUMA AL StringBuilder Y QUEDA SIN LA ','
-            camposDb.Append($"{propiedades[propiedades.Length - 1].Name}=@{propiedades[propiedades.Length - 1].Name}");
-
-            string consulta = $"UPDATE {nombreTabla} SET {camposDb} WHERE {propiedades[0].Name} = {propiedades[0].GetValue(gen)}";
-            //ENVIO LA CONSULTA
-            query = new MySqlCommand(consulta, mysqlConexion);
-            //propiedad va ir tomando los valores de cada propiedad - de esta forma esten o no modificados los atributos, se pisaran.
-            foreach (PropertyInfo propiedad in propiedades)
-            {
-                if (propiedad.GetValue(gen) is Enum)
-                {
-                    query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen).ToString());
-                }
-                else
-                {
-                    query.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(gen));
-                }
-            }
-            //EJECUTO INSTRUCCION
-            query.ExecuteNonQuery();
-            //CIERRO CONEXION
-            mysqlConexion.Close();
-        }
-        public static void ModificarViajes<T>(T gen, string nombreTabla)
-        {
-            //ABRO CONEXION
-            mysqlConexion.Open();
-            int contador=0;
-            //OBTENGO EL TIPO DE OBJETO PARA ASI PODER ACCEDER A LAS PROPIEDADES
-            Type tipoDeObjeto = typeof(T);
-            //GUARDO LAS PROPIEDADES EN UN ARRAY DE TIPO PropertyInfo
-            PropertyInfo[] propiedades = tipoDeObjeto.GetProperties();
-
-            StringBuilder camposDb = new StringBuilder();
-            //ITERO LA CATIDAD DE PROPIEDADES -1 PARA EVITAR LA ',' EN EL ULTIMO ELEMENTO
-            for (int i = 0; i < propiedades.Length - 1; i++)
-            {
-                //VERIFICO QUE LA PROPIEDAD NO CONTENGA ID YA QUE EL MISMO NO SE PODRA MODIFICAR Y ES UNA PK
-                if (contador != 0)
-                {
-                    camposDb.Append(propiedades[i].Name + "=@" + propiedades[i].Name + ",");
-                }
-                contador++;
+                bandera = 1;
             }
             // LA ULTIMA PROPIEDAD ACTUALIZADA SE SUMA AL StringBuilder Y QUEDA SIN LA ','
             camposDb.Append($"{propiedades[propiedades.Length - 1].Name}=@{propiedades[propiedades.Length - 1].Name}");

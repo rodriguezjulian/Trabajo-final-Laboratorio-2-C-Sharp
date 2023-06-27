@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Conexion_FireBase;
 
 namespace TransporteRodriguez
 {
-    public class Repositorio_Empleados : Interfaz_Padre<Empleado>
+    public class Repositorio_Empleados : Interfaz_Padre<Empleado>, Interfaz_Busqueda<Empleado,Usuario>
     {
         private static List<Empleado> listaEmpleado = new List<Empleado>();
         private readonly static Repositorio_Empleados repo_Empleados = new Repositorio_Empleados();
@@ -28,7 +29,6 @@ namespace TransporteRodriguez
             {
                 if (empleadoAuxiliar.IdEmpleado == idEmpleado)
                 {
-
                     empleado = empleadoAuxiliar;
                     break;
                 }
@@ -106,17 +106,18 @@ namespace TransporteRodriguez
             }
             return empleado;
         }
-        public bool CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
+        public async Task<bool> CrearEmpleado(string nombre, string mail, string tipoMail, Puestos puesto)
         {
             string mailFinal;
             bool retorno = false;
-
+       
             if (VerificarPuesto(puesto))
             {
                 if (Validaciones.VerificarNombre(nombre) && Sistema.CrearMail(mail, tipoMail, out mailFinal))
                 {
                     Empleado empleado = new Empleado(nombre, Sistema.generarContraseña(), mailFinal, true, puesto);
                     Conexion_SQL.Insertar(empleado, "empleados");
+                    await Conexion_FireBase.Agregar(empleado, "2");
                     retorno = true;
                 }
             }
@@ -124,7 +125,6 @@ namespace TransporteRodriguez
             {
                 throw new Exception("ERROR, Ingrese puesto valido.");
             }
-
             return retorno;
         }
         /// <summary>
@@ -186,9 +186,20 @@ namespace TransporteRodriguez
                     }
                 }
             }
-          
              return retorno;
          }
-     
+        /*public int OrdenarPorNombre (Empleado uno,Empleado dos)
+        {
+            return uno.Nombre.CompareTo(dos.Nombre);
+        }*/
+        public bool FiltrarEstados(Empleado uno,bool estadoFiltrado)
+        {
+            bool retorno=false;
+            if (uno.Estado==estadoFiltrado)
+            {
+                return true;
+            }
+            return retorno;
+        }
     }
 }

@@ -121,7 +121,7 @@ namespace TransporteRodriguez
 
                Viaje viajeAux =new Viaje(idEntero, nombre, direccionSalida, provinciaDestino, cargaKgFloat,
                calcularPrecioViaje(provinciaDestino, cargaKgFloat), Repositorio_Vehiculos.RetornarVehiculoDisponible(cargaKgFloat, fecha), fecha.Date,true);
-               Conexion_SQL.InsertarViaje(viajeAux, "viajes");
+               Conexion_SQL.Insertar(viajeAux, "viajes");
               
             }
             return retorno;
@@ -179,7 +179,7 @@ namespace TransporteRodriguez
                                     viajeAux.ProvinciaDestino = destino;
                                     viaje = viajeAux;
                                     retorno = true;
-                                    Conexion_SQL.ModificarViajes(viaje, "viajes");
+                                    Conexion_SQL.Modificar(viaje, "viajes");
                                 }
                             }
                         }

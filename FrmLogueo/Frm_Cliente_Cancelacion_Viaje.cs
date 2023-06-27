@@ -45,7 +45,7 @@ namespace WF_TransporteRodriguez
                 txt_Fecha.Text = "";
                 MessageBox.Show("Viaje cancelado exitosamente\n");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

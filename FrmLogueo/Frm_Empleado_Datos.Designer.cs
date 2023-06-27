@@ -78,6 +78,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.FromArgb(255, 224, 192);
             groupBox1.Controls.Add(pic_Cargo);
             groupBox1.Controls.Add(pic_Mail);
             groupBox1.Controls.Add(pic_Persona);
@@ -252,6 +253,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 502);
             Controls.Add(panel2);
             Controls.Add(groupBox1);

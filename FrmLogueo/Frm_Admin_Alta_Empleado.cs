@@ -25,11 +25,11 @@ namespace WF_TransporteRodriguez
             cbo_Mail.SelectedIndex = 1;
         }
 
-        private void pic_Guardar_Click(object sender, EventArgs e)
+        private async void pic_Guardar_Click(object sender, EventArgs e)
         {
             try
             {
-                Repositorio_Empleados.Repo_Empleados.CrearEmpleado(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), (Puestos)cbo_Puesto.SelectedItem);
+                await Repositorio_Empleados.Repo_Empleados.CrearEmpleado(txt_AltaNombre.Text, txt_AltaMail.Text, cbo_Mail.SelectedItem.ToString(), (Puestos)cbo_Puesto.SelectedItem);
                 MessageBox.Show("Empleado creado satisfactoriamente.");
             }
             catch (Exception ex)

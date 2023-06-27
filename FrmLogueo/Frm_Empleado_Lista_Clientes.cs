@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Type;
+using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransporteRodriguez;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace WF_TransporteRodriguez
 {
     public partial class Frm_Empleado_Lista_Clientes : Form
     {
-        private static List<Cliente> listaClientesAuxiliar = new List<Cliente>();
+        private static List<Cliente> listaClientesAuxiliar;
+
         public Frm_Empleado_Lista_Clientes()
         {
             InitializeComponent();
@@ -22,9 +26,19 @@ namespace WF_TransporteRodriguez
         private void Frm_Empleado_Listar_Clientes_Load(object sender, EventArgs e)
         {
             ConfigurarDTG(Conexion_SQL.ObtenerClientes("clientes"));
+            btn_DeBaja.Click += CambiarCheck;
+            btn_Activos.Click += CambiarCheck;
+            btn_Todos.Click += CambiarCheck;
+
+            btn_Todos.Click += CambiarFondo;
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
+            //this.btn_DeBaja.Click += CambiarCheck;
+            // this.btn_DeBaja.Click += CambiarFondo;
+            //this.btn_DeBaja.BackColor = Color.Gray;
+
+
             listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == false);
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
@@ -80,6 +94,11 @@ namespace WF_TransporteRodriguez
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
+            //this.btn_Activos.Click += CambiarFondo;
+
+            // this.btn_Activos.BackColor = Color.Gray;
+
+            //btn_Activos.BackColor = Color.Gray;
             listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
@@ -87,8 +106,46 @@ namespace WF_TransporteRodriguez
 
         private void btn_Todos_Click(object sender, EventArgs e)
         {
+
+            // this.btn_Todos.Click += CambiarFondo;
+
+
+            // this.btn_Todos.BackColor = Color.Gray;
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(Conexion_SQL.ObtenerClientes("clientes"));
+            //this.btn_Todos.Click -= CambiarCheck;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.check;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes");
+            listaClientesAuxiliar.Sort((Cliente cliente, Cliente cliente2) => cliente.Nombre.CompareTo(cliente2.Nombre));
+            dtg_ListarClientes.Columns.Clear();
+            ConfigurarDTG(listaClientesAuxiliar);
+        }
+        private void CambiarCheck(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.delete;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+        private void CambiarFondo(object sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                Button boton = (Button)sender;
+                if (boton.Name == "btn_Todos")
+                {
+                    btn_Todos.BackColor = System.Drawing.Color.Gray;
+                    btn_Activos.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                    btn_DeBaja.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                }
+            }
+            /*btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_Activos.BackColor = Color.FromArgb(192, 255, 192);
+            btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);*/
+        }
+
     }
 }

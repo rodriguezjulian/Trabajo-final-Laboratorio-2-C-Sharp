@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dtg_Listar = new DataGridView();
             pnl_Izquierdo = new Panel();
             pic_Volver = new PictureBox();
@@ -45,12 +47,33 @@
             // dtg_Listar
             // 
             dtg_Listar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtg_Listar.BackgroundColor = Color.White;
+            dtg_Listar.BackgroundColor = Color.FromArgb(255, 255, 192);
+            dtg_Listar.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtg_Listar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtg_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_Listar.DefaultCellStyle = dataGridViewCellStyle2;
+            dtg_Listar.EnableHeadersVisualStyles = false;
+            dtg_Listar.GridColor = Color.FromArgb(255, 224, 192);
             dtg_Listar.Location = new Point(113, 147);
             dtg_Listar.Name = "dtg_Listar";
             dtg_Listar.ReadOnly = true;
+            dtg_Listar.RowHeadersVisible = false;
             dtg_Listar.RowTemplate.Height = 25;
+            dtg_Listar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_Listar.Size = new Size(595, 343);
             dtg_Listar.TabIndex = 9;
             // 

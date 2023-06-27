@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Conexion_FireBase\Conexion_FireBase.csproj" />
     <ProjectReference Include="..\Enumerado\Enumerado.csproj" />
   </ItemGroup>
 

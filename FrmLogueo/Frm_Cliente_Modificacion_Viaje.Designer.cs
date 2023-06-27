@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente_Modificacion_Viaje));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             lbl_ListaDeViajesPendientes = new Label();
             cbo_Provincias = new ComboBox();
@@ -224,10 +225,21 @@
             // 
             dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListaViajes.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtg_ListaViajes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListaViajes.EnableHeadersVisualStyles = false;
+            dtg_ListaViajes.GridColor = Color.FromArgb(255, 224, 192);
             dtg_ListaViajes.Location = new Point(0, 183);
             dtg_ListaViajes.Name = "dtg_ListaViajes";
             dtg_ListaViajes.ReadOnly = true;
+            dtg_ListaViajes.RowHeadersVisible = false;
             dtg_ListaViajes.RowTemplate.Height = 25;
             dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListaViajes.Size = new Size(720, 286);

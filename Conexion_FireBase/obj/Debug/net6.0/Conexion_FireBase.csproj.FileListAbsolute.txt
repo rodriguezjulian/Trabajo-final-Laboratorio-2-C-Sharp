@@ -1,0 +1,12 @@
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\bin\Debug\net6.0\Conexion_FireBase.deps.json
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\bin\Debug\net6.0\Conexion_FireBase.dll
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\bin\Debug\net6.0\Conexion_FireBase.pdb
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.csproj.AssemblyReference.cache
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.AssemblyInfoInputs.cache
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.AssemblyInfo.cs
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.csproj.CoreCompileInputs.cache
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.dll
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\refint\Conexion_FireBase.dll
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\Conexion_FireBase.pdb
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\Conexion_FireBase\obj\Debug\net6.0\ref\Conexion_FireBase.dll

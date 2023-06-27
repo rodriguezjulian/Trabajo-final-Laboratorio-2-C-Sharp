@@ -54,7 +54,7 @@ namespace WF_TransporteRodriguez
                     txt_AltaDireccion.Text, cbo_Rubro.SelectedItem.ToString());
                 MessageBox.Show("Cliente creado satisfactoriamente");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

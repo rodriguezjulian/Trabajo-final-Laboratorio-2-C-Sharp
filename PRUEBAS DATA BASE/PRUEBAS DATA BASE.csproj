@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>PRUEBAS_DATA_BASE</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Conexion_FireBase\Conexion_FireBase.csproj" />
+    <ProjectReference Include="..\TransporteRodriguez\TransporteRodriguez.csproj" />
+  </ItemGroup>
+
+</Project>

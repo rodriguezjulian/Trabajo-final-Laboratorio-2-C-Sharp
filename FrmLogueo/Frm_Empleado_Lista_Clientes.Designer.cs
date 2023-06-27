@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -40,6 +42,8 @@
             dtg_ListarClientes = new DataGridView();
             btn_DeBaja = new Button();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             btn_Todos = new Button();
             btn_Activos = new Button();
             pnl_Izquierdo.SuspendLayout();
@@ -47,6 +51,7 @@
             pnl_PanelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -126,11 +131,30 @@
             // dtg_ListarClientes
             // 
             dtg_ListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtg_ListarClientes.BackgroundColor = Color.White;
+            dtg_ListarClientes.BackgroundColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtg_ListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtg_ListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_ListarClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dtg_ListarClientes.EnableHeadersVisualStyles = false;
+            dtg_ListarClientes.GridColor = Color.FromArgb(255, 224, 192);
             dtg_ListarClientes.Location = new Point(112, 88);
             dtg_ListarClientes.Name = "dtg_ListarClientes";
             dtg_ListarClientes.ReadOnly = true;
+            dtg_ListarClientes.RowHeadersVisible = false;
             dtg_ListarClientes.RowTemplate.Height = 25;
             dtg_ListarClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarClientes.Size = new Size(595, 379);
@@ -151,6 +175,8 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Bottom;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(btn_Todos);
             panel1.Controls.Add(btn_Activos);
             panel1.Controls.Add(pnl_PanelSup);
@@ -161,6 +187,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(720, 469);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.delete;
+            pictureBox1.Location = new Point(329, 51);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(49, 31);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 77;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(126, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(197, 15);
+            label1.TabIndex = 76;
+            label1.Text = "ORDENAR POR NOMBRE (TODOS)";
             // 
             // btn_Todos
             // 
@@ -186,14 +233,14 @@
             btn_Activos.UseVisualStyleBackColor = false;
             btn_Activos.Click += btn_Activos_Click;
             // 
-            // Frm_Empleado_Listar_Clientes
+            // Frm_Empleado_Lista_Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Frm_Empleado_Listar_Clientes";
+            Name = "Frm_Empleado_Lista_Clientes";
             Text = "Frm_Empleado_Listar_Clientes";
             Load += Frm_Empleado_Listar_Clientes_Load;
             pnl_Izquierdo.ResumeLayout(false);
@@ -202,6 +249,8 @@
             pnl_PanelSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_ListarClientes).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -221,5 +270,10 @@
         public Panel panel1;
         private Button btn_Todos;
         private Button btn_Activos;
+        private Button button2;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private Button button1;
     }
 }

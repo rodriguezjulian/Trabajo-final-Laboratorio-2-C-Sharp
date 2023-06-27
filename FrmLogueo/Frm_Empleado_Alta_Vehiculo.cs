@@ -35,7 +35,7 @@ namespace WF_TransporteRodriguez
                 Repositorio_Vehiculos.Repo_Vehiculos.CrearVehiculo((Marcas)cbo_Marca.SelectedItem, nup_Kilos.Value.ToString(), (Colores)cbo_Color.SelectedItem, txt_AltaPatente.Text);
                 MessageBox.Show("Vehiculo creado satisfactoriamente.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

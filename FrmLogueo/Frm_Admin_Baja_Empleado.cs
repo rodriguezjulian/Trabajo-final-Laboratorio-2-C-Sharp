@@ -16,8 +16,10 @@ namespace WF_TransporteRodriguez
     {
         List<Empleado> empleadosActivos;
         Empleado empleado;
-
-        public Empleado Empleado { get => empleado; set => empleado = value; }
+        public void TraerEmpleado(Empleado empleadoIns)
+        {
+            empleado = empleadoIns;
+        }
 
         public Frm_Admin_Baja_Empleado()
         {
@@ -75,12 +77,12 @@ namespace WF_TransporteRodriguez
         {
             try
             {
-                Empleado empleado = Repositorio_Empleados.Repo_Empleados.DarDeBaja(txt_BajaID.Text, Empleado);
+                Empleado empleadoAuxliar = Repositorio_Empleados.Repo_Empleados.DarDeBaja(txt_BajaID.Text, empleado);
 
                 dtg_ListarEmpleados.DataSource = null;
                 dtg_ListarEmpleados.Rows.Clear();
                 dtg_ListarEmpleados.AutoGenerateColumns = false;
-                empleadosActivos = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true);
+                empleadosActivos = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleadoAuxliar => empleadoAuxliar.Estado == true);
                 dtg_ListarEmpleados.DataSource = empleadosActivos;
                 MessageBox.Show("Baja satisfactoria");
             }

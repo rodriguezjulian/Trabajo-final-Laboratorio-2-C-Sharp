@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dtg_ListaViajes = new DataGridView();
             grp_ListarViajesCliente = new GroupBox();
             btn_Cancelados = new Button();
@@ -53,11 +55,30 @@
             // 
             dtg_ListaViajes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtg_ListaViajes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtg_ListaViajes.BackgroundColor = Color.White;
+            dtg_ListaViajes.BackgroundColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtg_ListaViajes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtg_ListaViajes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_ListaViajes.DefaultCellStyle = dataGridViewCellStyle2;
+            dtg_ListaViajes.EnableHeadersVisualStyles = false;
+            dtg_ListaViajes.GridColor = Color.FromArgb(255, 224, 192);
             dtg_ListaViajes.Location = new Point(3, 114);
             dtg_ListaViajes.Name = "dtg_ListaViajes";
             dtg_ListaViajes.ReadOnly = true;
+            dtg_ListaViajes.RowHeadersVisible = false;
             dtg_ListaViajes.RowTemplate.Height = 25;
             dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListaViajes.Size = new Size(717, 343);

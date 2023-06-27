@@ -17,6 +17,7 @@ namespace WF_TransporteRodriguez
     {
         private Empleado empleadoInstanciado;
         private static Frm_Login login;
+        public delegate void usuarioDelegado (Empleado empleado);
         public Frm_Admin_Menu()
         {
             InitializeComponent();
@@ -154,9 +155,10 @@ namespace WF_TransporteRodriguez
             try
             {
                 Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
-                
                 Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
-                frm_Admin_Baja_Empleado.Empleado= empleadoInstanciado;
+                usuarioDelegado delegado= frm_Admin_Baja_Empleado.TraerEmpleado;
+                delegado(empleadoInstanciado);
+                //frm_Admin_Baja_Empleado.Empleado= empleadoInstanciado;
                 frm_Admin_Baja_Empleado.MdiParent = this;
                 frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
                 frm_Admin_Baja_Empleado.Show();

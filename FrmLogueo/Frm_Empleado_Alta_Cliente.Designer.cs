@@ -40,6 +40,7 @@
             cbo_Rubro = new ComboBox();
             label3 = new Label();
             grp_DatosNuevoCliente = new GroupBox();
+            label7 = new Label();
             pictureBox1 = new PictureBox();
             lbl_TipoMail = new Label();
             cbo_Mail = new ComboBox();
@@ -53,7 +54,6 @@
             label4 = new Label();
             label11 = new Label();
             pnl_AltaCliente = new Panel();
-            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -78,7 +78,7 @@
             // 
             // txt_AltaNombre
             // 
-            txt_AltaNombre.BackColor = Color.FromArgb(255, 255, 192);
+            txt_AltaNombre.BackColor = Color.White;
             txt_AltaNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaNombre.Location = new Point(64, 68);
             txt_AltaNombre.Name = "txt_AltaNombre";
@@ -98,7 +98,7 @@
             // 
             // txt_AltaMail
             // 
-            txt_AltaMail.BackColor = Color.FromArgb(255, 255, 192);
+            txt_AltaMail.BackColor = Color.White;
             txt_AltaMail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaMail.Location = new Point(67, 116);
             txt_AltaMail.Name = "txt_AltaMail";
@@ -128,7 +128,7 @@
             // 
             // txt_AltaDireccion
             // 
-            txt_AltaDireccion.BackColor = Color.FromArgb(255, 255, 192);
+            txt_AltaDireccion.BackColor = Color.White;
             txt_AltaDireccion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaDireccion.Location = new Point(68, 216);
             txt_AltaDireccion.Name = "txt_AltaDireccion";
@@ -168,7 +168,7 @@
             // 
             // grp_DatosNuevoCliente
             // 
-            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 224, 192);
             grp_DatosNuevoCliente.Controls.Add(label7);
             grp_DatosNuevoCliente.Controls.Add(pictureBox1);
             grp_DatosNuevoCliente.Controls.Add(lbl_TipoMail);
@@ -190,6 +190,16 @@
             grp_DatosNuevoCliente.TabIndex = 48;
             grp_DatosNuevoCliente.TabStop = false;
             grp_DatosNuevoCliente.Text = "Datos por ingresar";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(68, 96);
+            label7.Name = "label7";
+            label7.Size = new Size(89, 17);
+            label7.TabIndex = 58;
+            label7.Text = "Mail, sin \"@\"";
             // 
             // pictureBox1
             // 
@@ -327,21 +337,11 @@
             pnl_AltaCliente.Size = new Size(200, 33);
             pnl_AltaCliente.TabIndex = 58;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(68, 96);
-            label7.Name = "label7";
-            label7.Size = new Size(89, 17);
-            label7.TabIndex = 58;
-            label7.Text = "Mail, sin \"@\"";
-            // 
             // Frm_Empleado_Alta_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(720, 469);
             ControlBox = false;
             Controls.Add(pnl_AltaCliente);

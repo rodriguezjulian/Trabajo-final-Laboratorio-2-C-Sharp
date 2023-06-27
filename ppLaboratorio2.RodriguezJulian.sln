@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerado", "Enumerado\Enum
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WF_TransporteRodriguez", "FrmLogueo\WF_TransporteRodriguez.csproj", "{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conexion_FireBase", "Conexion_FireBase\Conexion_FireBase.csproj", "{F0F8D6D0-00F1-4E58-A962-7C5B8B9B46EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FD3FF4C-6906-4F97-B399-AFD9F6F8551C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F8D6D0-00F1-4E58-A962-7C5B8B9B46EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F8D6D0-00F1-4E58-A962-7C5B8B9B46EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F8D6D0-00F1-4E58-A962-7C5B8B9B46EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F8D6D0-00F1-4E58-A962-7C5B8B9B46EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

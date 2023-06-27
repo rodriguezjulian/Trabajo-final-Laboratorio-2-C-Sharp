@@ -84,6 +84,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(255, 255, 192);
             panel1.Controls.Add(grp_DatosNuevoCliente);
             panel1.Controls.SetChildIndex(panel2, 0);
             panel1.Controls.SetChildIndex(pnl_PanelSup, 0);
@@ -91,7 +92,7 @@
             // 
             // grp_DatosNuevoCliente
             // 
-            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 255, 192);
+            grp_DatosNuevoCliente.BackColor = Color.FromArgb(255, 224, 192);
             grp_DatosNuevoCliente.Controls.Add(cbo_Marca);
             grp_DatosNuevoCliente.Controls.Add(pictureBox2);
             grp_DatosNuevoCliente.Controls.Add(cbo_Color);
@@ -202,7 +203,7 @@
             // 
             // txt_AltaPatente
             // 
-            txt_AltaPatente.BackColor = Color.FromArgb(255, 255, 192);
+            txt_AltaPatente.BackColor = Color.White;
             txt_AltaPatente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txt_AltaPatente.Location = new Point(59, 105);
             txt_AltaPatente.Name = "txt_AltaPatente";

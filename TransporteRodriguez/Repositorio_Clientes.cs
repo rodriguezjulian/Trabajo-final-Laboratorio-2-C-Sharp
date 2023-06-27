@@ -12,16 +12,7 @@ namespace TransporteRodriguez
         private static List<Cliente> listaClientes = new List<Cliente>();
         private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
-        /*
-                 private readonly static Repositorio_Empleados repo_Empleados = new Repositorio_Empleados();
-        public static List<Empleado> ListaEmpleado { get => listaEmpleado; set => listaEmpleado = value; }
-
-        public static Repositorio_Empleados Repo_Empleados => repo_Empleados;
-         */
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
-
-
-
 
         public  Cliente BuscarInstanciaId(int idCliente)
         {
@@ -31,7 +22,6 @@ namespace TransporteRodriguez
             {
                 if (clienteAuxliar.IdCliente == idCliente)
                 {
-
                     cliente = clienteAuxliar;
                     break;
                 }

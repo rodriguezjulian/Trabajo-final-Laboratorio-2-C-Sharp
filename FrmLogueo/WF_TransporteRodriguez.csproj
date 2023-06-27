@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Conexion_FireBase\Conexion_FireBase.csproj" />
     <ProjectReference Include="..\TransporteRodriguez\TransporteRodriguez.csproj" />
   </ItemGroup>
 

@@ -16,8 +16,11 @@ namespace TransporteRodriguez
 
         public static Repositorio_Vehiculos Repo_Vehiculos => repo_Vehiculos;
 
-
-
+       /* public delegate int FiltarPorEstado(Vehiculo vehiculos);
+        public void FiltrarVehiculos(List <Vehiculo> listavehiculos, FiltarPorEstado func)
+        {
+            listavehiculos.Sort(func);
+        }*/
 
         /// <summary>
         /// Se obtiene la direccion de memoria de la instancia a travez de su id

@@ -4,6 +4,67 @@
     "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\FrmLogueo\\WF_TransporteRodriguez.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj",
+        "projectName": "Conexion_FireBase",
+        "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj",
+        "packagesPath": "C:\\Users\\Julian Rodriguez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Julian Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -83,6 +144,9 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
+              "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj": {
+                "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj"
+              },
               "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj": {
                 "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\TransporteRodriguez\\TransporteRodriguez.csproj"
               }
@@ -145,6 +209,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj": {
+                "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Conexion_FireBase\\Conexion_FireBase.csproj"
+              },
               "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj": {
                 "projectPath": "C:\\Users\\Julian Rodriguez\\Desktop\\LaboratorioDos\\ppLaboratorio2B---SEGUNDO-INTENTO\\Enumerado\\Enumerado.csproj"
               }

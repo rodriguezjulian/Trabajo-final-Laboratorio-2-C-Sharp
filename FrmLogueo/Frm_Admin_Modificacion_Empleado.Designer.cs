@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Admin_Modificacion_Empleado));
             dtg_ListarEmpleados = new DataGridView();
             grp_DatosNuevoCliente = new GroupBox();
@@ -99,10 +100,21 @@
             // 
             dtg_ListarEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_ListarEmpleados.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtg_ListarEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtg_ListarEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_ListarEmpleados.EnableHeadersVisualStyles = false;
+            dtg_ListarEmpleados.GridColor = Color.FromArgb(255, 224, 192);
             dtg_ListarEmpleados.Location = new Point(94, 239);
             dtg_ListarEmpleados.Name = "dtg_ListarEmpleados";
             dtg_ListarEmpleados.ReadOnly = true;
+            dtg_ListarEmpleados.RowHeadersVisible = false;
             dtg_ListarEmpleados.RowTemplate.Height = 25;
             dtg_ListarEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListarEmpleados.Size = new Size(623, 251);
