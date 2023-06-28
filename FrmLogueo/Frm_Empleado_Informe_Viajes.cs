@@ -18,17 +18,34 @@ namespace WF_TransporteRodriguez
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void pic_ReservarViajar_Click(object sender, EventArgs e)
         {
             try
             {
-                Repositorio_Viajes.Repo_Viajes.GuardarViajes(dtp_LimiteInferior.Value.Date, dtp_LimiteSuperior.Value.Date);
+                string rutaArchivo;
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //if (File.Exists(saveFileDialog.FileName))
+                    //{
+                    rutaArchivo = saveFileDialog.FileName;
+                    Repositorio_Viajes.Repo_Viajes.GuardarViajes(dtp_LimiteInferior.Value.Date, dtp_LimiteSuperior.Value.Date, rutaArchivo);
+                    MessageBox.Show("Informe generado con exito");
+                    //}
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void pic_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace TransporteRodriguez
 {
@@ -40,6 +41,7 @@ namespace TransporteRodriguez
             _idVehiculo = idVehiculo;
             _fechaViaje = fechaViaje;
         }
+        
         public int IdViaje { get => _idViaje; set => _idViaje = value; }
         public string NombreCliente { get => _nombreCliente; set => _nombreCliente = value; }
         public string DireccionSalida { get => _direccionSalida; set => _direccionSalida = value; }
@@ -50,7 +52,6 @@ namespace TransporteRodriguez
         public float KilosATransportar { get => _kilosATransportar; set => _kilosATransportar = value; }
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public bool Estado { get => _estado; set => _estado = value; }
-
         public static bool operator ==(Viaje uno, Viaje dos)
         {
             bool retorno = false;

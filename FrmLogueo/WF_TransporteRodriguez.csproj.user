@@ -55,6 +55,9 @@
     <Compile Update="Frm_Empleado_Informe_Viajes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Empleado_Leer_Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Empleado_Lista_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>

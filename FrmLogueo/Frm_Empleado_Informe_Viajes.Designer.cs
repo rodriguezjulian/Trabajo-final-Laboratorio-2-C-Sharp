@@ -38,6 +38,7 @@
             label1 = new Label();
             lbl_GuardarInforme = new Label();
             panel1 = new Panel();
+            saveFileDialog1 = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)pic_ReservarViajar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_Cancelar).BeginInit();
             panel1.SuspendLayout();
@@ -60,12 +61,13 @@
             // pic_ReservarViajar
             // 
             pic_ReservarViajar.Image = Properties.Resources.guardar;
-            pic_ReservarViajar.Location = new Point(204, 242);
+            pic_ReservarViajar.Location = new Point(198, 242);
             pic_ReservarViajar.Name = "pic_ReservarViajar";
             pic_ReservarViajar.Size = new Size(83, 76);
             pic_ReservarViajar.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_ReservarViajar.TabIndex = 72;
             pic_ReservarViajar.TabStop = false;
+            pic_ReservarViajar.Click += pic_ReservarViajar_Click;
             // 
             // pic_Cancelar
             // 
@@ -76,6 +78,7 @@
             pic_Cancelar.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_Cancelar.TabIndex = 75;
             pic_Cancelar.TabStop = false;
+            pic_Cancelar.Click += pic_Cancelar_Click;
             // 
             // lbl_InformeDeViajes
             // 
@@ -83,9 +86,9 @@
             lbl_InformeDeViajes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_InformeDeViajes.Location = new Point(251, 33);
             lbl_InformeDeViajes.Name = "lbl_InformeDeViajes";
-            lbl_InformeDeViajes.Size = new Size(216, 30);
+            lbl_InformeDeViajes.Size = new Size(212, 30);
             lbl_InformeDeViajes.TabIndex = 76;
-            lbl_InformeDeViajes.Text = "INFORME DE VIAJES";
+            lbl_InformeDeViajes.Text = "GENERAR INFORME";
             // 
             // lbl_FechaInferior
             // 
@@ -137,7 +140,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
-            ClientSize = new Size(720, 502);
+            ClientSize = new Size(718, 500);
             ControlBox = false;
             Controls.Add(lbl_InformeDeViajes);
             Controls.Add(panel1);
@@ -163,5 +166,6 @@
         private Label label1;
         private Label lbl_GuardarInforme;
         private Panel panel1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

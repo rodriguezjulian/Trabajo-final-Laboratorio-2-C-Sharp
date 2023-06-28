@@ -51,6 +51,8 @@
             listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
             informe = new ToolStripMenuItem();
+            generarInformeToolStripMenuItem = new ToolStripMenuItem();
+            abrirInformeToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -240,12 +242,26 @@
             // 
             // informe
             // 
+            informe.DropDownItems.AddRange(new ToolStripItem[] { generarInformeToolStripMenuItem, abrirInformeToolStripMenuItem });
             informe.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             informe.Margin = new Padding(0, 0, 0, 100);
             informe.Name = "informe";
             informe.Size = new Size(144, 34);
-            informe.Text = "Informe";
-            informe.Click += informe_Click;
+            informe.Text = "Informes";
+            // 
+            // generarInformeToolStripMenuItem
+            // 
+            generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
+            generarInformeToolStripMenuItem.Size = new Size(248, 34);
+            generarInformeToolStripMenuItem.Text = "Generar Informe";
+            generarInformeToolStripMenuItem.Click += generarInformeToolStripMenuItem_Click;
+            // 
+            // abrirInformeToolStripMenuItem
+            // 
+            abrirInformeToolStripMenuItem.Name = "abrirInformeToolStripMenuItem";
+            abrirInformeToolStripMenuItem.Size = new Size(248, 34);
+            abrirInformeToolStripMenuItem.Text = "Abrir Informe";
+            abrirInformeToolStripMenuItem.Click += abrirInformeToolStripMenuItem_Click;
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -303,5 +319,7 @@
         private ToolStripMenuItem listarToolStripMenuItem1;
         private ToolStripMenuItem cuentasToolStripMenuItem;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private ToolStripMenuItem generarInformeToolStripMenuItem;
+        private ToolStripMenuItem abrirInformeToolStripMenuItem;
     }
 }

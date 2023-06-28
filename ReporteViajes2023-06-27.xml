@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Viaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdViaje>15</IdViaje>
+  <NombreCliente>Javier Diaz</NombreCliente>
+  <DireccionSalida>Calle Maipú 3456</DireccionSalida>
+  <ProvinciaDestino>Santa fe</ProvinciaDestino>
+  <Precio>16000</Precio>
+  <IdVehiculo>1</IdVehiculo>
+  <FechaViaje>2023-06-28T00:00:00</FechaViaje>
+  <KilosATransportar>60</KilosATransportar>
+  <IdCliente>7</IdCliente>
+  <Estado>true</Estado>
+</Viaje><?xml version="1.0" encoding="utf-8"?>
+<Viaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdViaje>16</IdViaje>
+  <NombreCliente>Javier Diaz</NombreCliente>
+  <DireccionSalida>Calle Maipú 3456</DireccionSalida>
+  <ProvinciaDestino>Santa fe</ProvinciaDestino>
+  <Precio>144000</Precio>
+  <IdVehiculo>3</IdVehiculo>
+  <FechaViaje>2023-06-28T00:00:00</FechaViaje>
+  <KilosATransportar>700</KilosATransportar>
+  <IdCliente>7</IdCliente>
+  <Estado>true</Estado>
+</Viaje><?xml version="1.0" encoding="utf-8"?>
+<Viaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdViaje>17</IdViaje>
+  <NombreCliente>Javier Diaz</NombreCliente>
+  <DireccionSalida>Calle Maipú 3456</DireccionSalida>
+  <ProvinciaDestino>Santa fe</ProvinciaDestino>
+  <Precio>402000</Precio>
+  <IdVehiculo>3</IdVehiculo>
+  <FechaViaje>2023-06-29T00:00:00</FechaViaje>
+  <KilosATransportar>1990</KilosATransportar>
+  <IdCliente>7</IdCliente>
+  <Estado>true</Estado>
+</Viaje>

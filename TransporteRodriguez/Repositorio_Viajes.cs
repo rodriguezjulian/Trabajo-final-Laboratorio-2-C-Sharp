@@ -225,18 +225,31 @@ namespace TransporteRodriguez
             }
             return null;
         }
-        public void GuardarViajes(DateTime limiteInferior, DateTime limiteSuperior)
+        public void GuardarViajes(DateTime limiteInferior, DateTime limiteSuperior, string ruta)
         {
             List<Viaje> listaViajes = Conexion_SQL.ObtenerViajes("viajes");
-            foreach (Viaje viaje in listaViajes)
+            List<Viaje> listaAux= new List<Viaje>();
+            if (limiteInferior < limiteSuperior || limiteInferior == limiteSuperior)
             {
-                if(viaje.FechaViaje >= limiteInferior && viaje.FechaViaje<= limiteSuperior)
+
+                foreach (Viaje viaje in listaViajes)
                 {
-                    string fechaActual = DateTime.Now.ToString("yyyy-MM-dd");
-                    Serializadora<Viaje>.EscribirXML(@"C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\", "ReporteViajes" + fechaActual, viaje);
+                    if (viaje.FechaViaje >= limiteInferior && viaje.FechaViaje <= limiteSuperior)
+                    {
+                        listaAux.Add(viaje);    
+                    }
                 }
+                Serializadora<Viaje>.EscribirXML(ruta + ".xml", listaAux);
+            }
+            else
+            {
+                throw new Exception("ERROR, Debe ingresar las fechas con coherencia en tanto a limite inferior y mayor.");
             }
         }
-
+        public List<Viaje> LeerInforme(string ruta)
+        {
+            List<Viaje> listaViajes = Serializadora<Viaje>.LeerXML(ruta);
+            return listaViajes;
+        }
     }
 }

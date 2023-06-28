@@ -190,14 +190,28 @@ namespace WF_TransporteRodriguez
             this.Hide(); // Oculta el formulario actual
             Login.Show();
         }
-
-        private void informe_Click(object sender, EventArgs e)
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 Frm_Empleado_Informe_Viajes frm_Empleado_Informe_Viajes = new Frm_Empleado_Informe_Viajes();
                 frm_Empleado_Informe_Viajes.MdiParent = this;
                 frm_Empleado_Informe_Viajes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
+            }
+        }
+
+        private void abrirInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Empleado_Leer_Informes frm_Empleado_Leer_Informes = new Frm_Empleado_Leer_Informes();
+                frm_Empleado_Leer_Informes.MdiParent = this;
+                frm_Empleado_Leer_Informes.Show();
             }
             catch (Exception ex)
             {

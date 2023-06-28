@@ -72,3 +72,15 @@ Clase: System.Windows.Forms.Form
 Método: set_MdiParentInternal
 
 
+Fecha y hora: 2023-06-27 22:49:25
+Descripción: No hay vehiculo disponible en esa fecha que soporte la carga que desea transportar.
+Clase: TransporteRodriguez.Repositorio_Vehiculos
+Método: RetornarVehiculoDisponible
+
+
+Fecha y hora: 2023-06-27 22:49:30
+Descripción: No hay vehiculo disponible en esa fecha que soporte la carga que desea transportar.
+Clase: TransporteRodriguez.Repositorio_Vehiculos
+Método: RetornarVehiculoDisponible
+
+
