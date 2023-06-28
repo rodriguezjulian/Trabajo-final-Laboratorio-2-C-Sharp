@@ -84,3 +84,9 @@ Clase: TransporteRodriguez.Repositorio_Vehiculos
 Método: RetornarVehiculoDisponible
 
 
+Fecha y hora: 2023-06-28 02:24:41
+Descripción: There is an error in XML document (1, 1).
+Clase: System.Xml.Serialization.XmlSerializer
+Método: Deserialize
+
+
