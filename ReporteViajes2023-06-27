@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Viaje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IdViaje>14</IdViaje>
+  <NombreCliente>Javier Diaz</NombreCliente>
+  <DireccionSalida>Calle Maipú 3456</DireccionSalida>
+  <ProvinciaDestino>Santa fe</ProvinciaDestino>
+  <Precio>16000</Precio>
+  <IdVehiculo>1</IdVehiculo>
+  <FechaViaje>2023-06-24T00:00:00</FechaViaje>
+  <KilosATransportar>60</KilosATransportar>
+  <IdCliente>7</IdCliente>
+  <Estado>false</Estado>
+</Viaje>

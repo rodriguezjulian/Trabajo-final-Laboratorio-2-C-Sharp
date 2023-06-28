@@ -39,6 +39,7 @@
             modificarToolStripMenuItem = new ToolStripMenuItem();
             bajaToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem1 = new ToolStripMenuItem();
+            cuentasToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
             moToolStripMenuItem = new ToolStripMenuItem();
@@ -49,8 +50,8 @@
             bajaVehiculoToolStripMenuItem = new ToolStripMenuItem();
             listarVehiculoToolStripMenuItem = new ToolStripMenuItem();
             turnosOcupadosToolStripMenuItem = new ToolStripMenuItem();
+            informe = new ToolStripMenuItem();
             cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
-            cuentasToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             mnu_Admin.SuspendLayout();
@@ -101,7 +102,7 @@
             // 
             mnu_Admin.BackColor = Color.FromArgb(255, 192, 128);
             mnu_Admin.Dock = DockStyle.Left;
-            mnu_Admin.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, empleadosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, cerrarSesionToolStripMenuItem });
+            mnu_Admin.Items.AddRange(new ToolStripItem[] { misDatosToolStripMenuItem, empleadosToolStripMenuItem, clienteToolStripMenuItem, vehiculosToolStripMenuItem, turnosOcupadosToolStripMenuItem, informe, cerrarSesionToolStripMenuItem });
             mnu_Admin.Location = new Point(0, 0);
             mnu_Admin.Name = "mnu_Admin";
             mnu_Admin.Size = new Size(157, 505);
@@ -125,7 +126,6 @@
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             empleadosToolStripMenuItem.Size = new Size(144, 34);
             empleadosToolStripMenuItem.Text = "Empleados";
-            empleadosToolStripMenuItem.Click += empleadosToolStripMenuItem_Click;
             // 
             // crearToolStripMenuItem1
             // 
@@ -154,6 +154,12 @@
             listarToolStripMenuItem1.Size = new Size(181, 34);
             listarToolStripMenuItem1.Text = "Listar";
             listarToolStripMenuItem1.Click += listarToolStripMenuItem1_Click;
+            // 
+            // cuentasToolStripMenuItem
+            // 
+            cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
+            cuentasToolStripMenuItem.Size = new Size(181, 34);
+            cuentasToolStripMenuItem.Text = "Cuentas";
             // 
             // clienteToolStripMenuItem
             // 
@@ -226,11 +232,20 @@
             // turnosOcupadosToolStripMenuItem
             // 
             turnosOcupadosToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            turnosOcupadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 120);
+            turnosOcupadosToolStripMenuItem.Margin = new Padding(0, 0, 0, 20);
             turnosOcupadosToolStripMenuItem.Name = "turnosOcupadosToolStripMenuItem";
             turnosOcupadosToolStripMenuItem.Size = new Size(144, 34);
             turnosOcupadosToolStripMenuItem.Text = "Listar viajes ";
             turnosOcupadosToolStripMenuItem.Click += turnosOcupadosToolStripMenuItem_Click;
+            // 
+            // informe
+            // 
+            informe.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            informe.Margin = new Padding(0, 0, 0, 100);
+            informe.Name = "informe";
+            informe.Size = new Size(144, 34);
+            informe.Text = "Informe";
+            informe.Click += informe_Click;
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -238,13 +253,7 @@
             cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             cerrarSesionToolStripMenuItem.Size = new Size(144, 34);
             cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
-            cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
-            // 
-            // cuentasToolStripMenuItem
-            // 
-            cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            cuentasToolStripMenuItem.Size = new Size(181, 34);
-            cuentasToolStripMenuItem.Text = "Cuentas";
+            cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click_1;
             // 
             // Frm_Admin_Menu
             // 
@@ -286,12 +295,13 @@
         private ToolStripMenuItem bajaVehiculoToolStripMenuItem;
         private ToolStripMenuItem listarVehiculoToolStripMenuItem;
         private ToolStripMenuItem turnosOcupadosToolStripMenuItem;
-        private ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private ToolStripMenuItem informe;
         private ToolStripMenuItem empleadosToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem1;
         private ToolStripMenuItem modificarToolStripMenuItem;
         private ToolStripMenuItem bajaToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem1;
         private ToolStripMenuItem cuentasToolStripMenuItem;
+        private ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }

@@ -38,11 +38,6 @@ namespace WF_TransporteRodriguez
 
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // Oculta el formulario actual
-            Login.Show();
-        }
 
         private void Frm_Admin_Menu_Load(object sender, EventArgs e)
         {
@@ -129,6 +124,7 @@ namespace WF_TransporteRodriguez
             }
             catch (Exception ex)
             {
+                Log_Errores.EscribirLogErrores(ex);
                 MessageBox.Show(ex.Message);
             }
 
@@ -145,6 +141,7 @@ namespace WF_TransporteRodriguez
             }
             catch (Exception ex)
             {
+                Log_Errores.EscribirLogErrores(ex);
                 MessageBox.Show(ex.Message);
             }
 
@@ -157,6 +154,7 @@ namespace WF_TransporteRodriguez
                 Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
                 Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
                 usuarioDelegado delegado = frm_Admin_Baja_Empleado.TraerEmpleado;
+                //usuarioDelegado delegado = Repositorio_Empleados.Repo_Empleados.TraerEmpleado;
                 delegado(empleadoInstanciado);
                 //frm_Admin_Baja_Empleado.Empleado= empleadoInstanciado;
                 frm_Admin_Baja_Empleado.MdiParent = this;
@@ -165,6 +163,7 @@ namespace WF_TransporteRodriguez
             }
             catch (Exception ex)
             {
+                Log_Errores.EscribirLogErrores(ex);
                 MessageBox.Show(ex.Message);
             }
         }
@@ -182,12 +181,29 @@ namespace WF_TransporteRodriguez
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
             }
         }
 
-        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cerrarSesionToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            this.Hide(); // Oculta el formulario actual
+            Login.Show();
+        }
 
+        private void informe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Empleado_Informe_Viajes frm_Empleado_Informe_Viajes = new Frm_Empleado_Informe_Viajes();
+                frm_Empleado_Informe_Viajes.MdiParent = this;
+                frm_Empleado_Informe_Viajes.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
+            }
         }
     }
 }

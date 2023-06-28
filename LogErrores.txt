@@ -54,3 +54,21 @@ Clase: TransporteRodriguez.Validaciones
 Método: VerificarCuerpoMail
 
 
+Fecha y hora: 2023-06-27 17:02:04
+Descripción: Error, solo puede modificar o dar de baja viajes que aun no se han realizado.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-27 18:24:06
+Descripción: ERROR, Verifique la patente ingresada
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarPatente
+
+
+Fecha y hora: 2023-06-27 20:07:39
+Descripción: El formulario especificado como MdiParent para este formulario no es un contenedor MdiContainer. (Parameter 'value')
+Clase: System.Windows.Forms.Form
+Método: set_MdiParentInternal
+
+

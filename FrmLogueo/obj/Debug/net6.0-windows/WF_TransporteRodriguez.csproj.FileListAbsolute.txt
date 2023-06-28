@@ -152,3 +152,4 @@ C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTEN
 C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\bin\Debug\net6.0-windows\Conexion_FireBase.dll
 C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\bin\Debug\net6.0-windows\Conexion_FireBase.pdb
 C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Admin_Cuentas.resources
+C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\FrmLogueo\obj\Debug\net6.0-windows\WF_TransporteRodriguez.Frm_Empleado_Informe_Viajes.resources

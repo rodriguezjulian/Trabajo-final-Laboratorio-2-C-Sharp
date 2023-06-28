@@ -225,5 +225,18 @@ namespace TransporteRodriguez
             }
             return null;
         }
+        public void GuardarViajes(DateTime limiteInferior, DateTime limiteSuperior)
+        {
+            List<Viaje> listaViajes = Conexion_SQL.ObtenerViajes("viajes");
+            foreach (Viaje viaje in listaViajes)
+            {
+                if(viaje.FechaViaje >= limiteInferior && viaje.FechaViaje<= limiteSuperior)
+                {
+                    string fechaActual = DateTime.Now.ToString("yyyy-MM-dd");
+                    Serializadora<Viaje>.EscribirXML(@"C:\Users\Julian Rodriguez\Desktop\LaboratorioDos\ppLaboratorio2B---SEGUNDO-INTENTO\", "ReporteViajes" + fechaActual, viaje);
+                }
+            }
+        }
+
     }
 }

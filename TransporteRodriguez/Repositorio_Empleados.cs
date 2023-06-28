@@ -201,5 +201,9 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
+       /* public void TraerEmpleado(Empleado empleadoIns, out Empleado empleado)
+        {
+            empleado = empleadoIns;
+        }*/
     }
 }

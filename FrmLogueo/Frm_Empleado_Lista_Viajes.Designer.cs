@@ -176,6 +176,7 @@
             Controls.Add(gpb_ListarViajes);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Empleado_Lista_Viajes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Frm_Empleado_Lista_Viajes";
             Load += Frm_Empleado_Lista_Viajes_Load;
             pnl_Izquierdo.ResumeLayout(false);

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransporteRodriguez;
+using static TransporteRodriguez.Repositorio_Clientes;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
@@ -18,7 +19,7 @@ namespace WF_TransporteRodriguez
     public partial class Frm_Empleado_Lista_Clientes : Form
     {
         private static List<Cliente> listaClientesAuxiliar;
-
+        ClienteData clienteFiltrar = null;
         public Frm_Empleado_Lista_Clientes()
         {
             InitializeComponent();
@@ -34,11 +35,6 @@ namespace WF_TransporteRodriguez
         }
         private void btn_DeBaja_Click(object sender, EventArgs e)
         {
-            //this.btn_DeBaja.Click += CambiarCheck;
-            // this.btn_DeBaja.Click += CambiarFondo;
-            //this.btn_DeBaja.BackColor = Color.Gray;
-
-
             listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == false);
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
@@ -94,12 +90,17 @@ namespace WF_TransporteRodriguez
 
         private void btn_Activos_Click(object sender, EventArgs e)
         {
-            //this.btn_Activos.Click += CambiarFondo;
+           listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
 
-            // this.btn_Activos.BackColor = Color.Gray;
-
-            //btn_Activos.BackColor = Color.Gray;
-            listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes").FindAll(cliente => cliente.Estado == true);
+          /*  clienteFiltrar = Repo_Clientes.FiltrarClienteActivo;
+           // listaClientesAuxiliar = Conexion_SQL.ObtenerClientes("clientes");
+            foreach(Cliente cliente in Conexion_SQL.ObtenerClientes("clientes"))
+            {
+                if (clienteFiltrar(cliente))
+                {
+                    listaClientesAuxiliar.Add(cliente);
+                }
+            }*/
             dtg_ListarClientes.Columns.Clear();
             ConfigurarDTG(listaClientesAuxiliar);
         }

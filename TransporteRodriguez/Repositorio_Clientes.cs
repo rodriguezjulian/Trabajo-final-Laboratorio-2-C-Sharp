@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto.Engines;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace TransporteRodriguez
         private readonly static Repositorio_Clientes repo_Clientes = new Repositorio_Clientes();
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
+
+        public delegate bool ClienteData(Cliente cliente);
 
         public  Cliente BuscarInstanciaId(int idCliente)
         {
@@ -171,5 +174,19 @@ namespace TransporteRodriguez
             }
             return cliente;
         }
+        public  bool FiltrarClienteActivo(Cliente cliente)
+        {
+            return cliente.Estado == true;
+        }
+        public  bool FiltrarClienteInactivo(Cliente cliente)
+        {
+            bool retorno = false;
+            if (cliente.Estado == false)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace TransporteRodriguez
     {
         public static bool VerificarIdIngresado(string ID, out int IDINT)
         {
-            bool retorno=false;
+            bool retorno = false;
             int idEntero;
             if (ID == "")
             {
@@ -28,13 +28,13 @@ namespace TransporteRodriguez
                     retorno = true;
                 }
             }
-                return retorno;
+            return retorno;
         }
         //NO SE PODRAN DAR DE BAJA NI MODIFICAR VIAJES QUE YA HAN EXISTIDO
         public static bool VerificarFecha(DateTime fechaVieja)
         {
             bool retorno;
-            if(fechaVieja < DateTime.Today)
+            if (fechaVieja < DateTime.Today)
             {
                 throw new Exception("ERROR, No puede modificar o dar de baja un viaje que ya se realizo.");
             }
@@ -47,7 +47,7 @@ namespace TransporteRodriguez
         public static bool VerificarkgIngresado(string kgS, out float kg)
         {
             float kgFloat;
-            bool retorno ;
+            bool retorno;
             if (kgS == "")
             {
                 throw new Exception("ERROR, Ingrese una cantidad de KG a transportar");
@@ -56,11 +56,11 @@ namespace TransporteRodriguez
             {
                 if (float.TryParse(kgS, out kgFloat) == false)
                 {
-                    throw new Exception("ERROR, Ingrese un numero para KG") ;
+                    throw new Exception("ERROR, Ingrese un numero para KG");
                 }
                 else
                 {
-                    if ( kgFloat < 50 || kgFloat > 2000 )
+                    if (kgFloat < 50 || kgFloat > 2000)
                     {
                         throw new Exception("ERROR, Peso minimo a transportar: 50\nPeso maximo a transportar: 2000.");
                     }
@@ -105,7 +105,7 @@ namespace TransporteRodriguez
             foreach (char caracter in despuesDelArroba)
             {
                 if (caracter == 64)
-                { 
+                {
                     retorno = true;
                 }
             }
@@ -144,7 +144,7 @@ namespace TransporteRodriguez
         public static Usuario ValidarUsuario(Usuario usuarioUno)
         {
             Usuario retorno = null;
-            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleados( "empleados");
+            List<Empleado> ListaEmpleados = Conexion_SQL.ObtenerEmpleados("empleados");
             foreach (Empleado empleado in ListaEmpleados)
             {
                 if (empleado == usuarioUno && empleado.Estado == true)
@@ -176,7 +176,7 @@ namespace TransporteRodriguez
         public static bool VerificarExistenciaPatente(string patenteIngresada)
         {
             bool retorno = true;
-            List <Vehiculo> listaVehiculosAux = Conexion_SQL.ObtenerVehiculos("vehiculos");
+            List<Vehiculo> listaVehiculosAux = Conexion_SQL.ObtenerVehiculos("vehiculos");
             foreach (Vehiculo vehiculo in listaVehiculosAux)
             {
                 if (vehiculo.Patente == patenteIngresada)
@@ -200,12 +200,12 @@ namespace TransporteRodriguez
             if (VerificarFormatoPatente(patenteAuxiliar) != true)
             {
                 retorno = false;
-                throw new Exception ("ERROR, Verifique la patente ingresada\n");
+                throw new Exception("ERROR, Verifique la patente ingresada\n");
             }
             else
             {
                 if (VerificarExistenciaPatente(patenteAuxiliar) != true)
-                {   
+                {
                     retorno = false;
                     throw new Exception("ERROR, La patente ingresada pertenece a un vehiculo existente\n");
                 }
@@ -243,10 +243,10 @@ namespace TransporteRodriguez
         public static bool VerificarViajesPendientes(Vehiculo vehiculo)
         {
             bool retorno = true;
-            List <Viaje> listaViajes=Conexion_SQL.ObtenerViajes("viajes");
-            foreach(Viaje viaje in listaViajes)
+            List<Viaje> listaViajes = Conexion_SQL.ObtenerViajes("viajes");
+            foreach (Viaje viaje in listaViajes)
             {
-                if(viaje.IdVehiculo == vehiculo.IdVehiculo && viaje.Estado==true && viaje.FechaViaje > DateTime.Today)
+                if (viaje.IdVehiculo == vehiculo.IdVehiculo && viaje.Estado == true && viaje.FechaViaje > DateTime.Today)
                 {
                     retorno = false;
                     throw new Exception("ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.");
