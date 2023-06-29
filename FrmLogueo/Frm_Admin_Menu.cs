@@ -1,4 +1,5 @@
-﻿using FrmLogueo;
+﻿using Enumerado;
+using FrmLogueo;
 using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,11 @@ namespace WF_TransporteRodriguez
             frm_Hora.MdiParent = this;
             frm_Hora.Dock = DockStyle.Fill;
             frm_Hora.Show();
+
+            if (empleadoInstanciado.Puesto!= Puestos.Sistemas)
+            {
+                empleadosToolStripMenuItem.BackColor= Color.Gray;
+            };
         }
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,9 +160,7 @@ namespace WF_TransporteRodriguez
                 Repositorio_Empleados.Repo_Empleados.VerificarPuesto(empleadoInstanciado);
                 Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
                 usuarioDelegado delegado = frm_Admin_Baja_Empleado.TraerEmpleado;
-                //usuarioDelegado delegado = Repositorio_Empleados.Repo_Empleados.TraerEmpleado;
                 delegado(empleadoInstanciado);
-                //frm_Admin_Baja_Empleado.Empleado= empleadoInstanciado;
                 frm_Admin_Baja_Empleado.MdiParent = this;
                 frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
                 frm_Admin_Baja_Empleado.Show();
@@ -218,6 +222,11 @@ namespace WF_TransporteRodriguez
                 MessageBox.Show(ex.Message);
                 Log_Errores.EscribirLogErrores(ex);
             }
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

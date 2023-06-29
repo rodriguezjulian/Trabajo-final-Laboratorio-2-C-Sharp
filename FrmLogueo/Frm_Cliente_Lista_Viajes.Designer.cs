@@ -83,6 +83,7 @@
             dtg_ListaViajes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtg_ListaViajes.Size = new Size(717, 343);
             dtg_ListaViajes.TabIndex = 0;
+            
             // 
             // grp_ListarViajesCliente
             // 

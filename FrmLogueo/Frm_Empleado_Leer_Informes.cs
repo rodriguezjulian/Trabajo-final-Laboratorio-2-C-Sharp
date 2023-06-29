@@ -26,6 +26,7 @@ namespace WF_TransporteRodriguez
             OpenFileDialog openFileDialog = new OpenFileDialog();
             try
             {
+                openFileDialog.Filter = "Archivos XML (*.xml)|*.xml";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     rutaArchivo = openFileDialog.FileName;

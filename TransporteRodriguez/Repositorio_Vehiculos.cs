@@ -76,7 +76,7 @@ namespace TransporteRodriguez
             }
             if(retorno ==0)
             {
-                throw new Exception("No hay vehiculo disponible en esa fecha que soporte la carga que desea transportar.");
+                throw new fechaException("No hay vehiculo disponible en esa fecha que soporte la carga que desea transportar.");
             }
             return retorno;
         }

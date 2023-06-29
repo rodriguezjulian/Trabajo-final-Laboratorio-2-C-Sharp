@@ -44,8 +44,14 @@ namespace WF_TransporteRodriguez
                 
                 MessageBox.Show("VIAJE CONFIRMADO\n");
             }
+            catch(fechaException exa)
+            {
+
+                MessageBox.Show(exa.Message);
+            }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
                 Log_Errores.EscribirLogErrores(ex);
             }

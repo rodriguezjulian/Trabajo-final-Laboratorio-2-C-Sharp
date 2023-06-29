@@ -134,7 +134,7 @@
             // 
             // btn_ViajesCancelados
             // 
-            btn_ViajesCancelados.BackColor = Color.Red;
+            btn_ViajesCancelados.BackColor = Color.FromArgb(255, 192, 192);
             btn_ViajesCancelados.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_ViajesCancelados.Location = new Point(608, 22);
             btn_ViajesCancelados.Name = "btn_ViajesCancelados";

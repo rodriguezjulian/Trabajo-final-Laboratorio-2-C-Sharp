@@ -61,7 +61,7 @@
             // pic_ReservarViajar
             // 
             pic_ReservarViajar.Image = Properties.Resources.guardar;
-            pic_ReservarViajar.Location = new Point(198, 242);
+            pic_ReservarViajar.Location = new Point(198, 274);
             pic_ReservarViajar.Name = "pic_ReservarViajar";
             pic_ReservarViajar.Size = new Size(83, 76);
             pic_ReservarViajar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -72,7 +72,7 @@
             // pic_Cancelar
             // 
             pic_Cancelar.Image = (Image)resources.GetObject("pic_Cancelar.Image");
-            pic_Cancelar.Location = new Point(337, 242);
+            pic_Cancelar.Location = new Point(331, 274);
             pic_Cancelar.Name = "pic_Cancelar";
             pic_Cancelar.Size = new Size(79, 76);
             pic_Cancelar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -114,7 +114,7 @@
             // 
             lbl_GuardarInforme.AutoSize = true;
             lbl_GuardarInforme.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_GuardarInforme.Location = new Point(200, 334);
+            lbl_GuardarInforme.Location = new Point(194, 353);
             lbl_GuardarInforme.Name = "lbl_GuardarInforme";
             lbl_GuardarInforme.Size = new Size(87, 21);
             lbl_GuardarInforme.TabIndex = 79;

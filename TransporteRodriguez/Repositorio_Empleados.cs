@@ -69,10 +69,6 @@ namespace TransporteRodriguez
             }
             return retorno;
         }
-      /*  public Empleado DarDeBaja(string id) 
-        {
-            return null;
-        }*/
         public Empleado DarDeBaja(string ID, Empleado empleadoLogueado)
         {
             Empleado empleado = null;

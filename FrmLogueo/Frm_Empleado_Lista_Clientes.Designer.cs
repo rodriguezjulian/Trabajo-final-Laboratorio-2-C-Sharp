@@ -163,6 +163,8 @@
             // btn_DeBaja
             // 
             btn_DeBaja.BackColor = Color.FromArgb(255, 192, 192);
+            btn_DeBaja.FlatAppearance.BorderSize = 0;
+            btn_DeBaja.FlatStyle = FlatStyle.Flat;
             btn_DeBaja.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_DeBaja.Location = new Point(609, 46);
             btn_DeBaja.Name = "btn_DeBaja";
@@ -212,6 +214,8 @@
             // btn_Todos
             // 
             btn_Todos.BackColor = Color.FromArgb(192, 255, 255);
+            btn_Todos.FlatAppearance.BorderSize = 0;
+            btn_Todos.FlatStyle = FlatStyle.Flat;
             btn_Todos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Todos.Location = new Point(401, 46);
             btn_Todos.Name = "btn_Todos";
@@ -224,6 +228,8 @@
             // btn_Activos
             // 
             btn_Activos.BackColor = Color.FromArgb(192, 255, 192);
+            btn_Activos.FlatAppearance.BorderSize = 0;
+            btn_Activos.FlatStyle = FlatStyle.Flat;
             btn_Activos.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Activos.Location = new Point(505, 46);
             btn_Activos.Name = "btn_Activos";

@@ -90,3 +90,107 @@ Clase: System.Xml.Serialization.XmlSerializer
 Método: Deserialize
 
 
+Fecha y hora: 2023-06-28 03:17:40
+Descripción: ERROR, No se puede eliminar asi mismo
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-28 03:20:16
+Descripción: ERROR, Ingrese un ID o elija una fila haciendole click
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarIdIngresado
+
+
+Fecha y hora: 2023-06-28 15:58:02
+Descripción: Error, solo puede modificar o dar de baja viajes que aun no se han realizado.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-28 15:58:08
+Descripción: ERROR, El ID ingresado no corresponde a ningun viaje.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-28 15:58:12
+Descripción: Error, solo puede modificar o dar de baja viajes que aun no se han realizado.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-28 20:55:32
+Descripción: ERROR, Peso minimo a transportar: 50
+Peso maximo a transportar: 2000.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarkgIngresado
+
+
+Fecha y hora: 2023-06-28 21:00:46
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:00:49
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:00:52
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:01:14
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:05:09
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:05:18
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-06-28 21:06:11
+Descripción: ERROR, El vehiculo ya se encuentra dado de baja
+Clase: TransporteRodriguez.Repositorio_Vehiculos
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-28 21:06:17
+Descripción: ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarViajesPendientes
+
+
+Fecha y hora: 2023-06-28 21:06:30
+Descripción: ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarViajesPendientes
+
+
+Fecha y hora: 2023-06-28 21:08:09
+Descripción: No hay vehiculo disponible en esa fecha que soporte la carga que desea transportar.
+Clase: TransporteRodriguez.Repositorio_Vehiculos
+Método: RetornarVehiculoDisponible
+
+
+Fecha y hora: 2023-06-28 21:36:43
+Descripción: ERROR, Peso minimo a transportar: 50
+Peso maximo a transportar: 2000.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarkgIngresado
+
+

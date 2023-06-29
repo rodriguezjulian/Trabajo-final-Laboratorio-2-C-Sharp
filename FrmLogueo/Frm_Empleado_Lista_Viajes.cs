@@ -11,9 +11,14 @@ using TransporteRodriguez;
 
 namespace WF_TransporteRodriguez
 {
-    public partial class Frm_Empleado_Lista_Viajes : Form
+    public partial class Frm_Empleado_Lista_Viajes : Form, I_Grafica //CambiarFondoDeBotones
     {
         List<Viaje> listaAuxiliar;
+
+        Predicate<Viaje> FiltrarDelegateEstado;
+        Predicate<Viaje> FiltrarDelegateFecha;
+
+
         public Frm_Empleado_Lista_Viajes()
         {
             InitializeComponent();
@@ -27,8 +32,12 @@ namespace WF_TransporteRodriguez
 
         private void Frm_Empleado_Lista_Viajes_Load(object sender, EventArgs e)
         {
-            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == true);
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes");
             OrganizarDataGridViajes(listaAuxiliar);
+            btn_Todos.BackColor = System.Drawing.Color.Gray;
+            btn_Todos.Click += CambiarFondoDeBotones;
+            btn_ViajesCancelados.Click += CambiarFondoDeBotones;
+            btn_ViajesRealizados.Click += CambiarFondoDeBotones;
         }
         public void OrganizarDataGridViajes(List<Viaje> viajesCliente)
         {
@@ -76,7 +85,8 @@ namespace WF_TransporteRodriguez
 
         private void btn_ViajesRealizados_Click(object sender, EventArgs e)
         {
-            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.FechaViaje < DateTime.Now && viaje.Estado == true);
+            FiltrarDelegateFecha = Repositorio_Viajes.Repo_Viajes.FiltrarViajeRealizado;
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(FiltrarDelegateFecha);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(listaAuxiliar);
         }
@@ -84,15 +94,46 @@ namespace WF_TransporteRodriguez
         private void btn_Todos_Click(object sender, EventArgs e)
         {
             dtg_ListaViajes.Columns.Clear();
-            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == true);
+            FiltrarDelegateEstado = Repositorio_Viajes.Repo_Viajes.FiltrarViajeActivo;
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(FiltrarDelegateEstado);
             OrganizarDataGridViajes(listaAuxiliar);
         }
 
         private void btn_ViajesCancelados_Click(object sender, EventArgs e)
         {
             dtg_ListaViajes.Columns.Clear();
-            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.Estado == false);
+            FiltrarDelegateEstado = Repositorio_Viajes.Repo_Viajes.FiltrarViajeInactivo;
+            listaAuxiliar = Conexion_SQL.ObtenerViajes("viajes").FindAll(FiltrarDelegateEstado);
             OrganizarDataGridViajes(listaAuxiliar);
         }
+        public void CambiarFondoDeBotones(object sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                Button boton = (Button)sender;
+                if (boton.Name == "btn_Todos")
+                {
+                    btn_Todos.BackColor = System.Drawing.Color.Gray;
+                    btn_ViajesRealizados.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                    btn_ViajesCancelados.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                }
+                else
+                {
+                    if (boton.Name == "btn_ViajesRealizados")
+                    {
+                        btn_Todos.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.Gray;
+                        btn_ViajesCancelados.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                    }
+                    else
+                    {
+                        btn_Todos.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                        btn_ViajesCancelados.BackColor = System.Drawing.Color.Gray;
+                    }
+                }
+            }
+        }
+
     }
 }

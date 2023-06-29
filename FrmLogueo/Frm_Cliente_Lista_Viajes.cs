@@ -11,7 +11,7 @@ using TransporteRodriguez;
 
 namespace WF_TransporteRodriguez
 {
-    public partial class Frm_Cliente_Lista_Viajes : Form
+    public partial class Frm_Cliente_Lista_Viajes : Form, I_Grafica
     {
         Cliente cliente;
         List<Viaje> viajesCliente;
@@ -28,6 +28,11 @@ namespace WF_TransporteRodriguez
             lbl_NombreCliente.Text = cliente.Nombre;
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
+            btn_Cancelados.Click += CambiarFondoDeBotones;
+            btn_ViajesPendientes.Click += CambiarFondoDeBotones;
+            btn_ViajesRealizados.Click += CambiarFondoDeBotones;
+            btn_ViajesTodos.Click += CambiarFondoDeBotones;
+            btn_ViajesTodos.BackColor = System.Drawing.Color.Gray;
         }
 
         private void pic_Atras_Click(object sender, EventArgs e)
@@ -42,8 +47,6 @@ namespace WF_TransporteRodriguez
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
         }
-
-
         private void btn_ViajesTodos_Click(object sender, EventArgs e)
         {
             viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == true);
@@ -105,6 +108,41 @@ namespace WF_TransporteRodriguez
             viajesCliente = Conexion_SQL.ObtenerViajes("viajes").FindAll(viaje => viaje.IdCliente == cliente.IdCliente && viaje.Estado == false);
             dtg_ListaViajes.Columns.Clear();
             OrganizarDataGridViajes(viajesCliente);
+        }
+
+        public void CambiarFondoDeBotones(object sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                Button boton = (Button)sender;
+                switch (boton.Name)
+                {
+                    case "btn_ViajesRealizados":
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.Gray;
+                        btn_Cancelados.BackColor = System.Drawing.Color.Red;
+                        btn_ViajesPendientes.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                        btn_ViajesTodos.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                        break;
+                    case "btn_Cancelados":
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                        btn_Cancelados.BackColor = System.Drawing.Color.Gray;
+                        btn_ViajesPendientes.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                        btn_ViajesTodos.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                        break;
+                    case "btn_ViajesPendientes":
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                        btn_Cancelados.BackColor = System.Drawing.Color.Red;
+                        btn_ViajesPendientes.BackColor = System.Drawing.Color.Gray;
+                        btn_ViajesTodos.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+                        break;
+                    case "btn_ViajesTodos":
+                        btn_ViajesRealizados.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                        btn_Cancelados.BackColor = System.Drawing.Color.Red;
+                        btn_ViajesPendientes.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                        btn_ViajesTodos.BackColor = System.Drawing.Color.Gray;
+                        break;
+                }
+            }
         }
     }
 }

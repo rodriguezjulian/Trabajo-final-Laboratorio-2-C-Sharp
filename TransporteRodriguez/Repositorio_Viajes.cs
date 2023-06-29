@@ -251,5 +251,33 @@ namespace TransporteRodriguez
             List<Viaje> listaViajes = Serializadora<Viaje>.LeerXML(ruta);
             return listaViajes;
         }
+        public bool FiltrarViajeActivo(Viaje viaje)
+        {
+            bool retorno = false;
+            if(viaje.Estado)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+        public bool FiltrarViajeInactivo(Viaje viaje)
+        {
+            bool retorno = false;
+            if (viaje.Estado==false)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+        public bool FiltrarViajeRealizado(Viaje viaje)
+        {
+            bool retorno = false;
+            if (viaje.FechaViaje < DateTime.Now && viaje.Estado)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
     }
 }

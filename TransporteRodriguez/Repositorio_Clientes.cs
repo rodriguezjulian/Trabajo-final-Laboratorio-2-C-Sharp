@@ -15,7 +15,7 @@ namespace TransporteRodriguez
         public static List<Cliente> ListaClientes { get => listaClientes; set => listaClientes = value; }
         public static Repositorio_Clientes Repo_Clientes => repo_Clientes;
 
-        public delegate bool ClienteData(Cliente cliente);
+        //public delegate bool ClienteData(Cliente cliente);
 
         public  Cliente BuscarInstanciaId(int idCliente)
         {
