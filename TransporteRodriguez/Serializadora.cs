@@ -35,6 +35,45 @@ namespace TransporteRodriguez
                 lectura = (List<T>)des.Deserialize(sr);
             }
             return lectura;
+        }  
+        public static void EscribirXMLEx(string path, T Excepcion)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    XmlSerializer ser = new XmlSerializer(typeof(Empleado));
+                    ser.Serialize(sw, Excepcion);
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
+
+
+
+
+
+        /*
+        public static void LeerXML(string path)
+        {
+            Empleado lectura;
+            using (StreamReader sr = new StreamReader(path))
+            {
+                XmlSerializer des = new XmlSerializer(typeof(Empleado));
+                lectura =(Empleado) des.Deserialize(sr);
+            }
+            Console.WriteLine(lectura.ToString());
+        }
+         
+         
+         */
+
+
+
+
+
     }
 }

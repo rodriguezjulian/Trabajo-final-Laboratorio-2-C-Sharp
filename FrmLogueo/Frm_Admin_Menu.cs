@@ -35,11 +35,7 @@ namespace WF_TransporteRodriguez
             frm_Empleado_Datos.MdiParent = this;
             frm_Empleado_Datos.Dock = DockStyle.Fill;
             frm_Empleado_Datos.Show();
-
-
         }
-
-
         private void Frm_Admin_Menu_Load(object sender, EventArgs e)
         {
             lbl_NombreUsuario.Text = empleadoInstanciado.Nombre;
@@ -47,10 +43,9 @@ namespace WF_TransporteRodriguez
             frm_Hora.MdiParent = this;
             frm_Hora.Dock = DockStyle.Fill;
             frm_Hora.Show();
-
-            if (empleadoInstanciado.Puesto!= Puestos.Sistemas)
+            if (empleadoInstanciado.Puesto != Puestos.Sistemas)
             {
-                empleadosToolStripMenuItem.BackColor= Color.Gray;
+                empleadosToolStripMenuItem.BackColor = Color.Gray;
             };
         }
 
@@ -227,6 +222,21 @@ namespace WF_TransporteRodriguez
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Admin_Cuentas frm_Admin_Cuentas = new Frm_Admin_Cuentas();
+                frm_Admin_Cuentas.MdiParent = this;
+                frm_Admin_Cuentas.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log_Errores.EscribirLogErrores(ex);
+            }
         }
     }
 }

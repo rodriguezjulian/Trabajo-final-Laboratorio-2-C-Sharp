@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,24 @@ namespace WF_TransporteRodriguez
     {
         Usuario clienteInstanciado;
         Cliente cliente;
-        Viaje viajeAux;
+
+        // Define el delegado y el evento
+        public delegate void FechaExceptionHandler(object sender, FechaEventArgs e);
+        public event FechaExceptionHandler FechaExceptionOcurred;
+
+        // Define la clase de argumentos del evento
+        public class FechaEventArgs : EventArgs
+        {
+            Cliente cliente;
+
+            public Cliente Client { get => cliente; set => cliente = value; }
+        }
+
+        private void NotificarExcepcion()
+        {
+            //DISPARO EL LLAMADO A TODOS LOS SUBSCRIPTORES PARA QUE CADA UNO MANEJE EL EVENTO CON SUS METODOS
+           // FechaExceptionOcurred.Invoke(this, new FechaEventArgs() { Client });
+        }
 
         public Frm_Cliente_Alta_Viaje()
         {
@@ -46,14 +64,21 @@ namespace WF_TransporteRodriguez
             }
             catch(fechaException exa)
             {
-
+                //pongo al delegado
+                //mail
+                //archivo
+                //BD
+                EnviarMail aa = new EnviarMail(); try { aa.Enviarcorreo(cliente); } catch (Exception exi) { MessageBox.Show(exi.Message); } 
+               
+               // NotificarExcepcion();
+                //Log_Errores.EscribirLogErrores(exa);
                 MessageBox.Show(exa.Message);
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-                Log_Errores.EscribirLogErrores(ex);
+                NotificarExcepcion();
+               // Log_Errores.EscribirLogErrores(ex);
             }
         }
         #region EVENTOS PARA EL MOUSE
@@ -82,5 +107,6 @@ namespace WF_TransporteRodriguez
             this.Hide();
             this.Close();
         }
+
     }
 }

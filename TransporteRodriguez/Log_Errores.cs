@@ -26,5 +26,11 @@ namespace TransporteRodriguez
                 writer.WriteLine(registro);
             }
         }
+        public static void DispararLog(object sender, EventArgs e)
+        {
+            //EscribirLogErrores
+
+        }
+
     }
 }

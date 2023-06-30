@@ -36,10 +36,15 @@ namespace WF_TransporteRodriguez
 
         private void reservarViajeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            EnviarMail mail=new EnviarMail();
+            
             Frm_Cliente_Alta_Viaje frmViaje = new Frm_Cliente_Alta_Viaje();
             frmViaje.ClienteInstanciado = usuarioInstanciado;
             frmViaje.MdiParent = this;
             frmViaje.Dock = DockStyle.Fill;
+
+            //frmViaje.FechaExceptionOcurred += mail.Enviarcorreo(clienteInstanciado);
+           // frmViaje.FechaExceptionOcurred += Log_Errores.EscribirLogErrores;
             frmViaje.Show();
         }
 

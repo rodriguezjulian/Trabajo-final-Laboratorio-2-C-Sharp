@@ -20,6 +20,7 @@ namespace WF_TransporteRodriguez
         {
             empleado = empleadoIns;
         }
+        //MENOS ACOPLAMIENTO - MAS COHESION
 
         public Frm_Admin_Baja_Empleado()
         {
@@ -31,7 +32,6 @@ namespace WF_TransporteRodriguez
             this.Hide();
             this.Close();
         }
-
         private void Frm_Admin_Baja_Empleado_Load(object sender, EventArgs e)
         {
             empleadosActivos = Conexion_SQL.ObtenerEmpleados("empleados").FindAll(empleado => empleado.Estado == true);

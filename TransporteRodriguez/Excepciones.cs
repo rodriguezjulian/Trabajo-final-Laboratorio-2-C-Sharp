@@ -9,19 +9,13 @@ namespace TransporteRodriguez
     [Serializable]
     public class fechaException : Exception
     {
-        public fechaException()
-        {
-        }
+        public fechaException() { }
+
 
         public fechaException(string message)
             : base(message)
-        {
-            /*
-             public delegate void NotificadorCambioTiempo(object reloj, InfoTiempoEventArgs infoTiempo);
-
-             public event NotificadorCambioTiempo SegundoCambiado;
-
-             */
+        {     
         }
     }
+
 }

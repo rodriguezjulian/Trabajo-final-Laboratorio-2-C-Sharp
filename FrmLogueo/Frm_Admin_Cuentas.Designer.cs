@@ -31,6 +31,7 @@
             dataGridView1 = new DataGridView();
             pnl_Izquierdo = new Panel();
             pic_Volver = new PictureBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnl_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Volver).BeginInit();
@@ -39,7 +40,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(181, 146);
+            dataGridView1.Location = new Point(182, 154);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(467, 282);
@@ -64,22 +65,35 @@
             pic_Volver.TabIndex = 1;
             pic_Volver.TabStop = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(182, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 75;
+            label1.Text = "label1";
+            label1.Click += label1_Click;
+            // 
             // Frm_Admin_Cuentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 469);
             ControlBox = false;
+            Controls.Add(label1);
             Controls.Add(pnl_Izquierdo);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Frm_Admin_Cuentas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Frm_Admin_Cuentas";
+            Load += Frm_Admin_Cuentas_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             pnl_Izquierdo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pic_Volver).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -87,5 +101,6 @@
         private DataGridView dataGridView1;
         private Panel pnl_Izquierdo;
         private PictureBox pic_Volver;
+        private Label label1;
     }
 }
