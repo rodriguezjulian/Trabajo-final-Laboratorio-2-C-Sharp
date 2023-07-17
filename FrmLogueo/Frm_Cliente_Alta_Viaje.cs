@@ -29,11 +29,11 @@ namespace WF_TransporteRodriguez
             public Cliente Client { get => cliente; set => cliente = value; }
         }
 
-        private void NotificarExcepcion()
+       /*private void NotificarExcepcion()
         {
             //DISPARO EL LLAMADO A TODOS LOS SUBSCRIPTORES PARA QUE CADA UNO MANEJE EL EVENTO CON SUS METODOS
-           // FechaExceptionOcurred.Invoke(this, new FechaEventArgs() { Client });
-        }
+           /FechaExceptionOcurred.Invoke(this, new FechaEventArgs() { Client });
+        }*/
 
         public Frm_Cliente_Alta_Viaje()
         {
@@ -68,7 +68,7 @@ namespace WF_TransporteRodriguez
                 //mail
                 //archivo
                 //BD
-                EnviarMail aa = new EnviarMail(); try { aa.Enviarcorreo(cliente); } catch (Exception exi) { MessageBox.Show(exi.Message); } 
+               EnviarMail aa = new EnviarMail(); try { aa.Enviarcorreo(cliente); } catch (Exception exi) { MessageBox.Show(exi.Message); } 
                
                // NotificarExcepcion();
                 //Log_Errores.EscribirLogErrores(exa);
@@ -77,7 +77,7 @@ namespace WF_TransporteRodriguez
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                NotificarExcepcion();
+               // NotificarExcepcion();
                // Log_Errores.EscribirLogErrores(ex);
             }
         }

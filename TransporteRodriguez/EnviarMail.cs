@@ -33,6 +33,7 @@ namespace TransporteRodriguez
 
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress("transportereclamos123@gmail.com");
+            
                 mail.To.Add("julian_rodriguez99@hotmail.com");
                 mail.Subject = "RECLAMOS AUTOMATICO";
                 mail.Body = cadena.ToString();

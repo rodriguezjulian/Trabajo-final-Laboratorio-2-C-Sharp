@@ -156,6 +156,8 @@ namespace WF_TransporteRodriguez
                 Frm_Admin_Baja_Empleado frm_Admin_Baja_Empleado = new Frm_Admin_Baja_Empleado();
                 usuarioDelegado delegado = frm_Admin_Baja_Empleado.TraerEmpleado;
                 delegado(empleadoInstanciado);
+                //MENOS ACOPLAMIENTO + COHESION
+
                 frm_Admin_Baja_Empleado.MdiParent = this;
                 frm_Admin_Baja_Empleado.Dock = DockStyle.Fill;
                 frm_Admin_Baja_Empleado.Show();

@@ -237,3 +237,143 @@ Clase: TransporteRodriguez.Validaciones
 Método: VerificarViajesPendientes
 
 
+Fecha y hora: 2023-06-30 15:38:21
+Descripción: Error, solo puede modificar o dar de baja viajes que aun no se han realizado.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: ModificarViaje
+
+
+Fecha y hora: 2023-06-30 15:38:30
+Descripción: ERROR, El ID de viaje no corresponde a usted.
+Clase: TransporteRodriguez.Repositorio_Viajes
+Método: ModificarViaje
+
+
+Fecha y hora: 2023-06-30 15:48:37
+Descripción: ERROR, No se puede eliminar asi mismo
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-06-30 15:58:48
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-07-03 17:21:55
+Descripción: Unable to connect to any of the specified MySQL hosts.
+Clase: MySql.Data.MySqlClient.NativeDriver+<>c
+Método: <OpenAsync>b__38_0
+
+
+Fecha y hora: 2023-07-10 12:55:40
+Descripción: Unable to connect to any of the specified MySQL hosts.
+Clase: MySql.Data.MySqlClient.NativeDriver+<>c
+Método: <OpenAsync>b__38_0
+
+
+Fecha y hora: 2023-07-10 12:56:47
+Descripción: Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'bd_transporte_rodriguez'
+Clase: MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin
+Método: AuthenticationFailed
+
+
+Fecha y hora: 2023-07-10 14:25:21
+Descripción: Table 'bd_transporte_rodriguez.clientes' doesn't exist
+Clase: MySql.Data.MySqlClient.MySqlStream+<ReadPacketAsync>d__30
+Método: MoveNext
+
+
+Fecha y hora: 2023-07-10 14:26:01
+Descripción: The connection is already open.
+Clase: MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor
+Método: Throw
+
+
+Fecha y hora: 2023-07-10 14:36:06
+Descripción: ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarViajesPendientes
+
+
+Fecha y hora: 2023-07-10 14:46:45
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-07-10 14:47:05
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-07-10 14:47:17
+Descripción: ERROR, Verifique la patente ingresada
+
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarPatente
+
+
+Fecha y hora: 2023-07-10 14:47:42
+Descripción: ERROR, El vehiculo ya se encuentra dado de baja
+Clase: TransporteRodriguez.Repositorio_Vehiculos
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-07-10 14:47:45
+Descripción: ERROR, No puede eliminar un vehiculo que tenga viajes pendiente.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarViajesPendientes
+
+
+Fecha y hora: 2023-07-10 14:51:37
+Descripción: Cliente no encontrado
+Clase: TransporteRodriguez.Repositorio_Clientes
+Método: ModificarCliente
+
+
+Fecha y hora: 2023-07-10 14:52:58
+Descripción: El empleado con ese ID ya se encontraba dado de baja
+Clase: TransporteRodriguez.Repositorio_Clientes
+Método: DarDeBaja
+
+
+Fecha y hora: 2023-07-10 14:53:56
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-07-10 14:54:04
+Descripción: Solo los empleados del sector sistemas pueden acceder a esta opcion
+Clase: TransporteRodriguez.Repositorio_Empleados
+Método: VerificarPuesto
+
+
+Fecha y hora: 2023-07-10 14:56:03
+Descripción: ERROR, Ingrese direccion del nuevo cliente
+Clase: TransporteRodriguez.Repositorio_Clientes
+Método: CrearCliente
+
+
+Fecha y hora: 2023-07-10 14:56:14
+Descripción: ERROR, Ingrese un nombre valido (sin números ni simbolos).
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarNombre
+
+
+Fecha y hora: 2023-07-10 14:56:30
+Descripción: No debes incluir @ en el cuerpo de tu mail.
+ El mismo se agrega automaticamente.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarCuerpoMail
+
+
+Fecha y hora: 2023-07-10 14:56:40
+Descripción: ERROR, Ingrese cuerpo del mail.
+Clase: TransporteRodriguez.Validaciones
+Método: VerificarCuerpoMail
+
+

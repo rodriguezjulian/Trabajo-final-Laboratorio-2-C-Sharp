@@ -16,6 +16,7 @@ namespace WF_TransporteRodriguez
     {
         List<Empleado> empleadosActivos;
         Empleado empleado;
+
         public void TraerEmpleado(Empleado empleadoIns)
         {
             empleado = empleadoIns;

@@ -36,7 +36,7 @@ namespace TransporteRodriguez
             }
             return lectura;
         }  
-        public static void EscribirXMLEx(string path, T Excepcion)
+    /*    public static void EscribirXMLEx(string path, T Excepcion)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace TransporteRodriguez
             {
                 Console.WriteLine(ex.ToString());
             }
-        }
+        }*/
 
 
 

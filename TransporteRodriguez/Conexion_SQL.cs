@@ -22,7 +22,7 @@ namespace TransporteRodriguez
         static Conexion_SQL()
         {
             //  mysqlConexion = new MySqlConnection("Server=localhost;Database=bd_transporte_rodriguez;Uid=root;Pwd='';");
-            mysqlConexion = new MySqlConnection("Server=localhost;Port=3302;Database=bd_transporte_rodriguez;Uid=root;Pwd='';");
+            mysqlConexion = new MySqlConnection("Server=localhost;Port=3306;Database=bd_transporte_rodriguez;Uid=root;Pwd='';");
         }
         public static void Conectar()
         {
