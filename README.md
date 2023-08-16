@@ -1,5 +1,5 @@
-#Universidad Tecnologica Nacional.
-##rgentina, Buenos Aires.
+# Universidad Tecnologica Nacional.
+## Argentina, Buenos Aires.
 
 ###Transporte Rodriguez
 - Proyecto de tipo windows form (VS 2022 - .NET 6.0).
